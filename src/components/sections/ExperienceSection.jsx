@@ -18,12 +18,12 @@ const ExperienceSection = () => {
               playsInline
               muted
               className="experience-video"
-              poster="/assets/experience-poster.webp"
+              poster={`${import.meta.env.BASE_URL}assets/experience-poster.webp`}
             >
               {/* Serve 1080p for screens >= 768px */}
-              <source src="/assets/videos/Section 6 - Experience Timeline 1080p.mp4" media="(min-width: 768px)" type="video/mp4" />
+              <source src={`${import.meta.env.BASE_URL}assets/videos/Section 6 - Experience Timeline 1080p.mp4`} media="(min-width: 768px)" type="video/mp4" />
               {/* Serve standard 720p for smaller screens */}
-              <source src="/assets/videos/Section 6 - Experience Timeline.mp4" type="video/mp4" />
+              <source src={`${import.meta.env.BASE_URL}assets/videos/Section 6 - Experience Timeline.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

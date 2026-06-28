@@ -14,12 +14,12 @@ const HeroSection = () => {
           playsInline
           muted
           className="hero-video"
-          poster="/assets/hero-poster.webp"
+          poster={`${import.meta.env.BASE_URL}assets/hero-poster.webp`}
         >
           {/* Serve 1080p for screens >= 768px */}
-          <source src="/assets/videos/Section 1 - Hero - 1080p.mp4" media="(min-width: 768px)" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/videos/Section 1 - Hero - 1080p.mp4`} media="(min-width: 768px)" type="video/mp4" />
           {/* Serve standard 720p for smaller screens */}
-          <source src="/assets/videos/Section 1 - Hero.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/videos/Section 1 - Hero.mp4`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="hero-overlay"></div>

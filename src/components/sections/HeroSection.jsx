@@ -15,7 +15,7 @@ const HeroSection = () => {
           playsInline
           muted={isMuted}
           className="hero-video"
-          poster={`${import.meta.env.BASE_URL}assets/hero-poster.webp`}
+          poster={`${import.meta.env.BASE_URL}assets/hero-poster.png`}
         >
           {/* Serve 1080p for screens >= 768px */}
           <source src={`${import.meta.env.BASE_URL}assets/videos/Section 1 - Hero - 1080p.mp4`} media="(min-width: 768px)" type="video/mp4" />
@@ -27,15 +27,16 @@ const HeroSection = () => {
       </div>
       
       <div className="hero-content">
-        <h1 className="hero-title">Architecting Autonomous Intelligence</h1>
+        <h1 className="hero-title">Rishav Saigal | Agentic AI Architect & ML Researcher</h1>
         <p className="hero-subtitle">
-          "Building Agentic AI, RAG Systems, & LLM Orchestration."
+          "Pioneering Behavioral Reliability Engineering (BRE) for Large Language Models."
         </p>
         <p className="hero-description">
-          Hi, I'm Rishav. I specialize in engineering autonomous machine learning systems. My career centers on time-series forecasting, causal inference, and deploying production-grade enterprise Agentic AI frameworks.
+          I specialize in engineering autonomous machine learning systems. My research focuses on time-series forecasting, causal inference, and mitigating behavioral drift in LLMs under adversarial pressure.
         </p>
         <div className="hero-actions">
           <a href="#contact" className="btn-primary-large">Let's Connect</a>
+          <a href="https://doi.org/10.5281/zenodo.20032071" target="_blank" rel="noopener noreferrer" className="btn-secondary-large">Research: LLM Drift Experiment</a>
         </div>
       </div>
     </section>

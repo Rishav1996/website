@@ -3,39 +3,30 @@ import { gsap } from 'gsap';
 import './CertificationsSection.css';
 
 const CertificationsSection = () => {
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    cardsRef.current.forEach((card) => {
-      if (card) {
-        card.addEventListener('mouseenter', () => {
-          gsap.to(card, { 
-            scale: 1.08, 
-            y: -10, 
-            duration: 0.8, 
-            ease: 'elastic.out(1, 0.4)', 
-            borderColor: 'var(--color-accent-primary)',
-            boxShadow: '0 25px 45px rgba(168, 199, 250, 0.15)' 
-          });
-        });
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card, { 
-            scale: 1, 
-            y: 0, 
-            duration: 0.6, 
-            ease: 'elastic.out(1, 0.6)', 
-            borderColor: 'rgba(255, 255, 255, 0.05)',
-            boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)' 
-          });
-        });
-      }
+  const handleMouseEnter = (e) => {
+    gsap.killTweensOf(e.currentTarget);
+    gsap.to(e.currentTarget, { 
+      scale: 1.08, 
+      y: -10, 
+      duration: 0.8, 
+      ease: 'elastic.out(1, 0.4)', 
+      borderColor: 'var(--color-accent-primary)',
+      boxShadow: '0 25px 45px rgba(168, 199, 250, 0.15)',
+      overwrite: 'auto'
     });
-  }, []);
+  };
 
-  const addToRefs = (el) => {
-    if (el && !cardsRef.current.includes(el)) {
-      cardsRef.current.push(el);
-    }
+  const handleMouseLeave = (e) => {
+    gsap.killTweensOf(e.currentTarget);
+    gsap.to(e.currentTarget, { 
+      scale: 1, 
+      y: 0, 
+      duration: 0.6, 
+      ease: 'elastic.out(1, 0.6)', 
+      borderColor: 'rgba(255, 255, 255, 0.05)',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
+      overwrite: 'auto'
+    });
   };
 
   const certifications = [
@@ -93,8 +84,9 @@ const CertificationsSection = () => {
           {certifications.map((cert, index) => (
             <div 
               className="cert-card" 
-              ref={addToRefs} 
               key={index}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               onClick={() => window.open(cert.link, '_blank', 'noopener,noreferrer')}
               role="button"
               tabIndex={0}

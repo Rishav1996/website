@@ -21,6 +21,10 @@
   padding: 0;
 }
 
+section {
+  background: transparent !important;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg-primary);

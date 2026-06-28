@@ -5,6 +5,7 @@ import HeroSection from '../components/sections/HeroSection'
 import ResearchSection from '../components/sections/ResearchSection'
 import CapabilitiesSection from '../components/sections/CapabilitiesSection'
 import ProjectsSection from '../components/sections/ProjectsSection'
+import OpenSourceSection from '../components/sections/OpenSourceSection'
 import ExperienceSection from '../components/sections/ExperienceSection'
 import PublicationsSection from '../components/sections/PublicationsSection'
 import CertificationsSection from '../components/sections/CertificationsSection'
@@ -23,6 +24,7 @@ const HomePage = () => {
           <ResearchSection />
           <ExperienceSection />
           <ProjectsSection />
+          <OpenSourceSection />
           <PublicationsSection />
           <CapabilitiesSection />
           <CertificationsSection />

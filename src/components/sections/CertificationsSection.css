@@ -1,0 +1,63 @@
+.certifications-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.certifications-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(43, 45, 49, 0.4) 0%, rgba(18, 19, 24, 0.6) 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  will-change: transform, box-shadow;
+}
+
+.cert-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.cert-icon.google { background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335); }
+.cert-icon.aws { background: linear-gradient(135deg, #FF9900, #232F3E); }
+.cert-icon.azure { background: linear-gradient(135deg, #00A4EF, #0078D7); }
+.cert-icon.stanford { background: linear-gradient(135deg, #8C1515, #4D4F53); }
+.cert-icon.dataiku { background: linear-gradient(135deg, #2D3A8C, #0F174A); }
+.cert-icon.microsoft { background: linear-gradient(135deg, #00A4EF, #0078D7); }
+
+.cert-info h3 {
+  color: var(--color-text-high);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.cert-info span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}

@@ -1,18 +1,19 @@
 import React from 'react';
+import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
 import './HeroSection.css';
 
 const HeroSection = () => {
   const videoRef = useVideoAutoplay({ threshold: 0.5 });
+  const { isMuted } = useAudio();
 
   return (
     <section id="hero" className="hero-section">
       <div className="hero-video-container">
         <video 
           ref={videoRef}
-          controls 
           playsInline
-          muted
+          muted={isMuted}
           className="hero-video"
           poster={`${import.meta.env.BASE_URL}assets/hero-poster.webp`}
         >
@@ -35,7 +36,6 @@ const HeroSection = () => {
         </p>
         <div className="hero-actions">
           <a href="#contact" className="btn-primary-large">Let's Connect</a>
-          <a href="#projects" className="btn-secondary">View Open Source</a>
         </div>
       </div>
     </section>

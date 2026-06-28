@@ -1,9 +1,11 @@
 import React from 'react';
+import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
 import './ExperienceSection.css';
 
 const ExperienceSection = () => {
   const videoRef = useVideoAutoplay({ threshold: 0.5 });
+  const { isMuted } = useAudio();
 
   return (
     <section id="experience" className="experience-section">
@@ -14,9 +16,8 @@ const ExperienceSection = () => {
           <div className="experience-video-wrapper">
             <video 
               ref={videoRef}
-              controls 
               playsInline
-              muted
+              muted={isMuted}
               className="experience-video"
               poster={`${import.meta.env.BASE_URL}assets/experience-poster.webp`}
             >

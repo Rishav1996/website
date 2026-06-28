@@ -1,12 +1,14 @@
 import React from 'react';
+import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
 import './ContactSection.css';
 
 const ContactSection = () => {
   const videoRef = useVideoAutoplay({ threshold: 0.5 });
+  const { isMuted } = useAudio();
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section section-padding">
       <div className="contact-container">
         <h2 className="section-title">Initiate Collaboration</h2>
         <p className="section-subtitle">Let's build the future of AI together.</p>
@@ -61,9 +63,8 @@ const ContactSection = () => {
           <div className="contact-video-wrapper">
             <video 
               ref={videoRef}
-              controls 
               playsInline
-              muted
+              muted={isMuted}
               className="contact-video"
               poster={`${import.meta.env.BASE_URL}assets/contact-poster.webp`}
             >

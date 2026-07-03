@@ -7,7 +7,7 @@ export const useAudio = () => {
 };
 
 export const AudioProvider = ({ children }) => {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   const toggleMute = () => {
     setIsMuted(prev => !prev);

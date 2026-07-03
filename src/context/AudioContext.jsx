@@ -7,14 +7,14 @@ export const useAudio = () => {
 };
 
 export const AudioProvider = ({ children }) => {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   const toggleMute = () => {
     setIsMuted(prev => !prev);
   };
 
   return (
-    <AudioContext.Provider value={{ isMuted, toggleMute }}>
+    <AudioContext.Provider value={{ isMuted, toggleMute, setIsMuted }}>
       {children}
     </AudioContext.Provider>
   );

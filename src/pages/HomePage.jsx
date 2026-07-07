@@ -9,6 +9,7 @@ import OpenSourceSection from '../components/sections/OpenSourceSection'
 import ExperienceSection from '../components/sections/ExperienceSection'
 import PublicationsSection from '../components/sections/PublicationsSection'
 import CertificationsSection from '../components/sections/CertificationsSection'
+import MediaSection from '../components/sections/MediaSection'
 import ContactSection from '../components/sections/ContactSection'
 
 const HomePage = () => {
@@ -28,6 +29,7 @@ const HomePage = () => {
           <PublicationsSection />
           <CapabilitiesSection />
           <CertificationsSection />
+          <MediaSection />
           <ContactSection />
         </main>
         <Footer />

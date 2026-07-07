@@ -125,59 +125,74 @@ const MediaSection = () => {
 
     // 2. Fetch LinkedIn Newsletter Articles
     const fetchLinkedIn = async () => {
-      try {
-        const targetUrl = "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/";
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
-        
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error("LinkedIn fetch failed");
-        
-        const data = await response.json();
-        const htmlText = data.contents;
-        if (!htmlText) throw new Error("Empty LinkedIn HTML contents");
+      const targetUrl = "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/";
+      
+      const proxies = [
+        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url + '?t=' + Date.now())}&_=${Date.now()}`,
+        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url + '?t=' + Date.now())}`
+      ];
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlText, "text/html");
-        const list = [];
-        const seenUrls = new Set();
-        
-        // Find all links referencing pulse
-        const titleLinks = doc.querySelectorAll('.share-article__title-link, .base-card--link, a[href*="/pulse/"]');
-        titleLinks.forEach(linkNode => {
-          let url = linkNode.getAttribute('href') || '';
-          if (url.includes('?')) {
-            url = url.split('?')[0];
+      for (let i = 0; i < proxies.length; i++) {
+        try {
+          const proxyUrl = proxies[i](targetUrl);
+          const response = await fetch(proxyUrl);
+          if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
+          
+          let htmlText = "";
+          if (proxyUrl.includes("allorigins")) {
+            const data = await response.json();
+            htmlText = data.contents;
+          } else {
+            htmlText = await response.text();
           }
-          if (url.startsWith('http') && url.includes('/pulse/') && !seenUrls.has(url)) {
-            seenUrls.add(url);
-            
-            let title = linkNode.textContent.trim().replace(/\s+/g, ' ');
-            
-            let date = "Latest Issue";
-            const parentText = linkNode.parentElement?.textContent || '';
-            const dateMatch = parentText.match(/\b\d+\s+(?:day|week|month|year)s?\s+ago\b/i);
-            if (dateMatch) {
-              date = dateMatch[0];
-            }
-            
-            if (title && !title.includes('LinkedIn') && title.length > 5) {
-              list.push({
-                title: title.replace(/&amp;/g, '&'),
-                link: url,
-                date
-              });
-            }
-          }
-        });
 
-        if (list.length > 0) {
-          setNewsletterArticles(list.slice(0, 5));
+          if (!htmlText) throw new Error(`Empty response from proxy ${i}`);
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(htmlText, "text/html");
+          const list = [];
+          const seenUrls = new Set();
+          
+          const titleLinks = doc.querySelectorAll('.share-article__title-link, .base-card--link, a[href*="/pulse/"]');
+          titleLinks.forEach(linkNode => {
+            let url = linkNode.getAttribute('href') || '';
+            if (url.includes('?')) {
+              url = url.split('?')[0];
+            }
+            if (url.startsWith('http') && url.includes('/pulse/') && !seenUrls.has(url)) {
+              seenUrls.add(url);
+              
+              let title = linkNode.textContent.trim().replace(/\s+/g, ' ');
+              
+              let date = "Latest Issue";
+              const parentText = linkNode.parentElement?.textContent || '';
+              const dateMatch = parentText.match(/\b\d+\s+(?:day|week|month|year)s?\s+ago\b/i);
+              if (dateMatch) {
+                date = dateMatch[0];
+              }
+              
+              if (title && !title.includes('LinkedIn') && title.length > 5) {
+                list.push({
+                  title: title.replace(/&amp;/g, '&'),
+                  link: url,
+                  date
+                });
+              }
+            }
+          });
+
+          if (list.length > 0) {
+            setNewsletterArticles(list.slice(0, 5));
+            setNewsletterLoading(false);
+            return; // Success! Exit early.
+          }
+        } catch (err) {
+          console.warn(`LinkedIn fetch via proxy ${i} failed:`, err);
         }
-      } catch (err) {
-        console.warn("LinkedIn real-time fetch failed, utilizing fallback data:", err);
-      } finally {
-        setNewsletterLoading(false);
       }
+
+      // If all proxies fail, load fallback data
+      setNewsletterLoading(false);
     };
 
     fetchYouTube();

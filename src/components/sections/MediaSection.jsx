@@ -126,8 +126,8 @@ const MediaSection = () => {
     // 2. Fetch LinkedIn Newsletter Articles
     const fetchLinkedIn = async () => {
       try {
-        const targetUrl = `https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/?t=${Date.now()}`;
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}&_=${Date.now()}`;
+        const targetUrl = "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/";
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
         
         const response = await fetch(proxyUrl);
         if (!response.ok) throw new Error("LinkedIn fetch failed");

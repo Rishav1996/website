@@ -58,59 +58,50 @@ const MediaSection = () => {
 
           if (!xmlText) throw new Error(`Empty response from proxy ${i}`);
 
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-          const entries = xmlDoc.getElementsByTagName("entry");
+          // Use regex-based parsing instead of DOM-based to reliably handle
+          // XML namespace prefixes (media:statistics, yt:videoId, etc.) which
+          // getElementsByTagName handles inconsistently across browsers.
+          const entryMatches = [...xmlText.matchAll(/<entry>([\s\S]*?)<\/entry>/g)];
           const list = [];
 
-          for (let j = 0; j < entries.length; j++) {
-            const entry = entries[j];
-            const title = entry.getElementsByTagName("title")[0]?.textContent || "";
-            const linkNode = entry.getElementsByTagName("link")[0];
-            const url = linkNode ? linkNode.getAttribute("href") : "";
-            
-            let videoId = "";
-            const videoIdNode = entry.getElementsByTagName("yt:videoId")[0] || entry.getElementsByTagName("videoId")[0];
-            if (videoIdNode) {
-              videoId = videoIdNode.textContent;
-            } else {
-              const urlMatch = url.match(/[?&]v=([^&#]+)/);
-              if (urlMatch) videoId = urlMatch[1];
-            }
-            
-            let viewsCount = 0;
-            let viewsText = "0 views";
-            const mediaGroup = entry.getElementsByTagName("media:group")[0] || entry.getElementsByTagName("group")[0];
-            if (mediaGroup) {
-              const community = mediaGroup.getElementsByTagName("media:community")[0] || mediaGroup.getElementsByTagName("community")[0];
-              if (community) {
-                const stats = community.getElementsByTagName("media:statistics")[0] || community.getElementsByTagName("statistics")[0];
-                if (stats) {
-                  const views = stats.getAttribute("views") || "0";
-                  viewsCount = parseInt(views, 10) || 0;
-                  viewsText = `${viewsCount.toLocaleString()} views`;
-                }
-              }
-            }
-            
-            if (title && url) {
+          for (const match of entryMatches) {
+            const entryXml = match[1];
+
+            // Title (strips CDATA if present)
+            const titleMatch = entryXml.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/);
+            const title = titleMatch ? titleMatch[1].replace(/&amp;/g, '&').trim() : '';
+
+            // Video ID from yt:videoId tag
+            const videoIdMatch = entryXml.match(/<yt:videoId>([\s\S]*?)<\/yt:videoId>/);
+            const videoId = videoIdMatch ? videoIdMatch[1].trim() : '';
+
+            // URL from link href
+            const urlMatch = entryXml.match(/<link[^>]+href="([^"]+)"/);
+            const url = urlMatch ? urlMatch[1] : (videoId ? `https://www.youtube.com/watch?v=${videoId}` : '');
+
+            // View count from media:statistics views="N" — regex handles namespace prefix reliably
+            const viewsMatch = entryXml.match(/media:statistics[^>]+views="(\d+)"/);
+            const viewsCount = viewsMatch ? parseInt(viewsMatch[1], 10) : 0;
+            const viewsText = `${viewsCount.toLocaleString()} views`;
+
+            if (title && videoId) {
               list.push({
                 id: videoId,
-                title: title.replace(/&amp;/g, '&'),
-                viewsText: viewsText,
-                viewsCount: viewsCount,
-                url: url,
+                title,
+                viewsText,
+                viewsCount,
+                url,
                 thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
               });
             }
           }
 
           if (list.length > 0) {
-            // Sort by viewsCount descending for "most viewed"
+            // Sort by viewsCount descending so most-watched videos appear first
             const sorted = list.sort((a, b) => b.viewsCount - a.viewsCount).slice(0, 5);
             setYoutubeVideos(sorted);
             setYoutubeLoading(false);
-            return; // Success! Exit early.
+            return; // Success — exit proxy loop early.
           }
         } catch (err) {
           console.warn(`YouTube fetch via proxy ${i} failed:`, err);

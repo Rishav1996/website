@@ -25,302 +25,237 @@ const FALLBACK_YOUTUBE = [
   }
 ];
 
-const FALLBACK_NEWSLETTER = [
-  {
-    title: "Algorhythm Chronicles: Issue #2 – The Weight of Everything",
-    link: "https://www.linkedin.com/pulse/algorhythm-chronicles-issue-2-weight-everything-rishav-saigal-cag5f",
-    date: "July 2026"
-  },
-  {
-    title: "The Boy Who Found a Star in the Noise",
-    link: "https://www.linkedin.com/pulse/boy-who-found-star-noise-rishav-saigal-qpgbf",
-    date: "July 2026"
-  },
-  {
-    title: "The $1.5 Million Difference: Why Benchmarks are Only 10% of the AI Agent Story",
-    link: "https://www.linkedin.com/pulse/15-million-difference-why-benchmarks-only-10-ai-agent-rishav-saigal-ao4jc",
-    date: "March 2026"
-  }
-];
-
 const MediaSection = () => {
   const [youtubeVideos, setYoutubeVideos] = useState(FALLBACK_YOUTUBE);
   const [youtubeLoading, setYoutubeLoading] = useState(true);
-  const [newsletterArticles, setNewsletterArticles] = useState(FALLBACK_NEWSLETTER);
-  const [newsletterLoading, setNewsletterLoading] = useState(true);
+  const [activeWave, setActiveWave] = useState('idle'); // 'idle' | 'linkedin' | 'youtube'
+  const [selectedVideoId, setSelectedVideoId] = useState(null);
 
   useEffect(() => {
-    // 1. Fetch YouTube Videos
+    // Fetch YouTube Videos via proxy chain
     const fetchYouTube = async () => {
-      try {
-        const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
-        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}&_=${Date.now()}`;
-        
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error("YouTube fetch failed");
-        
-        const data = await response.json();
-        const xmlText = data.contents;
-        if (!xmlText) throw new Error("Empty YouTube XML contents");
-
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-        const entries = xmlDoc.getElementsByTagName("entry");
-        const list = [];
-
-        for (let i = 0; i < entries.length; i++) {
-          const entry = entries[i];
-          const title = entry.getElementsByTagName("title")[0]?.textContent || "";
-          const linkNode = entry.getElementsByTagName("link")[0];
-          const url = linkNode ? linkNode.getAttribute("href") : "";
-          
-          let videoId = "";
-          const videoIdNode = entry.getElementsByTagName("yt:videoId")[0] || entry.getElementsByTagName("videoId")[0];
-          if (videoIdNode) {
-            videoId = videoIdNode.textContent;
-          } else {
-            const urlMatch = url.match(/[?&]v=([^&#]+)/);
-            if (urlMatch) videoId = urlMatch[1];
-          }
-          
-          let viewsCount = 0;
-          let viewsText = "0 views";
-          const mediaGroup = entry.getElementsByTagName("media:group")[0] || entry.getElementsByTagName("group")[0];
-          if (mediaGroup) {
-            const community = mediaGroup.getElementsByTagName("media:community")[0] || mediaGroup.getElementsByTagName("community")[0];
-            if (community) {
-              const stats = community.getElementsByTagName("media:statistics")[0] || community.getElementsByTagName("statistics")[0];
-              if (stats) {
-                const views = stats.attribs ? stats.attribs.views : (stats.getAttribute("views") || "0");
-                viewsCount = parseInt(views, 10) || 0;
-                viewsText = `${viewsCount.toLocaleString()} views`;
-              }
-            }
-          }
-          
-          if (title && url) {
-            list.push({
-              id: videoId,
-              title: title.replace(/&amp;/g, '&'),
-              viewsText: viewsText,
-              viewsCount: viewsCount,
-              url: url,
-              thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
-            });
-          }
-        }
-
-        if (list.length > 0) {
-          // Sort by viewsCount descending for "most viewed"
-          const sorted = list.sort((a, b) => b.viewsCount - a.viewsCount).slice(0, 5);
-          setYoutubeVideos(sorted);
-        }
-      } catch (err) {
-        console.warn("YouTube real-time fetch failed, utilizing fallback data:", err);
-      } finally {
-        setYoutubeLoading(false);
-      }
-    };
-
-    // 2. Fetch LinkedIn Newsletter Articles
-    const fetchLinkedIn = async () => {
-      const targetUrl = "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/";
+      const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
+      const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
       
       const proxies = [
-        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url + '?t=' + Date.now())}&_=${Date.now()}`,
-        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url + '?t=' + Date.now())}`
+        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}&_=${Date.now()}`,
+        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
       ];
 
       for (let i = 0; i < proxies.length; i++) {
         try {
-          const proxyUrl = proxies[i](targetUrl);
+          const proxyUrl = proxies[i](rssUrl);
           const response = await fetch(proxyUrl);
           if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
           
-          let htmlText = "";
+          let xmlText = "";
           if (proxyUrl.includes("allorigins")) {
             const data = await response.json();
-            htmlText = data.contents;
+            xmlText = data.contents;
           } else {
-            htmlText = await response.text();
+            xmlText = await response.text();
           }
 
-          if (!htmlText) throw new Error(`Empty response from proxy ${i}`);
+          if (!xmlText) throw new Error(`Empty response from proxy ${i}`);
 
           const parser = new DOMParser();
-          const doc = parser.parseFromString(htmlText, "text/html");
+          const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+          const entries = xmlDoc.getElementsByTagName("entry");
           const list = [];
-          const seenUrls = new Set();
-          
-          const titleLinks = doc.querySelectorAll('.share-article__title-link, .base-card--link, a[href*="/pulse/"]');
-          titleLinks.forEach(linkNode => {
-            let url = linkNode.getAttribute('href') || '';
-            if (url.includes('?')) {
-              url = url.split('?')[0];
+
+          for (let j = 0; j < entries.length; j++) {
+            const entry = entries[j];
+            const title = entry.getElementsByTagName("title")[0]?.textContent || "";
+            const linkNode = entry.getElementsByTagName("link")[0];
+            const url = linkNode ? linkNode.getAttribute("href") : "";
+            
+            let videoId = "";
+            const videoIdNode = entry.getElementsByTagName("yt:videoId")[0] || entry.getElementsByTagName("videoId")[0];
+            if (videoIdNode) {
+              videoId = videoIdNode.textContent;
+            } else {
+              const urlMatch = url.match(/[?&]v=([^&#]+)/);
+              if (urlMatch) videoId = urlMatch[1];
             }
-            if (url.startsWith('http') && url.includes('/pulse/') && !seenUrls.has(url)) {
-              seenUrls.add(url);
-              
-              let title = linkNode.textContent.trim().replace(/\s+/g, ' ');
-              
-              let date = "Latest Issue";
-              const parentText = linkNode.parentElement?.textContent || '';
-              const dateMatch = parentText.match(/\b\d+\s+(?:day|week|month|year)s?\s+ago\b/i);
-              if (dateMatch) {
-                date = dateMatch[0];
-              }
-              
-              if (title && !title.includes('LinkedIn') && title.length > 5) {
-                list.push({
-                  title: title.replace(/&amp;/g, '&'),
-                  link: url,
-                  date
-                });
+            
+            let viewsCount = 0;
+            let viewsText = "0 views";
+            const mediaGroup = entry.getElementsByTagName("media:group")[0] || entry.getElementsByTagName("group")[0];
+            if (mediaGroup) {
+              const community = mediaGroup.getElementsByTagName("media:community")[0] || mediaGroup.getElementsByTagName("community")[0];
+              if (community) {
+                const stats = community.getElementsByTagName("media:statistics")[0] || community.getElementsByTagName("statistics")[0];
+                if (stats) {
+                  const views = stats.getAttribute("views") || "0";
+                  viewsCount = parseInt(views, 10) || 0;
+                  viewsText = `${viewsCount.toLocaleString()} views`;
+                }
               }
             }
-          });
+            
+            if (title && url) {
+              list.push({
+                id: videoId,
+                title: title.replace(/&amp;/g, '&'),
+                viewsText: viewsText,
+                viewsCount: viewsCount,
+                url: url,
+                thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+              });
+            }
+          }
 
           if (list.length > 0) {
-            setNewsletterArticles(list.slice(0, 5));
-            setNewsletterLoading(false);
+            // Sort by viewsCount descending for "most viewed"
+            const sorted = list.sort((a, b) => b.viewsCount - a.viewsCount).slice(0, 5);
+            setYoutubeVideos(sorted);
+            setYoutubeLoading(false);
             return; // Success! Exit early.
           }
         } catch (err) {
-          console.warn(`LinkedIn fetch via proxy ${i} failed:`, err);
+          console.warn(`YouTube fetch via proxy ${i} failed:`, err);
         }
       }
 
-      // If all proxies fail, load fallback data
-      setNewsletterLoading(false);
+      setYoutubeLoading(false);
     };
 
     fetchYouTube();
-    fetchLinkedIn();
   }, []);
 
   return (
     <section id="media" className="media-section">
       <div className="media-container">
-        <h2 className="section-title">Digital Channels</h2>
-        <p className="section-subtitle">Real-time updates, tutorials, and mathematical narratives.</p>
         
+        {/* Motto Centerpiece */}
+        <div className="motto-container">
+          <p className="motto-text">
+            Algorhythm Chronicles: Discover the human stories behind data science, from historical mathematics to AI, told through original music.
+          </p>
+        </div>
+
         <div className="media-grid">
-          {/* LinkedIn Card */}
+          {/* LinkedIn Subscribe Card */}
           <div 
-            className="media-card linkedin"
+            className="media-interactive-card linkedin"
+            onMouseEnter={() => setActiveWave('linkedin')}
+            onMouseLeave={() => setActiveWave('idle')}
             onClick={() => window.open('https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/', '_blank', 'noopener,noreferrer')}
             role="button"
             tabIndex={0}
           >
-            <div className="card-header">
-              <div className="platform-icon">
+            <div className="media-header">
+              <div className="media-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a66c2">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
               </div>
               <div>
-                <span className="platform-name">LinkedIn Newsletter</span>
+                <span className="media-meta-tag">Newsletter</span>
                 <h3>Algorhythm Chronicles</h3>
               </div>
             </div>
             
-            <p className="card-motto">
-              "Algorhythm Chronicles: Discover the human stories behind data science, from historical mathematics to AI, told through original music."
+            <p className="subscribe-desc">
+              Subscribe on LinkedIn to receive bi-weekly narratives uncovering the mathematical breakthroughs, historical characters, and core concepts of AI and machine learning, brought to life with original thematic soundtracks.
             </p>
             
-            <div className="media-list-container" onClick={(e) => e.stopPropagation()}>
-              <div className="list-title">Latest Issues</div>
-              
-              {newsletterLoading ? (
-                <div className="media-loading">
-                  <div className="media-loading-spinner"></div>
-                  <span>Scanning articles...</span>
-                </div>
-              ) : (
-                <div className="media-list">
-                  {newsletterArticles.map((art, idx) => (
-                    <a 
-                      key={idx}
-                      href={art.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="media-item-row"
-                    >
-                      <div className="item-main">
-                        <span className="item-title">{art.title}</span>
-                        <span className="item-meta">{art.date}</span>
-                      </div>
-                      <span className="item-badge">Read</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            <button className="card-cta-btn">
+            <button className="subscribe-cta-btn">
               Subscribe on LinkedIn &rarr;
             </button>
           </div>
 
-          {/* YouTube Card */}
+          {/* YouTube Video List Card */}
           <div 
-            className="media-card youtube"
-            onClick={() => window.open('https://www.youtube.com/@rishavsaigal1996', '_blank', 'noopener,noreferrer')}
-            role="button"
-            tabIndex={0}
+            className="media-interactive-card youtube"
+            onMouseEnter={() => setActiveWave('youtube')}
+            onMouseLeave={() => setActiveWave('idle')}
           >
-            <div className="card-header">
-              <div className="platform-icon">
+            <div className="media-header">
+              <div className="media-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#ff0000">
                   <path d="M23.498 6.163c-.272-1.016-1.071-1.819-2.085-2.093-1.838-.493-9.213-.493-9.213-.493s-7.375 0-9.213.493c-1.014.274-1.813 1.077-2.085 2.093-.491 1.842-.491 5.688-.491 5.688s0 3.846.491 5.688c.272 1.016 1.071 1.819 2.085 2.093 1.838.493 9.213.493 9.213.493s7.375 0 9.213-.493c1.014-.274 1.813-1.077 2.085-2.093.491-1.842.491-5.688.491-5.688s0-3.846-.491-5.688zm-13.498 9.505v-7.336l6.388 3.668-6.388 3.668z"/>
                 </svg>
               </div>
               <div>
-                <span className="platform-name">YouTube Channel</span>
+                <span className="media-meta-tag">YouTube Channel</span>
                 <h3>Algorhythm Chronicles</h3>
               </div>
             </div>
             
-            <p className="card-motto">
-              "Algorhythm Chronicles: Discover the human stories behind data science, from historical mathematics to AI, told through original music."
-            </p>
+            <div className="youtube-list-title">Featured Videos</div>
             
-            <div className="media-list-container" onClick={(e) => e.stopPropagation()}>
-              <div className="list-title">Most Viewed Videos</div>
-              
-              {youtubeLoading ? (
-                <div className="media-loading">
-                  <div className="media-loading-spinner"></div>
-                  <span>Scanning channel...</span>
-                </div>
-              ) : (
-                <div className="media-list">
-                  {youtubeVideos.map((vid, idx) => (
-                    <a 
-                      key={idx}
-                      href={vid.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="media-item-row"
-                    >
-                      <div className="item-main">
-                        <span className="item-title">{vid.title}</span>
-                        <span className="item-meta">{vid.viewsText}</span>
-                      </div>
-                      <span className="item-badge">Watch</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            <button className="card-cta-btn">
-              Watch Videos on YouTube &rarr;
-            </button>
+            {youtubeLoading ? (
+              <div className="media-loading">
+                <div className="media-loading-spinner"></div>
+                <span>Syncing videos...</span>
+              </div>
+            ) : (
+              <div className="youtube-videos-list">
+                {youtubeVideos.map((vid, idx) => (
+                  <div 
+                    key={idx}
+                    className="yt-video-row"
+                    onClick={() => setSelectedVideoId(vid.id)}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <div className="video-info">
+                      <span className="video-title">{vid.title}</span>
+                      <span className="video-views">{vid.viewsText}</span>
+                    </div>
+                    <span className="play-badge">Play Video</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* SVG Soundwave Visualizer */}
+      <div className="waveform-section-divider">
+        <svg className={`waveform-svg ${activeWave}`} viewBox="0 0 1440 120" preserveAspectRatio="none">
+          {/* Main wave */}
+          <path 
+            className="wave-path wave-path-1" 
+            d="M0,60 C180,10 360,110 540,60 C720,10 900,110 1080,60 C1260,10 1440,110 1620,60 C1800,10 1980,110 2160,60" 
+          />
+          {/* Layer 2 */}
+          <path 
+            className="wave-path wave-path-2" 
+            d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 C1680,110 1920,10 2160,60" 
+          />
+          {/* Layer 3 */}
+          <path 
+            className="wave-path wave-path-3" 
+            d="M0,60 C120,40 240,80 360,60 C480,40 600,80 720,60 C840,40 960,80 1080,60 C1200,40 1320,80 1440,60 C1560,40 1680,80 1800,60" 
+          />
+        </svg>
+      </div>
+
+      {/* Fullscreen Video Player Modal */}
+      <div className={`theatre-modal ${selectedVideoId ? 'active' : ''}`} onClick={() => setSelectedVideoId(null)}>
+        {selectedVideoId && (
+          <div className="theatre-container" onClick={(e) => e.stopPropagation()}>
+            <button className="close-theatre-btn" onClick={() => setSelectedVideoId(null)}>
+              <span>[ ESC_CLOSE ]</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <iframe 
+              className="theatre-iframe"
+              src={`https://www.youtube.com/embed/${selectedVideoId}?autoplay=1`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+      </div>
+
     </section>
   );
 };

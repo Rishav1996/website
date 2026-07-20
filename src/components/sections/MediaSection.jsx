@@ -32,11 +32,47 @@ const MediaSection = () => {
   const [selectedVideoId, setSelectedVideoId] = useState(null);
 
   useEffect(() => {
-    // Fetch YouTube Videos via proxy chain
+    // Fetch YouTube Videos via proxy chain. rss2json is a purpose-built RSS->JSON
+    // service and tried first; the raw-XML CORS proxies (allorigins, codetabs) are
+    // kept as fallback for when rss2json is unavailable, since they also expose the
+    // media:statistics view counts that rss2json's free tier strips.
     const fetchYouTube = async () => {
       const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
       const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
-      
+
+      try {
+        const jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        const response = await fetch(jsonUrl);
+        if (!response.ok) throw new Error(`rss2json returned status ${response.status}`);
+        const data = await response.json();
+        if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error('rss2json returned no items');
+
+        const list = data.items
+          .filter((item) => item.link && item.guid)
+          .map((item) => {
+            const videoId = (item.guid.match(/([\w-]{11})$/) || [])[1] || '';
+            const pubDate = item.pubDate ? new Date(item.pubDate.replace(' ', 'T') + 'Z') : null;
+            return {
+              id: videoId,
+              title: (item.title || '').replace(/&amp;/g, '&'),
+              viewsText: pubDate ? pubDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '',
+              pubDate: pubDate ? pubDate.getTime() : 0,
+              url: item.link,
+              thumbnail: item.thumbnail || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+            };
+          })
+          .filter((vid) => vid.id);
+
+        if (list.length > 0) {
+          const sorted = list.sort((a, b) => b.pubDate - a.pubDate).slice(0, 5);
+          setYoutubeVideos(sorted);
+          setYoutubeLoading(false);
+          return;
+        }
+      } catch (err) {
+        console.warn('YouTube fetch via rss2json failed:', err);
+      }
+
       const proxies = [
         (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}&_=${Date.now()}`,
         (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
@@ -47,7 +83,7 @@ const MediaSection = () => {
           const proxyUrl = proxies[i](rssUrl);
           const response = await fetch(proxyUrl);
           if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
-          
+
           let xmlText = "";
           if (proxyUrl.includes("allorigins")) {
             const data = await response.json();

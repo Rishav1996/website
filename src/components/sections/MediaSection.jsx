@@ -32,14 +32,66 @@ const MediaSection = () => {
   const [selectedVideoId, setSelectedVideoId] = useState(null);
 
   useEffect(() => {
+    const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
+    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
+
+    const xmlProxies = [
+      (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}&_=${Date.now()}`,
+      (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+    ];
+
+    // Parses the raw YouTube RSS XML into { videoId -> viewsCount }. Regex-based
+    // rather than DOM-based to reliably handle namespace prefixes (media:statistics,
+    // yt:videoId) which getElementsByTagName handles inconsistently across browsers.
+    const parseViewCounts = (xmlText) => {
+      const counts = new Map();
+      for (const match of xmlText.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+        const entryXml = match[1];
+        const videoIdMatch = entryXml.match(/<yt:videoId>([\s\S]*?)<\/yt:videoId>/);
+        const viewsMatch = entryXml.match(/media:statistics[^>]+views="(\d+)"/);
+        if (videoIdMatch && viewsMatch) {
+          counts.set(videoIdMatch[1].trim(), parseInt(viewsMatch[1], 10));
+        }
+      }
+      return counts;
+    };
+
+    // Best-effort enrichment: fetches real view counts via the XML proxies and merges
+    // them into whatever video list is already on screen, replacing the date fallback.
+    // Runs after the primary list renders so a slow/dead proxy never blocks the UI.
+    const enrichWithViewCounts = async () => {
+      for (let i = 0; i < xmlProxies.length; i++) {
+        try {
+          const proxyUrl = xmlProxies[i](rssUrl);
+          const response = await fetch(proxyUrl);
+          if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
+
+          const xmlText = proxyUrl.includes("allorigins")
+            ? (await response.json()).contents
+            : await response.text();
+          if (!xmlText) throw new Error(`Empty response from proxy ${i}`);
+
+          const counts = parseViewCounts(xmlText);
+          if (counts.size === 0) throw new Error(`Proxy ${i} returned no view counts`);
+
+          setYoutubeVideos((prev) => prev.map((vid) => {
+            const viewsCount = counts.get(vid.id);
+            return viewsCount === undefined
+              ? vid
+              : { ...vid, viewsCount, viewsText: `${viewsCount.toLocaleString()} views` };
+          }));
+          return;
+        } catch (err) {
+          console.warn(`View-count enrichment via proxy ${i} failed:`, err);
+        }
+      }
+    };
+
     // Fetch YouTube Videos via proxy chain. rss2json is a purpose-built RSS->JSON
     // service and tried first; the raw-XML CORS proxies (allorigins, codetabs) are
     // kept as fallback for when rss2json is unavailable, since they also expose the
     // media:statistics view counts that rss2json's free tier strips.
     const fetchYouTube = async () => {
-      const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
-      const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
-
       try {
         const jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
         const response = await fetch(jsonUrl);
@@ -67,20 +119,16 @@ const MediaSection = () => {
           const sorted = list.sort((a, b) => b.pubDate - a.pubDate).slice(0, 5);
           setYoutubeVideos(sorted);
           setYoutubeLoading(false);
+          enrichWithViewCounts();
           return;
         }
       } catch (err) {
         console.warn('YouTube fetch via rss2json failed:', err);
       }
 
-      const proxies = [
-        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}&_=${Date.now()}`,
-        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
-      ];
-
-      for (let i = 0; i < proxies.length; i++) {
+      for (let i = 0; i < xmlProxies.length; i++) {
         try {
-          const proxyUrl = proxies[i](rssUrl);
+          const proxyUrl = xmlProxies[i](rssUrl);
           const response = await fetch(proxyUrl);
           if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
 
@@ -94,9 +142,6 @@ const MediaSection = () => {
 
           if (!xmlText) throw new Error(`Empty response from proxy ${i}`);
 
-          // Use regex-based parsing instead of DOM-based to reliably handle
-          // XML namespace prefixes (media:statistics, yt:videoId, etc.) which
-          // getElementsByTagName handles inconsistently across browsers.
           const entryMatches = [...xmlText.matchAll(/<entry>([\s\S]*?)<\/entry>/g)];
           const list = [];
 

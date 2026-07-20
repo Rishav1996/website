@@ -35,10 +35,20 @@ const MediaSection = () => {
     const channelId = "UCh2FmsvvhBsu8L0HsJgh9-A";
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}&t=${Date.now()}`;
 
+    // corsproxy.io / api.cors.lol return the raw XML directly; allorigins/codetabs are
+    // kept as further fallback (allorigins wraps the XML in a { contents } JSON envelope).
     const xmlProxies = [
+      (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+      (url) => `https://api.cors.lol/?url=${encodeURIComponent(url)}`,
       (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}&_=${Date.now()}`,
       (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
     ];
+
+    const fetchWithTimeout = (url, ms = 8000) => {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort('timeout'), ms);
+      return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(timer));
+    };
 
     // Parses the raw YouTube RSS XML into { videoId -> viewsCount }. Regex-based
     // rather than DOM-based to reliably handle namespace prefixes (media:statistics,
@@ -63,7 +73,7 @@ const MediaSection = () => {
       for (let i = 0; i < xmlProxies.length; i++) {
         try {
           const proxyUrl = xmlProxies[i](rssUrl);
-          const response = await fetch(proxyUrl);
+          const response = await fetchWithTimeout(proxyUrl);
           if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
 
           const xmlText = proxyUrl.includes("allorigins")
@@ -129,7 +139,7 @@ const MediaSection = () => {
       for (let i = 0; i < xmlProxies.length; i++) {
         try {
           const proxyUrl = xmlProxies[i](rssUrl);
-          const response = await fetch(proxyUrl);
+          const response = await fetchWithTimeout(proxyUrl);
           if (!response.ok) throw new Error(`Proxy ${i} returned status ${response.status}`);
 
           let xmlText = "";

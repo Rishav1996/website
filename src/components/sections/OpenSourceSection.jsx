@@ -3,6 +3,23 @@ import './OpenSourceSection.css';
 
 const OS_PROJECTS = [
   {
+    title: "model-router",
+    url: "https://github.com/Rishav1996/model-router",
+    desc: "Two-axis Claude Code skill that scores capability floor and cost exposure separately to pick the cheapest model.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/model-router.git` },
+      { type: 'input', text: `/plugin marketplace add Rishav1996/model-router` },
+      { type: 'system', text: `[Marketplace] Registered Rishav1996/model-router` },
+      { type: 'input', text: `/plugin install model-router` },
+      { type: 'success', text: `[Plugin] model-router installed.` },
+      { type: 'input', text: `/model-router "refactor auth across 6 files, run tests"` },
+      { type: 'system', text: `[Score] Capability floor = max(D=2, S=2, A=2) = 2` },
+      { type: 'system', text: `[Score] Cost exposure = C+O+A = 2+3+2 = 7` },
+      { type: 'observation', text: `[Router] Floor 2 -> Sonnet 5. Exposure 7 -> lever: scope to 2 files/pass, not a model swap.` },
+      { type: 'success', text: `[Success] Recommended: Sonnet 5, effort xhigh.` }
+    ]
+  },
+  {
     title: "LLMDriftExperiment",
     url: "https://github.com/Rishav1996/LLMDriftExperiment",
     desc: "High-fidelity research platform for quantifying LLM Drift.",

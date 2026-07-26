@@ -70,6 +70,13 @@ const TiltCard = ({ pub, onOpen }) => {
 
 const publications = [
   {
+    title: "Claude Model Routing: Stop Scoring \"Complexity.\" Score These Two Things Instead.",
+    date: "Jul 2026",
+    description: "Published on Medium",
+    summary: "Argues that a single blended 'complexity' score breaks Claude model routing — short-but-hard prompts get routed too cheap, long-but-easy ones too expensive. Proposes scoring capability floor (a max) and cost exposure (a sum) as two separate axes instead, with a real downgrade test gating any model swap.",
+    link: "https://medium.com/@rishavsaigal/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce"
+  },
+  {
     title: "LangGraph Multi-Agent Architecture: Building a Self-Critiquing AI Debate System",
     date: "May 2026",
     description: "Published in Towards AI",

@@ -99,8 +99,120 @@
   transition: color 0.3s;
   display: inline-block;
   margin-top: auto;
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .pub-link:hover {
   color: var(--color-text-high);
+  text-decoration: underline;
+}
+
+/* Publication Summary Modal */
+.pub-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 19, 24, 0.85);
+  backdrop-filter: blur(20px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pub-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pub-modal-container {
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  background: linear-gradient(135deg, rgba(43, 45, 49, 0.95) 0%, rgba(18, 19, 24, 0.98) 100%);
+  border: 1px solid rgba(168, 199, 250, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.pub-modal.active .pub-modal-container {
+  transform: scale(1);
+}
+
+.pub-modal-date {
+  color: var(--color-accent-secondary);
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.pub-modal-title {
+  color: var(--color-text-high);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.pub-modal-summary {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.pub-modal-readmore {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.pub-modal-readmore:hover {
+  color: var(--color-text-high);
+}
+
+.close-pub-modal-btn {
+  position: absolute;
+  top: -2.2rem;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.close-pub-modal-btn:hover {
+  color: var(--color-accent-primary);
+}
+
+@media (max-width: 600px) {
+  .pub-modal-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .close-pub-modal-btn span {
+    display: none;
+  }
 }

@@ -8,7 +8,6 @@ import ProjectsSection from '../components/sections/ProjectsSection'
 import OpenSourceSection from '../components/sections/OpenSourceSection'
 import ExperienceSection from '../components/sections/ExperienceSection'
 import PublicationsSection from '../components/sections/PublicationsSection'
-import ResearchHighlightSection from '../components/sections/ResearchHighlightSection'
 import CertificationsSection from '../components/sections/CertificationsSection'
 import MediaSection from '../components/sections/MediaSection'
 import ContactSection from '../components/sections/ContactSection'
@@ -25,7 +24,6 @@ const HomePage = () => {
           <ProjectsSection />
           <OpenSourceSection />
           <PublicationsSection />
-          <ResearchHighlightSection />
           <CapabilitiesSection />
           <CertificationsSection />
           <MediaSection />

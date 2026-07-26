@@ -47,32 +47,9 @@ a {
   font-family: var(--font-code);
 }
 
-.mobile-warning-banner {
-  display: none;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-high);
-  text-align: center;
-  padding: 2rem;
-  font-family: var(--font-display);
-}
-
+/* Mobile visitors get the real, responsive site (see per-section @media rules)
+   instead of a "switch to desktop" wall — that was hiding the entire page,
+   including the H1 and all content, from mobile-first search indexing. */
 .desktop-content {
   display: block;
-}
-
-@media (max-width: 768px) {
-  .desktop-content {
-    display: none;
-  }
-  .mobile-warning-banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    border: 2px solid var(--color-accent-primary);
-    box-sizing: border-box;
-  }
 }

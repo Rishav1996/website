@@ -15,9 +15,6 @@ import ContactSection from '../components/sections/ContactSection'
 const HomePage = () => {
   return (
     <>
-      <div className="mobile-warning-banner">
-        ⚠️ For the full interactive experience, please view this portfolio on a desktop or switch to "Desktop site" mode.
-      </div>
       <div className="desktop-content">
         <Navbar />
         <main>

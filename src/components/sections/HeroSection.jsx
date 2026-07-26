@@ -27,7 +27,10 @@ const HeroSection = () => {
       </div>
       
       <div className="hero-content">
-        <h1 className="hero-title">Architecting Autonomous Intelligence</h1>
+        <h1 className="hero-title">
+          <span className="hero-name">Rishav Saigal — Agentic AI Architect</span>
+          <span className="hero-tagline">Architecting Autonomous Intelligence</span>
+        </h1>
         <p className="hero-subtitle">
           "Building Agentic AI, RAG Systems, & LLM Orchestration."
         </p>

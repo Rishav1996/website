@@ -92,6 +92,19 @@
   margin: 0;
 }
 
+.os-repo-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #58a6ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.os-repo-link:hover {
+  text-decoration: underline;
+}
+
 .os-terminal-container {
   background: #0d1117;
   border-radius: 12px;

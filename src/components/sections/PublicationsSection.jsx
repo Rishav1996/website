@@ -33,14 +33,14 @@ const TiltCard = ({ title, date, description, link }) => {
   }
 
   return (
-    <motion.div
+    <motion.a
       className="tilt-card-wrapper"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       style={{ perspective: 2000 }}
       onMouseMove={handleMouse}
       onMouseLeave={handleMouseLeave}
-      onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}
-      role="button"
-      tabIndex={0}
     >
       <motion.div
         className="tilt-card"
@@ -55,7 +55,7 @@ const TiltCard = ({ title, date, description, link }) => {
           <span className="pub-link">Read Publication &rarr;</span>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.a>
   );
 };
 

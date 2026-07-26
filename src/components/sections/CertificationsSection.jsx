@@ -82,21 +82,21 @@ const CertificationsSection = () => {
         
         <div className="certifications-grid">
           {certifications.map((cert, index) => (
-            <div 
-              className="cert-card" 
+            <a
+              className="cert-card"
               key={index}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              onClick={() => window.open(cert.link, '_blank', 'noopener,noreferrer')}
-              role="button"
-              tabIndex={0}
             >
               <div className={`cert-icon ${cert.issuer.toLowerCase().split(' ')[0]}`}>{cert.icon}</div>
               <div className="cert-info">
                 <h3>{cert.title}</h3>
                 <span>{cert.issuer} &bull; {cert.date}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

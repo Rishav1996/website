@@ -171,6 +171,11 @@
   box-shadow: 0 10px 20px rgba(10, 102, 194, 0.3);
 }
 
+.media-header-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* YouTube List */
 .youtube-list-title {
   font-family: var(--font-code);
@@ -189,6 +194,21 @@
   flex-grow: 1;
   height: 1px;
   background: rgba(255, 255, 255, 0.05);
+}
+
+.visit-channel-link {
+  order: 1;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.visit-channel-link:hover {
+  color: #ff0000;
 }
 
 .youtube-videos-list {

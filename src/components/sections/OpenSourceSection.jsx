@@ -4,6 +4,7 @@ import './OpenSourceSection.css';
 const OS_PROJECTS = [
   {
     title: "LLMDriftExperiment",
+    url: "https://github.com/Rishav1996/LLMDriftExperiment",
     desc: "High-fidelity research platform for quantifying LLM Drift.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/LLMDriftExperiment.git` },
@@ -22,6 +23,7 @@ const OS_PROJECTS = [
   },
   {
     title: "PyCaretAgent",
+    url: "https://github.com/Rishav1996/PyCaretAgent",
     desc: "Autonomous AI agent framework extending PyCaret.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/PyCaretAgent.git` },
@@ -40,6 +42,7 @@ const OS_PROJECTS = [
   },
   {
     title: "CognitoEDA",
+    url: "https://github.com/Rishav1996/CognitoEDA",
     desc: "Agentic workflow for automated EDA.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/CognitoEDA.git` },
@@ -58,6 +61,7 @@ const OS_PROJECTS = [
   },
   {
     title: "AWS-ML-Services",
+    url: "https://github.com/Rishav1996/AWS-ML-Services",
     desc: "POCs for AWS Comprehend, Transcribe, and SageMaker.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/AWS-ML-Services.git` },
@@ -76,6 +80,7 @@ const OS_PROJECTS = [
   },
   {
     title: "PyCaret-MLOps",
+    url: "https://github.com/Rishav1996/PyCaret-MLOps",
     desc: "Deployment pipelines for AWS and Hugging Face.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/PyCaret-MLOps.git` },
@@ -94,6 +99,7 @@ const OS_PROJECTS = [
   },
   {
     title: "AI-MLOps-TimeSeries",
+    url: "https://github.com/Rishav1996/AI-MLOps-TimeSeries",
     desc: "Self-hosted FastAPI & React MLOps platform for forecasting.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/AI-MLOps-TimeSeries.git` },
@@ -193,6 +199,15 @@ const OpenSourceSection = () => {
               >
                 <h3>{proj.title}</h3>
                 <p className="os-desc">{proj.desc}</p>
+                <a
+                  className="os-repo-link"
+                  href={proj.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View on GitHub &rarr;
+                </a>
               </div>
             ))}
           </div>

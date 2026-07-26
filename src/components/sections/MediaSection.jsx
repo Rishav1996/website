@@ -218,13 +218,13 @@ const MediaSection = () => {
 
         <div className="media-grid">
           {/* LinkedIn Subscribe Card */}
-          <div 
+          <a
             className="media-interactive-card linkedin"
+            href="https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/"
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setActiveWave('linkedin')}
             onMouseLeave={() => setActiveWave('idle')}
-            onClick={() => window.open('https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/', '_blank', 'noopener,noreferrer')}
-            role="button"
-            tabIndex={0}
           >
             <div className="media-header">
               <div className="media-badge">
@@ -237,23 +237,28 @@ const MediaSection = () => {
                 <h3>Algorhythm Chronicles</h3>
               </div>
             </div>
-            
+
             <p className="subscribe-desc">
               Subscribe on LinkedIn to receive bi-weekly narratives uncovering the mathematical breakthroughs, historical characters, and core concepts of AI and machine learning, brought to life with original thematic soundtracks.
             </p>
-            
-            <button className="subscribe-cta-btn">
+
+            <span className="subscribe-cta-btn">
               Subscribe on LinkedIn &rarr;
-            </button>
-          </div>
+            </span>
+          </a>
 
           {/* YouTube Video List Card */}
-          <div 
+          <div
             className="media-interactive-card youtube"
             onMouseEnter={() => setActiveWave('youtube')}
             onMouseLeave={() => setActiveWave('idle')}
           >
-            <div className="media-header">
+            <a
+              className="media-header media-header-link"
+              href="https://www.youtube.com/@algorythmchronicles"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="media-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#ff0000">
                   <path d="M23.498 6.163c-.272-1.016-1.071-1.819-2.085-2.093-1.838-.493-9.213-.493-9.213-.493s-7.375 0-9.213.493c-1.014.274-1.813 1.077-2.085 2.093-.491 1.842-.491 5.688-.491 5.688s0 3.846.491 5.688c.272 1.016 1.071 1.819 2.085 2.093 1.838.493 9.213.493 9.213.493s7.375 0 9.213-.493c1.014-.274 1.813-1.077 2.085-2.093.491-1.842.491-5.688.491-5.688s0-3.846-.491-5.688zm-13.498 9.505v-7.336l6.388 3.668-6.388 3.668z"/>
@@ -263,9 +268,19 @@ const MediaSection = () => {
                 <span className="media-meta-tag">YouTube Channel</span>
                 <h3>Algorhythm Chronicles</h3>
               </div>
+            </a>
+
+            <div className="youtube-list-title">
+              Featured Videos
+              <a
+                className="visit-channel-link"
+                href="https://www.youtube.com/@algorythmchronicles"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Channel &rarr;
+              </a>
             </div>
-            
-            <div className="youtube-list-title">Featured Videos</div>
             
             {youtubeLoading ? (
               <div className="media-loading">

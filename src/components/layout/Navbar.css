@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 2.5rem;
+  padding: 1.1rem 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -34,12 +34,13 @@
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
 }
 
 .navbar-item {
   position: relative;
+  padding: 0.5rem 0; /* Extends hover hitbox vertically */
 }
 
 .navbar-link {
@@ -50,9 +51,10 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.65rem;
   border-radius: 8px;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .dropdown-arrow {
@@ -67,24 +69,25 @@
 }
 
 .navbar-link:hover,
+.navbar-item:hover > .navbar-link,
 .navbar-item:focus-within > .navbar-link {
   color: var(--color-text-high);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* Glassmorphism Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(-6px);
-  min-width: 170px;
-  background: rgba(26, 28, 34, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateX(-50%) translateY(4px);
+  min-width: 180px;
+  background: rgba(22, 24, 30, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.2);
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -92,13 +95,25 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
   z-index: 1001;
 }
 
-.dropdown-menu.open,
+/* Invisible bridge so mouse hover never drops between link and dropdown */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: transparent;
+}
+
+/* Immediate hover trigger: opens on hover, stays open seamlessly */
 .navbar-item:hover .dropdown-menu,
-.navbar-item:focus-within .dropdown-menu {
+.navbar-item:focus-within .dropdown-menu,
+.dropdown-menu.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -109,16 +124,18 @@
   color: var(--color-text-muted);
   font-size: 0.88rem;
   font-weight: 500;
-  padding: 0.55rem 0.85rem;
+  padding: 0.6rem 0.85rem;
   border-radius: 8px;
   transition: all 0.15s ease;
   white-space: nowrap;
+  cursor: pointer;
+  display: block;
 }
 
 .dropdown-item:hover {
   color: var(--color-accent-primary);
-  background: rgba(168, 199, 250, 0.08);
-  transform: translateX(2px);
+  background: rgba(168, 199, 250, 0.1);
+  transform: translateX(3px);
 }
 
 .navbar-item-cta {
@@ -164,6 +181,10 @@
   .navbar-menu {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .navbar-item {
+    padding: 0;
   }
 
   .navbar-link {

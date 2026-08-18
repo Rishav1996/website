@@ -39,6 +39,14 @@ const NAV_PILLARS = [
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  const handleSubItemClick = (href) => {
+    setActiveDropdown(null);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar" aria-label="Main Navigation">
       <div className="navbar-container">
@@ -61,7 +69,10 @@ const Navbar = () => {
               <a
                 href={pillar.href}
                 className="navbar-link"
-                onClick={() => setActiveDropdown(null)}
+                onClick={(e) => {
+                  // If on mobile or direct click
+                  setActiveDropdown(null);
+                }}
               >
                 <span>{pillar.label}</span>
                 <svg className="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
@@ -75,7 +86,11 @@ const Navbar = () => {
                     key={sIdx}
                     href={sub.href}
                     className="dropdown-item"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSubItemClick(sub.href);
+                      window.history.pushState(null, '', sub.href);
+                    }}
                   >
                     {sub.label}
                   </a>

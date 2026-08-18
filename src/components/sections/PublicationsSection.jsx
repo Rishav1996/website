@@ -81,7 +81,8 @@ const publications = [
     date: "Jul 2026",
     description: "Published in Towards Deep Learning",
     summary: "Argues that a single blended 'complexity' score breaks Claude model routing — short-but-hard prompts get routed too cheap, long-but-easy ones too expensive. Proposes scoring capability floor (a max) and cost exposure (a sum) as two separate axes instead, with a real downgrade test gating any model swap.",
-    link: "https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce"
+    link: "https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce",
+    repoLink: "https://github.com/Rishav1996/model-router"
   },
   {
     title: "LangGraph Multi-Agent Architecture: Building a Self-Critiquing AI Debate System",
@@ -95,7 +96,8 @@ const publications = [
     date: "May 2026",
     description: "Published in Zenodo (Research Dataset & Framework)",
     summary: "An open research framework and dataset for quantifying how a model's persona and reasoning shift under sustained adversarial pressure, using a Pros/Cons multi-agent debate setup tracked across a set of behavioral signals.",
-    link: "https://doi.org/10.5281/zenodo.20032071"
+    link: "https://doi.org/10.5281/zenodo.20032071",
+    repoLink: "https://github.com/Rishav1996/LLMDriftExperiment"
   },
   {
     title: "Measuring Behavioral Drift in LLMs: 22 Signals, 5 Dimensions, and the Calcification Effect",
@@ -123,14 +125,16 @@ const publications = [
     date: "Mar 2026",
     description: "Published in Towards AI",
     summary: "A practical look at automating the machine learning pipeline end-to-end, from model selection to deployment, and where AutoML tooling still needs a human in the loop.",
-    link: "https://pub.towardsai.net/automl-on-autopilot-c8939bca8f8f"
+    link: "https://pub.towardsai.net/automl-on-autopilot-c8939bca8f8f",
+    repoLink: "https://github.com/Rishav1996/PyCaretAgent"
   },
   {
     title: "CognitoEDA",
     date: "Aug 2025",
     description: "Published on Medium",
     summary: "Introduces CognitoEDA, an agentic workflow that automates exploratory data analysis — schema inspection, statistical summaries, and report generation — using a multi-agent LangGraph pipeline.",
-    link: "https://medium.com/@rishavsaigal/cognitoeda-bcbd3567e6d2"
+    link: "https://medium.com/@rishavsaigal/cognitoeda-bcbd3567e6d2",
+    repoLink: "https://github.com/Rishav1996/CognitoEDA"
   },
   {
     title: "Beyond Prediction: Generative AI's Probabilistic Future in Time Series",
@@ -178,14 +182,27 @@ const PublicationsSection = () => {
             <span className="pub-modal-date">{selectedPub.date} &bull; {selectedPub.description}</span>
             <h3 className="pub-modal-title">{selectedPub.title}</h3>
             <p className="pub-modal-summary">{selectedPub.summary}</p>
-            <a
-              href={selectedPub.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pub-modal-readmore"
-            >
-              Read Full Article &rarr;
-            </a>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
+              <a
+                href={selectedPub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pub-modal-readmore"
+              >
+                Read Full Article &rarr;
+              </a>
+              {selectedPub.repoLink && (
+                <a
+                  href={selectedPub.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pub-modal-readmore"
+                  style={{ background: 'rgba(255, 255, 255, 0.08)', borderColor: 'rgba(255, 255, 255, 0.2)' }}
+                >
+                  GitHub Repository &rarr;
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>

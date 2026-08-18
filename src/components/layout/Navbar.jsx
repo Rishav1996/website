@@ -10,6 +10,7 @@ const Navbar = () => {
           <li><a href="#research">Academics</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#opensource">Open Source</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#capabilities">Skills</a></li>
           <li><a href="#certifications">Certifications</a></li>

@@ -38,15 +38,16 @@ const TiltCard = ({ pub, onOpen }) => {
     y.set(0);
   };
 
-  const getPublisherBadge = (publisher) => {
-    if (publisher.includes("Towards AI")) return { label: "TOWARDS AI", color: "cyan" };
-    if (publisher.includes("Zenodo") || publisher.includes("DOI")) return { label: "ZENODO DOI", color: "purple" };
-    if (publisher.includes("Towards Deep Learning")) return { label: "TOWARDS DEEP LEARNING", color: "green" };
-    if (publisher.includes("Medium")) return { label: "MEDIUM", color: "amber" };
-    return { label: "PEER REVIEWED", color: "blue" };
+  const getPublisherBadge = (desc) => {
+    if (desc.includes("Towards AI")) return { label: "TOWARDS AI", color: "cyan" };
+    if (desc.includes("Zenodo") || desc.includes("DOI")) return { label: "ZENODO DOI", color: "purple" };
+    if (desc.includes("Towards Deep Learning")) return { label: "TOWARDS DEEP LEARNING", color: "green" };
+    if (desc.includes("LinkedIn")) return { label: "LINKEDIN", color: "blue" };
+    if (desc.includes("Medium")) return { label: "MEDIUM", color: "amber" };
+    return { label: "RESEARCH", color: "cyan" };
   };
 
-  const badge = getPublisherBadge(pub.publisher);
+  const badge = getPublisherBadge(description);
 
   return (
     <motion.div
@@ -63,10 +64,10 @@ const TiltCard = ({ pub, onOpen }) => {
         </div>
 
         <h3 className="pub-title">{title}</h3>
-        <p className="pub-desc">{description}</p>
+        <p className="pub-desc">{pub.summary}</p>
 
         <div className="pub-card-action">
-          <span>Read Research Brief & Citation</span>
+          <span>Read Research Brief & Links</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -78,72 +79,90 @@ const TiltCard = ({ pub, onOpen }) => {
 
 const publications = [
   {
-    title: "A Dual-Pillar Evaluation of Calcification and Prompt Drift in Large Language Models",
-    publisher: "Zenodo / Research DOI",
-    date: "Feb 2026",
-    link: "https://doi.org/10.5281/zenodo.18820464",
-    description: "Empirical benchmarking framework tracking behavioral drift, calcification, and prompt degradation in frontier LLMs over time."
+    title: "The Specialized Frontier: An Inquiry Into Gated AI Architectures and the Cooperative Safety Flywheel",
+    date: "Aug 2026",
+    description: "Published in Towards AI",
+    summary: "Examines the emergence of gated AI architectures operating under vetted access, and proposes the cooperative safety flywheel where public interaction and red-teaming directly supply the empirical data needed to harden frontier models.",
+    link: "https://pub.towardsai.net/the-specialized-frontier-an-inquiry-into-gated-ai-architectures-and-the-cooperative-safety-0f10f1546ad6"
   },
   {
-    title: "The Specialized Frontier: How Agent Workflows Beat Bigger Models",
-    publisher: "Towards AI",
-    date: "Jan 2026",
-    link: "https://towardsai.net/p/machine-learning/the-specialized-frontier-how-agent-workflows-beat-bigger-models",
-    description: "Architecture blueprint for multi-agent workflows outperforming monolithic models through task decomposition and verification loops."
+    title: "Claude Model Routing: Stop Scoring \"Complexity.\" Score These Two Things Instead.",
+    date: "Jul 2026",
+    description: "Published in Towards Deep Learning",
+    summary: "Argues that a single blended 'complexity' score breaks Claude model routing — short-but-hard prompts get routed too cheap, long-but-easy ones too expensive. Proposes scoring capability floor (a max) and cost exposure (a sum) as two separate axes instead, with a real downgrade test gating any model swap.",
+    link: "https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce",
+    repoLink: "https://github.com/Rishav1996/model-router"
   },
   {
-    title: "Claude Model Routing: Precision Architecture For Complex Reasoning",
-    publisher: "Towards Deep Learning",
-    date: "Jan 2026",
-    link: "https://towardsdeeplearning.com/claude-model-routing-precision-architecture-for-complex-reasoning-1721532ffad8",
-    description: "Design patterns for dynamic model routing among Claude 3.5 Sonnet, Haiku, and Opus to optimize accuracy and inference latency."
+    title: "LangGraph Multi-Agent Architecture: Building a Self-Critiquing AI Debate System",
+    date: "May 2026",
+    description: "Published in Towards AI",
+    summary: "Walks through building a multi-agent debate system in LangGraph, where AI agents critique and refine each other's reasoning. Covers state graph design, agent roles, and shared-memory coordination patterns.",
+    link: "https://pub.towardsai.net/langgraph-multi-agent-architecture-building-a-self-critiquing-ai-debate-system-971a7ad881d9"
   },
   {
-    title: "Architecting Context-Aware Agentic Workflows with Google Gemini",
-    publisher: "Towards AI",
-    date: "Dec 2025",
-    link: "https://towardsai.net/p/machine-learning/architecting-context-aware-agentic-workflows-with-google-gemini-and-google-agent-development-kit-adk",
-    description: "Enterprise implementation guide for multimodal long-context agent orchestration using Gemini 1.5 and Google ADK."
+    title: "LLM Drift Experiment: A Quantitative Framework for Measuring Behavioural Drift via Adversarial Multi-Agent Debate",
+    date: "May 2026",
+    description: "Published in Zenodo (Research Dataset & Framework)",
+    summary: "An open research framework and dataset for quantifying how a model's persona and reasoning shift under sustained adversarial pressure, using a Pros/Cons multi-agent debate setup tracked across a set of behavioral signals.",
+    link: "https://doi.org/10.5281/zenodo.20032071",
+    repoLink: "https://github.com/Rishav1996/LLMDriftExperiment"
   },
   {
-    title: "Autonomous Code Optimization with Multi-Agent Systems",
-    publisher: "Towards AI",
-    date: "Nov 2025",
-    link: "https://towardsai.net/p/software-engineering/autonomous-code-optimization-with-multi-agent-systems",
-    description: "Iterative multi-agent debate and refinement framework for automated AST transformation and code performance tuning."
+    title: "Measuring Behavioral Drift in LLMs: 22 Signals, 5 Dimensions, and the Calcification Effect",
+    date: "May 2026",
+    description: "Published in Towards AI",
+    summary: "Breaks down the 22-signal, 5-dimension measurement framework used to detect LLM drift, and introduces the 'calcification effect' — the tendency for a model's stance to grow more rigid the longer it's challenged.",
+    link: "https://medium.com/towards-artificial-intelligence/measuring-behavioral-drift-in-llms-22-signals-5-dimensions-and-the-calcification-effect-aeaeb904d096"
   },
   {
-    title: "Building Production-Grade RAG Systems with Hybrid Search",
-    publisher: "Medium / Towards AI",
-    date: "Oct 2025",
-    link: "https://medium.com/@rishavsaigal",
-    description: "Architectural blueprint combining dense vector search with sparse BM25 reranking for zero-hallucination enterprise retrieval."
+    title: "LLM Drift Explained: Do AI Models Lose Themselves Under Adversarial Pressure?",
+    date: "May 2026",
+    description: "Published in Towards AI",
+    summary: "An accessible explainer on LLM drift: what it looks like in practice, why adversarial multi-agent debate is a useful way to surface it, and what the early findings suggest about model consistency.",
+    link: "https://pub.towardsai.net/do-ai-models-lose-themselves-exploring-llm-drift-through-adversarial-debate-a37e0c75012b"
   },
   {
-    title: "Causal Inference in Dynamic Pricing Engines",
-    publisher: "Medium",
+    title: "The $1.5 Million Difference: Why Benchmarks are Only 10% of the AI Agent Story",
+    date: "Mar 2026",
+    description: "Published on LinkedIn",
+    summary: "Argues that standard AI agent benchmarks capture only a fraction of what determines real-world production success, and outlines the operational factors — cost, reliability, observability — that account for the rest.",
+    link: "https://www.linkedin.com/pulse/15-million-difference-why-benchmarks-only-10-ai-agent-rishav-saigal-ao4jc/"
+  },
+  {
+    title: "AutoML on Autopilot",
+    date: "Mar 2026",
+    description: "Published in Towards AI",
+    summary: "A practical look at automating the machine learning pipeline end-to-end, from model selection to deployment, and where AutoML tooling still needs a human in the loop.",
+    link: "https://pub.towardsai.net/automl-on-autopilot-c8939bca8f8f",
+    repoLink: "https://github.com/Rishav1996/PyCaretAgent"
+  },
+  {
+    title: "CognitoEDA",
     date: "Aug 2025",
-    link: "https://medium.com/@rishavsaigal",
-    description: "Double machine learning methodologies for isolating true price elasticity and mitigating confounding variables in retail data."
+    description: "Published on Medium",
+    summary: "Introduces CognitoEDA, an agentic workflow that automates exploratory data analysis — schema inspection, statistical summaries, and report generation — using a multi-agent LangGraph pipeline.",
+    link: "https://medium.com/@rishavsaigal/cognitoeda-bcbd3567e6d2",
+    repoLink: "https://github.com/Rishav1996/CognitoEDA"
   },
   {
-    title: "Time-Series Survival Modeling in Enterprise Churn Forecasting",
-    publisher: "Medium",
+    title: "Beyond Prediction: Generative AI's Probabilistic Future in Time Series",
     date: "Jun 2025",
-    link: "https://medium.com/@rishavsaigal",
-    description: "Application of Cox Proportional Hazards and neural survival analysis to model customer lifetime probability curves."
+    description: "Published on Medium",
+    summary: "Explores how generative AI is shifting time-series forecasting from single-point predictions toward probabilistic, scenario-based forecasts, and what that means for planning under uncertainty.",
+    link: "https://medium.com/@rishavsaigal/the-generative-ai-revolution-moving-beyond-what-will-happen-to-what-could-happen-in-time-f820ed5263f1"
   },
   {
-    title: "Explainable AI (XAI) with SHAP and LIME in High-Stakes Finance",
-    publisher: "Medium",
-    date: "Mar 2025",
-    link: "https://medium.com/@rishavsaigal",
-    description: "Interpretable machine learning pipelines providing audit-compliant explanations for black-box credit risk models."
+    title: "Unlocking Time Series with LLMs: A New Era with TimeCAP",
+    date: "Jun 2025",
+    description: "Published on Medium",
+    summary: "Looks at TimeCAP and the emerging class of LLM-based time-series models, examining how language-model architectures are being adapted for forecasting tasks traditionally owned by statistical methods.",
+    link: "https://medium.com/@rishavsaigal/unlocking-time-series-with-llms-99a369f45447"
   }
 ];
 
 const PublicationsSection = () => {
-  const [activeModal, setActiveModal] = useState(null);
+  const [selectedPub, setSelectedPub] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -154,7 +173,7 @@ const PublicationsSection = () => {
       targets: cards,
       opacity: [0, 1],
       scale: [0.92, 1],
-      delay: anime.stagger(80),
+      delay: anime.stagger(60),
       duration: 700,
       easing: 'easeOutQuad',
     });
@@ -171,29 +190,42 @@ const PublicationsSection = () => {
 
         <div className="publications-grid">
           {publications.map((pub, index) => (
-            <TiltCard key={index} pub={pub} onOpen={(p) => setActiveModal(p)} />
+            <TiltCard key={index} pub={pub} onOpen={setSelectedPub} />
           ))}
         </div>
       </div>
 
-      {/* Modal Dialog */}
-      {activeModal && (
-        <div className="pub-modal-backdrop" onClick={() => setActiveModal(null)}>
+      {/* Publication Summary Modal */}
+      {selectedPub && (
+        <div className="pub-modal-backdrop" onClick={() => setSelectedPub(null)}>
           <div className="pub-modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="pub-modal-header">
-              <span className="modal-publisher-tag">{activeModal.publisher}</span>
-              <span className="modal-date-tag">{activeModal.date}</span>
-              <button className="modal-close-btn" onClick={() => setActiveModal(null)} aria-label="Close modal">✕</button>
+              <span className="modal-publisher-tag">{selectedPub.description}</span>
+              <span className="modal-date-tag">{selectedPub.date}</span>
+              <button className="modal-close-btn" onClick={() => setSelectedPub(null)} aria-label="Close modal">✕</button>
             </div>
-            <h3 className="modal-pub-title">{activeModal.title}</h3>
-            <p className="modal-pub-desc">{activeModal.description}</p>
+            <h3 className="modal-pub-title">{selectedPub.title}</h3>
+            <p className="modal-pub-desc">{selectedPub.summary}</p>
             <div className="modal-footer-actions">
-              <a href={activeModal.link} target="_blank" rel="noopener noreferrer" className="modal-view-paper-btn">
+              <a href={selectedPub.link} target="_blank" rel="noopener noreferrer" className="modal-view-paper-btn">
                 <span>Access Full Publication</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M7 17l9.2-9.2M17 17V8H8"/>
                 </svg>
               </a>
+              {selectedPub.repoLink && (
+                <a
+                  href={selectedPub.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-repo-link-btn"
+                >
+                  <span>GitHub Repository</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M7 17l9.2-9.2M17 17V8H8"/>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>

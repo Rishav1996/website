@@ -13,7 +13,6 @@ const HeroSection = () => {
   useEffect(() => {
     if (!heroRef.current) return;
 
-    // Anime.js Timeline for entrance choreography
     const tl = anime.timeline({
       easing: 'easeOutExpo',
       duration: 800,
@@ -29,7 +28,6 @@ const HeroSection = () => {
       targets: '.hero-name',
       opacity: [0, 1],
       translateY: [20, 0],
-      letterSpacing: ['4px', '-0.02em'],
       duration: 700,
     }, '-=300')
     .add({
@@ -54,13 +52,13 @@ const HeroSection = () => {
     .add({
       targets: '.hud-stat-pill',
       opacity: [0, 1],
-      scale: [0.8, 1],
+      scale: [0.85, 1],
       delay: anime.stagger(120),
       duration: 800,
       easing: 'easeOutElastic(1, .6)',
     }, '-=400');
 
-    // Anime.js Continuous Floating Physics for HUD chips
+    // Continuous floating physics on metric pills
     const levitateAnim1 = anime({
       targets: '.pill-1',
       translateY: [-4, 6],
@@ -88,23 +86,11 @@ const HeroSection = () => {
       easing: 'easeInOutSine',
     });
 
-    // Radial aura breathing
-    const auraAnim = anime({
-      targets: '.hero-glow-aura',
-      scale: [1, 1.35],
-      opacity: [0.35, 0.75],
-      direction: 'alternate',
-      loop: true,
-      duration: 4000,
-      easing: 'easeInOutSine',
-    });
-
     return () => {
       tl.pause();
       levitateAnim1.pause();
       levitateAnim2.pause();
       levitateAnim3.pause();
-      auraAnim.pause();
     };
   }, []);
 
@@ -125,10 +111,7 @@ const HeroSection = () => {
           Your browser does not support the video tag.
         </video>
         <div className="hero-overlay"></div>
-        <div className="hero-scanline"></div>
       </div>
-      
-      <div className="hero-glow-aura" />
 
       <div className="hero-layout">
         <div className="hero-content">

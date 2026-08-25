@@ -1,174 +1,186 @@
 import React, { useEffect, useRef } from 'react';
 import anime from '../../utils/anime';
+import { useAudio } from '../../context/AudioContext';
+import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
 import GlowCard from '../ui/GlowCard';
 import './ExperienceSection.css';
 
 const experiences = [
   {
-    role: "Senior AI Specialist / Lead Data Scientist",
-    company: "Cognizant Technology Solutions",
-    period: "Feb 2024 - Present",
-    location: "Kolkata, India",
+    company: "Cognizant",
+    role: "Senior Associate (Senior Data Scientist / AI Architect)",
+    period: "Nov 2023 – Present",
     active: true,
-    impact: "Lead enterprise AI solutions, production Generative AI multi-agent workflows, dynamic price elasticity modeling, and time-series forecasting frameworks across Fortune 500 accounts.",
-    highlights: [
-      "Architected enterprise Agentic AI workflows using LangGraph and GCP Vertex AI, decreasing manual decision latency by 65%.",
-      "Constructed dynamic pricing algorithms using Hierarchical Linear Models with automated MLflow model tracking and retraining.",
-      "Spearheaded technical development of an in-house automated GenAI Video synthesis pipeline for real-time marketing analytics.",
-      "Engineered automated PySpark data pipelines to ingest and process 10M+ daily records on cloud infrastructure."
+    responsibilities: [
+      {
+        title: "Solution Architect & Agentic AI Lead",
+        desc: "Spearheaded end-to-end architectural design of enterprise-grade Generative AI and Agentic AI systems on complex GCP infrastructure."
+      },
+      {
+        title: "Team Leadership & Architectural Direction",
+        desc: "Led and mentored a cross-functional team of ML/GenAI engineers; defined architectural standards and drove Agile sprint planning."
+      },
+      {
+        title: "Client Deliverable Management",
+        desc: "Owned end-to-end delivery from requirement workshops through production handoff and stakeholder-facing POC demonstrations."
+      }
     ],
-    skills: {
-      genai: ["GCP Vertex AI", "LangGraph", "Gemini 1.5 Pro", "Multi-Agent Debate"],
-      ml: ["Hierarchical Linear Models", "Causal Inference", "Survival Modeling", "PySpark"],
-      mlops: ["MLflow", "Docker", "CI/CD Pipelines", "FastAPI"]
-    }
+    skills: [
+      "GCP Vertex AI", "Gemini Enterprise", "Google ADK",
+      "LangGraph", "CrewAI", "LangChain",
+      "FastAPI", "Streamlit", "Azure ML", "MLflow"
+    ]
   },
   {
-    role: "Management Trainee — Data Scientist",
     company: "Genpact",
-    period: "Aug 2018 - Feb 2024",
-    location: "Kolkata, India",
+    role: "Assistant Manager",
+    period: "Jun 2022 – Nov 2023",
     active: false,
-    impact: "Engineered scalable predictive modeling architectures, automated financial time-series forecasting, and machine learning pipelines across banking, insurance, and retail clients.",
-    highlights: [
-      "Built production XGBoost, LightGBM, and Random Forest models achieving 94%+ precision on customer lifetime prediction.",
-      "Developed end-to-end automated retraining pipelines using Docker and cloud APIs, cutting deployment turnaround by 40%.",
-      "Designed interpretable machine learning dashboards using SHAP and LIME to provide audit-compliant decision explanations."
+    responsibilities: [
+      {
+        title: "Team Leadership & ML Architecture",
+        desc: "Managed a cross-functional team of 6 ML engineers; led Agile architecture reviews and end-to-end MLOps solution deployment."
+      },
+      {
+        title: "Stakeholder Delivery",
+        desc: "Served as primary technical point-of-contact for executive stakeholder demos and quarterly business reviews."
+      },
+      {
+        title: "Responsible AI Governance",
+        desc: "Translated complex business requirements into scalable ML specifications; upskilled client teams on model interpretability and proactive model monitoring."
+      }
     ],
-    skills: {
-      ml: ["XGBoost", "LightGBM", "Scikit-Learn", "SHAP / XAI"],
-      engineering: ["Python", "SQL", "Pandas", "AWS SageMaker"]
-    }
+    skills: [
+      "Scikit-Learn", "DataRobot", "Azure ML",
+      "Causal Inference", "Customer Segmentation", "SHAP (XAI)"
+    ]
+  },
+  {
+    company: "Capgemini",
+    role: "Consultant",
+    period: "Apr 2018 – Jun 2022",
+    active: false,
+    responsibilities: [
+      {
+        title: "Technical Lead & Full-Lifecycle Delivery",
+        desc: "Led cross-functional teams of up to 15 members across supply chain, manufacturing, and service analytics."
+      },
+      {
+        title: "End-to-End ML Delivery",
+        desc: "Owned the complete ML lifecycle—from Agile requirement gathering through CI/CD-driven production deployment on cloud infrastructure."
+      }
+    ],
+    skills: [
+      "PySpark", "TensorFlow", "Keras",
+      "AWS SageMaker", "XGBoost", "Cox Proportional Hazard",
+      "OpenCV", "LSTM", "MLP"
+    ]
   }
 ];
 
 const ExperienceSection = () => {
+  const videoRef = useVideoAutoplay({ threshold: 0.5 });
+  const { isMuted } = useAudio();
   const sectionRef = useRef(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Anime.js Staggered timeline card entrance
     const cards = sectionRef.current.querySelectorAll('.experience-card-wrapper');
-    const anim = anime({
+    anime({
       targets: cards,
       opacity: [0, 1],
       translateX: [-30, 0],
-      delay: anime.stagger(200),
+      delay: anime.stagger(180),
       duration: 800,
       easing: 'easeOutQuad',
     });
-
-    // Animate the vertical circuit line
-    const circuitPath = sectionRef.current.querySelector('.timeline-svg-line');
-    let lineAnim = null;
-    if (circuitPath) {
-      lineAnim = anime({
-        targets: circuitPath,
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: 1800,
-        easing: 'easeInOutSine',
-      });
-    }
-
-    return () => {
-      anim.pause();
-      if (lineAnim) lineAnim.pause();
-    };
   }, []);
 
   return (
     <section id="experience" className="experience-section" ref={sectionRef}>
       <div className="experience-container">
         <div className="section-header-center">
-          <span className="section-tag-badge">CAREER TRAJECTORY</span>
-          <h2 className="section-title">Enterprise Infrastructure</h2>
-          <p className="section-subtitle">8+ years of production AI leadership, scaling machine learning architectures from research prototypes to high-availability enterprise services.</p>
+          <span className="section-tag-badge">CAREER ARCHITECTURE</span>
+          <h2 className="section-title">Enterprise Experience</h2>
+          <p className="section-subtitle">Track record of leading ML engineering teams and architecting production AI systems.</p>
         </div>
-
-        <div className="timeline-corridor">
-          <div className="timeline-circuit-track">
-            <svg className="timeline-circuit-svg" width="4" height="100%" preserveAspectRatio="none">
-              <line className="timeline-svg-line" x1="2" y1="0" x2="2" y2="100%" stroke="rgba(0, 240, 255, 0.4)" strokeWidth="2" strokeDasharray="6 6"/>
-            </svg>
+        
+        <div className="experience-layout">
+          {/* Left Column: Talking Video Player */}
+          <div className="experience-video-col">
+            <div className="experience-video-wrapper">
+              <video 
+                ref={videoRef}
+                playsInline
+                muted={isMuted}
+                className="experience-video"
+                poster={`${import.meta.env.BASE_URL}assets/experience-poster.webp`}
+              >
+                {/* Serve 1080p for screens >= 768px */}
+                <source src={`${import.meta.env.BASE_URL}assets/videos/Section 6 - Experience Timeline 1080p.mp4`} media="(min-width: 768px)" type="video/mp4" />
+                {/* Serve standard 720p for smaller screens */}
+                <source src={`${import.meta.env.BASE_URL}assets/videos/Section 6 - Experience Timeline.mp4`} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="video-live-overlay">
+                <span className="video-live-dot"></span>
+                <span className="video-live-text">CAREER RETROSPECTIVE</span>
+              </div>
+            </div>
           </div>
 
-          <div className="experiences-list">
-            {experiences.map((exp, index) => (
-              <div key={index} className="experience-card-wrapper">
-                <div className={`timeline-node ${exp.active ? 'active-node' : ''}`}>
-                  <span className="node-core"></span>
-                  {exp.active && <span className="node-pulse-ring"></span>}
-                </div>
-
-                <GlowCard
-                  glowColor={exp.active ? "rgba(0, 240, 255, 0.35)" : "rgba(168, 85, 247, 0.25)"}
-                  className={`exp-glow-card ${exp.active ? 'exp-active-border' : ''}`}
-                >
-                  <div className="experience-inner">
-                    <div className="exp-header">
-                      <div>
-                        <div className="exp-role-title-row">
-                          <h3 className="exp-role">{exp.role}</h3>
-                          {exp.active && <span className="live-role-badge">ACTIVE ROLE</span>}
-                        </div>
-                        <h4 className="exp-company">{exp.company} &bull; <span className="exp-location">{exp.location}</span></h4>
-                      </div>
-                      <span className="exp-period-pill">{exp.period}</span>
-                    </div>
-
-                    <p className="exp-impact">{exp.impact}</p>
-
-                    <div className="exp-highlights-box">
-                      <span className="highlights-label">PRODUCTION HIGHLIGHTS</span>
-                      <ul className="highlights-list">
-                        {exp.highlights.map((item, hIdx) => (
-                          <li key={hIdx}>
-                            <span className="bullet-chevron">&gt;</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="exp-skills-quadrant">
-                      {exp.skills.genai && (
-                        <div className="skill-group">
-                          <span className="skill-group-label genai-label">GenAI & Agents</span>
-                          <div className="skill-pill-wrap">
-                            {exp.skills.genai.map((s, sIdx) => <span key={sIdx} className="skill-pill genai-pill">{s}</span>)}
-                          </div>
-                        </div>
-                      )}
-                      {exp.skills.ml && (
-                        <div className="skill-group">
-                          <span className="skill-group-label ml-label">Core ML & Causal</span>
-                          <div className="skill-pill-wrap">
-                            {exp.skills.ml.map((s, sIdx) => <span key={sIdx} className="skill-pill ml-pill">{s}</span>)}
-                          </div>
-                        </div>
-                      )}
-                      {exp.skills.mlops && (
-                        <div className="skill-group">
-                          <span className="skill-group-label mlops-label">Production MLOps</span>
-                          <div className="skill-pill-wrap">
-                            {exp.skills.mlops.map((s, sIdx) => <span key={sIdx} className="skill-pill mlops-pill">{s}</span>)}
-                          </div>
-                        </div>
-                      )}
-                      {exp.skills.engineering && (
-                        <div className="skill-group">
-                          <span className="skill-group-label eng-label">Engineering</span>
-                          <div className="skill-pill-wrap">
-                            {exp.skills.engineering.map((s, sIdx) => <span key={sIdx} className="skill-pill eng-pill">{s}</span>)}
-                          </div>
-                        </div>
-                      )}
-                    </div>
+          {/* Right Column: Timeline Cards */}
+          <div className="timeline-col">
+            <div className="experiences-list">
+              {experiences.map((exp, index) => (
+                <div key={index} className="experience-card-wrapper">
+                  <div className={`timeline-node ${exp.active ? 'active-node' : ''}`}>
+                    <span className="node-core"></span>
+                    {exp.active && <span className="node-pulse-ring"></span>}
                   </div>
-                </GlowCard>
-              </div>
-            ))}
+
+                  <GlowCard
+                    glowColor={exp.active ? "rgba(0, 240, 255, 0.35)" : "rgba(168, 85, 247, 0.2)"}
+                    className={`exp-glow-card ${exp.active ? 'exp-active-border' : ''}`}
+                  >
+                    <div className="experience-inner">
+                      <div className="exp-header">
+                        <div>
+                          <div className="exp-company-title-row">
+                            <h3 className="exp-company">{exp.company}</h3>
+                            {exp.active && <span className="live-role-badge">PRESENT</span>}
+                          </div>
+                          <h4 className="exp-role">{exp.role}</h4>
+                        </div>
+                        <span className="exp-period-pill">{exp.period}</span>
+                      </div>
+
+                      <div className="exp-responsibilities-box">
+                        <span className="highlights-label">ROLES & RESPONSIBILITIES</span>
+                        <ul className="highlights-list">
+                          {exp.responsibilities.map((resp, rIdx) => (
+                            <li key={rIdx}>
+                              <span className="bullet-chevron">&gt;</span>
+                              <span><strong>{resp.title}:</strong> {resp.desc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="exp-skills-box">
+                        <span className="highlights-label">SKILLS & TECHNOLOGIES ACQUIRED</span>
+                        <div className="skill-pill-wrap">
+                          {exp.skills.map((s, sIdx) => (
+                            <span key={sIdx} className="skill-pill">{s}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </GlowCard>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,170 +1,185 @@
 import React, { useState, useEffect, useRef } from 'react';
-import anime from '../../utils/anime';
-import GlowCard from '../ui/GlowCard';
 import './ProjectsSection.css';
 
-const projects = [
+const PROJECTS = [
   {
-    title: "AI Project Fact-Sheet - Agentic AI",
-    category: "Agentic AI",
-    problem: "Enterprise workflows required dynamic multi-model reasoning, tool synthesis, and continuous evaluation across complex multi-step tasks.",
-    architecture: "Engineered stateful multi-agent supervisors using LangGraph, Gemini 1.5 Pro, and vector memory retrieval with self-correcting validation loops.",
-    deployment: "Deployed containerized FastAPI microservices orchestrated on GCP Vertex AI with real-time telemetry and streaming WebSocket responses.",
-    tags: ["LangGraph", "GCP Vertex AI", "Gemini Pro", "Multi-Agent Supervisor", "FastAPI"]
+    title: "Gen AI Video Generation",
+    date: "Jan 2026 – Present",
+    desc: "Multi-agent pipeline (Google ADK, LangGraph, GCP Vertex AI, Gemini Enterprise) ingesting meeting transcripts, summarising and storyboarding via LLM, then synthesising sales pitch videos; architecture features a token-cost observability layer (per-run cost tracking, quality-vs-cost controls) and a self-correction mechanism (automated retry on output-validation failure)."
   },
   {
-    title: "AI Project Fact-Sheet - Causal ML / Dynamic Pricing",
-    category: "Causal ML",
-    problem: "Pricing decisions across 500+ product categories lacked elasticity sensitivity and causal treatment attribution under market volatility.",
-    architecture: "Constructed Hierarchical Linear Models (HLM) combined with double machine learning (DML) causal inference to isolate pure price elasticity.",
-    deployment: "Automated MLflow experiment tracking registry with automated scheduled retraining and drift monitoring alerts on cloud infrastructure.",
-    tags: ["Hierarchical Linear Models", "Causal Inference", "MLflow", "Elasticity Engine", "Python"]
+    title: "Media Use Case (POC)",
+    date: "Jun 2025 – Oct 2025",
+    desc: "Agentic AI system (CrewAI, LangGraph, GCP) dynamically analysing ad performance, optimising budget allocation, and recommending channel-series combinations."
   },
   {
-    title: "AI Project Fact-Sheet - Time-Series Survival Analysis",
-    category: "Time Series",
-    problem: "Predicting enterprise customer churn and asset component failure risks required time-to-event probabilistic estimations.",
-    architecture: "Implemented Cox Proportional Hazards and gradient-boosted survival trees to output continuous survival curves and hazard ratios.",
-    deployment: "Integrated with PySpark large-scale distributed data pipelines for batch scoring over 10M+ daily telemetry records.",
-    tags: ["Survival Analysis", "Cox Proportional Hazards", "PySpark", "XGBoost", "Batch Pipelines"]
+    title: "Price Elasticity (POC)",
+    date: "Jun 2025 – Jul 2025",
+    desc: "Dynamic pricing engine using Hierarchical Linear Models (statsmodels, Python) with real-time competitor data ingestion and an automated MLflow retraining pipeline; modelled cross-product elasticities to recommend optimal price points."
   },
   {
-    title: "AI Project Fact-Sheet - GenAI Video Synthesis",
-    category: "Multimodal AI",
-    problem: "Manual generation of targeted marketing video variants was slow, expensive, and difficult to scale across product catalogs.",
-    architecture: "Spearheaded an automated GenAI video pipeline integrating text-to-video diffusion models, dynamic audio synthesis, and automated FFmpeg composition.",
-    deployment: "Dockerized GPU pipeline with asynchronous Celery worker queues and real-time cloud storage sync.",
-    tags: ["Generative Video", "Diffusion Models", "FFmpeg", "Celery", "GPU Accelerated"]
+    title: "Analytics Chatbot",
+    date: "Jul 2024 – Dec 2025",
+    desc: "LLM-powered chatbot (LangChain, Streamlit, PostgreSQL) enabling NL querying over enterprise databases with dynamic chart generation (Plotly) and LLM-based visual summarisation for non-technical stakeholders."
   },
   {
-    title: "AI Project Fact-Sheet - Multimodal Document Extraction",
-    category: "Computer Vision / NLP",
-    problem: "Unstructured complex enterprise PDFs, invoices, and contracts contained mixed tabular, handwritten, and hierarchical textual data.",
-    architecture: "Constructed OCR + vision-language model (VLM) extraction pipelines with layout-aware spatial embeddings and confidence scoring.",
-    deployment: "Scalable REST APIs serving sub-second parsed JSON schemas with automated human-in-the-loop exception routing.",
-    tags: ["Vision-Language Models", "OCR", "LayoutLM", "Schema Enforcement", "FastAPI"]
+    title: "Intelligent QA / BA Chatbot",
+    date: "Apr 2024 – Apr 2025",
+    desc: "Conversational AI system (LangChain, FastAPI, Python) for internal policy Q&A, action execution, and automated test-case generation in Gherkin/TMMi formats; reduced manual QA documentation effort significantly."
+  },
+  {
+    title: "Predictive Modelling",
+    date: "Jul 2024 – Sep 2024",
+    desc: "LLM-driven feature engineering pipeline converting unstructured text to numerical embeddings (OpenAI API, Scikit-Learn); incorporated SHAP explainability layer, improving model accuracy and interpretability for downstream tasks."
+  },
+  {
+    title: "LLM Test Case Generator",
+    date: "Nov 2023 – Mar 2024",
+    desc: "LLM-powered QA automation tool (LangChain, FastAPI, Python) generating test cases in Gherkin/TMMi formats from business requirements; provided intelligent, referenced Q&A, streamlining testing workflows and significantly reducing manual documentation effort."
+  },
+  {
+    title: "Healthcare Consumer Analytics",
+    date: "Jun 2022 – Oct 2023",
+    desc: "Predictive promotion optimisation (Scikit-Learn, DataRobot, Azure ML) targeting account-level healthcare clients; combined customer segmentation, causal inference, and SHAP-based explainability to rank promotional strategies."
+  },
+  {
+    title: "Demand Sensing",
+    date: "Mar 2020 – Jun 2022",
+    desc: "End-to-end time series MLOps pipeline (PySpark, TensorFlow, MLflow, AWS SageMaker) with automated feature engineering, model selection, and continuous retraining; designed for scalable, low-touch operation across product lines."
+  },
+  {
+    title: "Predictive Maintenance",
+    date: "Dec 2019 – Mar 2020",
+    desc: "Time-varying survival analysis (Cox PH, XGBoost, lifelines, Python) forecasting EV component failures within specified windows; combined survival modelling with transfer-learning-enhanced gradient boosting and interactive Plotly visualisations."
+  },
+  {
+    title: "Service Now Analytics",
+    date: "Oct 2019 – Dec 2019",
+    desc: "Ticket volume forecasting (LSTM, MLP, TensorFlow, MySQL) with custom routing algorithms for optimal agent assignment; benchmarked deep sequence models against MLP baselines with rich client reporting."
+  },
+  {
+    title: "Supply Chain Management (POC)",
+    date: "Apr 2019 – Oct 2019",
+    desc: "End-to-end demand forecasting pipeline (statsmodels, NLTK Vader, pandas, Python) integrating social media sentiment as an external regressor; uni- and multi-variate models optimised via Grid Search with automated data wrangling."
+  },
+  {
+    title: "Video Analytics Solution (POC)",
+    date: "Apr 2018 – Mar 2019",
+    desc: "Internal computer vision POC (OpenCV, TensorFlow, Keras, Python) for brand recognition in retail imagery; extracted and classified brand presence from individual frames to support marketing intelligence use cases."
   }
 ];
 
-const categories = ["All", "Agentic AI", "Causal ML", "Time Series", "Multimodal AI", "Computer Vision / NLP"];
-
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeProject, setActiveProject] = useState(projects[0]);
-  const sectionRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [terminalOutput, setTerminalOutput] = useState([]);
+  const terminalRef = useRef(null);
+  const projectRefs = useRef([]);
 
-  const filteredProjects = selectedCategory === "All"
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+  // Auto-scroll observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.dataset.index);
+            if (!isNaN(index)) setActiveIndex(index);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0,
+      }
+    );
+
+    const elements = projectRefs.current;
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    // Fast typing effect for terminal
+    setTerminalOutput([]);
+    const project = PROJECTS[activeIndex];
+    
+    const cmds = [
+      { type: 'input', text: `cat ${project.title.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase()}.md` },
+      { type: 'system', text: `[System] Extracting architectural blueprints...` },
+      { type: 'output', text: `DATE: ${project.date}` },
+      { type: 'output', text: `ARCHITECTURE & APPROACH:` },
+      { type: 'success', text: project.desc }
+    ];
 
-    const cards = sectionRef.current.querySelectorAll('.project-fact-card');
-    anime({
-      targets: cards,
-      opacity: [0, 1],
-      translateY: [20, 0],
-      delay: anime.stagger(80),
-      duration: 600,
-      easing: 'easeOutQuad',
-    });
-  }, [selectedCategory]);
+    let currentCmd = 0;
+    const interval = setInterval(() => {
+      if (currentCmd < cmds.length) {
+        currentCmd++;
+        setTerminalOutput(cmds.slice(0, currentCmd));
+      } else {
+        clearInterval(interval);
+      }
+    }, 120);
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   return (
-    <section id="projects" className="projects-section" ref={sectionRef}>
+    <section id="projects" className="projects-section">
       <div className="projects-container">
         <div className="section-header-center">
           <span className="section-tag-badge">TECHNICAL FACTSHEETS</span>
-          <h2 className="section-title">AI Project Laboratory</h2>
-          <p className="section-subtitle">Architectural fact-sheets detailing technical problems, system designs, algorithms, and production deployment frameworks.</p>
+          <h2 className="section-title">Project Laboratory</h2>
+          <p className="section-subtitle">Technical fact-sheets focusing on architecture, design, and approach details.</p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="project-categories-bar">
-          {categories.map((cat, index) => (
-            <button
-              key={index}
-              className={`project-cat-btn ${selectedCategory === cat ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Dual Pane Layout */}
-        <div className="projects-dual-pane">
-          {/* Left Pane: Project Cards List */}
-          <div className="projects-cards-col">
-            {filteredProjects.map((proj, index) => {
-              const isSelected = activeProject.title === proj.title;
-              return (
-                <GlowCard
-                  key={index}
-                  glowColor={isSelected ? "rgba(0, 240, 255, 0.4)" : "rgba(255, 255, 255, 0.1)"}
-                  className={`project-fact-card ${isSelected ? 'selected-card' : ''}`}
-                  onClick={() => setActiveProject(proj)}
-                >
-                  <div className="fact-card-inner">
-                    <div className="fact-card-header">
-                      <span className="fact-cat-tag">{proj.category}</span>
-                      {isSelected && <span className="active-inspect-pill">ACTIVE</span>}
-                    </div>
-                    <h3 className="fact-card-title">{proj.title}</h3>
-                    <p className="fact-card-preview">{proj.problem.substring(0, 110)}...</p>
-                    <div className="fact-card-tags">
-                      {proj.tags.slice(0, 3).map((t, tIdx) => (
-                        <span key={tIdx} className="fact-tag-chip">{t}</span>
-                      ))}
-                    </div>
-                  </div>
-                </GlowCard>
-              );
-            })}
+        <div className="projects-layout">
+          {/* Left: Scrollable 13 Project Items */}
+          <div className="projects-list">
+            {PROJECTS.map((proj, idx) => (
+              <div 
+                key={idx} 
+                ref={(el) => (projectRefs.current[idx] = el)}
+                data-index={idx}
+                className={`project-item ${idx === activeIndex ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveIndex(idx);
+                  if (projectRefs.current[idx]) {
+                    projectRefs.current[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }}
+              >
+                <h3>{proj.title}</h3>
+                <p className="proj-date">{proj.date}</p>
+              </div>
+            ))}
           </div>
-
-          {/* Right Pane: Linux Cyber Terminal Factsheet Inspector */}
-          <div className="project-inspector-col">
-            <div className="cyber-terminal-window">
-              <div className="cyber-terminal-header">
-                <div className="terminal-dots">
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                </div>
-                <div className="terminal-title">bash - factsheet_inspector.sh // {activeProject.category}</div>
-                <span className="terminal-status-pill">ONLINE</span>
+          
+          {/* Right: Sticky Linux Cyber Terminal */}
+          <div className="terminal-container">
+            <div className="terminal-header">
+              <div className="terminal-buttons">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
               </div>
-
-              <div className="cyber-terminal-body">
-                <div className="terminal-line">
-                  <span className="term-prompt">rishav@ai-lab:~$</span> <span className="term-cmd">cat factsheet.json</span>
+              <div className="terminal-title">bash - {PROJECTS[activeIndex].title.replace(/[^a-zA-Z0-9]/g, '_')} - 80x24</div>
+            </div>
+            <div className="terminal-body code" ref={terminalRef}>
+              {terminalOutput.filter(Boolean).map((line, idx) => (
+                <div key={idx} className={`terminal-line ${line.type}`}>
+                  {line.type === 'input' && <span className="prompt">rishav@lab:~$ </span>}
+                  {line.text}
                 </div>
-
-                <div className="terminal-block">
-                  <span className="term-key">"title"</span>: <span className="term-val">"{activeProject.title}"</span>,
-                </div>
-                <div className="terminal-block">
-                  <span className="term-key">"category"</span>: <span className="term-val">"{activeProject.category}"</span>,
-                </div>
-
-                <div className="terminal-section-title">// 01. BUSINESS & TECHNICAL CHALLENGE</div>
-                <p className="terminal-text-block">{activeProject.problem}</p>
-
-                <div className="terminal-section-title">// 02. SYSTEM ARCHITECTURE & ALGORITHMS</div>
-                <p className="terminal-text-block">{activeProject.architecture}</p>
-
-                <div className="terminal-section-title">// 03. PRODUCTION DEPLOYMENT & SCALING</div>
-                <p className="terminal-text-block">{activeProject.deployment}</p>
-
-                <div className="terminal-section-title">// 04. STACK MANIFEST</div>
-                <div className="terminal-tags-grid">
-                  {activeProject.tags.map((t, tIdx) => (
-                    <span key={tIdx} className="terminal-tech-badge">{t}</span>
-                  ))}
-                </div>
-              </div>
+              ))}
+              <div className="cursor"></div>
             </div>
           </div>
         </div>

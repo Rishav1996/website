@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AnimeMagnetic from '../ui/AnimeMagnetic';
 import './Navbar.css';
 
 const NAV_PILLARS = [
@@ -48,9 +49,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar" aria-label="Main Navigation">
-      <div className="navbar-container">
-        <a href="#" className="navbar-logo">Rishav Saigal</a>
+    <header className="navbar-wrapper">
+      <nav className="navbar-pill" aria-label="Main Navigation">
+        <a href="#" className="navbar-logo">
+          <span className="logo-glitch">RS</span>
+          <span className="logo-text">Rishav Saigal</span>
+          <span className="live-status-dot" title="Online for Architecture & Research"></span>
+        </a>
         
         <ul className="navbar-menu">
           {NAV_PILLARS.map((pillar, idx) => (
@@ -69,10 +74,7 @@ const Navbar = () => {
               <a
                 href={pillar.href}
                 className="navbar-link"
-                onClick={(e) => {
-                  // If on mobile or direct click
-                  setActiveDropdown(null);
-                }}
+                onClick={() => setActiveDropdown(null)}
               >
                 <span>{pillar.label}</span>
                 <svg className="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
@@ -100,11 +102,16 @@ const Navbar = () => {
           ))}
 
           <li className="navbar-item-cta">
-            <a href="#contact" className="btn-primary">Connect</a>
+            <AnimeMagnetic strength={0.3}>
+              <a href="#contact" className="btn-nav-connect">
+                <span>Connect</span>
+                <span className="btn-glow-pulse"></span>
+              </a>
+            </AnimeMagnetic>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

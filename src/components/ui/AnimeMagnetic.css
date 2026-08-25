@@ -1,0 +1,4 @@
+.anime-magnetic-wrapper {
+  display: inline-block;
+  will-change: transform;
+}

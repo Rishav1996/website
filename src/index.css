@@ -1,22 +1,37 @@
-:root {
-  /* Material Dark Theme Tokens */
-  --color-bg-primary: #121318;
-  --color-bg-surface: #1E1F22;
-  --color-surface-card: #2B2D31;
-  
-  --color-accent-primary: #A8C7FA; /* Steel Blue */
-  --color-accent-secondary: #C4E7CB; /* Sage Green */
-  
-  --color-text-high: #E3E2E6;
-  --color-text-muted: #C7C6CA;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap');
 
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+:root {
+  /* Cybernetic / AI Architect Palette */
+  --color-bg-primary: #090a0f;
+  --color-bg-secondary: #0f1118;
+  --color-bg-surface: #141722;
+  --color-surface-card: #1c202e;
+  --color-surface-card-hover: #23283a;
+  
+  --color-accent-primary: #00f0ff; /* Neon Cyber Cyan */
+  --color-accent-secondary: #00ffaa; /* Electric Neon Emerald */
+  --color-accent-purple: #a855f7; /* High-Voltage Purple */
+  --color-accent-blue: #3b82f6; /* Radiant Cobalt */
+  --color-accent-amber: #f59e0b; /* Amber */
+
+  --color-text-high: #f8fafc;
+  --color-text-body: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(0, 240, 255, 0.4);
+  --glass-bg: rgba(15, 17, 24, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-code: 'Fira Code', monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg-primary);
+  color-scheme: dark;
 }
 
 * {
@@ -25,35 +40,120 @@ html {
   padding: 0;
 }
 
-section {
-  background: transparent !important;
-}
-
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg-primary);
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(168, 85, 247, 0.05) 0%, transparent 40%),
+    linear-gradient(to bottom, rgba(9, 10, 15, 0.8), rgba(9, 10, 15, 1));
+  background-attachment: fixed;
+}
+
+/* Cybernetic Grid Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--color-text-high);
+  letter-spacing: -0.02em;
 }
 
 a {
   color: var(--color-accent-primary);
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .code {
   font-family: var(--font-code);
 }
 
-/* Mobile visitors get the real, responsive site (see per-section @media rules)
-   instead of a "switch to desktop" wall — that was hiding the entire page,
-   including the H1 and all content, from mobile-first search indexing. */
 .desktop-content {
   display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.5);
+}
+
+/* Global Section Header Standard */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 30%, var(--color-accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-secondary);
+  background: rgba(0, 255, 170, 0.1);
+  border: 1px solid rgba(0, 255, 170, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }

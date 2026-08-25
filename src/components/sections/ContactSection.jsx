@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
+import AnimeMagnetic from '../ui/AnimeMagnetic';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -8,10 +9,13 @@ const ContactSection = () => {
   const { isMuted } = useAudio();
 
   return (
-    <section id="contact" className="contact-section section-padding">
+    <section id="contact" className="contact-section">
       <div className="contact-container">
-        <h2 className="section-title">Initiate Collaboration</h2>
-        <p className="section-subtitle">Let's build the future of AI together.</p>
+        <div className="section-header-center">
+          <span className="section-tag-badge">DIRECT COMMUNICATION PROTOCOL</span>
+          <h2 className="section-title">Initiate Collaboration</h2>
+          <p className="section-subtitle">Reach out for enterprise AI architecture consultation, advisory roles, or speaking engagements.</p>
+        </div>
         
         <div className="contact-layout">
           <div className="contact-form-container terminal-window">
@@ -21,7 +25,8 @@ const ContactSection = () => {
                 <span className="dot yellow"></span>
                 <span className="dot green"></span>
               </div>
-              <div className="terminal-title">bash - initiate_protocol.sh</div>
+              <div className="terminal-title">bash - initiate_collaboration_protocol.sh</div>
+              <span className="terminal-ready-pill">READY</span>
             </div>
             
             <form className="contact-form" onSubmit={(e) => {
@@ -37,26 +42,33 @@ const ContactSection = () => {
             }}>
               <div className="form-group terminal-group">
                 <label htmlFor="name">
-                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">set_name=</span>
+                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">export SENDER_NAME=</span>
                 </label>
                 <input type="text" id="name" placeholder='"John Doe"' autoComplete="off" />
               </div>
               
               <div className="form-group terminal-group">
                 <label htmlFor="email">
-                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">set_email=</span>
+                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">export SENDER_EMAIL=</span>
                 </label>
                 <input type="email" id="email" placeholder='"john@example.com"' autoComplete="off" />
               </div>
               
               <div className="form-group terminal-group">
                 <label htmlFor="message">
-                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">define_mission=</span>
+                  <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">export MISSION_BRIEF=</span>
                 </label>
-                <textarea id="message" rows="3" placeholder='"How can we collaborate?"'></textarea>
+                <textarea id="message" rows="3" placeholder='"How can we collaborate on Agentic AI / Architecture?"'></textarea>
               </div>
               
-              <button type="submit" className="submit-btn terminal-btn">[ ./TRANSMIT_PAYLOAD ]</button>
+              <AnimeMagnetic strength={0.35}>
+                <button type="submit" className="submit-btn terminal-btn">
+                  <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </AnimeMagnetic>
             </form>
           </div>
 

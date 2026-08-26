@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
 import AnimeMagnetic from '../ui/AnimeMagnetic';
 import './ContactSection.css';
 
+const PRESETS = [
+  { label: "💼 Full-Time Enterprise Role", text: "We are interested in discussing a Full-Time AI Architect / Engineering Lead opportunity." },
+  { label: "🤝 AI Advisory / Consulting", text: "We would like to consult with you on our Agentic AI & Time-Series architecture." },
+  { label: "🎙️ Speaking / Keynote", text: "We would like to invite you as a speaker/panelist to discuss LLMs & Agentic AI." }
+];
+
 const ContactSection = () => {
   const videoRef = useVideoAutoplay({ threshold: 0.5 });
   const { isMuted } = useAudio();
+  const [selectedPreset, setSelectedPreset] = useState(0);
+  const [message, setMessage] = useState(PRESETS[0].text);
 
   return (
     <section id="contact" className="contact-section">
@@ -15,6 +23,22 @@ const ContactSection = () => {
           <span className="section-tag-badge">DIRECT COMMUNICATION PROTOCOL</span>
           <h2 className="section-title">Initiate Collaboration</h2>
           <p className="section-subtitle">Reach out for enterprise AI architecture consultation, advisory roles, or speaking engagements.</p>
+        </div>
+
+        {/* 1-Click Recruiter Intent Selector */}
+        <div className="recruiter-intent-pills">
+          {PRESETS.map((preset, idx) => (
+            <button
+              key={idx}
+              className={`intent-pill ${selectedPreset === idx ? 'active' : ''}`}
+              onClick={() => {
+                setSelectedPreset(idx);
+                setMessage(preset.text);
+              }}
+            >
+              {preset.label}
+            </button>
+          ))}
         </div>
         
         <div className="contact-layout">
@@ -33,9 +57,8 @@ const ContactSection = () => {
               e.preventDefault();
               const name = document.getElementById('name').value;
               const email = document.getElementById('email').value;
-              const message = document.getElementById('message').value;
               
-              const subject = encodeURIComponent(`Collaboration Inquiry from ${name || 'a visitor'}`);
+              const subject = encodeURIComponent(`Inquiry from ${name || 'a recruiter / partner'}`);
               const body = encodeURIComponent(`Hi Rishav,\n\n${message}\n\nBest,\n${name}\n${email}`);
               
               window.location.href = `mailto:rishavsaigal@gmail.com?subject=${subject}&body=${body}`;
@@ -58,17 +81,34 @@ const ContactSection = () => {
                 <label htmlFor="message">
                   <span className="prompt-path">root@rishav-ai:~/collaborate#</span> <span className="prompt-cmd">export MISSION_BRIEF=</span>
                 </label>
-                <textarea id="message" rows="3" placeholder='"How can we collaborate on Agentic AI / Architecture?"'></textarea>
+                <textarea 
+                  id="message" 
+                  rows="3" 
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder='"How can we collaborate on Agentic AI / Architecture?"'
+                ></textarea>
               </div>
               
-              <AnimeMagnetic strength={0.35}>
-                <button type="submit" className="submit-btn terminal-btn">
-                  <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-              </AnimeMagnetic>
+              <div className="contact-actions-row">
+                <AnimeMagnetic strength={0.35}>
+                  <button type="submit" className="submit-btn terminal-btn">
+                    <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </AnimeMagnetic>
+
+                <a 
+                  href="https://www.linkedin.com/in/rishav-saigal-439566144/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="recruiter-quick-link"
+                >
+                  <span>LinkedIn Profile &rarr;</span>
+                </a>
+              </div>
             </form>
           </div>
 

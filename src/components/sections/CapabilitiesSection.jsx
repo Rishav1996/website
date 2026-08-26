@@ -81,6 +81,7 @@ const COLORS = {
 
 const CapabilitiesSection = () => {
   const [currentYear, setCurrentYear] = useState(2026);
+  const [searchQuery, setSearchQuery] = useState('');
   const yearRefs = useRef([]);
   const cloudContainerRef = useRef(null);
 
@@ -140,7 +141,7 @@ const CapabilitiesSection = () => {
       duration: 750,
       easing: 'easeOutElastic(1, .6)'
     });
-  }, [currentYear]);
+  }, [currentYear, searchQuery]);
 
   return (
     <section id="capabilities" className="capabilities-section">
@@ -189,10 +190,25 @@ const CapabilitiesSection = () => {
             })}
           </div>
 
-          {/* Right: Sticky Neural Word Cloud with Fall-Down Layer Physics */}
+          {/* Right: Sticky Neural Word Cloud with Fall-Down Layer Physics & JD Skill Search */}
           <div className="word-cloud-container">
-            <div className="word-cloud-header">
-              <span className="cloud-domain-title">// ACTIVE DOMAIN REACH // UP TO {currentYear}</span>
+            <div className="word-cloud-top-row">
+              <div className="search-box-wrapper">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Filter by JD Keyword (e.g. LangGraph, Vertex, PySpark)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="jd-skill-search-input"
+                />
+                {searchQuery && (
+                  <button className="clear-search-btn" onClick={() => setSearchQuery('')}>✕</button>
+                )}
+              </div>
               <div className="legend">
                 <span style={{color: COLORS[1]}}>● Leadership</span>
                 <span style={{color: COLORS[2]}}>● AI/ML</span>
@@ -203,13 +219,14 @@ const CapabilitiesSection = () => {
 
             <div className="word-cloud-box" ref={cloudContainerRef}>
               {wordCloudItems.map(skill => {
-                const isVisible = skill.year <= currentYear;
+                const matchesSearch = !searchQuery || skill.id.toLowerCase().includes(searchQuery.toLowerCase());
+                const isVisible = (searchQuery ? matchesSearch : skill.year <= currentYear);
                 if (!isVisible) return null;
                 
                 return (
                   <span
                     key={skill.id}
-                    className="cloud-word"
+                    className={`cloud-word ${searchQuery && matchesSearch ? 'highlight-match' : ''}`}
                     style={{
                       color: COLORS[skill.group],
                       fontSize: `${skill.size}rem`,

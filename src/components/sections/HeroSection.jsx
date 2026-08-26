@@ -94,6 +94,13 @@ const HeroSection = () => {
     };
   }, []);
 
+  const seekVideo = (timeSec) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timeSec;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
   return (
     <section id="hero" className="hero-section" ref={heroRef}>
       <div className="hero-video-container">
@@ -132,6 +139,13 @@ const HeroSection = () => {
           <p className="hero-description">
             Hi, I'm Rishav. I specialize in engineering autonomous machine learning systems. My career centers on time-series forecasting, causal inference, and deploying production-grade enterprise Agentic AI frameworks.
           </p>
+
+          <div className="hero-video-chapters">
+            <span className="chapter-label">VIDEO CHAPTERS:</span>
+            <button className="chapter-pill" onClick={() => seekVideo(0)}>0:00 Intro</button>
+            <button className="chapter-pill" onClick={() => seekVideo(20)}>0:20 Agentic AI</button>
+            <button className="chapter-pill" onClick={() => seekVideo(45)}>0:45 Enterprise Scale</button>
+          </div>
 
           <div className="hero-actions">
             <AnimeMagnetic strength={0.35}>

@@ -9,6 +9,39 @@
   margin: 0 auto;
 }
 
+.recruiter-intent-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.intent-pill {
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-body);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.intent-pill:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-high);
+}
+
+.intent-pill.active {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -135,6 +168,15 @@
   font-style: italic;
 }
 
+.contact-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
 .terminal-btn {
   display: inline-flex;
   align-items: center;
@@ -151,14 +193,25 @@
   cursor: pointer;
   box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
   transition: all 0.25s ease;
-  margin-top: 0.5rem;
-  width: 100%;
 }
 
 .terminal-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
   color: #000 !important;
+}
+
+.recruiter-quick-link {
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent-secondary);
+  transition: all 0.2s ease;
+}
+
+.recruiter-quick-link:hover {
+  color: #fff;
+  transform: translateX(3px);
 }
 
 .contact-video-wrapper {

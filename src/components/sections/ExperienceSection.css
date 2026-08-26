@@ -39,6 +39,41 @@
   background: #000;
 }
 
+.exp-video-chapters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.exp-video-chapters .chapter-label {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+
+.exp-video-chapters .chapter-pill {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-high);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exp-video-chapters .chapter-pill:hover {
+  background: var(--color-accent-primary);
+  color: #090a0f;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  transform: translateY(-1px);
+}
+
 .experience-video {
   width: 100%;
   height: auto;

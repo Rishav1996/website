@@ -97,6 +97,13 @@ const ExperienceSection = () => {
     });
   }, []);
 
+  const seekVideo = (timeSec) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timeSec;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
   return (
     <section id="experience" className="experience-section" ref={sectionRef}>
       <div className="experience-container">
@@ -127,6 +134,13 @@ const ExperienceSection = () => {
                 <span className="video-live-dot"></span>
                 <span className="video-live-text">CAREER RETROSPECTIVE</span>
               </div>
+            </div>
+
+            <div className="exp-video-chapters">
+              <span className="chapter-label">VIDEO CHAPTERS:</span>
+              <button className="chapter-pill" onClick={() => seekVideo(0)}>0:00 Overview</button>
+              <button className="chapter-pill" onClick={() => seekVideo(25)}>0:25 Cognizant Scale</button>
+              <button className="chapter-pill" onClick={() => seekVideo(55)}>0:55 Leadership</button>
             </div>
           </div>
 

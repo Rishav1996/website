@@ -133,7 +133,43 @@
   line-height: 1.7;
   color: #e2e8f0;
   max-width: 620px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-video-chapters {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.chapter-label {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.5px;
+}
+
+.chapter-pill {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-high);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chapter-pill:hover {
+  background: var(--color-accent-primary);
+  color: #090a0f;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .hero-actions {

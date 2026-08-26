@@ -90,31 +90,14 @@ const ContactSection = () => {
                 ></textarea>
               </div>
               
-              <div className="contact-actions-row">
-                <AnimeMagnetic strength={0.35}>
-                  <button type="submit" className="submit-btn terminal-btn">
-                    <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                </AnimeMagnetic>
-
-                <a 
-                  href={`${import.meta.env.BASE_URL}assets/Rishav_Saigal_Resume.pdf`}
-                  download="Rishav_Saigal_Resume.pdf"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-download-resume-contact"
-                >
+              <AnimeMagnetic strength={0.35}>
+                <button type="submit" className="submit-btn terminal-btn">
+                  <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
-                  <span>[ 📄 DOWNLOAD_PDF_RESUME ]</span>
-                </a>
-              </div>
+                </button>
+              </AnimeMagnetic>
             </form>
           </div>
 

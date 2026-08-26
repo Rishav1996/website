@@ -3,12 +3,69 @@ import './OpenSourceSection.css';
 
 const OS_PROJECTS = [
   {
+    title: "model-router",
+    url: "https://github.com/Rishav1996/model-router",
+    desc: "Two-axis Claude Code skill that scores capability floor and cost exposure separately to pick the cheapest model.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/model-router.git` },
+      { type: 'input', text: `/plugin marketplace add Rishav1996/model-router` },
+      { type: 'system', text: `[Marketplace] Registered Rishav1996/model-router` },
+      { type: 'input', text: `/plugin install model-router` },
+      { type: 'success', text: `[Plugin] model-router installed.` },
+      { type: 'input', text: `/model-router "refactor auth across 6 files, run tests"` },
+      { type: 'system', text: `[Score] Capability floor = max(D=2, S=2, A=2) = 2` },
+      { type: 'system', text: `[Score] Cost exposure = C+O+A = 2+3+2 = 7` },
+      { type: 'observation', text: `[Router] Floor 2 -> Sonnet 5. Exposure 7 -> lever: scope to 2 files/pass, not a model swap.` },
+      { type: 'success', text: `[Success] Recommended: Sonnet 5, effort xhigh.` }
+    ]
+  },
+  {
+    title: "LLMDriftExperiment",
+    url: "https://github.com/Rishav1996/LLMDriftExperiment",
+    desc: "High-fidelity research platform for quantifying LLM Drift.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/LLMDriftExperiment.git` },
+      { type: 'input', text: `cd LLMDriftExperiment` },
+      { type: 'input', text: `uv sync && cp .env.example .env` },
+      { type: 'system', text: `[uv] Installed 34 packages in 0.82s` },
+      { type: 'input', text: `uv run python -m debate_agents.main` },
+      { type: 'system', text: `[System] Initializing LangGraph-based multi-agent debate engine...` },
+      { type: 'observation', text: `[Pros Agent] Adopting PROTECT posture. Prioritizing logical defense...` },
+      { type: 'observation', text: `[Cons Agent] Adopting ATTACK posture. Launching character-consistent assault...` },
+      { type: 'progress', text: `[Debate] Round 1: Analyzing arguments via shared_memory.json...` },
+      { type: 'system', text: `[Metrics] Calculating Affective, Cognitive/Structural, and Social/Relational signals...` },
+      { type: 'output', text: `[Output] Analyzing final metrics for Persona deviation...` },
+      { type: 'success', text: `[Success] Simulation complete. Memory snapshots archived to Research Runs/` }
+    ]
+  },
+  {
+    title: "PyCaretAgent",
+    url: "https://github.com/Rishav1996/PyCaretAgent",
+    desc: "Autonomous AI agent framework extending PyCaret.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/PyCaretAgent.git` },
+      { type: 'input', text: `cd PyCaretAgent && uv pip install .` },
+      { type: 'success', text: `[uv] Installed PyCaretAgent and 15 dependencies.` },
+      { type: 'input', text: `python -c "from pycaretagent.agent import root_agent; root_agent('classification')"` },
+      { type: 'observation', text: `[Supervisor] Validating dataset via file_validator_tool...` },
+      { type: 'progress', text: `[Router] Request routed to Classification Agent.` },
+      { type: 'system', text: `[Planner] Allocating BuiltInPlanner with 4096 thinking budget...` },
+      { type: 'progress', text: `[Tool] Executing csv_analytics_tool: retrieving schemas...` },
+      { type: 'system', text: `[Execution] Generating Markdown Code Blocks via google-adk...` },
+      { type: 'output', text: `[Output] Saving pipeline to runs/WHGV1L/models/final_pipeline.pkl` },
+      { type: 'progress', text: `[Deploy] Generating FastAPI REST wrapper and dockerfile...` },
+      { type: 'success', text: `[Success] Production-ready ML system built.` }
+    ]
+  },
+  {
     title: "CognitoEDA",
     url: "https://github.com/Rishav1996/CognitoEDA",
     desc: "Autonomous agentic EDA pipeline using LangGraph and Python.",
     commands: [
       { type: 'input', text: `git clone https://github.com/Rishav1996/CognitoEDA.git` },
       { type: 'input', text: `cd CognitoEDA` },
+      { type: 'input', text: `uv add -r requirements.txt` },
+      { type: 'success', text: `[uv] Installed LangChain, LangGraph, Streamlit...` },
       { type: 'input', text: `uv run streamlit run ./src/app.py` },
       { type: 'system', text: `[System] Initializing LangGraph state machine...` },
       { type: 'progress', text: `[Agent] Metadata Extractor Agent: Analyzing schema...` },
@@ -140,7 +197,7 @@ const OpenSourceSection = () => {
         <div className="section-header-center">
           <span className="section-tag-badge">OPEN SOURCE TOOLING</span>
           <h2 className="section-title">GitHub Open Source</h2>
-          <p className="section-subtitle">Publicly available AI research & MLOps frameworks.</p>
+          <p className="section-subtitle">Publicly available AI research & MLOps frameworks across 7 open source repositories.</p>
         </div>
 
         <div className="opensource-layout">

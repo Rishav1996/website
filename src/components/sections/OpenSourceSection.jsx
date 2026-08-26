@@ -1,107 +1,197 @@
-import React, { useEffect, useRef } from 'react';
-import anime from '../../utils/anime';
-import GlowCard from '../ui/GlowCard';
+import React, { useState, useEffect, useRef } from 'react';
 import './OpenSourceSection.css';
 
-const repos = [
+const OS_PROJECTS = [
   {
-    name: "PyCaretAgent",
-    status: "ACTIVE DEV",
-    desc: "Autonomous agentic framework integrating automated machine learning pipelines with stateful LLM supervision.",
-    tech: ["Python", "LangChain", "AutoML", "FastAPI"],
-    githubUrl: "https://github.com/Rishav1996/PyCaretAgent"
+    title: "CognitoEDA",
+    url: "https://github.com/Rishav1996/CognitoEDA",
+    desc: "Autonomous agentic EDA pipeline using LangGraph and Python.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/CognitoEDA.git` },
+      { type: 'input', text: `cd CognitoEDA` },
+      { type: 'input', text: `uv run streamlit run ./src/app.py` },
+      { type: 'system', text: `[System] Initializing LangGraph state machine...` },
+      { type: 'progress', text: `[Agent] Metadata Extractor Agent: Analyzing schema...` },
+      { type: 'progress', text: `[Agent] Python Pandas Coder Agent: Executing Pandas queries...` },
+      { type: 'progress', text: `[Agent] Structure Creator Agent: Organizing results...` },
+      { type: 'progress', text: `[Agent] Python Statistics Coder Agent: Executing queries...` },
+      { type: 'progress', text: `[Agent] Web Developer Agent: Creating HTML report...` },
+      { type: 'success', text: `[Success] Human-readable structured document generated.` }
+    ]
   },
   {
-    name: "model-router",
-    status: "STABLE",
-    desc: "Dynamic multi-LLM routing engine that directs queries between frontier models based on task complexity, cost, and latency.",
-    tech: ["Python", "LLM Routing", "Cost Optimization", "Embeddings"],
-    githubUrl: "https://github.com/Rishav1996/model-router"
+    title: "AWS-ML-Services",
+    url: "https://github.com/Rishav1996/AWS-ML-Services",
+    desc: "POCs for AWS Comprehend, Transcribe, and SageMaker.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/AWS-ML-Services.git` },
+      { type: 'input', text: `cd AWS-ML-Services` },
+      { type: 'system', text: `[System] Authenticating with AWS services...` },
+      { type: 'progress', text: `[POC] Starting Face Matching Pipeline...` },
+      { type: 'observation', text: `[Resume Verifier] Matching real-time video candidate...` },
+      { type: 'progress', text: `[POC] Starting Speech Recognition Pipeline...` },
+      { type: 'progress', text: `[POC] Starting Text Analytics Pipeline...` },
+      { type: 'observation', text: `[AWS Comprehend] Executing Named Entity Recognition (NER)...` },
+      { type: 'progress', text: `[POC] Starting Transcribe Pipeline...` },
+      { type: 'observation', text: `[AWS Transcribe] Converting real-time speech streams...` },
+      { type: 'output', text: `[Metrics] Transcribe Short Text Accuracy: 97.25%` },
+      { type: 'success', text: `[Success] All AWS ML POC pipelines executed.` }
+    ]
   },
   {
-    name: "CognitoEDA",
-    status: "STABLE",
-    desc: "Automated exploratory data analysis suite with anomaly detection and automated statistical reporting.",
-    tech: ["Python", "Data Profiling", "Statistical Analysis", "Seaborn"],
-    githubUrl: "https://github.com/Rishav1996/CognitoEDA"
+    title: "PyCaret-MLOps",
+    url: "https://github.com/Rishav1996/PyCaret-MLOps",
+    desc: "Deployment pipelines for AWS and Hugging Face.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/PyCaret-MLOps.git` },
+      { type: 'input', text: `cd PyCaret-MLOps` },
+      { type: 'input', text: `pip install PyCaret Scikit-learn boto3 fastapi python-dotenv` },
+      { type: 'success', text: `[pip] Installed dependencies for Python 3.7.` },
+      { type: 'input', text: `jupyter nbconvert --execute "Data Splitting Module.ipynb"` },
+      { type: 'progress', text: `[Notebook] Executing data ingestion...` },
+      { type: 'input', text: `jupyter nbconvert --execute "Training & Deployment Module.ipynb"` },
+      { type: 'progress', text: `[Scikit-learn] Training final optimized model pipeline...` },
+      { type: 'system', text: `[Docker] Containerizing deploy module...` },
+      { type: 'observation', text: `[Deploy] Pushing Docker image to Hugging Face Spaces...` },
+      { type: 'input', text: `jupyter nbconvert --execute "Prediction Module.ipynb"` },
+      { type: 'success', text: `[Success] Model deployed on AWS and Hugging Face.` }
+    ]
   },
   {
-    name: "LLMDriftExperiment",
-    status: "RESEARCH POC",
-    desc: "Empirical benchmarking framework tracking behavioral drift, accuracy degradation, and prompt sensitivity over time.",
-    tech: ["Python", "Drift Detection", "Benchmarking", "Evaluation"],
-    githubUrl: "https://github.com/Rishav1996/LLMDriftExperiment"
+    title: "AI-MLOps-TimeSeries",
+    url: "https://github.com/Rishav1996/AI-MLOps-TimeSeries",
+    desc: "Self-hosted FastAPI & React MLOps platform for forecasting.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/AI-MLOps-TimeSeries.git` },
+      { type: 'input', text: `cd AI-MLOps-TimeSeries` },
+      { type: 'input', text: `docker compose up --build` },
+      { type: 'system', text: `[+] Running 6/6 (mysql, redis, backend, celery, frontend)` },
+      { type: 'success', text: `[System] APIs available on ports 8000, 8001, 8501.` },
+      { type: 'progress', text: `[Stage 1] Ingestion: CSV payload uploaded to MySQL.` },
+      { type: 'observation', text: `[Stage 2] Executing Isolation Forest & Z-score detection...` },
+      { type: 'observation', text: `[Stage 3] Fitting ARIMA, Prophet, ETS over expanding CV...` },
+      { type: 'output', text: `[Stage 4] Metrics: Computing RMSE, MAPE, PSI, KS.` },
+      { type: 'success', text: `[Success] Forecasts rendered to Streamlit visualization.` }
+    ]
   }
 ];
 
 const OpenSourceSection = () => {
-  const sectionRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [terminalOutput, setTerminalOutput] = useState([]);
+  const terminalRef = useRef(null);
+  const listRefs = useRef([]);
 
+  // Auto-scroll observer
   useEffect(() => {
-    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.dataset.index);
+            if (!isNaN(index)) setActiveIndex(index);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0,
+      }
+    );
 
-    const cards = sectionRef.current.querySelectorAll('.repo-bento-card');
-    anime({
-      targets: cards,
-      opacity: [0, 1],
-      translateY: [25, 0],
-      delay: anime.stagger(100),
-      duration: 700,
-      easing: 'easeOutQuad',
+    const elements = listRefs.current;
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
     });
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
   }, []);
 
+  useEffect(() => {
+    // Fast typing effect for terminal
+    setTerminalOutput([]);
+    const project = OS_PROJECTS[activeIndex];
+    
+    let currentCmd = 0;
+    const interval = setInterval(() => {
+      if (currentCmd < project.commands.length) {
+        currentCmd++;
+        setTerminalOutput(project.commands.slice(0, currentCmd));
+        // Scroll terminal to bottom
+        if (terminalRef.current) {
+          terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+        }
+      } else {
+        clearInterval(interval);
+      }
+    }, 280);
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
-    <section id="opensource" className="opensource-section" ref={sectionRef}>
+    <section id="opensource" className="opensource-section">
       <div className="opensource-container">
         <div className="section-header-center">
           <span className="section-tag-badge">OPEN SOURCE TOOLING</span>
-          <h2 className="section-title">Open Source Frameworks</h2>
-          <p className="section-subtitle">Public repositories, developer tooling, and research frameworks designed for the machine learning community.</p>
+          <h2 className="section-title">GitHub Open Source</h2>
+          <p className="section-subtitle">Publicly available AI research & MLOps frameworks.</p>
         </div>
 
-        <div className="repos-grid">
-          {repos.map((repo, index) => (
-            <GlowCard
-              key={index}
-              glowColor="rgba(0, 240, 255, 0.3)"
-              className="repo-bento-card"
-            >
-              <div className="repo-card-inner">
-                <div className="repo-top-row">
-                  <div className="repo-icon-name">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    <h3 className="repo-name">{repo.name}</h3>
-                  </div>
-                  <span className="repo-status-pill">{repo.status}</span>
-                </div>
-
-                <p className="repo-desc">{repo.desc}</p>
-
-                <div className="repo-footer">
-                  <div className="repo-tech-wrap">
-                    {repo.tech.map((t, tIdx) => (
-                      <span key={tIdx} className="repo-tech-chip">{t}</span>
-                    ))}
-                  </div>
-
-                  <a 
-                    href={repo.githubUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="repo-link-btn"
-                  >
-                    <span>View Repo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M7 17l9.2-9.2M17 17V8H8"/>
-                    </svg>
-                  </a>
-                </div>
+        <div className="opensource-layout">
+          <div className="opensource-list">
+            {OS_PROJECTS.map((proj, idx) => (
+              <div 
+                key={idx} 
+                ref={(el) => (listRefs.current[idx] = el)}
+                data-index={idx}
+                className={`os-item ${idx === activeIndex ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveIndex(idx);
+                  if (listRefs.current[idx]) {
+                    listRefs.current[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }}
+              >
+                <h3>{proj.title}</h3>
+                <p className="os-desc">{proj.desc}</p>
+                <a
+                  className="os-repo-link"
+                  href={proj.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View on GitHub &rarr;
+                </a>
               </div>
-            </GlowCard>
-          ))}
+            ))}
+          </div>
+          
+          <div className="os-terminal-container">
+            <div className="os-terminal-header">
+              <div className="os-terminal-buttons">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
+              </div>
+              <div className="os-terminal-title">bash - {OS_PROJECTS[activeIndex].title} - 80x24</div>
+            </div>
+            <div className="os-terminal-body code" ref={terminalRef}>
+              {terminalOutput.filter(Boolean).map((line, idx) => (
+                <div key={idx} className={`os-terminal-line ${line.type}`}>
+                  {line.type === 'input' && <span className="prompt">rishav@lab:~$ </span>}
+                  {line.text}
+                </div>
+              ))}
+              <div className="os-cursor"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -199,10 +199,18 @@ const PublicationsSection = () => {
       {selectedPub && (
         <div className="pub-modal-backdrop" onClick={() => setSelectedPub(null)}>
           <div className="pub-modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="pub-modal-header">
-              <span className="modal-publisher-tag">{selectedPub.description}</span>
-              <span className="modal-date-tag">{selectedPub.date}</span>
-              <button className="modal-close-btn" onClick={() => setSelectedPub(null)} aria-label="Close modal">✕</button>
+            <div className="pub-modal-top-bar">
+              <div className="modal-meta-badges">
+                <span className="modal-publisher-tag">{selectedPub.description}</span>
+                <span className="modal-date-tag">{selectedPub.date}</span>
+              </div>
+              <button className="modal-close-btn" onClick={() => setSelectedPub(null)} aria-label="Close modal">
+                <span>[ ESC_CLOSE ]</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
             <h3 className="modal-pub-title">{selectedPub.title}</h3>
             <p className="modal-pub-desc">{selectedPub.summary}</p>

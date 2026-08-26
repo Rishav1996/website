@@ -149,33 +149,11 @@ const HeroSection = () => {
 
           <div className="hero-actions">
             <AnimeMagnetic strength={0.35}>
-              <a href="#contact" className="btn-hero-primary">
-                <span>Let's Connect</span>
+              <a href="#experience" className="btn-hero-primary">
+                <span>Explore Enterprise Work</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M12 5v14M19 12l-7 7-7-7"/>
                 </svg>
-              </a>
-            </AnimeMagnetic>
-            <AnimeMagnetic strength={0.35}>
-              <a 
-                href={`${import.meta.env.BASE_URL}assets/Rishav_Saigal_Resume.pdf`}
-                download="Rishav_Saigal_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-hero-resume"
-              >
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span>Download PDF Resume</span>
-              </a>
-            </AnimeMagnetic>
-            <AnimeMagnetic strength={0.35}>
-              <a href="#projects" className="btn-hero-secondary">
-                <span>Project Lab</span>
-                <span className="btn-tag">13 Factsheets</span>
               </a>
             </AnimeMagnetic>
           </div>

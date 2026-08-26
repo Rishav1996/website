@@ -102,6 +102,19 @@ const Navbar = () => {
           ))}
 
           <li className="navbar-item-cta">
+            <a 
+              href={`${import.meta.env.BASE_URL}assets/Rishav_Saigal_Resume.pdf`}
+              download="Rishav_Saigal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-nav-resume"
+              title="Download 2-Page PDF Resume"
+            >
+              <span>Resume PDF</span>
+            </a>
+          </li>
+
+          <li className="navbar-item-cta">
             <AnimeMagnetic strength={0.3}>
               <a href="#contact" className="btn-nav-connect">
                 <span>Connect</span>

@@ -167,6 +167,29 @@
   transform: translateX(4px);
 }
 
+.btn-nav-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 170, 0.1);
+  border: 1px solid rgba(0, 255, 170, 0.35);
+  color: #00ffaa !important;
+  font-family: var(--font-code);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-nav-resume:hover {
+  background: #00ffaa;
+  color: #090a0f !important;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
+  transform: scale(1.04);
+}
+
 .btn-nav-connect {
   position: relative;
   display: inline-flex;

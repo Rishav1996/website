@@ -201,17 +201,27 @@
   color: #000 !important;
 }
 
-.recruiter-quick-link {
+.btn-download-resume-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-code);
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--color-accent-secondary);
+  font-weight: 700;
+  color: #00ffaa;
+  background: rgba(0, 255, 170, 0.1);
+  border: 1px solid rgba(0, 255, 170, 0.35);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.recruiter-quick-link:hover {
-  color: #fff;
-  transform: translateX(3px);
+.btn-download-resume-contact:hover {
+  background: #00ffaa;
+  color: #090a0f !important;
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+  transform: translateY(-2px);
 }
 
 .contact-video-wrapper {

@@ -198,6 +198,29 @@
   box-shadow: 0 0 35px rgba(0, 240, 255, 0.7);
 }
 
+.btn-hero-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(0, 255, 170, 0.12);
+  border: 1px solid rgba(0, 255, 170, 0.4);
+  color: #00ffaa;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-hero-resume:hover {
+  background: #00ffaa;
+  color: #090a0f !important;
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.6);
+  transform: translateY(-2px);
+}
+
 .btn-hero-secondary {
   display: inline-flex;
   align-items: center;

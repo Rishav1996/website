@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+import fs from 'fs';
+import path from 'path';
+import puppeteer from 'puppeteer';
+
+const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -83,4 +87,48 @@
            C 378 140, 408 162, 416 190
            Z"
         fill="url(#sGrad)"/>
-</svg>
+</svg>`;
+
+const outputDir = path.resolve('public');
+fs.writeFileSync(path.join(outputDir, 'favicon.svg'), svgContent.trim());
+
+async function generatePngs() {
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+  const page = await browser.newPage();
+  
+  const html = `<!DOCTYPE html><html><head><style>body { margin: 0; padding: 0; background: transparent; overflow: hidden; }</style></head><body>${svgContent}</body></html>`;
+  await page.setContent(html);
+
+  const sizes = [
+    { name: 'favicon-16x16.png', size: 16 },
+    { name: 'favicon-32x32.png', size: 32 },
+    { name: 'favicon-48x48.png', size: 48 },
+    { name: 'favicon-96x96.png', size: 96 },
+    { name: 'apple-touch-icon.png', size: 180 },
+    { name: 'favicon-192x192.png', size: 192 },
+    { name: 'favicon-512x512.png', size: 512 }
+  ];
+
+  for (const { name, size } of sizes) {
+    await page.setViewport({ width: size, height: size, deviceScaleFactor: 1 });
+    const svgElem = await page.$('svg');
+    await svgElem.evaluate((el, s) => {
+      el.setAttribute('width', s);
+      el.setAttribute('height', s);
+    }, size);
+    
+    const filePath = path.join(outputDir, name);
+    await page.screenshot({
+      path: filePath,
+      omitBackground: true,
+      clip: { x: 0, y: 0, width: size, height: size }
+    });
+  }
+
+  await browser.close();
+}
+
+generatePngs().catch(console.error);

@@ -25,10 +25,10 @@
 }
 
 .audio-toggle-btn.unmuted {
-  background: rgba(0, 255, 204, 0.2);
-  border-color: #00ffcc;
-  color: #00ffcc;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  background: rgba(82, 183, 136, 0.2);
+  border-color: #52b788;
+  color: #52b788;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .audio-toggle-btn svg {

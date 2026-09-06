@@ -4,7 +4,7 @@ import './GlowCard.css';
 const GlowCard = ({ 
   children, 
   className = '', 
-  glowColor = 'rgba(0, 240, 255, 0.35)', 
+  glowColor = 'rgba(88, 166, 255, 0.25)', 
   spotlightRadius = 300,
   onClick
 }) => {

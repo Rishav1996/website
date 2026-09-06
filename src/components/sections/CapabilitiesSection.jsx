@@ -74,8 +74,8 @@ const SKILLS = [
 
 const COLORS = {
   1: '#a855f7', // Purple (Leadership)
-  2: '#00f0ff', // Cyan (AI/ML)
-  3: '#00ffaa', // Emerald (MLOps)
+  2: '#58a6ff', // Steel Blue (AI/ML)
+  3: '#52b788', // Muted Sage (MLOps)
   4: '#f59e0b', // Amber (Prog/Viz)
 };
 

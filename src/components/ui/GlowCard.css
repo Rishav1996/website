@@ -11,25 +11,13 @@
 }
 
 .glow-card-container:hover {
-  border-color: rgba(0, 240, 255, 0.35);
+  border-color: rgba(88, 166, 255, 0.3);
   transform: translateY(-4px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 240, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
 }
 
 .glow-card-spotlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    var(--spotlight-radius, 300px) circle at var(--mouse-x, 0) var(--mouse-y, 0),
-    var(--glow-color, rgba(0, 240, 255, 0.25)),
-    transparent 70%
-  );
-  transition: opacity 0.3s ease;
-  z-index: 1;
+  display: none;
 }
 
 .glow-card-content {

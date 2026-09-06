@@ -25,7 +25,7 @@
   line-height: 1.7;
   color: var(--color-text-high);
   font-style: italic;
-  background: linear-gradient(135deg, #ffffff 30%, var(--color-accent-primary) 70%, var(--color-accent-purple) 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #79b8ff 70%, #a5b4fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -36,7 +36,7 @@
   content: '"';
   font-family: var(--font-display);
   font-size: 3rem;
-  color: rgba(0, 240, 255, 0.25);
+  color: rgba(88, 166, 255, 0.25);
   position: absolute;
 }
 
@@ -66,7 +66,7 @@
 
 /* Glassmorphic Cyber Cards */
 .media-interactive-card {
-  background: rgba(20, 23, 34, 0.75);
+  background: rgba(20, 26, 38, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 2.5rem;
@@ -86,12 +86,12 @@
 
 .media-interactive-card.linkedin:hover {
   border-color: rgba(10, 102, 194, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(10, 102, 194, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .media-interactive-card.youtube:hover {
   border-color: rgba(255, 0, 0, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Card Header */
@@ -169,7 +169,7 @@
   background: #0a66c2;
   color: #fff;
   border-color: #0a66c2;
-  box-shadow: 0 10px 25px rgba(10, 102, 194, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .media-header-link {
@@ -277,7 +277,6 @@
   background: #ff0000;
   color: #fff;
   border-color: #ff0000;
-  box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
 }
 
 /* Dynamic Audio Waveform */
@@ -385,7 +384,7 @@
   background: #000;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8), 0 0 100px rgba(255, 0, 0, 0.15);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transform: scale(0.92);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);

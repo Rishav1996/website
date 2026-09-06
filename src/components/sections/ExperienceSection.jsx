@@ -155,7 +155,7 @@ const ExperienceSection = () => {
                   </div>
 
                   <GlowCard
-                    glowColor={exp.active ? "rgba(0, 240, 255, 0.35)" : "rgba(168, 85, 247, 0.2)"}
+                    glowColor={exp.active ? "rgba(88, 166, 255, 0.25)" : "rgba(168, 85, 247, 0.15)"}
                     className={`exp-glow-card ${exp.active ? 'exp-active-border' : ''}`}
                   >
                     <div className="experience-inner">

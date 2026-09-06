@@ -34,8 +34,8 @@
 }
 
 .tilt-card-wrapper:hover {
-  border-color: rgba(0, 240, 255, 0.4);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 240, 255, 0.15);
+  border-color: rgba(88, 166, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
 }
 
 .tilt-card-inner {
@@ -62,33 +62,33 @@
 }
 
 .pub-publisher-badge.cyan {
-  color: #00f0ff;
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.12);
+  border: 1px solid rgba(88, 166, 255, 0.28);
 }
 
 .pub-publisher-badge.purple {
-  color: #c084fc;
-  background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #a5b4fc;
+  background: rgba(129, 140, 248, 0.12);
+  border: 1px solid rgba(129, 140, 248, 0.28);
 }
 
 .pub-publisher-badge.green {
-  color: #00ffaa;
-  background: rgba(0, 255, 170, 0.12);
-  border: 1px solid rgba(0, 255, 170, 0.3);
+  color: #52b788;
+  background: rgba(82, 183, 136, 0.12);
+  border: 1px solid rgba(82, 183, 136, 0.28);
 }
 
 .pub-publisher-badge.amber {
-  color: #fbbf24;
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #e5a93c;
+  background: rgba(229, 169, 60, 0.12);
+  border: 1px solid rgba(229, 169, 60, 0.28);
 }
 
 .pub-publisher-badge.blue {
   color: #60a5fa;
   background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.28);
 }
 
 .pub-date-badge {
@@ -133,7 +133,7 @@
 .pub-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(9, 10, 15, 0.88);
+  background: rgba(9, 12, 18, 0.9);
   backdrop-filter: blur(24px);
   z-index: 2000;
   display: flex;
@@ -143,15 +143,15 @@
 }
 
 .pub-modal-content {
-  background: #11141f;
-  border: 1px solid rgba(0, 240, 255, 0.35);
+  background: #0d121c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 2.5rem;
   max-width: 720px;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 240, 255, 0.18);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -179,8 +179,8 @@
   font-size: 0.75rem;
   font-weight: 800;
   color: var(--color-accent-primary);
-  background: rgba(0, 240, 255, 0.1);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.25);
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
 }
@@ -239,19 +239,20 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, var(--color-accent-primary), #00c3ff);
-  color: #090a0f !important;
+  background: linear-gradient(135deg, #388bfd, #1f6feb);
+  color: #ffffff !important;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.8rem 1.6rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
 }
 
 .modal-view-paper-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #4f9aff, #2563eb);
 }
 
 .modal-repo-link-btn {

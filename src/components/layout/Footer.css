@@ -37,5 +37,4 @@
 
 .footer-links a:hover {
   color: var(--color-accent-primary);
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }

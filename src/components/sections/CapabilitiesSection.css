@@ -29,7 +29,7 @@
 }
 
 .year-node {
-  background: rgba(20, 24, 36, 0.7);
+  background: rgba(20, 26, 38, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 1.5rem;
@@ -42,14 +42,14 @@
 }
 
 .year-node:hover {
-  border-color: rgba(0, 240, 255, 0.3);
+  border-color: rgba(88, 166, 255, 0.3);
   transform: translateX(4px);
 }
 
 .year-node.active {
-  background: rgba(20, 24, 36, 0.95);
+  background: rgba(22, 29, 43, 0.95);
   border-color: var(--color-accent-primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .year-node-header {
@@ -74,8 +74,8 @@
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--color-accent-secondary);
-  background: rgba(0, 255, 170, 0.1);
-  border: 1px solid rgba(0, 255, 170, 0.25);
+  background: rgba(82, 183, 136, 0.1);
+  border: 1px solid rgba(82, 183, 136, 0.25);
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
 }
@@ -100,12 +100,12 @@
 .word-cloud-container {
   position: sticky;
   top: 6rem;
-  background: rgba(20, 24, 36, 0.85);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: rgba(20, 26, 38, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(20px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -127,7 +127,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(88, 166, 255, 0.3);
   padding: 0.45rem 0.85rem;
   border-radius: 10px;
   flex-grow: 1;
@@ -171,9 +171,8 @@
 }
 
 .cloud-word.highlight-match {
-  background: rgba(0, 240, 255, 0.2) !important;
+  background: rgba(88, 166, 255, 0.2) !important;
   border-color: var(--color-accent-primary) !important;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5) !important;
   transform: scale(1.15) !important;
 }
 

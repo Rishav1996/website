@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useAudio } from '../../context/AudioContext';
 import { useVideoAutoplay } from '../../hooks/useVideoAutoplay';
-import AnimeMagnetic from '../ui/AnimeMagnetic';
 import './ContactSection.css';
 
 const PRESETS = [
@@ -90,14 +89,12 @@ const ContactSection = () => {
                 ></textarea>
               </div>
               
-              <AnimeMagnetic strength={0.35}>
-                <button type="submit" className="submit-btn terminal-btn">
-                  <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-              </AnimeMagnetic>
+              <button type="submit" className="submit-btn terminal-btn">
+                <span>[ ./TRANSMIT_PAYLOAD_TO_RISHAV ]</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </form>
           </div>
 

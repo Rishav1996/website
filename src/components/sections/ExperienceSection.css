@@ -34,8 +34,8 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.15);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: #000;
 }
 
@@ -60,7 +60,7 @@
   font-weight: 600;
   color: var(--color-text-high);
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
   cursor: pointer;
@@ -69,8 +69,7 @@
 
 .exp-video-chapters .chapter-pill:hover {
   background: var(--color-accent-primary);
-  color: #090a0f;
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  color: #0c1017;
   transform: translateY(-1px);
 }
 
@@ -88,9 +87,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(9, 10, 15, 0.75);
+  background: rgba(12, 16, 23, 0.85);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0.3rem 0.75rem;
   border-radius: 9999px;
 }
@@ -100,7 +99,6 @@
   height: 7px;
   background: var(--color-accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--color-accent-primary);
 }
 
 .video-live-text {
@@ -142,13 +140,11 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-accent-purple);
-  box-shadow: 0 0 10px var(--color-accent-purple);
+  background: var(--color-accent-secondary);
 }
 
 .active-node .node-core {
   background: var(--color-accent-primary);
-  box-shadow: 0 0 15px var(--color-accent-primary);
 }
 
 .node-pulse-ring {
@@ -170,7 +166,7 @@
 }
 
 .exp-active-border {
-  border-color: rgba(0, 240, 255, 0.35) !important;
+  border-color: rgba(88, 166, 255, 0.35) !important;
 }
 
 .experience-inner {
@@ -205,8 +201,8 @@
   font-size: 0.68rem;
   font-weight: 700;
   color: var(--color-accent-secondary);
-  background: rgba(0, 255, 170, 0.12);
-  border: 1px solid rgba(0, 255, 170, 0.3);
+  background: rgba(82, 183, 136, 0.1);
+  border: 1px solid rgba(82, 183, 136, 0.25);
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
   letter-spacing: 0.5px;
@@ -284,7 +280,7 @@
   font-weight: 500;
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.2);
   color: var(--color-accent-primary);
 }

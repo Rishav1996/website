@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import anime from '../../utils/anime';
 import './SvgCircuitFrame.css';
 
-const SvgCircuitFrame = ({ children, className = '', color = '#00f0ff' }) => {
+const SvgCircuitFrame = ({ children, className = '', color = '#58a6ff' }) => {
   const frameRef = useRef(null);
 
   useEffect(() => {

@@ -49,9 +49,9 @@ const ResearchSection = () => {
 
         <div className="research-grid">
           {researchData.map((item, index) => (
-            <SvgCircuitFrame key={index} color="rgba(0, 240, 255, 0.4)">
+            <SvgCircuitFrame key={index} color="rgba(88, 166, 255, 0.35)">
               <GlowCard 
-                glowColor="rgba(0, 240, 255, 0.25)"
+                glowColor="rgba(88, 166, 255, 0.2)"
                 className="academics-card"
               >
                 <div className="academics-card-inner">

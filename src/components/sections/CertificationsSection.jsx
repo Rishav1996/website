@@ -78,7 +78,7 @@ const CertificationsSection = () => {
           {certifications.map((cert, index) => (
             <GlowCard
               key={index}
-              glowColor="rgba(0, 240, 255, 0.25)"
+              glowColor="rgba(88, 166, 255, 0.2)"
               className="cert-card-container"
             >
               <a

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AnimeMagnetic from '../ui/AnimeMagnetic';
 import './Navbar.css';
 
 const NAV_PILLARS = [
@@ -115,12 +114,9 @@ const Navbar = () => {
           </li>
 
           <li className="navbar-item-cta">
-            <AnimeMagnetic strength={0.3}>
-              <a href="#contact" className="btn-nav-connect">
-                <span>Connect</span>
-                <span className="btn-glow-pulse"></span>
-              </a>
-            </AnimeMagnetic>
+            <a href="#contact" className="btn-nav-connect">
+              <span>Connect</span>
+            </a>
           </li>
         </ul>
       </nav>

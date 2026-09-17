@@ -8,7 +8,7 @@ import './ExperienceSection.css';
 const experiences = [
   {
     company: "Cognizant",
-    role: "Senior Associate (Senior Data Scientist / AI Architect)",
+    role: "Manager (Senior Data Scientist / AI Architect)",
     period: "Nov 2023 – Present",
     active: true,
     responsibilities: [

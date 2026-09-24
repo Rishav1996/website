@@ -58,7 +58,6 @@ const SKILLS = [
   { id: 'Streamlit', group: 4, year: 2024 },
   { id: 'DASH', group: 4, year: 2024 },
   { id: 'ipywidgets', group: 4, year: 2024 },
-  { id: 'LLM Fine-Tuning', group: 2, year: 2024 },
   { id: 'Technical Roadmapping', group: 1, year: 2024 },
   { id: 'Cost Optimisation', group: 1, year: 2024 },
   // 2025

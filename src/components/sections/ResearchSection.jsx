@@ -6,6 +6,13 @@ import './ResearchSection.css';
 
 const researchData = [
   {
+    institution: "Indian Institute of Technology Patna",
+    monogram: "IITP",
+    degree: "Ph.D. in Computer Science & Engineering",
+    details: "Indian Institute of Technology Patna (Pursuing).",
+    period: "Jul 2026 – Jun 2029"
+  },
+  {
     institution: "BITS Pilani",
     monogram: "BITS",
     degree: "M.Tech in Data Science & Engineering",

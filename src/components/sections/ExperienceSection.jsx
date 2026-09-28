@@ -26,7 +26,7 @@ const experiences = [
       }
     ],
     skills: [
-      "GCP Vertex AI", "Gemini Enterprise", "Google ADK",
+      "GCP Vertex AI", "Gemini Enterprise", "Cloud Run", "Google ADK",
       "LangGraph", "CrewAI", "LangChain",
       "FastAPI", "Streamlit", "Azure ML", "MLflow"
     ]

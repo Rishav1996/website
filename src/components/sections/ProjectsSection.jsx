@@ -3,7 +3,7 @@ import './ProjectsSection.css';
 
 const PROJECTS = [
   {
-    title: "Gen AI Video Generation",
+    title: "Generative AI (GenAI) Video Generation",
     category: "Agentic AI & GenAI",
     date: "Jan 2026 – Present",
     desc: "Multi-agent pipeline (Google ADK, LangGraph, GCP Vertex AI, Gemini Enterprise) ingesting meeting transcripts, summarising and storyboarding via LLM, then synthesising sales pitch videos; architecture features a token-cost observability layer (per-run cost tracking, quality-vs-cost controls) and a self-correction mechanism (automated retry on output-validation failure)."
@@ -12,7 +12,7 @@ const PROJECTS = [
     title: "Media Use Case (POC)",
     category: "Agentic AI & GenAI",
     date: "Jun 2025 – Oct 2025",
-    desc: "Agentic AI system (CrewAI, LangGraph, GCP) dynamically analysing ad performance, optimising budget allocation, and recommending channel-series combinations."
+    desc: "Agentic AI system (CrewAI, LangGraph, GCP) dynamically analysing ad performance, optimising budget allocation, and recommending channel-series combinations; projected 5–10% ROI uplift and 5–7% subscription growth."
   },
   {
     title: "Price Elasticity (POC)",
@@ -21,7 +21,7 @@ const PROJECTS = [
     desc: "Dynamic pricing engine using Hierarchical Linear Models (statsmodels, Python) with real-time competitor data ingestion and an automated MLflow retraining pipeline; modelled cross-product elasticities to recommend optimal price points."
   },
   {
-    title: "Analytics Chatbot",
+    title: "Enterprise Analytics Chatbot",
     category: "Agentic AI & GenAI",
     date: "Jul 2024 – Dec 2025",
     desc: "LLM-powered chatbot (LangChain, Streamlit, PostgreSQL) enabling NL querying over enterprise databases with dynamic chart generation (Plotly) and LLM-based visual summarisation for non-technical stakeholders."
@@ -39,7 +39,7 @@ const PROJECTS = [
     desc: "LLM-driven feature engineering pipeline converting unstructured text to numerical embeddings (OpenAI API, Scikit-Learn); incorporated SHAP explainability layer, improving model accuracy and interpretability for downstream tasks."
   },
   {
-    title: "LLM Test Case Generator",
+    title: "LLM-Based Test Case Generator",
     category: "Agentic AI & GenAI",
     date: "Nov 2023 – Mar 2024",
     desc: "LLM-powered QA automation tool (LangChain, FastAPI, Python) generating test cases in Gherkin/TMMi formats from business requirements; provided intelligent, referenced Q&A, streamlining testing workflows and significantly reducing manual documentation effort."
@@ -51,7 +51,7 @@ const PROJECTS = [
     desc: "Predictive promotion optimisation (Scikit-Learn, DataRobot, Azure ML) targeting account-level healthcare clients; combined customer segmentation, causal inference, and SHAP-based explainability to rank promotional strategies."
   },
   {
-    title: "Demand Sensing",
+    title: "Demand Sensing MLOps",
     category: "Time Series & MLOps",
     date: "Mar 2020 – Jun 2022",
     desc: "End-to-end time series MLOps pipeline (PySpark, TensorFlow, MLflow, AWS SageMaker) with automated feature engineering, model selection, and continuous retraining; designed for scalable, low-touch operation across product lines."
@@ -63,19 +63,19 @@ const PROJECTS = [
     desc: "Time-varying survival analysis (Cox PH, XGBoost, lifelines, Python) forecasting EV component failures within specified windows; combined survival modelling with transfer-learning-enhanced gradient boosting and interactive Plotly visualisations."
   },
   {
-    title: "Service Now Analytics",
+    title: "Service Now Ticket Analytics",
     category: "Time Series & MLOps",
     date: "Oct 2019 – Dec 2019",
     desc: "Ticket volume forecasting (LSTM, MLP, TensorFlow, MySQL) with custom routing algorithms for optimal agent assignment; benchmarked deep sequence models against MLP baselines with rich client reporting."
   },
   {
-    title: "Supply Chain Management (POC)",
+    title: "Supply Chain Demand Forecasting (POC)",
     category: "Time Series & MLOps",
     date: "Apr 2019 – Oct 2019",
     desc: "End-to-end demand forecasting pipeline (statsmodels, NLTK Vader, pandas, Python) integrating social media sentiment as an external regressor; uni- and multi-variate models optimised via Grid Search with automated data wrangling."
   },
   {
-    title: "Video Analytics Solution (POC)",
+    title: "Retail Video Analytics (POC)",
     category: "NLP & Computer Vision",
     date: "Apr 2018 – Mar 2019",
     desc: "Internal computer vision POC (OpenCV, TensorFlow, Keras, Python) for brand recognition in retail imagery; extracted and classified brand presence from individual frames to support marketing intelligence use cases."

@@ -19,6 +19,7 @@ const SKILLS = [
   { id: 'JavaScript', group: 4, year: 2018 },
   // 2019
   { id: 'Time Series', group: 2, year: 2019 },
+  { id: 'Time Series Forecasting', group: 2, year: 2019 },
   { id: 'PySpark', group: 3, year: 2019 },
   { id: 'Keras', group: 2, year: 2019 },
   { id: 'Transfer Learning', group: 2, year: 2019 },
@@ -39,6 +40,7 @@ const SKILLS = [
   { id: 'SHAP/XAI', group: 2, year: 2022 },
   { id: 'PyCaret', group: 2, year: 2022 },
   { id: 'Model Monitoring', group: 3, year: 2022 },
+  { id: 'Automated Retraining', group: 3, year: 2022 },
   { id: 'Team Leadership', group: 1, year: 2022 },
   { id: 'Stakeholder Management', group: 1, year: 2022 },
   { id: 'Causal Inference', group: 2, year: 2022 },
@@ -64,9 +66,12 @@ const SKILLS = [
   { id: 'CrewAI', group: 2, year: 2025 },
   { id: 'LangGraph', group: 2, year: 2025 },
   { id: 'Agentic AI', group: 2, year: 2025 },
+  { id: 'Multi-Agent Systems', group: 2, year: 2025 },
   { id: 'POC Management', group: 1, year: 2025 },
   // 2026
   { id: 'GCP Vertex AI', group: 3, year: 2026 },
+  { id: 'Gemini Enterprise', group: 2, year: 2026 },
+  { id: 'Cloud Run', group: 3, year: 2026 },
   { id: 'Google ADK', group: 2, year: 2026 },
   { id: 'Architectural Design', group: 1, year: 2026 }
 ];

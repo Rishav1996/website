@@ -13,21 +13,25 @@ const experiences = [
     active: true,
     responsibilities: [
       {
-        title: "Solution Architect & Agentic AI Lead",
-        desc: "Spearheaded end-to-end architectural design of enterprise-grade Generative AI and Agentic AI systems on complex GCP infrastructure."
+        title: "Enterprise AI Architecture & Strategy (SME)",
+        desc: "Served as designated SME in AI Architecture Design and GenAI; spearheaded end-to-end architectural roadmaps and technical standards for enterprise-grade Agentic AI systems on GCP infrastructure (Vertex AI, Cloud Run, Gemini Enterprise, Agent Engine Platform, FastMCP)."
       },
       {
-        title: "Team Leadership & Architectural Direction",
-        desc: "Led and mentored a cross-functional team of ML/GenAI engineers; defined architectural standards and drove Agile sprint planning."
+        title: "RFP Solutioning, Pre-Sales & Resource Planning",
+        desc: "Spearheaded architectural solution design and technical response strategy for multiple high-value RFPs; formulated tailored architecture proposals, multi-phase resource planning models, and effort estimation matrices."
       },
       {
-        title: "Client Deliverable Management",
-        desc: "Owned end-to-end delivery from requirement workshops through production handoff and stakeholder-facing POC demonstrations."
+        title: "Team Leadership, Mentorship & Talent Acquisition",
+        desc: "Managed cross-functional ML/GenAI teams; directed campus-to-corporate mentorship for college freshers; actively contributed to tech communities fostering student growth; served as technical panellist for account staffing and external hiring."
+      },
+      {
+        title: "Client Deliverable Management & Governance",
+        desc: "Led end-to-end delivery ownership from initial client requirement discovery workshops through technical architecture, executive stakeholder POC demonstrations, and production sign-off governance."
       }
     ],
     skills: [
       "GCP Vertex AI", "Gemini Enterprise", "Cloud Run", "Google ADK",
-      "LangGraph", "CrewAI", "LangChain",
+      "FastMCP", "Agent Engine Platform", "LangGraph", "CrewAI",
       "FastAPI", "Streamlit", "Azure ML", "MLflow"
     ]
   },
@@ -39,19 +43,19 @@ const experiences = [
     responsibilities: [
       {
         title: "Team Leadership & ML Architecture",
-        desc: "Managed a cross-functional team of 6 ML engineers; led Agile architecture reviews and end-to-end MLOps solution deployment."
+        desc: "Managed a cross-functional team of 6 ML engineers; led Agile architecture reviews, sprint delivery, and end-to-end MLOps solution deployments on AWS SageMaker."
       },
       {
-        title: "Stakeholder Delivery",
-        desc: "Served as primary technical point-of-contact for executive stakeholder demos and quarterly business reviews."
+        title: "Executive Stakeholder Delivery",
+        desc: "Served as primary technical point-of-contact for executive client demos and quarterly business reviews; translated commercial objectives into scalable machine learning specifications."
       },
       {
-        title: "Responsible AI Governance",
-        desc: "Translated complex business requirements into scalable ML specifications; upskilled client teams on model interpretability and proactive model monitoring."
+        title: "Responsible AI Governance & Explainability",
+        desc: "Architected production model interpretability frameworks using SHAP (XAI), customer segmentation, and causal inference uplift modeling; upskilled client teams on model governance."
       }
     ],
     skills: [
-      "Scikit-Learn", "DataRobot", "Azure ML",
+      "Scikit-Learn", "DataRobot", "AWS SageMaker",
       "Causal Inference", "Customer Segmentation", "SHAP (XAI)"
     ]
   },
@@ -63,16 +67,20 @@ const experiences = [
     responsibilities: [
       {
         title: "Technical Lead & Full-Lifecycle Delivery",
-        desc: "Led cross-functional teams of up to 15 members across supply chain, manufacturing, and service analytics."
+        desc: "Led cross-functional engineering teams of up to 15 members across supply chain, manufacturing, and enterprise service domains; directed end-to-end ML solution delivery on AWS and Azure."
       },
       {
-        title: "End-to-End ML Delivery",
-        desc: "Owned the complete ML lifecycle—from Agile requirement gathering through CI/CD-driven production deployment on cloud infrastructure."
+        title: "Distributed Time Series & MLOps Architecture",
+        desc: "Engineered scalable distributed time series and predictive maintenance pipelines on Azure Databricks and PySpark; automated model selection and retraining workflows."
+      },
+      {
+        title: "Deep Learning & Computer Vision Systems",
+        desc: "Architected sequence volume forecasting architectures (LSTM, MLP) with Hungarian dispatch heuristics and frame-level CNN transfer learning pipelines for real-time asset detection."
       }
     ],
     skills: [
       "PySpark", "TensorFlow", "Keras",
-      "AWS SageMaker", "XGBoost", "Cox Proportional Hazard",
+      "Azure Databricks", "XGBoost", "Cox Proportional Hazard",
       "OpenCV", "LSTM", "MLP"
     ]
   }

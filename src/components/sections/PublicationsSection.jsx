@@ -91,6 +91,8 @@ const publications = [
     description: "Published in Towards Deep Learning",
     summary: "Argues that a single blended 'complexity' score breaks Claude model routing — short-but-hard prompts get routed too cheap, long-but-easy ones too expensive. Proposes scoring capability floor (a max) and cost exposure (a sum) as two separate axes instead, with a real downgrade test gating any model swap.",
     link: "https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce",
+    doi: "10.5281/zenodo.21520843",
+    doiLink: "https://doi.org/10.5281/zenodo.21520843",
     repoLink: "https://github.com/Rishav1996/model-router"
   },
   {
@@ -106,6 +108,8 @@ const publications = [
     description: "Published in Zenodo (Research Dataset & Framework)",
     summary: "An open research framework and dataset for quantifying how a model's persona and reasoning shift under sustained adversarial pressure, using a Pros/Cons multi-agent debate setup tracked across a set of behavioral signals.",
     link: "https://doi.org/10.5281/zenodo.20032071",
+    doi: "10.5281/zenodo.20032071",
+    doiLink: "https://doi.org/10.5281/zenodo.20032071",
     repoLink: "https://github.com/Rishav1996/LLMDriftExperiment"
   },
   {
@@ -202,6 +206,9 @@ const PublicationsSection = () => {
             <div className="pub-modal-top-bar">
               <div className="modal-meta-badges">
                 <span className="modal-publisher-tag">{selectedPub.description}</span>
+                {selectedPub.doi && (
+                  <span className="modal-doi-badge">DOI: {selectedPub.doi}</span>
+                )}
                 <span className="modal-date-tag">{selectedPub.date}</span>
               </div>
               <button className="modal-close-btn" onClick={() => setSelectedPub(null)} aria-label="Close modal">
@@ -221,6 +228,19 @@ const PublicationsSection = () => {
                   <path d="M7 17l9.2-9.2M17 17V8H8"/>
                 </svg>
               </a>
+              {selectedPub.doiLink && selectedPub.doiLink !== selectedPub.link && (
+                <a
+                  href={selectedPub.doiLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-doi-link-btn"
+                >
+                  <span>Zenodo DOI</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M7 17l9.2-9.2M17 17V8H8"/>
+                  </svg>
+                </a>
+              )}
               {selectedPub.repoLink && (
                 <a
                   href={selectedPub.repoLink}

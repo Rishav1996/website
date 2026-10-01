@@ -185,6 +185,17 @@
   border-radius: 6px;
 }
 
+.modal-doi-badge {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}
+
 .modal-date-tag {
   font-family: var(--font-code);
   font-size: 0.78rem;
@@ -273,5 +284,26 @@
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-accent-primary);
   color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+.modal-doi-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  color: #c4b5fd;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.modal-doi-link-btn:hover {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: #a78bfa;
+  color: #ffffff;
   transform: translateY(-2px);
 }

@@ -6,79 +6,79 @@ const PROJECTS = [
     title: "Generative AI (GenAI) Video Generation",
     category: "Agentic AI & GenAI",
     date: "Jan 2026 – Present",
-    desc: "Multi-agent pipeline (Google ADK, LangGraph, GCP Vertex AI, Gemini Enterprise) ingesting meeting transcripts, summarising and storyboarding via LLM, then synthesising sales pitch videos; architecture features a token-cost observability layer (per-run cost tracking, quality-vs-cost controls) and a self-correction mechanism (automated retry on output-validation failure)."
+    desc: "Autonomous multi-agent pipeline using Google ADK, GCP Vertex AI (document storage), Gemini Enterprise, Agent Engine Platform, and FastMCP; features context-window summarisation, token-cost observability, dynamic prompting, and automated self-correction validation loops. Slashed end-to-end delivery timeline from 5–14 days down to under 6 hours (from script generation to final video demo)."
   },
   {
     title: "Media Use Case (POC)",
     category: "Agentic AI & GenAI",
     date: "Jun 2025 – Oct 2025",
-    desc: "Agentic AI system (CrewAI, LangGraph, GCP) dynamically analysing ad performance, optimising budget allocation, and recommending channel-series combinations; projected 5–10% ROI uplift and 5–7% subscription growth."
+    desc: "Agentic AI system (CrewAI, LangGraph, GCP) combining ML and prompt engineering for inference explanation, insight extraction, and business KPI generation; models multi-channel budget allocation and predicts future investment growth using multi-timeseries forecasting."
   },
   {
     title: "Price Elasticity (POC)",
     category: "Causal ML & Pricing",
     date: "Jun 2025 – Jul 2025",
-    desc: "Dynamic pricing engine using Hierarchical Linear Models (statsmodels, Python) with real-time competitor data ingestion and an automated MLflow retraining pipeline; modelled cross-product elasticities to recommend optimal price points."
+    desc: "Dynamic pricing architecture using Hierarchical Linear Models (HLM) (statsmodels, Python, Azure ML) with automated MLflow continuous retraining pipelines to model cross-product elasticity frontiers."
   },
   {
     title: "Enterprise Analytics Chatbot",
     category: "Agentic AI & GenAI",
     date: "Jul 2024 – Dec 2025",
-    desc: "LLM-powered chatbot (LangChain, Streamlit, PostgreSQL) enabling NL querying over enterprise databases with dynamic chart generation (Plotly) and LLM-based visual summarisation for non-technical stakeholders."
+    desc: "Conversational analytics agent (Streamlit, PostgreSQL) featuring a dedicated Intent Classifier to determine required insight types, paired with dynamic Text-to-SQL generation powered by Client Proprietary Internal LLMs. Projected cycle time reduction for designing complex enterprise insights from 3 months down to under 15 days."
   },
   {
     title: "Intelligent QA / BA Chatbot",
     category: "Agentic AI & GenAI",
     date: "Apr 2024 – Apr 2025",
-    desc: "Conversational AI system (LangChain, FastAPI, Python) for internal policy Q&A, action execution, and automated test-case generation in Gherkin/TMMi formats; reduced manual QA documentation effort significantly."
+    desc: "Enterprise conversational system (FastAPI, Python) utilizing semantic policy retrieval, intent classifiers, and structured intent flows for automated policy Q&A and operational task execution. Autonomously resolved 80% of internal policy document queries; automated RBAC-governed workflow execution and access request approvals/rejections."
   },
   {
-    title: "Predictive Modelling",
+    title: "LLM-Driven Predictive Modelling",
     category: "Causal ML & Pricing",
     date: "Jul 2024 – Sep 2024",
-    desc: "LLM-driven feature engineering pipeline converting unstructured text to numerical embeddings (OpenAI API, Scikit-Learn); incorporated SHAP explainability layer, improving model accuracy and interpretability for downstream tasks."
+    desc: "Unsupervised feature extraction pipeline using open-source LLMs via Ollama to discover ticket objective classes; aggregates class occurrences into hourly instance feature vectors fed into an existing deep LSTM sequence model for enhanced predictive sequence accuracy."
   },
   {
     title: "LLM-Based Test Case Generator",
     category: "Agentic AI & GenAI",
     date: "Nov 2023 – Mar 2024",
-    desc: "LLM-powered QA automation tool (LangChain, FastAPI, Python) generating test cases in Gherkin/TMMi formats from business requirements; provided intelligent, referenced Q&A, streamlining testing workflows and significantly reducing manual documentation effort."
+    desc: "QA automation toolchain (FastAPI, Python) parsing unstructured Business Requirement Documents (BRDs) to extract acceptance criteria and auto-generate structured Gherkin and TMMi test suites. Accelerated test authoring cycle by 70%; ensured 100% test-to-requirement coverage mapping."
   },
   {
     title: "Healthcare Consumer Analytics",
     category: "Causal ML & Pricing",
     date: "Jun 2022 – Oct 2023",
-    desc: "Predictive promotion optimisation (Scikit-Learn, DataRobot, Azure ML) targeting account-level healthcare clients; combined customer segmentation, causal inference, and SHAP-based explainability to rank promotional strategies."
+    desc: "Production ML pipeline on AWS SageMaker (Scikit-Learn, DataRobot) combining customer segmentation, causal inference uplift modeling, and SHAP explainability for account-level promotional strategy ranking. Delivered projected $2.3M in cost savings at 90%+ model accuracy across all account-level promotion campaigns."
   },
   {
     title: "Demand Sensing MLOps",
     category: "Time Series & MLOps",
     date: "Mar 2020 – Jun 2022",
-    desc: "End-to-end time series MLOps pipeline (PySpark, TensorFlow, MLflow, AWS SageMaker) with automated feature engineering, model selection, and continuous retraining; designed for scalable, low-touch operation across product lines."
+    desc: "Distributed time series MLOps pipeline on Azure Databricks (PySpark, TensorFlow, Keras) with automated feature engineering, distributed model selection, and continuous retraining workflows. Achieved 5% accuracy improvement, 10% better model selection, reduced training from 3 days to 2 hours, and 60% reduction in manual intervention."
   },
   {
     title: "Predictive Maintenance",
     category: "Time Series & MLOps",
     date: "Dec 2019 – Mar 2020",
-    desc: "Time-varying survival analysis (Cox PH, XGBoost, lifelines, Python) forecasting EV component failures within specified windows; combined survival modelling with transfer-learning-enhanced gradient boosting and interactive Plotly visualisations."
+    desc: "Time-varying survival analysis pipeline (Cox Proportional Hazards, XGBoost, lifelines, Python) predicting EV component degradation windows paired with interactive Plotly operational HUDs. Achieved 82% validation accuracy for early failure prevention."
   },
   {
     title: "Service Now Ticket Analytics",
     category: "Time Series & MLOps",
     date: "Oct 2019 – Dec 2019",
-    desc: "Ticket volume forecasting (LSTM, MLP, TensorFlow, MySQL) with custom routing algorithms for optimal agent assignment; benchmarked deep sequence models against MLP baselines with rich client reporting."
+    desc: "Deep learning sequence volume forecasting architecture (LSTM vs. MLP, TensorFlow, MySQL) featuring custom greedy Hungarian workload dispatch heuristics. Achieved 85% validation accuracy with intelligent routing heuristics for optimized agent workload dispatch."
   },
   {
     title: "Supply Chain Demand Forecasting (POC)",
     category: "Time Series & MLOps",
     date: "Apr 2019 – Oct 2019",
-    desc: "End-to-end demand forecasting pipeline (statsmodels, NLTK Vader, pandas, Python) integrating social media sentiment as an external regressor; uni- and multi-variate models optimised via Grid Search with automated data wrangling."
+    desc: "Multivariate demand forecasting pipeline (statsmodels SARIMAX, pandas, Python) integrating dynamic NLTK VADER social media sentiment indices as exogenous regressors with grid search."
   },
   {
     title: "Retail Video Analytics (POC)",
     category: "NLP & Computer Vision",
     date: "Apr 2018 – Mar 2019",
-    desc: "Internal computer vision POC (OpenCV, TensorFlow, Keras, Python) for brand recognition in retail imagery; extracted and classified brand presence from individual frames to support marketing intelligence use cases."
+    desc: "Computer vision pipeline (OpenCV, TensorFlow, Keras, Python) featuring frame-level CNN transfer learning for brand asset detection and multi-class classification across retail video feeds."
   }
 ];
 

@@ -29,6 +29,7 @@ const SKILLS = [
   // 2020
   { id: 'Survival Analysis', group: 2, year: 2020 },
   { id: 'MLflow', group: 3, year: 2020 },
+  { id: 'Azure Databricks', group: 3, year: 2020 },
   { id: 'Plotly', group: 4, year: 2020 },
   { id: 'Power BI', group: 4, year: 2020 },
   { id: 'Feature Engineering', group: 3, year: 2020 },
@@ -55,6 +56,7 @@ const SKILLS = [
   { id: 'Impact & Risk Assessment', group: 1, year: 2023 },
   // 2024
   { id: 'RAG', group: 2, year: 2024 },
+  { id: 'Ollama', group: 2, year: 2024 },
   { id: 'PostgreSQL', group: 3, year: 2024 },
   { id: 'Redis', group: 3, year: 2024 },
   { id: 'Streamlit', group: 4, year: 2024 },
@@ -71,6 +73,8 @@ const SKILLS = [
   // 2026
   { id: 'GCP Vertex AI', group: 3, year: 2026 },
   { id: 'Gemini Enterprise', group: 2, year: 2026 },
+  { id: 'FastMCP', group: 2, year: 2026 },
+  { id: 'Agent Engine', group: 2, year: 2026 },
   { id: 'Cloud Run', group: 3, year: 2026 },
   { id: 'Google ADK', group: 2, year: 2026 },
   { id: 'Architectural Design', group: 1, year: 2026 }

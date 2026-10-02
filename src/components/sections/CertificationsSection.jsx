@@ -5,8 +5,9 @@ import './CertificationsSection.css';
 
 const CREDLY_PROFILE_URL = "https://www.credly.com/users/rishav-saigal.ae0679ae";
 
+// All 14 verified industry credentials ordered chronologically by procurement (most recent to oldest)
 const certifications = [
-  // Google Cloud Agentic AI & Frontier Badges (Credly)
+  // 1. Google Cloud - Sep 2026 (Sep 28, 2026)
   {
     id: "credly-adk-deploy",
     title: "Deploy an Agent with Agent Development Kit (ADK)",
@@ -19,6 +20,7 @@ const certifications = [
     icon: "ADK",
     skills: ["AI Agents", "Agent Development Kit", "Agent Engine"]
   },
+  // 2. Google Cloud - Sep 2026 (Sep 28, 2026)
   {
     id: "credly-adk-eval",
     title: "Evaluate and Improve Agent Development Kit Agents",
@@ -31,6 +33,7 @@ const certifications = [
     icon: "EVAL",
     skills: ["Agent Evaluation", "Evaluation Strategy"]
   },
+  // 3. Google Cloud - Sep 2026 (Sep 27, 2026)
   {
     id: "credly-antigravity",
     title: "Accelerate Development with Antigravity",
@@ -43,6 +46,7 @@ const certifications = [
     icon: "AGY",
     skills: ["Agent Development", "Application Development"]
   },
+  // 4. Google Cloud - Sep 2026 (Sep 27, 2026)
   {
     id: "credly-gemini",
     title: "Build with Gemini",
@@ -55,18 +59,18 @@ const certifications = [
     icon: "GEM",
     skills: ["Gemini Enterprise", "Prompt Engineering"]
   },
+  // 5. Dataiku Academy - Jun 2026
   {
-    id: "credly-braket",
-    title: "AWS Knowledge: Amazon Braket",
-    issuer: "Amazon Web Services Training & Certification",
-    date: "Aug 2025",
-    link: "https://www.credly.com/badges/556aff6b-069a-4e2f-a5b3-739337b0b18d/public_url",
-    badgeImage: "https://images.credly.com/images/811c6414-b84e-4879-bc5c-863fa62be6aa/blob",
-    platform: "Credly",
-    category: "credly",
-    icon: "BRK",
-    skills: ["Amazon Braket", "Quantum Computing", "AWS Cloud"]
+    id: "cert-genai-dataiku",
+    title: "Generative AI Practitioner Certificate",
+    issuer: "Dataiku Academy",
+    date: "Jun 2026",
+    link: "https://verify.skilljar.com/c/hg2aiksrvrt2",
+    platform: "Skilljar",
+    category: "academy",
+    icon: "AI"
   },
+  // 6. Cognizant - Nov 2025 (Nov 12, 2025)
   {
     id: "credly-vibe",
     title: "Vibe Code Hackathon - Vibe Coded using Windsurf",
@@ -79,6 +83,75 @@ const certifications = [
     icon: "VIBE",
     skills: ["Windsurf", "Vibe Coding", "Agentic Workflows"]
   },
+  // 7. AWS Training & Certification - Aug 2025 (Aug 29, 2025)
+  {
+    id: "credly-braket",
+    title: "AWS Knowledge: Amazon Braket",
+    issuer: "Amazon Web Services Training & Certification",
+    date: "Aug 2025",
+    link: "https://www.credly.com/badges/556aff6b-069a-4e2f-a5b3-739337b0b18d/public_url",
+    badgeImage: "https://images.credly.com/images/811c6414-b84e-4879-bc5c-863fa62be6aa/blob",
+    platform: "Credly",
+    category: "credly",
+    icon: "BRK",
+    skills: ["Amazon Braket", "Quantum Computing", "AWS Cloud"]
+  },
+  // 8. Microsoft - Jun 2025
+  {
+    id: "cert-azure-ai",
+    title: "Microsoft Certified: Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "Jun 2025",
+    link: "https://learn.microsoft.com/en-us/users/rishavsaigal-8851/credentials/3d9e3e8e7a0cb39d",
+    platform: "Microsoft",
+    category: "academy",
+    icon: "AZ"
+  },
+  // 9. Dataiku Academy - Aug 2023
+  {
+    id: "cert-mlops-dataiku",
+    title: "MLOps Practitioner Certificate",
+    issuer: "Dataiku Academy",
+    date: "Aug 2023",
+    link: "https://verify.skilljar.com/c/7djsjp74vdvj",
+    platform: "Skilljar",
+    category: "academy",
+    icon: "OPS"
+  },
+  // 10. Dataiku Academy - Jul 2023
+  {
+    id: "cert-adv-dataiku",
+    title: "Advanced Designer Certificate",
+    issuer: "Dataiku Academy",
+    date: "Jul 2023",
+    link: "https://verify.skilljar.com/c/weie95jezjyz",
+    platform: "Skilljar",
+    category: "academy",
+    icon: "ADV"
+  },
+  // 11. Dataiku Academy - Jul 2023
+  {
+    id: "cert-ml-dataiku",
+    title: "ML Practitioner Certificate",
+    issuer: "Dataiku Academy",
+    date: "Jul 2023",
+    link: "https://verify.skilljar.com/c/2hph8ogspvy5",
+    platform: "Skilljar",
+    category: "academy",
+    icon: "MLP"
+  },
+  // 12. Dataiku Academy - Jul 2023
+  {
+    id: "cert-core-dataiku",
+    title: "Core Designer Certificate",
+    issuer: "Dataiku Academy",
+    date: "Jul 2023",
+    link: "https://verify.skilljar.com/c/4ucupx9wj33r",
+    platform: "Skilljar",
+    category: "academy",
+    icon: "CORE"
+  },
+  // 13. IBM / Coursera - Jun 2021 (Jun 27, 2021)
   {
     id: "credly-ibm-ml",
     title: "Machine Learning with Python",
@@ -91,6 +164,7 @@ const certifications = [
     icon: "ML",
     skills: ["Scikit-Learn", "Machine Learning", "Classification"]
   },
+  // 14. IBM - May 2019 (May 21, 2019)
   {
     id: "credly-ibm-py",
     title: "Python for Data Science",
@@ -102,68 +176,6 @@ const certifications = [
     category: "credly",
     icon: "PY",
     skills: ["Python", "Pandas", "Data Science"]
-  },
-
-  // Professional Academy & Cloud Specializations
-  {
-    id: "cert-genai-dataiku",
-    title: "Generative AI Practitioner Certificate",
-    issuer: "Dataiku Academy",
-    date: "Jun 2026",
-    link: "https://verify.skilljar.com/c/hg2aiksrvrt2",
-    platform: "Skilljar",
-    category: "academy",
-    icon: "AI"
-  },
-  {
-    id: "cert-azure-ai",
-    title: "Microsoft Certified: Azure AI Fundamentals",
-    issuer: "Microsoft",
-    date: "Jun 2025",
-    link: "https://learn.microsoft.com/en-us/users/rishavsaigal-8851/credentials/3d9e3e8e7a0cb39d",
-    platform: "Microsoft",
-    category: "academy",
-    icon: "AZ"
-  },
-  {
-    id: "cert-mlops-dataiku",
-    title: "MLOps Practitioner Certificate",
-    issuer: "Dataiku Academy",
-    date: "Aug 2023",
-    link: "https://verify.skilljar.com/c/7djsjp74vdvj",
-    platform: "Skilljar",
-    category: "academy",
-    icon: "OPS"
-  },
-  {
-    id: "cert-adv-dataiku",
-    title: "Advanced Designer Certificate",
-    issuer: "Dataiku Academy",
-    date: "Jul 2023",
-    link: "https://verify.skilljar.com/c/weie95jezjyz",
-    platform: "Skilljar",
-    category: "academy",
-    icon: "ADV"
-  },
-  {
-    id: "cert-ml-dataiku",
-    title: "ML Practitioner Certificate",
-    issuer: "Dataiku Academy",
-    date: "Jul 2023",
-    link: "https://verify.skilljar.com/c/2hph8ogspvy5",
-    platform: "Skilljar",
-    category: "academy",
-    icon: "MLP"
-  },
-  {
-    id: "cert-core-dataiku",
-    title: "Core Designer Certificate",
-    issuer: "Dataiku Academy",
-    date: "Jul 2023",
-    link: "https://verify.skilljar.com/c/4ucupx9wj33r",
-    platform: "Skilljar",
-    category: "academy",
-    icon: "CORE"
   }
 ];
 

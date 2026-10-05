@@ -53,7 +53,7 @@
   background: rgba(11, 19, 30, 0.9);
   border: 1px solid rgba(56, 189, 248, 0.25);
   color: #cbd5e1;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.75rem;
   padding: 7px 16px;
   border-radius: 6px;
@@ -74,7 +74,7 @@
   background: rgba(11, 19, 30, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #94a3b8;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   padding: 7px 14px;
   border-radius: 6px;
@@ -104,7 +104,7 @@
 }
 
 .titan-tag-text {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #38bdf8;
   letter-spacing: 0.08em;
@@ -120,7 +120,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
   color: #38bdf8;
   letter-spacing: 0.08em;
@@ -128,7 +128,7 @@
 }
 
 .titan-main-title {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -138,12 +138,24 @@
 }
 
 .titan-lead-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.95rem;
   color: #94a3b8;
   max-width: 720px;
   line-height: 1.45;
   margin-bottom: 12px;
+}
+
+
+.titan-spec-pills-row .spec-pill {
+  background: rgba(11, 19, 30, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #f8fafc;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
 }
 
 .titan-spec-pills-row {
@@ -199,7 +211,7 @@
 }
 
 .cockpit-panel-left .cockpit-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: #f8fafc;
@@ -208,7 +220,7 @@
 }
 
 .cockpit-panel-left .cockpit-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.78rem;
   color: #94a3b8;
   margin-bottom: 10px;
@@ -239,7 +251,7 @@
 }
 
 .deca-presets-label {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #64748b;
   letter-spacing: 0.05em;
@@ -260,7 +272,7 @@
   background: #111d2e;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.68rem;
   color: #94a3b8;
   cursor: pointer;
@@ -287,7 +299,7 @@
 }
 
 .btn-deca-preset .preset-angle {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #38bdf8;
   opacity: 0.9;
@@ -307,14 +319,14 @@
 }
 
 .slider-label {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #64748b;
 }
 
 .text-cyan {
   color: #38bdf8 !important;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
 }
 
 .deca-angle-slider {
@@ -342,7 +354,7 @@
   background: #111d2e;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.64rem;
   color: #94a3b8;
   cursor: pointer;
@@ -396,7 +408,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #38bdf8;
   font-weight: 600;
@@ -429,7 +441,7 @@
 }
 
 .date-badge {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #38bdf8;
   background: rgba(56, 189, 248, 0.15);
@@ -439,7 +451,7 @@
 }
 
 .date-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: #f8fafc;
@@ -447,7 +459,7 @@
 }
 
 .date-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.74rem;
   color: #94a3b8;
   max-width: 200px;
@@ -474,7 +486,7 @@
 .date-box {
   background: #ffffff;
   color: #060a0f;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 1px 6px;
@@ -483,7 +495,7 @@
 }
 
 .date-btn-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.76rem;
   color: #f8fafc;
   font-weight: 500;
@@ -500,7 +512,7 @@
 }
 
 .element-indicator-text {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
   color: #38bdf8;
   letter-spacing: 0.05em;
@@ -601,7 +613,7 @@
 }
 
 .viewport-caption {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #94a3b8;
   margin-top: 10px;
@@ -638,7 +650,7 @@
 }
 
 .element-eyebrow {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #38bdf8;
   letter-spacing: 0.08em;
@@ -646,7 +658,7 @@
 }
 
 .active-element-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #f8fafc;
@@ -656,14 +668,14 @@
 
 .active-element-sub {
   display: block;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #38bdf8;
   margin-bottom: 8px;
 }
 
 .active-element-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   line-height: 1.5;
   color: #cbd5e1;
@@ -677,7 +689,7 @@
 }
 
 .tray-label {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #94a3b8;
   letter-spacing: 0.08em;
@@ -749,20 +761,20 @@
 }
 
 .s-num {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.6rem;
   color: #38bdf8;
 }
 
 .s-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: #f8fafc;
 }
 
 .s-sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.68rem;
   color: #94a3b8;
 }
@@ -789,7 +801,7 @@
 
 .titan-story-card .story-kicker {
   display: block;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #38bdf8;
   letter-spacing: 0.08em;
@@ -797,7 +809,7 @@
 }
 
 .story-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -815,7 +827,7 @@
 }
 
 .titan-story-card .story-list li {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.82rem;
   line-height: 1.45;
   color: #cbd5e1;
@@ -860,7 +872,7 @@
 }
 
 .next-kicker {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   color: #38bdf8;
@@ -868,7 +880,7 @@
 }
 
 .next-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #f8fafc;
@@ -877,7 +889,7 @@
 }
 
 .next-tagline {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.82rem;
   color: #94a3b8;
   line-height: 1.4;
@@ -889,7 +901,7 @@
   align-items: center;
   gap: 6px;
   margin-top: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   color: #38bdf8;

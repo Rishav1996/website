@@ -41,7 +41,7 @@
 }
 
 .brand-title {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -55,7 +55,7 @@
 }
 
 .brand-curator {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #71717a;
   letter-spacing: 0.08em;
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
 }
 
@@ -109,7 +109,7 @@
   border: 1px solid #27272a;
   padding: 4px 12px;
   border-radius: 20px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #a1a1aa;
   letter-spacing: 0.08em;
@@ -135,7 +135,7 @@
   background: #18181b;
   border: 1px solid #27272a;
   color: #a1a1aa;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   padding: 6px 14px;

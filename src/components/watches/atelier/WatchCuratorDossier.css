@@ -23,7 +23,7 @@
 
 .dossier-eyebrow {
   display: block;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #c5a059;
   letter-spacing: 0.12em;
@@ -32,7 +32,7 @@
 }
 
 .dossier-title {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.85rem;
   font-weight: 700;
   color: #f5f2eb;
@@ -41,7 +41,7 @@
 }
 
 .dossier-sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.92rem;
   color: #a39587;
 }
@@ -78,7 +78,7 @@
 }
 
 .quadrant-title {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: #f5f2eb;
@@ -101,14 +101,14 @@
 }
 
 .qk {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #786b60;
   white-space: nowrap;
 }
 
 .qv {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   color: #f5f2eb;
   text-align: right;
@@ -139,7 +139,7 @@
 
 .essay-badge {
   display: inline-block;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #c5a059;
   letter-spacing: 0.12em;
@@ -147,7 +147,7 @@
 }
 
 .essay-heading {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #f5f2eb;
@@ -155,7 +155,7 @@
 }
 
 .essay-byline {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #8c7d71;
 }
@@ -165,7 +165,7 @@
   border-left: 2px solid #c5a059;
   padding: 16px 20px;
   border-radius: 0 10px 10px 0;
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -180,7 +180,7 @@
 }
 
 .essay-p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.96rem;
   line-height: 1.75;
   color: #c5baaf;

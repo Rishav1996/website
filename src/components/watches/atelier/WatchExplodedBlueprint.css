@@ -35,7 +35,7 @@
   border: 1px solid rgba(197, 160, 89, 0.35);
   padding: 4px 12px;
   border-radius: 20px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #c5a059;
   font-weight: 600;
@@ -51,7 +51,7 @@
 }
 
 .blueprint-code-tag {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.74rem;
   color: #8c7d71;
 }
@@ -64,7 +64,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(197, 160, 89, 0.3);
   color: #f5f2eb;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.76rem;
   padding: 6px 14px;
   border-radius: 10px;
@@ -109,7 +109,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
 }
 
@@ -154,7 +154,7 @@
 .slider-ticks-row {
   display: flex;
   justify-content: space-between;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #63564c;
 }
@@ -210,7 +210,7 @@
 }
 
 .axis-label {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.58rem;
   color: #8c7d71;
   background: rgba(10, 8, 7, 0.8);
@@ -269,14 +269,14 @@
 }
 
 .wafer-num {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.76rem;
   color: #c5a059;
   font-weight: 700;
 }
 
 .wafer-tier {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.66rem;
   color: #8c7d71;
   text-transform: uppercase;
@@ -290,14 +290,14 @@
 }
 
 .wafer-name {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   color: #f5f2eb;
 }
 
 .wafer-badge {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #8c7d71;
   background: rgba(255, 255, 255, 0.04);
@@ -353,7 +353,7 @@
 }
 
 .drawer-eyebrow {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #c5a059;
   letter-spacing: 0.08em;
@@ -361,7 +361,7 @@
 }
 
 .drawer-title {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #f5f2eb;
@@ -370,7 +370,7 @@
 }
 
 .drawer-tier-pill {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
   color: #8c7d71;
   background: rgba(255, 255, 255, 0.04);
@@ -379,7 +379,7 @@
 }
 
 .drawer-description {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #d1c7bd;
@@ -396,7 +396,7 @@
 
 .specs-box-title {
   display: block;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #c5a059;
   letter-spacing: 0.08em;
@@ -417,14 +417,14 @@
 }
 
 .spec-k {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #8c7d71;
   text-transform: capitalize;
 }
 
 .spec-v {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.84rem;
   color: #f5f2eb;
   font-weight: 500;

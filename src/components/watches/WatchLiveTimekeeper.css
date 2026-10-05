@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
 }
 
 .live-clock-dot {
@@ -58,7 +58,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--watch-border, rgba(197, 160, 89, 0.2));
   color: #d1c7bd;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   padding: 6px 12px;
   border-radius: 6px;

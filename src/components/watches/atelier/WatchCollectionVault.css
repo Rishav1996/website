@@ -28,7 +28,7 @@
   border: 1px solid #27272a;
   padding: 4px 12px;
   border-radius: 20px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
   color: #a1a1aa;
   letter-spacing: 0.08em;
@@ -56,7 +56,7 @@
 }
 
 .vault-title-text {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -67,7 +67,7 @@
 }
 
 .vault-subtitle-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.95rem;
   color: #a1a1aa;
   line-height: 1.55;
@@ -95,7 +95,7 @@
 }
 
 .stat-matrix-num {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 1rem;
   font-weight: 700;
   color: #fafafa;
@@ -103,7 +103,7 @@
 }
 
 .stat-matrix-lbl {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.62rem;
   color: #71717a;
   letter-spacing: 0.08em;
@@ -136,7 +136,7 @@
 }
 
 .group-label {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #71717a;
   letter-spacing: 0.08em;
@@ -167,7 +167,7 @@
   background: rgba(24, 24, 27, 0.7);
   border: 1px solid #27272a;
   color: #a1a1aa;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 6px 14px;
@@ -204,7 +204,7 @@
   background: #14151a;
   border: 1px solid #27272a;
   color: #8e8e93;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   font-weight: 500;
   padding: 5px 12px;
@@ -268,7 +268,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
 }
 
@@ -293,7 +293,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.66rem;
   font-weight: 700;
   padding: 3px 9px;
@@ -377,7 +377,7 @@
 }
 
 .matrix-brand-text {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #71717a;
   letter-spacing: 0.06em;
@@ -386,13 +386,13 @@
 }
 
 .matrix-sku-text {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.64rem;
   color: #52525b;
 }
 
 .matrix-model-heading {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.28rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -402,7 +402,7 @@
 }
 
 .matrix-tagline-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.8rem;
   color: #a1a1aa;
   line-height: 1.45;
@@ -427,7 +427,7 @@
   border: 1px solid #27272a;
   padding: 3px 8px;
   border-radius: 5px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.66rem;
   color: #a1a1aa;
 }
@@ -443,7 +443,7 @@
 }
 
 .matrix-teaser-badge {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.66rem;
   color: #71717a;
   display: inline-flex;
@@ -465,7 +465,7 @@
   background: rgba(250, 250, 250, 0.08);
   border: 1px solid #3f3f46;
   color: #fafafa;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.74rem;
   font-weight: 600;
   padding: 5px 11px;
@@ -498,7 +498,7 @@
 }
 
 .empty-matrix-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #fafafa;
@@ -506,7 +506,7 @@
 }
 
 .empty-matrix-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   color: #71717a;
   margin-bottom: 20px;
@@ -516,7 +516,7 @@
   background: #fafafa;
   color: #09090b;
   border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   padding: 8px 18px;

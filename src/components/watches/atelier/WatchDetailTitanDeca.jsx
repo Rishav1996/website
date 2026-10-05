@@ -370,10 +370,10 @@ const WatchDetailTitanDeca = ({
                     <circle cx="50" cy="50" r="24" stroke="rgba(56, 189, 248, 0.08)" />
 
                     {/* Cardinal Reference Marks */}
-                    <text x="50" y="7" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', monospace">12H</text>
-                    <text x="96" y="52" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', monospace">3H</text>
-                    <text x="50" y="97" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', monospace">6H</text>
-                    <text x="4" y="52" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', monospace">9H</text>
+                    <text x="50" y="7" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace">12H</text>
+                    <text x="96" y="52" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace">3H</text>
+                    <text x="50" y="97" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace">6H</text>
+                    <text x="4" y="52" textAnchor="middle" fill="#64748b" fontSize="6" fontFamily="'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace">9H</text>
 
                     {/* Decagon Base Polygon */}
                     <polygon
@@ -417,7 +417,7 @@ const WatchDetailTitanDeca = ({
                       textAnchor="middle"
                       fill="#38bdf8"
                       fontSize="7.5"
-                      fontFamily="'Fira Code', monospace"
+                      fontFamily="'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace"
                       fontWeight="700"
                     >
                       F{activeFacet.id}

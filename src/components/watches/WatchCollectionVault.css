@@ -23,7 +23,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #cbd5e1;
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.82rem;
   font-weight: 500;
   padding: 8px 16px;
@@ -62,7 +62,7 @@
 }
 
 .vault-badge-text {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   color: #94a3b8;
   letter-spacing: 0.08em;
@@ -76,7 +76,7 @@
 }
 
 .vault-eyebrow {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   color: #c5a059;
@@ -96,7 +96,7 @@
 }
 
 .vault-subtitle {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 1.05rem;
   color: #94a3b8;
   max-width: 740px;
@@ -119,7 +119,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 6px 14px;
   border-radius: 8px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
 }
 
@@ -173,7 +173,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
 }
 
@@ -220,7 +220,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.75rem;
   color: #94a3b8;
   text-transform: uppercase;
@@ -248,7 +248,7 @@
   border: 1px solid rgba(197, 160, 89, 0.25);
   padding: 3px 8px;
   border-radius: 4px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   margin-bottom: 12px;
   align-self: flex-start;
@@ -264,7 +264,7 @@
 }
 
 .card-watch-tagline {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.88rem;
   color: #94a3b8;
   line-height: 1.5;
@@ -290,14 +290,14 @@
 }
 
 .ms-k {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.68rem;
   color: #64748b;
   text-transform: uppercase;
 }
 
 .ms-v {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.8rem;
   color: #cbd5e1;
   font-weight: 500;
@@ -356,7 +356,7 @@
 }
 
 .placeholder-tier {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   color: #64748b;
   letter-spacing: 0.08em;
@@ -372,7 +372,7 @@
 }
 
 .placeholder-desc {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.82rem;
   color: #64748b;
   line-height: 1.5;

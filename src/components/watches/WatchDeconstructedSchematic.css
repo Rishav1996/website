@@ -37,7 +37,7 @@
   border: 1px solid rgba(197, 160, 89, 0.35);
   padding: 5px 12px;
   border-radius: 20px;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   color: var(--watch-accent, #c5a059);
   font-weight: 600;
@@ -54,7 +54,7 @@
 }
 
 .cad-badge-label {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.75rem;
   color: #a39587;
   letter-spacing: 0.04em;
@@ -68,7 +68,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(197, 160, 89, 0.3);
   color: var(--watch-cream, #f5f2eb);
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.76rem;
   font-weight: 600;
   padding: 7px 14px;
@@ -115,7 +115,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   color: #a39587;
   letter-spacing: 0.05em;
@@ -266,14 +266,14 @@
 }
 
 .cad-layer-num {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.75rem;
   color: var(--watch-accent, #c5a059);
   font-weight: 700;
 }
 
 .cad-layer-tier {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.68rem;
   color: #8c7d71;
   text-transform: uppercase;
@@ -294,7 +294,7 @@
 }
 
 .layer-cad-badge {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.65rem;
   color: #a39587;
   background: rgba(255, 255, 255, 0.04);
@@ -361,14 +361,14 @@
 }
 
 .cad-id-code {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.72rem;
   color: var(--watch-accent, #c5a059);
   opacity: 0.85;
 }
 
 .cad-node-desc {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.92rem;
   line-height: 1.6;
   color: #d1c7bd;
@@ -384,7 +384,7 @@
 }
 
 .cad-specs-heading {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.68rem;
   color: var(--watch-accent, #c5a059);
   letter-spacing: 0.08em;
@@ -405,14 +405,14 @@
 }
 
 .cad-k {
-  font-family: var(--font-code, 'Fira Code', monospace);
+  font-family: var(--font-code, 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace);
   font-size: 0.68rem;
   color: #8c7d71;
   text-transform: capitalize;
 }
 
 .cad-v {
-  font-family: var(--font-body, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.85rem;
   color: var(--watch-cream, #f5f2eb);
   font-weight: 500;

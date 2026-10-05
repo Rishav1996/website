@@ -22,7 +22,7 @@ const StatsSection = () => {
           <p className="stat-label">Years Enterprise Exp.</p>
         </div>
         <div className="stat-card">
-          <h2 className="stat-number">9</h2>
+          <h2 className="stat-number">11</h2>
           <p className="stat-label">Publications & Frameworks</p>
         </div>
         <div className="stat-card">
@@ -30,7 +30,7 @@ const StatsSection = () => {
           <p className="stat-label">AI Models Deployed</p>
         </div>
         <div className="stat-card">
-          <h2 className="stat-number">4</h2>
+          <h2 className="stat-number">6</h2>
           <p className="stat-label">Cloud Certifications</p>
         </div>
       </div>

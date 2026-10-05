@@ -187,9 +187,9 @@ const PublicationsSection = () => {
     <section id="publications" className="publications-section" ref={sectionRef}>
       <div className="publications-container">
         <div className="section-header-center">
-          <span className="section-tag-badge">PEER-REVIEWED & TECHNICAL WRITING</span>
+          <span className="section-tag-badge">INDEPENDENT RESEARCH & TECHNICAL WRITING</span>
           <h2 className="section-title">Publications & Research Vault</h2>
-          <p className="section-subtitle">11 technical research publications spanning Agentic AI, LLM behavioral drift, causal dynamic pricing, and production MLOps.</p>
+          <p className="section-subtitle">11 technical research publications and open datasets spanning Agentic AI, LLM behavioral drift, causal dynamic pricing, and production MLOps.</p>
         </div>
 
         <div className="publications-grid">

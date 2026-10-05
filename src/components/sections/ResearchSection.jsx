@@ -10,7 +10,7 @@ const researchData = [
     monogram: "IITP",
     degree: "Ph.D. in Computer Science & Engineering",
     details: "Indian Institute of Technology Patna (Pursuing).",
-    period: "Jul 2026 – Jun 2029"
+    period: "Jul 2026 – Jun 2029 (Expected)"
   },
   {
     institution: "BITS Pilani",
@@ -26,6 +26,13 @@ const researchData = [
     details: "Maulana Abul Kalam Azad University of Technology.",
     period: "Aug 2013 – Jul 2017"
   }
+];
+
+const RESEARCH_INTERESTS = [
+  "LLM behavioral drift, adversarial robustness, and a self-coined calcification effect in multi-agent debate systems",
+  "Autonomous ML orchestration and agentic pipeline design (AutoML, self-correcting agents)",
+  "Probabilistic time series forecasting with LLMs",
+  "Production economics and efficiency optimisation of large-scale AI agent deployments"
 ];
 
 const ResearchSection = () => {
@@ -49,9 +56,9 @@ const ResearchSection = () => {
     <section id="research" className="research-section" ref={sectionRef}>
       <div className="research-container">
         <div className="section-header-center">
-          <span className="section-tag-badge">FORMAL EDUCATION</span>
-          <h2 className="section-title">Academics</h2>
-          <p className="section-subtitle">Formal education and foundational degrees.</p>
+          <span className="section-tag-badge">FORMAL EDUCATION & RESEARCH</span>
+          <h2 className="section-title">Academics & Research Focus</h2>
+          <p className="section-subtitle">Formal graduate education, degrees, and core empirical research vectors.</p>
         </div>
 
         <div className="research-grid">
@@ -80,6 +87,22 @@ const ResearchSection = () => {
               </GlowCard>
             </SvgCircuitFrame>
           ))}
+        </div>
+
+        {/* 4 Core Research Themes from Resume v24 */}
+        <div className="research-interests-card">
+          <div className="research-interests-header">
+            <span className="interests-tag">RESEARCH INTERESTS // INVESTIGATION VECTORS</span>
+            <h3 className="interests-title">Frontier Research Themes</h3>
+          </div>
+          <div className="interests-grid">
+            {RESEARCH_INTERESTS.map((interest, idx) => (
+              <div key={idx} className="interest-item">
+                <span className="interest-num">0{idx + 1}</span>
+                <p className="interest-text">{interest}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

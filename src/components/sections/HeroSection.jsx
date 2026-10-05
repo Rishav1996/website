@@ -127,12 +127,12 @@ const HeroSection = () => {
           </div>
 
           <h1 className="hero-title">
-            <span className="hero-name">Rishav Saigal — Agentic AI Architect</span>
+            <span className="hero-name">Rishav Saigal — Senior Data Scientist &amp; AI Architect</span>
             <span className="hero-tagline">Architecting Autonomous Intelligence</span>
           </h1>
 
           <p className="hero-subtitle">
-            "Building Agentic AI, RAG Systems, & LLM Orchestration."
+            Senior Data Scientist &nbsp;|&nbsp; Machine Learning Engineer &nbsp;|&nbsp; Generative AI / Agentic AI Engineer &nbsp;|&nbsp; AI Architect
           </p>
 
           <p className="hero-description">

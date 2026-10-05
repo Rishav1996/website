@@ -18,7 +18,6 @@ const SKILLS = [
   { id: 'Seaborn', group: 4, year: 2018 },
   { id: 'JavaScript', group: 4, year: 2018 },
   // 2019
-  { id: 'Time Series', group: 2, year: 2019 },
   { id: 'Time Series Forecasting', group: 2, year: 2019 },
   { id: 'PySpark', group: 3, year: 2019 },
   { id: 'Keras', group: 2, year: 2019 },
@@ -69,12 +68,13 @@ const SKILLS = [
   { id: 'LangGraph', group: 2, year: 2025 },
   { id: 'Agentic AI', group: 2, year: 2025 },
   { id: 'Multi-Agent Systems', group: 2, year: 2025 },
+  { id: 'Hierarchical Linear Models (HLM)', group: 2, year: 2025 },
   { id: 'POC Management', group: 1, year: 2025 },
   // 2026
   { id: 'GCP Vertex AI', group: 3, year: 2026 },
   { id: 'Gemini Enterprise', group: 2, year: 2026 },
   { id: 'FastMCP', group: 2, year: 2026 },
-  { id: 'Agent Engine', group: 2, year: 2026 },
+  { id: 'Agent Engine Platform', group: 2, year: 2026 },
   { id: 'Cloud Run', group: 3, year: 2026 },
   { id: 'Google ADK', group: 2, year: 2026 },
   { id: 'Architectural Design', group: 1, year: 2026 }

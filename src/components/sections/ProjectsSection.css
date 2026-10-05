@@ -221,6 +221,17 @@
   border-radius: 0 8px 8px 0;
 }
 
+.terminal-line.impact {
+  color: #f1f5f9;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  background: rgba(82, 183, 136, 0.08);
+  border-left: 2px solid var(--color-accent-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
 .cursor {
   display: inline-block;
   width: 8px;

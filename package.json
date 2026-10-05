@@ -11,6 +11,16 @@
   },
   "reactSnap": {
     "source": "dist",
+    "include": [
+      "/",
+      "/watches",
+      "/watches/kenneth-cole-kcwgl2104102mn",
+      "/watches/fastrack-opulence-nt3315km01",
+      "/watches/casio-gshock-gab2100luu8a",
+      "/watches/timex-automatic-tw000z800",
+      "/watches/lee-cooper-lc07979-399",
+      "/watches/titan-classique-deca-90245sm01"
+    ],
     "minifyHtml": {
       "collapseWhitespace": false,
       "removeComments": false
@@ -27,6 +37,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-tsparticles": "^2.12.2",
+    "three": "^0.186.1",
     "tsparticles-engine": "^2.12.0",
     "tsparticles-slim": "^2.12.0"
   },

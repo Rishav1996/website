@@ -1,0 +1,147 @@
+.atelier-footer-wrapper {
+  background: #09090b;
+  border-top: 1px solid #27272a;
+  padding: 50px 0 26px;
+  color: #71717a;
+  position: relative;
+  z-index: 10;
+}
+
+.atelier-footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #1f1f23;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-mark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mark-emblem {
+  font-size: 1.1rem;
+}
+
+.footer-tagline {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #71717a;
+  max-width: 420px;
+}
+
+.footer-spec-col,
+.footer-provenance-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-spec-head {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #71717a;
+}
+
+.footer-spec-list strong {
+  color: #fafafa;
+  font-weight: 500;
+}
+
+.footer-provenance-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #71717a;
+  margin-bottom: 6px;
+}
+
+.btn-footer-return {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-footer-return:hover {
+  background: #27272a;
+  transform: translateX(-2px);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #52525b;
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #71717a;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #71717a;
+}
+
+@media (max-width: 900px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

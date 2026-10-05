@@ -1,0 +1,689 @@
+/* Tailored Coffee Mocha Roastery Theme Styles */
+
+.tailored-exhibition-wrapper {
+  background-color: #080605;
+  color: #a1a1aa;
+  min-height: 100vh;
+  padding: 105px 24px 80px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.4s ease, filter 0.4s ease;
+  background-image:
+    radial-gradient(circle 600px at 50% 36%, rgba(197, 160, 89, 0.24) 0%, rgba(74, 51, 42, 0.16) 45%, transparent 75%),
+    radial-gradient(circle at 50% 10%, rgba(0, 0, 0, 0.65) 0%, transparent 70%);
+}
+
+/* Focused Roastery Spotlight Atelier Background */
+.tailored-exhibition-wrapper.mood-spotlight {
+  background-image:
+    radial-gradient(circle 650px at 50% 36%, rgba(197, 160, 89, 0.25) 0%, rgba(74, 51, 42, 0.18) 45%, transparent 78%),
+    radial-gradient(circle at 50% 10%, rgba(0, 0, 0, 0.65) 0%, transparent 70%);
+}
+
+/* Atmospheric Thematic Background Layer */
+.atelier-thematic-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  filter: contrast(1.1) brightness(0.9);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 88%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 88%);
+}
+
+.tailored-exhibition-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Bar */
+.exhibition-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.top-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-adjacent-timepiece {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(20, 14, 11, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #c5a059;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-adjacent-timepiece:hover {
+  background: #231813;
+  border-color: rgba(197, 160, 89, 0.5);
+  color: #f5f2eb;
+}
+
+.btn-archive-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #140e0b;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: #f5f2eb;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-archive-back:hover {
+  background: #231813;
+  border-color: #c5a059;
+  transform: translateX(-2px);
+}
+
+.arrow {
+  color: #c5a059;
+  font-size: 0.9rem;
+}
+
+.roastery-theme-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(74, 51, 42, 0.25);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #c5a059;
+}
+
+.roastery-emblem-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Mocha Header */
+.exhibition-mocha-header {
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  padding-bottom: 26px;
+  margin-bottom: 24px;
+}
+
+.mocha-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #c5a059;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.sep {
+  color: #5c3d2e;
+}
+
+.mocha-main-title {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 2.85rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #f5f2eb;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.mocha-lead-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d1c7bd;
+  max-width: 820px;
+  margin-bottom: 20px;
+}
+
+.mocha-spec-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spec-pill {
+  background: rgba(20, 14, 11, 0.7);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  color: #f5f2eb;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* Single Authoritative Spotlight Indicator Bar */
+.roastery-lighting-bar.single-spotlight-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(20, 14, 11, 0.9);
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  border-radius: 12px;
+  padding: 8px 18px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.lighting-label {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #c5a059;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.single-spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 160, 89, 0.16);
+  border: 1px solid #c5a059;
+  color: #f5f2eb;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 0 16px rgba(197, 160, 89, 0.22);
+}
+
+.single-spotlight-pill .pill-icon {
+  font-size: 0.9rem;
+}
+
+.single-spotlight-pill .pill-label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.single-spotlight-pill .pill-sub {
+  color: #c5a059;
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+.active-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.active-element-swatch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.s-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.elem-color-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Stage & Controls */
+.element-inspection-stage {
+  background: rgba(20, 14, 11, 0.85);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 44px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.stage-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.controls-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls-label {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #8c7d71;
+  letter-spacing: 0.08em;
+}
+
+.btn-mode-pill {
+  background: rgba(10, 8, 7, 0.6);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  color: #a39587;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mode-pill:hover {
+  color: #f5f2eb;
+  background: rgba(197, 160, 89, 0.12);
+}
+
+.btn-mode-pill.active {
+  background: #c5a059;
+  border-color: #c5a059;
+  color: #080605;
+  font-weight: 600;
+}
+
+.controls-right {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #c5a059;
+}
+
+/* Stage Split Display */
+.stage-split-display {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.stage-visual-viewport {
+  background: #080605;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mood-spotlight .stage-visual-viewport {
+  box-shadow: inset 0 0 50px rgba(197, 160, 89, 0.15);
+}
+
+.viewport-full-wrap,
+.viewport-macro-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.viewport-full-img {
+  max-height: 420px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none;
+  box-shadow: none;
+}
+
+.viewport-macro-img {
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+}
+
+.viewport-caption {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #8c7d71;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Stage Element Dossier */
+.stage-element-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.active-element-card {
+  background: #0e0a08;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.element-eyebrow {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #c5a059;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.active-element-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #f5f2eb;
+  margin-bottom: 4px;
+}
+
+.active-element-sub {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #c5a059;
+  margin-bottom: 14px;
+}
+
+.active-element-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #d1c7bd;
+}
+
+/* Elements Selector Tray */
+.elements-selector-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tray-label {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #8c7d71;
+  letter-spacing: 0.08em;
+}
+
+.selector-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selector-item-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #0e0a08;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.selector-item-card:hover {
+  background: rgba(197, 160, 89, 0.1);
+  border-color: rgba(197, 160, 89, 0.4);
+  transform: translateX(2px);
+}
+
+.selector-item-card.selected {
+  background: rgba(197, 160, 89, 0.18);
+  border-color: #c5a059;
+}
+
+.selector-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  flex-shrink: 0;
+}
+
+.selector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selector-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.s-num {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: #c5a059;
+}
+
+.s-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f5f2eb;
+}
+
+.s-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #8c7d71;
+}
+
+/* Concise Story Section */
+.mocha-story-section {
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  padding-top: 36px;
+}
+
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.story-card {
+  background: rgba(20, 14, 11, 0.85);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.story-kicker {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #c5a059;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.story-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #f5f2eb;
+  margin-bottom: 16px;
+}
+
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.story-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #d1c7bd;
+  padding-left: 14px;
+  border-left: 2px solid rgba(197, 160, 89, 0.35);
+}
+
+/* Next Timepiece in Archive Transition Card */
+.next-timepiece-transition-section {
+  margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 36px;
+}
+
+.next-timepiece-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(20, 14, 11, 0.9) 0%, rgba(10, 8, 7, 0.95) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 16px;
+  padding: 32px 40px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  gap: 24px;
+}
+
+.next-timepiece-card:hover {
+  border-color: #c5a059;
+  background: linear-gradient(135deg, rgba(30, 20, 15, 0.95) 0%, rgba(16, 12, 10, 0.98) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.next-card-left {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.next-kicker {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: #c5a059;
+  text-transform: uppercase;
+}
+
+.next-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #f5f2eb;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.next-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #a89f91;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.next-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c5a059;
+  transition: transform 0.2s ease;
+}
+
+.next-timepiece-card:hover .next-btn-action {
+  color: #f5f2eb;
+  transform: translateX(4px);
+}
+
+.next-card-thumb {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.next-watch-img {
+  max-height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+  transition: transform 0.3s ease;
+}
+
+.next-timepiece-card:hover .next-watch-img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 640px) {
+  .next-timepiece-card {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  .next-card-thumb {
+    width: 100%;
+    height: 100px;
+    justify-content: flex-start;
+  }
+}
+

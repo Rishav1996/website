@@ -1,0 +1,198 @@
+.curator-dossier-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.dossier-card {
+  background: rgba(14, 11, 9, 0.9);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(16px);
+}
+
+/* Header */
+.dossier-card-header {
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 18px;
+}
+
+.dossier-eyebrow {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #c5a059;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.dossier-title {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #f5f2eb;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.dossier-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #a39587;
+}
+
+.dossier-sub strong {
+  color: #c5a059;
+}
+
+/* Matrix Grid */
+.spec-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.spec-quadrant {
+  background: rgba(10, 8, 7, 0.6);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.quadrant-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.quadrant-icon {
+  font-size: 1.1rem;
+}
+
+.quadrant-title {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f5f2eb;
+}
+
+.quadrant-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quadrant-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.qk {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #786b60;
+  white-space: nowrap;
+}
+
+.qv {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #f5f2eb;
+  text-align: right;
+  font-weight: 500;
+}
+
+.highlight-ruby {
+  color: #fb7185;
+}
+
+.highlight-brass {
+  color: #c5a059;
+}
+
+/* Essay Card */
+.essay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.essay-left-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.essay-badge {
+  display: inline-block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #c5a059;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.essay-heading {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f5f2eb;
+  line-height: 1.25;
+}
+
+.essay-byline {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #8c7d71;
+}
+
+.essay-quote-callout {
+  background: rgba(197, 160, 89, 0.08);
+  border-left: 2px solid #c5a059;
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e8dec8;
+  margin-top: 14px;
+}
+
+.essay-body-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.essay-p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: #c5baaf;
+}
+
+.essay-p strong {
+  color: #f5f2eb;
+}
+
+@media (max-width: 900px) {
+  .spec-matrix-grid,
+  .essay-grid {
+    grid-template-columns: 1fr;
+  }
+}

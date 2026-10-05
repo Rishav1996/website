@@ -1,0 +1,206 @@
+/* Wall of Fame - Horological Background Gallery */
+
+.wall-of-fame-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #08090c;
+}
+
+/* Atmospheric Gradients */
+.wall-mesh-gradient {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(197, 160, 89, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 50% 75%, rgba(245, 158, 11, 0.03) 0%, transparent 55%);
+}
+
+.wall-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(6, 7, 10, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Marquee Lanes */
+.wall-marquee-lane {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  overflow: visible;
+  pointer-events: auto;
+  opacity: 0.16;
+  transition: opacity 0.5s ease;
+}
+
+.wall-marquee-lane:hover {
+  opacity: 0.38;
+}
+
+.lane-drift-left {
+  top: 10%;
+}
+
+.lane-drift-right {
+  bottom: 8%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.lane-drift-left .marquee-track {
+  animation: wall-drift-left 75s linear infinite;
+}
+
+.lane-drift-right .marquee-track {
+  animation: wall-drift-right 85s linear infinite;
+}
+
+.wall-marquee-lane:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes wall-drift-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes wall-drift-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Marquee Item Units */
+.wall-fame-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 42px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  user-select: none;
+}
+
+.wall-fame-item:hover {
+  transform: scale(1.08) translateY(-4px);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 10px var(--item-accent, #ffffff));
+}
+
+/* Cut Loupe Element */
+.item-cut-loupe .loupe-frame {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #111318;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.25s ease;
+}
+
+.wall-fame-item:hover .loupe-frame {
+  border-color: var(--item-accent, #ffffff);
+}
+
+.loupe-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.loupe-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* Timepiece Transparent Silhouette */
+.item-watch-silhouette .silhouette-frame {
+  width: 95px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.silhouette-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+  transition: transform 0.3s ease;
+}
+
+.wall-fame-item:hover .silhouette-img {
+  transform: scale(1.06);
+}
+
+/* Discreet Horological Caption */
+.item-caption {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
+}
+
+.wall-fame-item:hover .item-caption {
+  opacity: 1;
+}
+
+.caption-brand {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--item-accent, #94a3b8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.caption-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .wall-fame-item {
+    margin: 0 20px;
+  }
+  .item-cut-loupe .loupe-frame {
+    width: 65px;
+    height: 65px;
+  }
+  .item-watch-silhouette .silhouette-frame {
+    width: 70px;
+    height: 90px;
+  }
+  .caption-name {
+    display: none;
+  }
+}

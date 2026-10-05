@@ -1,0 +1,684 @@
+/* Heritage Parchment & Mid-Century Theme - WatchDetailTimex.css */
+
+.timex-exhibition-wrapper {
+  background-color: #0a0907;
+  color: #a1a1aa;
+  min-height: 100vh;
+  padding: 105px 24px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.timex-exhibition-wrapper .atelier-thematic-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  filter: contrast(1.1) brightness(0.9);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 88%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 88%);
+}
+
+.timex-exhibition-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Bar */
+.timex-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.top-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-archive-back-timex {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 18, 14, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #cbd5e1;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-archive-back-timex:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #ffffff;
+  border-color: #d4af37;
+}
+
+.btn-adjacent-timepiece {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20, 18, 14, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a89f91;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-adjacent-timepiece:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #fef08a;
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.timex-theme-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(20, 18, 14, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.timex-emblem-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.timex-tag-text {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #d4af37;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Header */
+.exhibition-timex-header {
+  margin-bottom: 32px;
+}
+
+.timex-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #d4af37;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.timex-main-title {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fbf8ee;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.timex-lead-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #a1a1aa;
+  max-width: 720px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.timex-spec-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Atmospheric Lighting */
+.timex-lighting-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #14120e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+}
+
+/* Rotor Simulator Cockpit */
+.timex-interactive-cockpit {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 20px;
+  background: #14120e;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 36px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+}
+
+.rotor-panel-left .cockpit-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fbf8ee;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.rotor-panel-left .cockpit-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  color: #a1a1aa;
+  margin-bottom: 16px;
+}
+
+.btn-wind-rotor {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid #d4af37;
+  color: #fbf8ee;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-wind-rotor:hover {
+  background: rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-wind-rotor.winding-active {
+  background: #d4af37;
+  color: #0a0907;
+}
+
+.power-reserve-meter {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.meter-title {
+  font-family: 'Fira Code', monospace;
+  color: #71717a;
+  font-size: 0.7rem;
+}
+
+.meter-val {
+  font-family: 'Fira Code', monospace;
+  color: #d4af37;
+}
+
+.meter-bar-track {
+  height: 8px;
+  background: #1d1913;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.meter-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b48a3c, #d4af37, #fef08a);
+  transition: width 0.4s ease;
+}
+
+.rotor-panel-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #1d1913;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.rotor-visual-disc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.animated-rotor {
+  width: 90px;
+  height: 90px;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.rotor-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rotor-subtext {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: #b48a3c;
+  letter-spacing: 0.05em;
+}
+
+/* Inspection Stage Container */
+.timex-inspection-stage {
+  background: #14120e;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 44px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.element-indicator-text {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #d4af37;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Stage Split Display */
+.stage-split-display {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.stage-visual-viewport {
+  background: #0e0d0a;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timex-viewport .viewport-full-img {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.viewport-caption {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #a89f91;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Stage Element Dossier Stack */
+.stage-element-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.active-element-card {
+  background: #14120e;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.active-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.active-element-swatch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.element-eyebrow {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #d4af37;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.active-element-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fef08a;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.active-element-sub {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #d4af37;
+  margin-bottom: 14px;
+}
+
+.active-element-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+/* Elements Selector Tray */
+.elements-selector-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tray-label {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #a89f91;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selector-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timex-selector-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #110f0b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timex-selector-card:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateX(2px);
+}
+
+.timex-selector-card.selected {
+  background: rgba(212, 175, 55, 0.16);
+  border-color: #d4af37;
+}
+
+.selector-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  flex-shrink: 0;
+  background: #0d0b08;
+}
+
+.selector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selector-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.elem-color-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.s-num {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: #d4af37;
+}
+
+.s-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #fef08a;
+}
+
+.s-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #a89f91;
+}
+
+/* Concise Story Section */
+.timex-story-section {
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding-top: 36px;
+  margin-top: 48px;
+}
+
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.timex-story-card {
+  background: rgba(20, 18, 14, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.timex-story-card .story-kicker {
+  display: block;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #d4af37;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.story-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fef08a;
+  margin-bottom: 16px;
+}
+
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timex-story-card .story-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+}
+
+/* Next Timepiece in Archive Transition Card */
+.next-timepiece-transition-section {
+  margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 36px;
+}
+
+.timex-next-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(20, 18, 14, 0.92) 0%, rgba(10, 9, 7, 0.96) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
+  padding: 32px 40px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  gap: 24px;
+}
+
+.timex-next-card:hover {
+  border-color: #d4af37;
+  background: linear-gradient(135deg, rgba(30, 26, 18, 0.96) 0%, rgba(16, 14, 10, 0.98) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.next-card-left {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.next-kicker {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+.next-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fef08a;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.next-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #a89f91;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.next-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #d4af37;
+  transition: transform 0.2s ease;
+}
+
+.timex-next-card:hover .next-btn-action {
+  color: #fef08a;
+  transform: translateX(4px);
+}
+
+.next-card-thumb {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.next-watch-img {
+  max-height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+  transition: transform 0.3s ease;
+}
+
+.timex-next-card:hover .next-watch-img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+  .timex-interactive-cockpit {
+    grid-template-columns: 1fr;
+  }
+  .story-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .timex-next-card {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  .next-card-thumb {
+    width: 100%;
+    height: 100px;
+    justify-content: flex-start;
+  }
+}

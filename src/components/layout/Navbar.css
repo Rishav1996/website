@@ -110,6 +110,24 @@
   background: rgba(88, 166, 255, 0.08);
 }
 
+.navbar-link.active {
+  color: var(--color-accent-primary);
+  background: rgba(88, 166, 255, 0.12);
+  font-weight: 600;
+}
+
+.nav-link-horology:hover {
+  color: var(--color-accent-secondary, #52b788) !important;
+  background: rgba(82, 183, 136, 0.12) !important;
+}
+
+.nav-link-horology.active {
+  color: var(--color-accent-secondary, #52b788) !important;
+  background: rgba(82, 183, 136, 0.15) !important;
+  border: 1px solid rgba(82, 183, 136, 0.3);
+}
+
+
 .dropdown-menu {
   position: absolute;
   top: 100%;

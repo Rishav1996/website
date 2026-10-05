@@ -1,0 +1,90 @@
+.live-timekeeper-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(19, 14, 11, 0.75);
+  border: 1px solid var(--watch-border, rgba(197, 160, 89, 0.25));
+  border-radius: 12px;
+  padding: 10px 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.timekeeper-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-code, 'Fira Code', monospace);
+}
+
+.live-clock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--watch-accent, #c5a059);
+  box-shadow: 0 0 8px var(--watch-accent, #c5a059);
+  animation: clockPulse 1s infinite alternate;
+}
+
+@keyframes clockPulse {
+  from { opacity: 0.5; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.15); }
+}
+
+.live-clock-label {
+  font-size: 0.72rem;
+  color: #786b60;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.live-clock-digital {
+  font-size: 0.92rem;
+  color: #f5f2eb;
+  letter-spacing: 0.05em;
+}
+
+.live-clock-vph {
+  font-size: 0.7rem;
+  color: var(--watch-accent, #c5a059);
+  letter-spacing: 0.05em;
+}
+
+.btn-escapement-sound {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--watch-border, rgba(197, 160, 89, 0.2));
+  color: #d1c7bd;
+  font-family: var(--font-code, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-escapement-sound:hover {
+  background: rgba(197, 160, 89, 0.15);
+  border-color: var(--watch-accent, #c5a059);
+  color: #ffffff;
+}
+
+.btn-escapement-sound.active {
+  background: rgba(197, 160, 89, 0.2);
+  border-color: var(--watch-accent, #c5a059);
+  color: var(--watch-accent, #c5a059);
+}
+
+.sound-icon {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .live-timekeeper-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

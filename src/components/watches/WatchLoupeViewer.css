@@ -1,0 +1,245 @@
+.watch-loupe-card {
+  background: radial-gradient(circle at 50% 40%, #1a130f 0%, #0a0807 80%);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.loupe-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.loupe-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.loupe-pulse {
+  width: 6px;
+  height: 6px;
+  background: #c5a059;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #c5a059;
+}
+
+.loupe-title {
+  font-family: var(--font-code, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #f5f2eb;
+  font-weight: 600;
+}
+
+.loupe-preset-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-loupe-preset {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  color: #d1c7bd;
+  font-family: var(--font-code, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  padding: 5px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-loupe-preset:hover {
+  background: rgba(197, 160, 89, 0.18);
+  border-color: #c5a059;
+  color: #ffffff;
+}
+
+/* Photographic Frame */
+.loupe-image-frame {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background: #080605;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: crosshair;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.watch-authentic-photo {
+  max-width: 90%;
+  max-height: 94%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.8));
+  transition: transform 0.3s ease;
+}
+
+/* CAD Hotspot Pins */
+.cad-hotspot-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-core {
+  width: 10px;
+  height: 10px;
+  background: #c5a059;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.9);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.pin-pulse {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(197, 160, 89, 0.6);
+  animation: hotspotPing 2.2s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes hotspotPing {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.0); opacity: 0; }
+}
+
+.cad-hotspot-pin:hover .pin-core,
+.cad-hotspot-pin.selected .pin-core {
+  background: #ffffff;
+  transform: scale(1.35);
+  box-shadow: 0 0 14px #c5a059;
+}
+
+.pin-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 11, 9, 0.92);
+  border: 1px solid #c5a059;
+  color: #f5f2eb;
+  font-family: var(--font-code, 'Fira Code', monospace);
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.cad-hotspot-pin:hover .pin-tooltip {
+  opacity: 1;
+}
+
+/* Optical Loupe Lens */
+.optical-loupe-glass {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #c5a059;
+  box-shadow: 0 0 0 6px rgba(14, 11, 9, 0.8), 0 20px 40px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1px);
+}
+
+.loupe-reticle-crosshair {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 40%, rgba(14, 11, 9, 0.2) 100%);
+}
+
+.loupe-reticle-crosshair::before,
+.loupe-reticle-crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(197, 160, 89, 0.45);
+}
+
+.loupe-reticle-crosshair::before {
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+}
+
+.loupe-reticle-crosshair::after {
+  left: 50%;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+}
+
+.loupe-magnification-readout {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  font-family: var(--font-code, 'Fira Code', monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #c5a059;
+  background: rgba(10, 8, 7, 0.85);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.loupe-footer-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.78rem;
+  color: #9c8e82;
+}
+
+.hint-icon {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .loupe-image-frame {
+    height: 420px;
+  }
+
+  .optical-loupe-glass {
+    width: 140px;
+    height: 140px;
+  }
+}

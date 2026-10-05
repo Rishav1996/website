@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useRoute from '../../hooks/useRoute';
 import './Navbar.css';
 
 const NAV_PILLARS = [
@@ -38,19 +39,39 @@ const NAV_PILLARS = [
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { route, navigate } = useRoute();
 
   const handleSubItemClick = (href) => {
     setActiveDropdown(null);
+    if (route === 'watches') {
+      navigate('home');
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (route === 'watches') {
+      navigate('home');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="navbar-wrapper">
       <nav className="navbar-pill" aria-label="Main Navigation">
-        <a href="#" className="navbar-logo">
+        <a href={import.meta.env.BASE_URL} className="navbar-logo" onClick={handleLogoClick}>
           <span className="logo-glitch">RS</span>
           <span className="logo-text">Rishav Saigal</span>
           <span className="live-status-dot" title="Online for Architecture & Research"></span>
@@ -73,7 +94,11 @@ const Navbar = () => {
               <a
                 href={pillar.href}
                 className="navbar-link"
-                onClick={() => setActiveDropdown(null)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveDropdown(null);
+                  handleSubItemClick(pillar.href);
+                }}
               >
                 <span>{pillar.label}</span>
                 <svg className="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
@@ -100,6 +125,21 @@ const Navbar = () => {
             </li>
           ))}
 
+          {/* Dedicated Watches / Horology Route Link */}
+          <li className="navbar-item">
+            <a
+              href={`${import.meta.env.BASE_URL}watches`}
+              className={`navbar-link nav-link-horology ${route === 'watches' ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('watches');
+              }}
+              title="Explore Horological Timepiece Collection"
+            >
+              <span>Horology</span>
+            </a>
+          </li>
+
           <li className="navbar-item-cta">
             <a 
               href={`${import.meta.env.BASE_URL}assets/Rishav_Saigal_Resume.pdf`}
@@ -114,7 +154,19 @@ const Navbar = () => {
           </li>
 
           <li className="navbar-item-cta">
-            <a href="#contact" className="btn-nav-connect">
+            <a
+              href="#contact"
+              className="btn-nav-connect"
+              onClick={(e) => {
+                if (route === 'watches') {
+                  e.preventDefault();
+                  navigate('home');
+                  setTimeout(() => {
+                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }
+              }}
+            >
               <span>Connect</span>
             </a>
           </li>
@@ -125,3 +177,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

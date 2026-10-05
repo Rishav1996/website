@@ -99,99 +99,40 @@ const WatchDetailLeeCooper = ({
           </div>
         </div>
 
-        {/* Clean Header Block */}
-        <header className="exhibition-leecooper-header">
-          <div className="leecooper-eyebrow">
-            <span>LEE COOPER // HAUTE TONNEAU SKELETON</span>
-            <span className="sep">•</span>
-            <span>REFERENCE {watch.sku}</span>
-          </div>
+        {/* Header & Integrated Atmospheric Lighting Split Block */}
+        <div className="header-split-row">
+          <header className="exhibition-leecooper-header">
+            <div className="leecooper-eyebrow">
+              <span>LEE COOPER // HAUTE TONNEAU SKELETON</span>
+              <span className="sep">•</span>
+              <span>REFERENCE {watch.sku}</span>
+            </div>
 
-          <h1 className="leecooper-main-title">{watch.model}</h1>
-          <p className="leecooper-lead-text">{watch.tagline}</p>
+            <h1 className="leecooper-main-title">{watch.model}</h1>
+            <p className="leecooper-lead-text">{watch.tagline}</p>
 
-          {/* Clean Horological Spec Chips */}
-          <div className="leecooper-spec-pills-row">
-            <span className="spec-pill">{watch.dimensions.caseDiameter} Tonneau</span>
-            <span className="spec-pill">{watch.movement.type}</span>
-            <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
-            <span className="spec-pill">8-Rivet Bezel</span>
-          </div>
-        </header>
+            {/* Clean Horological Spec Chips */}
+            <div className="leecooper-spec-pills-row">
+              <span className="spec-pill">{watch.dimensions.caseDiameter} Tonneau</span>
+              <span className="spec-pill">{watch.movement.type}</span>
+              <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
+              <span className="spec-pill">8-Rivet Bezel</span>
+            </div>
+          </header>
 
-        {/* Single Authoritative Atmospheric Lighting: Indigo Forge Spotlight */}
-        <div className="leecooper-lighting-bar single-spotlight-bar">
-          <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
-          <div className="single-spotlight-pill">
-            <span className="pill-icon">⚡</span>
-            <span className="pill-label">Indigo Forge Spotlight</span>
-            <span className="pill-sub">• Electric Cobalt Beam</span>
+          {/* Integrated Atmospheric Lighting Badge */}
+          <div className="header-lighting-col">
+            <div className="leecooper-lighting-bar single-spotlight-bar">
+              <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
+              <div className="single-spotlight-pill">
+                <span className="pill-icon">⚡</span>
+                <span className="pill-label">Indigo Forge Spotlight</span>
+                <span className="pill-sub">• Electric Cobalt Beam</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Interactive 3 Hz Escapement Heartbeat Pulse Cockpit */}
-        <section className="leecooper-interactive-cockpit" aria-label="3 Hz Escapement Cockpit">
-          <div className="escapement-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">3 HZ HARMONIC PULSE</span>
-              <h3 className="cockpit-title">Mechanical Lever Escapement Rhythm</h3>
-            </div>
-            <p className="cockpit-desc">
-              Pulsing at 21,600 beats per hour, the synthetic ruby pallets release the escape wheel exactly 6 times per second to drive the sweeping second hand.
-            </p>
-
-            <div className="pulse-meter-row">
-              <button
-                type="button"
-                className={`btn-toggle-pulse ${isEscapementActive ? 'active' : ''}`}
-                onClick={() => setIsEscapementActive(!isEscapementActive)}
-              >
-                <span>{isEscapementActive ? '⏸ Pause Escapement' : '▶ Engage Escapement'}</span>
-              </button>
-
-              <div className="tick-visualizer">
-                {[0, 1, 2, 3, 4, 5].map((beat) => (
-                  <span
-                    key={beat}
-                    className={`beat-bar ${isEscapementActive && tickCount === beat ? 'active' : ''}`}
-                  ></span>
-                ))}
-              </div>
-            </div>
-
-            <div className="escapement-stats-strip">
-              <div className="stat-unit">
-                <span className="stat-label">FREQUENCY:</span>
-                <strong className="stat-val text-blue">21,600 VPH (3.0 Hz)</strong>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">DISCRETE STEPS:</span>
-                <span className="stat-val">6 Micro-Ticks / Second</span>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">BEARING:</span>
-                <span className="stat-val text-ruby">Corundum Ruby Cap</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="escapement-panel-right">
-            <div className="tonneau-geometry-card">
-              <span className="geo-badge">ERGONOMIC ANATOMY</span>
-              <h4 className="geo-title">Curved Tonneau Profile</h4>
-              <p className="geo-desc">
-                Departing from traditional round silhouettes, the 42mm curved tonneau chassis naturally wraps the carpal anatomy.
-              </p>
-              <div className="geo-specs">
-                <span className="geo-spec-item">8 Perimeter Rivets</span>
-                <span className="geo-spec-item">Cobalt Inner Chapter Flange</span>
-                <span className="geo-spec-item">Midnight Silicone Integration</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Centerpiece: Single Unified Watch & Macro Element Inspection Stage */}
         {/* Centerpiece: Single Unified Watch & Macro Element Inspection Stage */}
         <section className="leecooper-inspection-stage" aria-label="Watch and Macro Element Showcase">
           <div className="stage-controls-bar">
@@ -305,6 +246,68 @@ const WatchDetailLeeCooper = ({
                     );
                   })}
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive 3 Hz Escapement Heartbeat Pulse Cockpit */}
+        <section className="leecooper-interactive-cockpit" aria-label="3 Hz Escapement Cockpit">
+          <div className="escapement-panel-left">
+            <div className="cockpit-title-row">
+              <span className="cockpit-badge">3 HZ HARMONIC PULSE</span>
+              <h3 className="cockpit-title">Mechanical Lever Escapement Rhythm</h3>
+            </div>
+            <p className="cockpit-desc">
+              Pulsing at 21,600 beats per hour, the synthetic ruby pallets release the escape wheel exactly 6 times per second to drive the sweeping second hand.
+            </p>
+
+            <div className="pulse-meter-row">
+              <button
+                type="button"
+                className={`btn-toggle-pulse ${isEscapementActive ? 'active' : ''}`}
+                onClick={() => setIsEscapementActive(!isEscapementActive)}
+              >
+                <span>{isEscapementActive ? '⏸ Pause Escapement' : '▶ Engage Escapement'}</span>
+              </button>
+
+              <div className="tick-visualizer">
+                {[0, 1, 2, 3, 4, 5].map((beat) => (
+                  <span
+                    key={beat}
+                    className={`beat-bar ${isEscapementActive && tickCount === beat ? 'active' : ''}`}
+                  ></span>
+                ))}
+              </div>
+            </div>
+
+            <div className="escapement-stats-strip">
+              <div className="stat-unit">
+                <span className="stat-label">FREQUENCY:</span>
+                <strong className="stat-val text-blue">21,600 VPH (3.0 Hz)</strong>
+              </div>
+              <div className="stat-unit">
+                <span className="stat-label">DISCRETE STEPS:</span>
+                <span className="stat-val">6 Micro-Ticks / Second</span>
+              </div>
+              <div className="stat-unit">
+                <span className="stat-label">BEARING:</span>
+                <span className="stat-val text-ruby">Corundum Ruby Cap</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="escapement-panel-right">
+            <div className="tonneau-geometry-card">
+              <span className="geo-badge">ERGONOMIC ANATOMY</span>
+              <h4 className="geo-title">Curved Tonneau Profile</h4>
+              <p className="geo-desc">
+                Departing from traditional round silhouettes, the 42mm curved tonneau chassis naturally wraps the carpal anatomy.
+              </p>
+              <div className="geo-specs">
+                <span className="geo-spec-item">8 Perimeter Rivets</span>
+                <span className="geo-spec-item">Cobalt Inner Chapter Flange</span>
+                <span className="geo-spec-item">Midnight Silicone Integration</span>
               </div>
             </div>
           </div>

@@ -147,135 +147,39 @@ const WatchDetailFastrack = ({
           </div>
         </div>
 
-        {/* Clean Header Block (Zero Duplicate Swatches) */}
-        <header className="exhibition-fastrack-header">
-          <div className="fastrack-eyebrow">
-            <span>FASTRACK OPULENCE COLLECTION</span>
-            <span className="sep">•</span>
-            <span>REFERENCE {watch.sku}</span>
-          </div>
-
-          <h1 className="fastrack-main-title">{watch.model}</h1>
-          <p className="fastrack-lead-text">{watch.tagline}</p>
-
-          {/* Clean Horological Spec Chips */}
-          <div className="fastrack-spec-pills-row">
-            <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
-            <span className="spec-pill">{watch.movement.type}</span>
-            <span className="spec-pill">Sun & Moon 24H Complication</span>
-            <span className="spec-pill">{watch.materials.waterResistance.split('(')[0].trim()}</span>
-          </div>
-        </header>
-
-        {/* Interactive 24-Hour Sun & Moon Diurnal Dial Slider */}
-        <section className="celestial-slider-card" aria-label="Sun and Moon Dial Slider">
-          <div className="celestial-slider-header">
-            <div className="celestial-title-row">
-              <span className="celestial-label">24-HOUR SUN & MOON DIURNAL SLIDER:</span>
-              <div className="celestial-readout-badge">
-                <span className="time-digit">{formattedHour}</span>
-                <span className="sep">•</span>
-                <span className="phase-pill">{phaseTitle}</span>
-              </div>
+        {/* Header & Integrated Atmospheric Lighting Split Block */}
+        <div className="header-split-row">
+          <header className="exhibition-fastrack-header">
+            <div className="fastrack-eyebrow">
+              <span>FASTRACK OPULENCE COLLECTION</span>
+              <span className="sep">•</span>
+              <span>REFERENCE {watch.sku}</span>
             </div>
 
-            <div className="celestial-presets-row">
-              <button
-                type="button"
-                className={`btn-preset-pill ${orbitHour === 12 ? 'active' : ''}`}
-                onClick={() => setOrbitHour(12)}
-              >
-                <span>☀️ Noon (12:00)</span>
-              </button>
-              <button
-                type="button"
-                className={`btn-preset-pill ${orbitHour === 18 ? 'active' : ''}`}
-                onClick={() => setOrbitHour(18)}
-              >
-                <span>🌗 Dusk (18:00)</span>
-              </button>
-              <button
-                type="button"
-                className={`btn-preset-pill ${orbitHour === 0 ? 'active' : ''}`}
-                onClick={() => setOrbitHour(0)}
-              >
-                <span>🌙 Midnight (00:00)</span>
-              </button>
-            </div>
-          </div>
+            <h1 className="fastrack-main-title">{watch.model}</h1>
+            <p className="fastrack-lead-text">{watch.tagline}</p>
 
-          <div className="celestial-slider-body">
-            {/* Micro Rotating Sun & Moon Disc Graphic */}
-            <div className="celestial-disc-viewport" title={`Disc angle: ${Math.round(discDeg)}°`}>
-              <div
-                className="celestial-disc-rotating"
-                style={{ transform: `rotate(${discDeg}deg)` }}
-              >
-                <span className="disc-sun">☀️</span>
-                <span className="disc-moon">🌙</span>
-              </div>
+            {/* Clean Horological Spec Chips */}
+            <div className="fastrack-spec-pills-row">
+              <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
+              <span className="spec-pill">{watch.movement.type}</span>
+              <span className="spec-pill">Sun & Moon 24H Complication</span>
+              <span className="spec-pill">{watch.materials.waterResistance.split('(')[0].trim()}</span>
             </div>
+          </header>
 
-            {/* 24-Hour Range Slider Input */}
-            <div className="celestial-range-wrap">
-              <input
-                type="range"
-                min="0"
-                max="24"
-                step="1"
-                value={orbitHour}
-                onChange={(e) => setOrbitHour(Number(e.target.value))}
-                className="celestial-range-input"
-                aria-label="24-Hour Sun & Moon Orbit Slider"
-              />
-              <div className="celestial-ticks-row">
-                <span>00:00 (Night)</span>
-                <span>06:00 (Dawn)</span>
-                <span>12:00 (Noon)</span>
-                <span>18:00 (Dusk)</span>
-                <span>24:00 (Night)</span>
+          {/* Integrated Atmospheric Lighting Badge */}
+          <div className="header-lighting-col">
+            <div className="fastrack-lighting-bar single-spotlight-bar">
+              <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
+              <div className="single-spotlight-pill">
+                <span className="pill-icon">🌒</span>
+                <span className="pill-label">Obsidian Eclipse Spotlight</span>
+                <span className="pill-sub">• Celestial Amber Atelier Focus</span>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Chronograph Stopwatch Cockpit Simulator */}
-        <section className="fastrack-chrono-cockpit-bar" aria-label="Chronograph Simulator">
-          <div className="chrono-cockpit-card-unified">
-            <div className="cockpit-left">
-              <span className="cockpit-kicker">CHRONOGRAPH STOPWATCH SIMULATOR</span>
-              <div className="chrono-digits-wrap">
-                <span className="chrono-digits">{formattedChrono}</span>
-                <span className="chrono-unit">ELAPSED</span>
-                <span className={`status-pill ${chronoRunning ? 'running' : 'idle'}`}>
-                  {chronoRunning ? 'TIMING ACTIVE' : chronoMs > 0 ? 'PAUSED' : 'READY'}
-                </span>
-              </div>
-            </div>
-
-            <div className="chrono-pushers-row">
-              <button
-                type="button"
-                className={`btn-pusher crimson-start-btn ${chronoRunning ? 'active-timing' : ''}`}
-                onClick={handleStartStop}
-                title="Click to Start / Stop Chronograph"
-              >
-                <span className="pusher-dot"></span>
-                <span>{chronoRunning ? 'Stop Chrono (2H)' : 'Start Chrono (2H Trigger)'}</span>
-              </button>
-
-              <button
-                type="button"
-                className="btn-pusher reset-btn"
-                onClick={handleReset}
-                disabled={chronoMs === 0}
-                title="Click to Reset to Zero"
-              >
-                <span>Reset to Zero (4H)</span>
-              </button>
-            </div>
-          </div>
-        </section>
+        </div>
 
         {/* Centerpiece: Single Unified Watch & Macro Element Inspection Stage */}
         <section className="fastrack-inspection-stage" aria-label="Watch and Macro Showcase">
@@ -390,6 +294,119 @@ const WatchDetailFastrack = ({
             </div>
           </div>
         </section>
+
+        {/* Dual Instrument Cockpit Grid: 24H Diurnal Slider + Chronograph Stopwatch */}
+        <div className="fastrack-dual-cockpit-grid">
+          {/* Interactive 24-Hour Sun & Moon Diurnal Dial Slider */}
+          <section className="celestial-slider-card" aria-label="Sun and Moon Dial Slider">
+            <div className="celestial-slider-header">
+              <div className="celestial-title-row">
+                <span className="celestial-label">24-HOUR SUN & MOON DIURNAL SLIDER:</span>
+                <div className="celestial-readout-badge">
+                  <span className="time-digit">{formattedHour}</span>
+                  <span className="sep">•</span>
+                  <span className="phase-pill">{phaseTitle}</span>
+                </div>
+              </div>
+
+              <div className="celestial-presets-row">
+                <button
+                  type="button"
+                  className={`btn-preset-pill ${orbitHour === 12 ? 'active' : ''}`}
+                  onClick={() => setOrbitHour(12)}
+                >
+                  <span>☀️ Noon (12:00)</span>
+                </button>
+                <button
+                  type="button"
+                  className={`btn-preset-pill ${orbitHour === 18 ? 'active' : ''}`}
+                  onClick={() => setOrbitHour(18)}
+                >
+                  <span>🌗 Dusk (18:00)</span>
+                </button>
+                <button
+                  type="button"
+                  className={`btn-preset-pill ${orbitHour === 0 ? 'active' : ''}`}
+                  onClick={() => setOrbitHour(0)}
+                >
+                  <span>🌙 Midnight (00:00)</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="celestial-slider-body">
+              {/* Micro Rotating Sun & Moon Disc Graphic */}
+              <div className="celestial-disc-viewport" title={`Disc angle: ${Math.round(discDeg)}°`}>
+                <div
+                  className="celestial-disc-rotating"
+                  style={{ transform: `rotate(${discDeg}deg)` }}
+                >
+                  <span className="disc-sun">☀️</span>
+                  <span className="disc-moon">🌙</span>
+                </div>
+              </div>
+
+              {/* 24-Hour Range Slider Input */}
+              <div className="celestial-range-wrap">
+                <input
+                  type="range"
+                  min="0"
+                  max="24"
+                  step="1"
+                  value={orbitHour}
+                  onChange={(e) => setOrbitHour(Number(e.target.value))}
+                  className="celestial-range-input"
+                  aria-label="24-Hour Sun & Moon Orbit Slider"
+                />
+                <div className="celestial-ticks-row">
+                  <span>00:00 (Night)</span>
+                  <span>06:00 (Dawn)</span>
+                  <span>12:00 (Noon)</span>
+                  <span>18:00 (Dusk)</span>
+                  <span>24:00 (Night)</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Chronograph Stopwatch Cockpit Simulator */}
+          <section className="fastrack-chrono-cockpit-bar" aria-label="Chronograph Simulator">
+            <div className="chrono-cockpit-card-unified">
+              <div className="cockpit-left">
+                <span className="cockpit-kicker">CHRONOGRAPH STOPWATCH SIMULATOR</span>
+                <div className="chrono-digits-wrap">
+                  <span className="chrono-digits">{formattedChrono}</span>
+                  <span className="chrono-unit">ELAPSED</span>
+                  <span className={`status-pill ${chronoRunning ? 'running' : 'idle'}`}>
+                    {chronoRunning ? 'TIMING ACTIVE' : chronoMs > 0 ? 'PAUSED' : 'READY'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="chrono-pushers-row">
+                <button
+                  type="button"
+                  className={`btn-pusher crimson-start-btn ${chronoRunning ? 'active-timing' : ''}`}
+                  onClick={handleStartStop}
+                  title="Click to Start / Stop Chronograph"
+                >
+                  <span className="pusher-dot"></span>
+                  <span>{chronoRunning ? 'Stop (2H)' : 'Start (2H Trigger)'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="btn-pusher reset-btn"
+                  onClick={handleReset}
+                  disabled={chronoMs === 0}
+                  title="Click to Reset to Zero"
+                >
+                  <span>Reset (4H)</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
 
         {/* Concise Design Narrative: Terrestrial Speed & Celestial Horizon */}
         <section className="fastrack-story-section" aria-label="Design Backstory">

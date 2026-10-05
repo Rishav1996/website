@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './WatchDetailExhibition.css';
 
 /**
  * WatchDetailKennethCole
  * Tailored Sub-Watch Experience for Kenneth Cole KCWGL2104102MN.
- * De-duplicated & Streamlined:
- *  - Single unified Roast Lighting Mood bar (Morning Espresso, Roastery Spotlight, Late Night Café)
- *  - Single authoritative 5-element macro inspector with color dots (no duplicate header swatches)
- *  - Clean header with horological specs
+ * Features:
+ *  - The Coffee Mocha Roastery Theme
+ *  - Single Authoritative Roastery Spotlight Atmosphere Bar
+ *  - Dedicated 3 Hz Kinetic Balance Wheel Oscillator Cockpit (21,600 VPH harmonic rhythm)
+ *  - Knurled Crown Stem (3H) Manual Winding & Mainspring Tensioner Cockpit (+4h per wind)
+ *  - Single authoritative 5-element macro inspector with color dots
+ *  - Full timepiece default viewport with active 7H balance wheel kinetic heartbeat
  */
+
 // Color dots mapped to the 5 authentic macro elements
 const ELEMENT_SWATCH_COLORS = {
   'element-balance': '#e11d48',       // Synthetic Ruby Pivot
@@ -29,6 +33,31 @@ const WatchDetailKennethCole = ({
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);
   const [viewMode, setViewMode] = useState('full-watch'); // Default to full timepiece view across all watches
+  const [isEscapementActive, setIsEscapementActive] = useState(true);
+  const [tickCount, setTickCount] = useState(0);
+  const [kcReserveHours, setKcReserveHours] = useState(36);
+  const [isCrownWinding, setIsCrownWinding] = useState(false);
+
+  const handleWindCrown = () => {
+    setIsCrownWinding(true);
+    setKcReserveHours((prev) => Math.min(40, prev + 4));
+    setTimeout(() => {
+      setIsCrownWinding(false);
+    }, 300);
+  };
+
+  useEffect(() => {
+    let interval = null;
+    if (isEscapementActive) {
+      // 6 beats per second (approx every 166ms for 3.0 Hz / 21,600 VPH)
+      interval = setInterval(() => {
+        setTickCount((prev) => (prev + 1) % 6);
+      }, 166);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isEscapementActive]);
 
   return (
     <div className="tailored-exhibition-wrapper mood-spotlight">
@@ -83,33 +112,37 @@ const WatchDetailKennethCole = ({
           </div>
         </div>
 
-        {/* Clean Header Block (Zero Duplicate Swatches) */}
-        <header className="exhibition-mocha-header">
-          <div className="mocha-eyebrow">
-            <span>KENNETH COLE NEW YORK</span>
-            <span className="sep">•</span>
-            <span>REFERENCE {watch.sku}</span>
-          </div>
+        {/* Header & Integrated Atmospheric Lighting Split Block */}
+        <div className="header-split-row">
+          <header className="exhibition-mocha-header">
+            <div className="mocha-eyebrow">
+              <span>KENNETH COLE NEW YORK</span>
+              <span className="sep">•</span>
+              <span>REFERENCE {watch.sku}</span>
+            </div>
 
-          <h1 className="mocha-main-title">{watch.model}</h1>
-          <p className="mocha-lead-text">{watch.tagline}</p>
+            <h1 className="mocha-main-title">{watch.model}</h1>
+            <p className="mocha-lead-text">{watch.tagline}</p>
 
-          {/* Clean Horological Spec Chips */}
-          <div className="mocha-spec-pills-row">
-            <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
-            <span className="spec-pill">{watch.movement.type}</span>
-            <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
-            <span className="spec-pill">{watch.materials.waterResistance.split('(')[0].trim()}</span>
-          </div>
-        </header>
+            {/* Clean Horological Spec Chips */}
+            <div className="mocha-spec-pills-row">
+              <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
+              <span className="spec-pill">{watch.movement.type}</span>
+              <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
+              <span className="spec-pill">{watch.materials.waterResistance.split('(')[0].trim()}</span>
+            </div>
+          </header>
 
-        {/* Single Authoritative Atmospheric Lighting: Roastery Spotlight */}
-        <div className="roastery-lighting-bar single-spotlight-bar">
-          <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
-          <div className="single-spotlight-pill">
-            <span className="pill-icon">🕯️</span>
-            <span className="pill-label">Roastery Spotlight</span>
-            <span className="pill-sub">• Warm Amber Atelier Focus</span>
+          {/* Integrated Atmospheric Lighting Badge */}
+          <div className="header-lighting-col">
+            <div className="roastery-lighting-bar single-spotlight-bar">
+              <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
+              <div className="single-spotlight-pill">
+                <span className="pill-icon">🕯️</span>
+                <span className="pill-label">Roastery Spotlight</span>
+                <span className="pill-sub">• Warm Amber Atelier Focus</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -146,13 +179,26 @@ const WatchDetailKennethCole = ({
             <div className="stage-visual-viewport">
               {viewMode === 'full-watch' ? (
                 <div className="viewport-full-wrap">
-                  <img
-                    src={`${import.meta.env.BASE_URL}${watch.image}`}
-                    alt={`${watch.brand} ${watch.model}`}
-                    className="viewport-full-img"
-                  />
+                  <div className="viewport-img-holder">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${watch.image}`}
+                      alt={`${watch.brand} ${watch.model}`}
+                      className="viewport-full-img"
+                    />
+                    {/* Synchronized 3 Hz Balance Wheel Kinetic Pulse at 7H open-heart aperture */}
+                    {isEscapementActive && (
+                      <div
+                        className={`kc-balance-heartbeat beat-${tickCount}`}
+                        aria-hidden="true"
+                        title="Active 3 Hz Escapement Heartbeat"
+                      >
+                        <div className="heartbeat-ring" />
+                        <div className="ruby-pip" />
+                      </div>
+                    )}
+                  </div>
                   <div className="viewport-caption">
-                    Full Timepiece • 44mm Matte Mocha IP Steel in Roastery Spotlight
+                    Full Timepiece • 44mm Matte Mocha IP Steel in Roastery Spotlight (Automatic Skeleton • 21 Jewels • {isEscapementActive ? '3.0 Hz Oscillator Active' : 'Escapement Paused'})
                   </div>
                 </div>
               ) : (
@@ -221,6 +267,109 @@ const WatchDetailKennethCole = ({
                       </div>
                     );
                   })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Skeleton Balance Wheel & Auxiliary Crown Winding Cockpit */}
+        <section className="kc-interactive-cockpit" aria-label="Mechanical Balance Wheel Cockpit">
+          <div className="cockpit-panel-left">
+            <div className="cockpit-title-row">
+              <span className="cockpit-badge">3 HZ KINETIC HEARTBEAT</span>
+              <h3 className="cockpit-title">Automatic Skeleton Balance Wheel Oscillator</h3>
+            </div>
+            <p className="cockpit-desc">
+              Pulsing at 21,600 VPH (3.0 Hz), the synthetic ruby pallet stones oscillate the balance wheel 6 times per second to meter power release from the mainspring.
+            </p>
+
+            <div className="kc-pulse-control-row">
+              <button
+                type="button"
+                className={`btn-toggle-pulse ${isEscapementActive ? 'active' : ''}`}
+                onClick={() => setIsEscapementActive(!isEscapementActive)}
+                title="Toggle mechanical escapement oscillation"
+              >
+                <span>{isEscapementActive ? '⏸ Pause Escapement' : '▶ Release Balance Wheel'}</span>
+              </button>
+
+              <div className="kc-beat-visualizer" title="6 beats per second harmonic frequency">
+                {[0, 1, 2, 3, 4, 5].map((beat) => (
+                  <span
+                    key={beat}
+                    className={`kc-beat-bar ${isEscapementActive && tickCount === beat ? 'active' : ''}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="kc-telemetry-strip">
+              <div className="telemetry-item">
+                <span className="telemetry-label">FREQUENCY:</span>
+                <strong className="telemetry-val text-gold">21,600 VPH (3.0 Hz)</strong>
+              </div>
+              <div className="telemetry-item">
+                <span className="telemetry-label">JEWEL BEARING:</span>
+                <span className="telemetry-val text-ruby">21 Synthetic Rubies</span>
+              </div>
+              <div className="telemetry-item">
+                <span className="telemetry-label">PALLET ACTION:</span>
+                <span className="telemetry-val">6 Micro-Ticks / Sec</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="cockpit-panel-right">
+            <div className="crown-winding-card">
+              <div className="crown-title-row">
+                <span className="crown-badge">MANUAL STEM WINDING</span>
+                <h4 className="crown-title">Knurled Crown Stem (3H)</h4>
+              </div>
+              <p className="crown-desc">
+                Auxiliary manual winding mechanism nestled between mocha IP crown guards to tension the mainspring barrel.
+              </p>
+
+              <div className="crown-action-row">
+                <button
+                  type="button"
+                  className={`btn-wind-crown ${isCrownWinding ? 'winding' : ''}`}
+                  onClick={handleWindCrown}
+                  title="Click to turn crown and wind the mainspring barrel"
+                >
+                  <span className="crown-icon">⚙️</span>
+                  <span className="crown-btn-text">Turn Crown (+4h Reserve)</span>
+                </button>
+                <span className="crown-winding-hint">
+                  {kcReserveHours >= 40 ? '✓ Fully Tensioned (40h Max)' : 'Click to add reserve'}
+                </span>
+              </div>
+
+              <div className="crown-reserve-gauge">
+                <div className="gauge-label-row">
+                  <span className="gauge-label">MAINSPRING TENSION:</span>
+                  <strong className="gauge-val text-gold">{kcReserveHours}h / 40h ({Math.round((kcReserveHours / 40) * 100)}%)</strong>
+                </div>
+                <div className="gauge-track">
+                  <div
+                    className="gauge-fill"
+                    style={{ width: `${Math.round((kcReserveHours / 40) * 100)}%` }}
+                  />
+                </div>
+              </div>
+
+              <div className="kc-telemetry-strip crown-telemetry-strip">
+                <div className="telemetry-item">
+                  <span className="telemetry-label">MAX CAPACITY:</span>
+                  <strong className="telemetry-val text-gold">40 Hours</strong>
+                </div>
+                <div className="telemetry-item">
+                  <span className="telemetry-label">WIND RATE:</span>
+                  <span className="telemetry-val">+4h / Crown Turn</span>
+                </div>
+                <div className="telemetry-item">
+                  <span className="telemetry-label">STEM SEAL:</span>
+                  <span className="telemetry-val">Dual O-Ring IP</span>
                 </div>
               </div>
             </div>

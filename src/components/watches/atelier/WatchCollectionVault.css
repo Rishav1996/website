@@ -14,9 +14,9 @@
   z-index: 2;
 }
 
-/* Minimal Header */
+/* Scalable Matrix Header */
 .vault-minimal-header {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .vault-eyebrow-tag {
@@ -40,11 +40,24 @@
   height: 5px;
   border-radius: 50%;
   background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+.vault-header-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.vault-title-column {
+  max-width: 760px;
 }
 
 .vault-title-text {
   font-family: 'Inter', -apple-system, sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: #fafafa;
@@ -55,29 +68,109 @@
 
 .vault-subtitle-text {
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #a1a1aa;
-  max-width: 680px;
+  line-height: 1.55;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  margin-bottom: 24px;
 }
 
-/* Category Filter Bar */
-.vault-category-filter-bar {
+/* Live Matrix Metrics Strip */
+.vault-stats-matrix-strip {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(18, 19, 22, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 12px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.stat-matrix-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-matrix-num {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fafafa;
+  letter-spacing: -0.01em;
+}
+
+.stat-matrix-lbl {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: #71717a;
+  letter-spacing: 0.08em;
+}
+
+.stat-matrix-divider {
+  width: 1px;
+  height: 28px;
+  background: #27272a;
+}
+
+/* Multi-Dimensional Filter & Sort Command Bar */
+.vault-matrix-command-bar {
+  background: rgba(18, 19, 22, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.command-filter-group,
+.command-sort-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.group-label {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #71717a;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.filter-pills-row,
+.sort-pills-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 8px;
+  align-items: center;
 }
 
+.command-sub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid rgba(39, 39, 42, 0.6);
+}
+
+/* Filter Pills */
 .vault-filter-pill {
   background: rgba(24, 24, 27, 0.7);
   border: 1px solid #27272a;
   color: #a1a1aa;
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -97,409 +190,381 @@
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
 }
 
-/* Featured Timepiece Card */
-.timepiece-neutral-card {
-  background: #121316;
+/* Year Filter Pills Special Active State */
+.vault-filter-pill.year-filter-pill.active {
+  background: #38bdf8;
+  color: #041019;
+  border-color: #38bdf8;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* Sort Pills */
+.vault-sort-pill {
+  background: #14151a;
   border: 1px solid #27272a;
-  border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 48px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-}
-
-.timepiece-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #27272a;
-}
-
-.timepiece-order-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  color: #8e8e93;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
   font-size: 0.72rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vault-sort-pill:hover {
+  background: #1c1d24;
   color: #fafafa;
-  letter-spacing: 0.08em;
+  border-color: #3f3f46;
+}
+
+.vault-sort-pill.active {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+  border-color: #58a6ff;
   font-weight: 600;
 }
 
-.timepiece-status-badge {
-  display: inline-flex;
+/* Scalable Horological Matrix Grid */
+.vault-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+/* Modular Timepiece Cell */
+.matrix-timepiece-cell {
+  background: #121316;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+
+.matrix-timepiece-cell:hover {
+  transform: translateY(-5px);
+  border-color: #3f3f46;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Cell Header */
+.matrix-cell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.6);
+  background: #0f1013;
+}
+
+.matrix-cell-order {
+  display: flex;
   align-items: center;
   gap: 6px;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: #22c55e;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  padding: 3px 10px;
-  border-radius: 20px;
+  font-size: 0.68rem;
 }
 
-.showcase-split-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1.35fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* Watch Hero Column */
-.watch-hero-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.watch-plinth-stage {
-  height: 420px;
-  background: #0f0f12;
-  border: 1px solid #27272a;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  margin-bottom: 24px;
-}
-
-.watch-hero-image {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.8));
-  transition: transform 0.3s ease;
-}
-
-.watch-hero-column:hover .watch-hero-image {
-  transform: scale(1.03);
-}
-
-.watch-identity-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.watch-brand-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: #71717a;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+.order-number {
+  color: #fafafa;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 .dot-sep {
   color: #3f3f46;
 }
 
-.watch-model-heading {
+.cell-category-label {
+  color: #71717a;
+  letter-spacing: 0.06em;
+  font-size: 0.64rem;
+}
+
+/* Prominent Bought Year Badges */
+.matrix-year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+.year-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.year-badge-2025 {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #f59e0b;
+}
+
+.year-badge-2026 {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+}
+
+/* Display Pedestal Stage (~220px) */
+.matrix-pedestal-stage {
+  height: 220px;
+  background: radial-gradient(circle at center, #17181f 0%, #0b0c0f 80%);
+  border-bottom: 1px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-pedestal-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.75));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.matrix-timepiece-cell:hover .matrix-pedestal-img {
+  transform: scale(1.05);
+}
+
+.pedestal-lighting-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Identity & Reference Block */
+.matrix-identity-block {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.matrix-brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.matrix-brand-text {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #71717a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.matrix-sku-text {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: #52525b;
+}
+
+.matrix-model-heading {
   font-family: 'Inter', -apple-system, sans-serif;
-  font-size: 1.85rem;
+  font-size: 1.28rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: #fafafa;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.matrix-tagline-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  line-height: 1.45;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.3em;
+}
+
+/* Key Specifications Strip */
+.matrix-quick-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.matrix-spec-pill {
+  background: #18181b;
+  border: 1px solid #27272a;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: #a1a1aa;
+}
+
+/* Cell Footer */
+.matrix-cell-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.matrix-teaser-badge {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: #71717a;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.teaser-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #58a6ff;
+}
+
+.btn-matrix-inspect {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(250, 250, 250, 0.08);
+  border: 1px solid #3f3f46;
+  color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.matrix-timepiece-cell:hover .btn-matrix-inspect {
+  background: #fafafa;
+  color: #09090b;
+  border-color: #fafafa;
+}
+
+.matrix-arrow {
+  transition: transform 0.2s ease;
+}
+
+.matrix-timepiece-cell:hover .matrix-arrow {
+  transform: translateX(3px);
+}
+
+/* Empty Matrix Card */
+.vault-empty-matrix-card {
+  background: #121316;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  padding: 48px 24px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.empty-matrix-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #fafafa;
   margin-bottom: 6px;
 }
 
-.watch-sku-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  margin-bottom: 12px;
-}
-
-.sku-label {
-  color: #52525b;
-}
-
-.sku-value {
-  color: #a1a1aa;
-}
-
-.watch-short-desc {
+.empty-matrix-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: #a1a1aa;
-  margin-bottom: 18px;
+  font-size: 0.85rem;
+  color: #71717a;
+  margin-bottom: 20px;
 }
 
-.watch-quick-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.spec-pill {
-  background: #18181b;
-  border: 1px solid #27272a;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #a1a1aa;
-}
-
-.btn-inspect-timepiece {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.btn-reset-matrix {
   background: #fafafa;
   color: #09090b;
   border: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.btn-inspect-timepiece:hover {
+.btn-reset-matrix:hover {
   background: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
 }
 
-.arrow-icon {
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .vault-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .vault-header-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
 
-.btn-inspect-timepiece:hover .arrow-icon {
-  transform: translateX(4px);
-}
-
-/* Watch Elements Column */
-.watch-elements-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.elements-column-header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #27272a;
-  padding-bottom: 14px;
-}
-
-.elements-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
-.elements-heading {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #fafafa;
-}
-
-.elements-count {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #71717a;
-}
-
-.elements-subtext {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  color: #71717a;
-}
-
-.elements-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.element-crop-card {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  background: #0f0f12;
-  border: 1px solid #27272a;
-  border-radius: 10px;
-  padding: 12px 14px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.element-crop-card:hover {
-  background: #18181b;
-  border-color: #3f3f46;
-  transform: translateX(3px);
-}
-
-.element-crop-card.active {
-  background: #1c1c21;
-  border-color: #52525b;
-}
-
-.element-thumb-wrap {
-  width: 76px;
-  height: 76px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #27272a;
-  background: #000;
-}
-
-.element-thumb-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.25s ease;
-}
-
-.element-crop-card:hover .element-thumb-img {
-  transform: scale(1.08);
-}
-
-.element-card-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex-grow: 1;
-}
-
-.element-num {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: #71717a;
-}
-
-.element-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #fafafa;
-}
-
-.element-subtitle {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: #a1a1aa;
-}
-
-.element-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  color: #71717a;
-  line-height: 1.4;
-  margin-top: 2px;
-}
-
-/* Expansion Section */
-.vault-expansion-section {
-  margin-top: 10px;
-}
-
-.expansion-neutral-card {
-  background: #0f0f12;
-  border: 1px dashed #27272a;
-  border-radius: 14px;
-  padding: 24px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.expansion-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.expansion-tag {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: #71717a;
-  letter-spacing: 0.08em;
-}
-
-.expansion-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #a1a1aa;
-}
-
-.expansion-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  color: #52525b;
-  max-width: 520px;
-}
-
-.expansion-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #18181b;
-  border: 1px solid #27272a;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: #71717a;
-}
-
-.status-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #71717a;
-}
-
-@media (max-width: 1024px) {
-  .showcase-split-grid {
+@media (max-width: 720px) {
+  .vault-matrix-grid {
     grid-template-columns: 1fr;
   }
 
-  .watch-plinth-stage {
-    height: 340px;
-  }
-}
-
-@media (max-width: 640px) {
   .neutral-vault-wrapper {
-    padding: 95px 16px 60px;
+    padding: 90px 16px 60px;
   }
 
   .vault-title-text {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 
-  .timepiece-neutral-card {
-    padding: 20px 16px;
+  .command-sub-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
-  .element-crop-card {
-    gap: 12px;
-  }
-
-  .element-thumb-wrap {
-    width: 64px;
-    height: 64px;
-  }
-
-  .element-desc {
-    display: none;
+  .vault-stats-matrix-strip {
+    width: 100%;
+    justify-content: space-around;
   }
 }

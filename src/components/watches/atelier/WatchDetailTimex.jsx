@@ -99,98 +99,39 @@ const WatchDetailTimex = ({
           </div>
         </div>
 
-        {/* Clean Header Block */}
-        <header className="exhibition-timex-header">
-          <div className="timex-eyebrow">
-            <span>TIMEX AMERICAN HOROLOGY // EST. 1854</span>
-            <span className="sep">•</span>
-            <span>REFERENCE {watch.sku}</span>
-          </div>
+        {/* Header & Integrated Atmospheric Lighting Split Block */}
+        <div className="header-split-row">
+          <header className="exhibition-timex-header">
+            <div className="timex-eyebrow">
+              <span>TIMEX AMERICAN HOROLOGY // EST. 1854</span>
+              <span className="sep">•</span>
+              <span>REFERENCE {watch.sku}</span>
+            </div>
 
-          <h1 className="timex-main-title">{watch.model}</h1>
-          <p className="timex-lead-text">{watch.tagline}</p>
+            <h1 className="timex-main-title">{watch.model}</h1>
+            <p className="timex-lead-text">{watch.tagline}</p>
 
-          {/* Clean Horological Spec Chips */}
-          <div className="timex-spec-pills-row">
-            <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
-            <span className="spec-pill">{watch.movement.type}</span>
-            <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
-            <span className="spec-pill">42h Power Reserve</span>
-          </div>
-        </header>
+            {/* Clean Horological Spec Chips */}
+            <div className="timex-spec-pills-row">
+              <span className="spec-pill">{watch.dimensions.caseDiameter} Case</span>
+              <span className="spec-pill">{watch.movement.type}</span>
+              <span className="spec-pill">{watch.movement.jewelCount} Synthetic Rubies</span>
+              <span className="spec-pill">42h Power Reserve</span>
+            </div>
+          </header>
 
-        {/* Single Authoritative Atmospheric Lighting: Mid-Century Drafting Spotlight */}
-        <div className="timex-lighting-bar single-spotlight-bar">
-          <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
-          <div className="single-spotlight-pill">
-            <span className="pill-icon">📜</span>
-            <span className="pill-label">Mid-Century Drafting Spotlight</span>
-            <span className="pill-sub">• Warm Caliper Focus</span>
+          {/* Integrated Atmospheric Lighting Badge */}
+          <div className="header-lighting-col">
+            <div className="timex-lighting-bar single-spotlight-bar">
+              <span className="lighting-label">ATMOSPHERIC LIGHTING:</span>
+              <div className="single-spotlight-pill">
+                <span className="pill-icon">📜</span>
+                <span className="pill-label">Mid-Century Drafting Spotlight</span>
+                <span className="pill-sub">• Warm Caliper Focus</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Interactive Automatic Winding Rotor & Kinetic Power Reserve Cockpit */}
-        <section className="timex-interactive-cockpit" aria-label="Kinetic Rotor Simulator">
-          <div className="rotor-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">KINETIC ENGINE</span>
-              <h3 className="cockpit-title">Automatic Ball-Bearing Rotor Simulator</h3>
-            </div>
-            <p className="cockpit-desc">
-              Every natural motion of the wrist rotates the weighted central oscillator, winding the mainspring band through reduction gears.
-            </p>
-
-            <div className="rotor-action-row">
-              <button
-                type="button"
-                className={`btn-wind-rotor ${isWinding ? 'winding-active' : ''}`}
-                onClick={handleWindRotor}
-              >
-                <span className="btn-icon">⚙️</span>
-                <span>Oscillate Winding Rotor (+2h Reserve)</span>
-              </button>
-            </div>
-
-            <div className="power-reserve-meter">
-              <div className="meter-labels">
-                <span className="meter-title">MAINSPRING TENSION:</span>
-                <strong className="meter-val">{powerReserveHours} Hours / 42 Max ({reservePercent}%)</strong>
-              </div>
-              <div className="meter-bar-track">
-                <div className="meter-bar-fill" style={{ width: `${reservePercent}%` }}></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="rotor-panel-right">
-            <div className="rotor-visual-disc">
-              <div
-                className="animated-rotor"
-                style={{ transform: `rotate(${rotorRotations}deg)` }}
-              >
-                <svg viewBox="0 0 100 100" className="rotor-svg" aria-hidden="true">
-                  <circle cx="50" cy="50" r="48" fill="none" stroke="#d4af37" strokeWidth="2" opacity="0.3" />
-                  <path
-                    d="M10,50 A40,40 0 0,1 90,50 L50,50 Z"
-                    fill="url(#rotorGrad)"
-                    stroke="#d4af37"
-                    strokeWidth="1.5"
-                  />
-                  <circle cx="50" cy="50" r="8" fill="#14120e" stroke="#d4af37" strokeWidth="2" />
-                  <circle cx="50" cy="50" r="3" fill="#e11d48" />
-                  <defs>
-                    <linearGradient id="rotorGrad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#b48a3c" stopOpacity="0.8" />
-                      <stop offset="50%" stopColor="#d4af37" stopOpacity="0.95" />
-                      <stop offset="100%" stopColor="#fef08a" stopOpacity="0.8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <span className="rotor-subtext">BI-DIRECTIONAL ROTOR</span>
-            </div>
-          </div>
-        </section>
 
         {/* Centerpiece: Single Unified Watch & Macro Element Inspection Stage */}
         <section className="timex-inspection-stage" aria-label="Watch and Macro Element Showcase">
@@ -306,6 +247,69 @@ const WatchDetailTimex = ({
                   })}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Automatic Winding Rotor & Kinetic Power Reserve Cockpit */}
+        <section className="timex-interactive-cockpit" aria-label="Kinetic Rotor Simulator">
+          <div className="rotor-panel-left">
+            <div className="cockpit-title-row">
+              <span className="cockpit-badge">KINETIC ENGINE</span>
+              <h3 className="cockpit-title">Automatic Ball-Bearing Rotor Simulator</h3>
+            </div>
+            <p className="cockpit-desc">
+              Every natural motion of the wrist rotates the weighted central oscillator, winding the mainspring band through reduction gears.
+            </p>
+
+            <div className="rotor-action-row">
+              <button
+                type="button"
+                className={`btn-wind-rotor ${isWinding ? 'winding-active' : ''}`}
+                onClick={handleWindRotor}
+              >
+                <span className="btn-icon">⚙️</span>
+                <span>Oscillate Winding Rotor (+2h Reserve)</span>
+              </button>
+            </div>
+
+            <div className="power-reserve-meter">
+              <div className="meter-labels">
+                <span className="meter-title">MAINSPRING TENSION:</span>
+                <strong className="meter-val">{powerReserveHours} Hours / 42 Max ({reservePercent}%)</strong>
+              </div>
+              <div className="meter-bar-track">
+                <div className="meter-bar-fill" style={{ width: `${reservePercent}%` }}></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rotor-panel-right">
+            <div className="rotor-visual-disc">
+              <div
+                className="animated-rotor"
+                style={{ transform: `rotate(${rotorRotations}deg)` }}
+              >
+                <svg viewBox="0 0 100 100" className="rotor-svg" aria-hidden="true">
+                  <circle cx="50" cy="50" r="48" fill="none" stroke="#d4af37" strokeWidth="2" opacity="0.3" />
+                  <path
+                    d="M10,50 A40,40 0 0,1 90,50 L50,50 Z"
+                    fill="url(#rotorGrad)"
+                    stroke="#d4af37"
+                    strokeWidth="1.5"
+                  />
+                  <circle cx="50" cy="50" r="8" fill="#14120e" stroke="#d4af37" strokeWidth="2" />
+                  <circle cx="50" cy="50" r="3" fill="#e11d48" />
+                  <defs>
+                    <linearGradient id="rotorGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#b48a3c" stopOpacity="0.8" />
+                      <stop offset="50%" stopColor="#d4af37" stopOpacity="0.95" />
+                      <stop offset="100%" stopColor="#fef08a" stopOpacity="0.8" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span className="rotor-subtext">BI-DIRECTIONAL ROTOR</span>
             </div>
           </div>
         </section>

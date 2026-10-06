@@ -10,10 +10,10 @@ const PROJECTS = [
     impact: "Slashed end-to-end delivery timeline from 5–14 days down to under 6 hours (from script generation to final video demo)."
   },
   {
-    title: "Media Use Case (POC)",
-    category: "Agentic AI & GenAI",
+    title: "Media Analytics (POC)",
+    category: "Time Series & MLOps",
     date: "Jun 2025 – Oct 2025",
-    desc: "Agentic AI system (CrewAI, LangGraph, GCP) combining ML and prompt engineering for inference explanation, insight extraction, and business KPI generation; models multi-channel budget allocation and predicts future investment growth using multi-timeseries forecasting.",
+    desc: "Predictive ML and prompt engineering pipeline for inference explanation, insight extraction, and business KPI generation; models multi-channel budget allocation and predicts future investment growth using multi-timeseries forecasting.",
     impact: null
   },
   {

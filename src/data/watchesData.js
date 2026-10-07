@@ -760,6 +760,120 @@ export const WATCH_COLLECTION = [
         description: 'Solid stainless steel bracelet with satin-brushed outer links and mirror-polished central links with folding deployant clasp.'
       }
     ]
+  },
+  {
+    id: 'police-cranium-plpewjm0081301w',
+    brand: 'Police',
+    model: 'Cranium Tonneau Skeleton',
+    sku: 'PLPEWJM0081301W',
+    referenceAlias: 'PLPEWJM0081301',
+    category: 'Industrial Skeleton / Avant-Garde',
+    categoryGroup: 'skeleton',
+    yearAcquired: '2026', // Acquired This Year (2026)
+    status: 'In Active Rotation',
+    tagline: 'Sculpted Tonneau Architecture with Silver Cranium Skeleton Dial & Bolted Top Bezel',
+    image: 'assets/watches/police/police_watch_transparent.png',
+    masterImage: 'assets/watches/police/police_watch.jpg',
+    backgroundImage: 'assets/watches/backgrounds/bg_urban_rebel.jpg',
+
+    // Watch-Specific Dynamic Luxury Theme Tokens (Crimson Rebel & Titanium Cold Steel)
+    theme: {
+      accentPrimary: '#e11d48', // Crimson Rebel
+      accentSecondary: '#94a3b8', // Brushed Stainless Steel
+      accentSteel: '#cbd5e1', // Chrome Highlight
+      bgDeep: '#08090d', // Obsidian Shadow Base
+      bgSurface: '#0f131a', // Cold Titanium Vault
+      bgCard: '#161c26', // Plinth Card
+      borderAccent: 'rgba(225, 29, 72, 0.24)',
+      glowColor: 'rgba(225, 29, 72, 0.15)',
+      whiteText: '#f8fafc'
+    },
+
+    // Core Horological Specifications
+    movement: {
+      type: 'Precision Three-Hand Quartz (Calibre 05-203A)',
+      mechanism: 'Calibre 05-203A high-torque quartz stepping motor regulated by 32,768 Hz quartz crystal oscillator',
+      beatRate: '1 step per second (1 Hz stepping cadence)',
+      batteryLife: '~2 to 3 Years (Standard Silver Oxide Cell)',
+      complications: ['Sweeping Central Seconds', 'Full Cranium Openworked Dial', 'Bolted Bezel Architecture']
+    },
+
+    dimensions: {
+      caseDiameter: '42.0 mm (Width)',
+      caseThickness: '14.0 mm',
+      lugWidth: '28.0 mm (Integrated Taper)',
+      lugToLug: '51.5 mm (Curved Tonneau Profile)',
+      weight: '~118 g (with heavy-duty silicone strap)'
+    },
+
+    materials: {
+      case: '316L Solid Stainless Steel with dual satin-brushed flank & high-polish chamfered bevels',
+      bezel: 'Bolted Tonneau Top Bezel secured by 4 corner industrial hex socket screws',
+      frontCrystal: 'High-Impact Flat Beveled Mineral Glass with anti-reflective coating',
+      dial: 'Architectural openworked silver cranium plate with micro-stud crystal hour markers',
+      hands: 'High-contrast luminescent faceted baton hands with needle second hand',
+      bracelet: 'High-density matte black silicone strap with engineered traction ribs & steel pin buckle',
+      waterResistance: '50 Meters (5 ATM / 5 Bar) — splash, rain, and surface swimming resistant'
+    },
+
+    narrative: {
+      headline: 'Industrial Gothic Tonneau & The Non-Conformist Horological Edge',
+      summary:
+        'Acquired in 2026 from the PL-FW 25 Newness Order collection, the Police Cranium (PLPEWJM0081301W) introduces an unapologetically bold, industrial street-luxury dimension to the horological vault. Departing from classical round contours, its asymmetrical 316L tonneau silhouette boasts four structural corner hex socket bolts and an openworked silver cranium framework that showcases the calibrated Calibre 05-203A quartz transmission.',
+      keyPillars: [
+        {
+          title: 'Sculpted Bolted Tonneau Anatomy',
+          description: 'Substantial 42mm × 51.5mm stainless steel barrel architecture featuring dual satin-brushed surfaces, high-polish chamfers, and four industrial corner socket bolts.'
+        },
+        {
+          title: 'Openwork Cranium Motif & Crystal Accents',
+          description: 'A striking silver skull bridge dial with embedded micro-stud crystal markers, offering an avant-garde fusion of rebellious attitude and horological detailing.'
+        },
+        {
+          title: 'Engineered Ergonomic Silicone',
+          description: 'Wide 28mm tapering black silicone strap engineered with longitudinal grip channels and a signed stainless steel buckle for all-day comfort.'
+        }
+      ]
+    },
+
+    // Authentic Macro Watch Element Pictures
+    elements: [
+      {
+        id: 'element-cranium-skull',
+        name: 'Silver Cranium Skeleton Dial',
+        subtitle: 'Openworked Skull Motif & Crystal Plots',
+        image: 'assets/watches/police/elements/element_cranium_skull.jpg',
+        description: 'Architectural skull cutaway bridge plate in frosted silver with micro-stud hour indices and exposed mechanical apertures.'
+      },
+      {
+        id: 'element-bolted-bezel',
+        name: 'Bolted Tonneau Top Bezel',
+        subtitle: '316L Steel & 4 Hex Anchors',
+        image: 'assets/watches/police/elements/element_bolted_bezel.jpg',
+        description: 'Asymmetrical tonneau bezel secured by 4 industrial hex socket corner bolts with alternating satin-brushed and polished chamfers.'
+      },
+      {
+        id: 'element-quartz-movement',
+        name: 'Calibre 05-203A Quartz Drive',
+        subtitle: '1 Hz Stepping Cadence & Hands',
+        image: 'assets/watches/police/elements/element_quartz_movement.jpg',
+        description: 'Calibrated quartz motor delivering crisp 1-second cadence to the faceted luminous baton hands and central needle second hand.'
+      },
+      {
+        id: 'element-silicone-strap',
+        name: 'High-Density Silicone Strap',
+        subtitle: '28mm Taper with Grip Channels',
+        image: 'assets/watches/police/elements/element_silicone_strap.jpg',
+        description: 'Supple matte black silicone sports strap featuring engineered traction channels and a signed solid stainless steel tang buckle.'
+      },
+      {
+        id: 'element-fluted-crown',
+        name: 'Industrial Knurled Crown',
+        subtitle: 'Sculpted Case Shoulder Flanks',
+        image: 'assets/watches/police/elements/element_fluted_crown.jpg',
+        description: 'Heavy knurled setting crown integrated seamlessly into the sculpted asymmetric right case flank for ergonomic grip.'
+      }
+    ]
   }
 ];
 
@@ -810,7 +924,8 @@ export function findWatchById(id) {
     { keys: ['casio', 'gshock', 'casioak', '2100', 'gab2100', 'solar'], id: 'casio-gshock-gab2100luu8a' },
     { keys: ['timex', 'tw000z', 'tw000z800', 'sunray'], id: 'timex-automatic-tw000z800' },
     { keys: ['leecooper', 'lee', 'cooper', 'lyam', 'tonneau', 'lc07979'], id: 'lee-cooper-lc07979-399' },
-    { keys: ['titan', 'deca', '90245', '90245sm01', 'classique'], id: 'titan-classique-deca-90245sm01' }
+    { keys: ['titan', 'deca', '90245', '90245sm01', 'classique'], id: 'titan-classique-deca-90245sm01' },
+    { keys: ['police', 'cranium', 'rebel', 'plpewjm0081301w', 'plpewjm0081301', 'plpewjm', 'pewjm', '0081301w', '0081301'], id: 'police-cranium-plpewjm0081301w' }
   ];
 
   for (const entry of KEYWORD_MAP) {

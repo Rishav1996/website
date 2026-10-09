@@ -7,6 +7,18 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/resume",
+        "destination": "/assets/Rishav_Saigal_Resume.pdf",
+        "type": 302
+      },
+      {
+        "source": "/resume.pdf",
+        "destination": "/assets/Rishav_Saigal_Resume.pdf",
+        "type": 302
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

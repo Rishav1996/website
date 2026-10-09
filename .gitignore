@@ -25,3 +25,6 @@ dist-ssr
 
 # Firebase
 .firebase/
+
+# GitHub Pages Bridge
+gh-pages-bridge/

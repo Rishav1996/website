@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rishav1996.github.io/website/sitemap.xml
+Sitemap: https://rishavsaigal.web.app/sitemap.xml

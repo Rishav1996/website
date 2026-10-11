@@ -67,7 +67,7 @@
   border-color: #3b82f6;
 }
 
-.btn-adjacent-timepiece {
+.leecooper-exhibition-wrapper .btn-adjacent-timepiece {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -82,7 +82,7 @@
   transition: all 0.2s ease;
 }
 
-.btn-adjacent-timepiece:hover {
+.leecooper-exhibition-wrapper .btn-adjacent-timepiece:hover {
   background: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
   border-color: rgba(59, 130, 246, 0.4);
@@ -191,10 +191,44 @@
   align-items: center;
   gap: 12px;
   background: #0e131d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   padding: 8px 14px;
   border-radius: 6px;
   margin-bottom: 0;
+}
+
+.leecooper-exhibition-wrapper .lighting-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.leecooper-exhibition-wrapper .single-spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 19, 29, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #f8fafc;
+}
+
+.leecooper-exhibition-wrapper .single-spotlight-pill .pill-icon {
+  font-size: 0.8rem;
+}
+
+.leecooper-exhibition-wrapper .single-spotlight-pill .pill-label {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.leecooper-exhibition-wrapper .single-spotlight-pill .pill-sub {
+  color: #94a3b8;
+  font-size: 0.65rem;
 }
 
 /* Escapement Pulse Cockpit */
@@ -378,6 +412,53 @@
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
 }
 
+.leecooper-exhibition-wrapper .stage-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.leecooper-exhibition-wrapper .controls-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.leecooper-exhibition-wrapper .controls-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.leecooper-exhibition-wrapper .btn-mode-pill {
+  background: #141b29;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  color: #94a3b8;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.leecooper-exhibition-wrapper .btn-mode-pill:hover {
+  border-color: #3b82f6;
+  color: #f8fafc;
+}
+
+.leecooper-exhibition-wrapper .btn-mode-pill.active {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
 .element-indicator-text {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
@@ -394,7 +475,7 @@
   align-items: start;
 }
 
-.stage-visual-viewport {
+.leecooper-exhibition-wrapper .stage-visual-viewport {
   background: #080c14;
   border: 1px solid rgba(59, 130, 246, 0.15);
   border-radius: 10px;
@@ -435,21 +516,21 @@
   gap: 14px;
 }
 
-.active-element-card {
+.leecooper-exhibition-wrapper .active-element-card {
   background: #0e131d;
   border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 10px;
   padding: 14px 16px;
 }
 
-.active-card-top {
+.leecooper-exhibition-wrapper .active-card-top {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
 }
 
-.active-element-swatch-dot {
+.leecooper-exhibition-wrapper .active-element-swatch-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -457,7 +538,7 @@
   box-shadow: 0 0 6px currentColor;
 }
 
-.element-eyebrow {
+.leecooper-exhibition-wrapper .element-eyebrow {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #3b82f6;
@@ -465,7 +546,7 @@
   text-transform: uppercase;
 }
 
-.active-element-title {
+.leecooper-exhibition-wrapper .active-element-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -474,7 +555,7 @@
   margin-bottom: 2px;
 }
 
-.active-element-sub {
+.leecooper-exhibition-wrapper .active-element-sub {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
@@ -482,7 +563,7 @@
   margin-bottom: 8px;
 }
 
-.active-element-desc {
+.leecooper-exhibition-wrapper .active-element-desc {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   line-height: 1.5;
@@ -490,13 +571,13 @@
 }
 
 /* Elements Selector Tray */
-.elements-selector-tray {
+.leecooper-exhibition-wrapper .elements-selector-tray {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.tray-label {
+.leecooper-exhibition-wrapper .tray-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #94a3b8;
@@ -504,12 +585,13 @@
   text-transform: uppercase;
 }
 
-.selector-cards-list {
+.leecooper-exhibition-wrapper .selector-cards-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+.leecooper-exhibition-wrapper .selector-item-card,
 .leecooper-selector-card {
   display: flex;
   align-items: center;
@@ -522,18 +604,20 @@
   transition: all 0.2s ease;
 }
 
+.leecooper-exhibition-wrapper .selector-item-card:hover,
 .leecooper-selector-card:hover {
   background: rgba(59, 130, 246, 0.12);
   border-color: rgba(59, 130, 246, 0.35);
   transform: translateX(2px);
 }
 
+.leecooper-exhibition-wrapper .selector-item-card.selected,
 .leecooper-selector-card.selected {
   background: rgba(59, 130, 246, 0.18);
   border-color: #3b82f6;
 }
 
-.selector-thumb {
+.leecooper-exhibition-wrapper .selector-thumb {
   width: 38px;
   height: 38px;
   border-radius: 5px;
@@ -600,6 +684,7 @@
   gap: 16px;
 }
 
+.leecooper-exhibition-wrapper .story-card,
 .leecooper-story-card {
   background: rgba(14, 19, 29, 0.9);
   border: 1px solid rgba(59, 130, 246, 0.2);
@@ -650,6 +735,7 @@
   padding-top: 18px;
 }
 
+.leecooper-exhibition-wrapper .next-timepiece-card,
 .leecooper-next-card {
   display: flex;
   align-items: center;
@@ -665,6 +751,7 @@
   gap: 16px;
 }
 
+.leecooper-exhibition-wrapper .next-timepiece-card:hover,
 .leecooper-next-card:hover {
   border-color: #3b82f6;
   background: linear-gradient(135deg, rgba(22, 28, 42, 0.96) 0%, rgba(12, 16, 26, 0.98) 100%);

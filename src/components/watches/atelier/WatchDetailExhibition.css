@@ -58,7 +58,7 @@
   flex-wrap: wrap;
 }
 
-.btn-adjacent-timepiece {
+.tailored-exhibition-wrapper .btn-adjacent-timepiece {
   display: inline-flex;
   align-items: center;
   background: rgba(20, 14, 11, 0.7);
@@ -74,13 +74,13 @@
   transition: all 0.2s ease;
 }
 
-.btn-adjacent-timepiece:hover {
+.tailored-exhibition-wrapper .btn-adjacent-timepiece:hover {
   background: #231813;
   border-color: rgba(197, 160, 89, 0.5);
   color: #f5f2eb;
 }
 
-.btn-archive-back {
+.tailored-exhibition-wrapper .btn-archive-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -97,13 +97,13 @@
   transition: all 0.2s ease;
 }
 
-.btn-archive-back:hover {
+.tailored-exhibition-wrapper .btn-archive-back:hover {
   background: #231813;
   border-color: #c5a059;
   transform: translateX(-2px);
 }
 
-.arrow {
+.tailored-exhibition-wrapper .arrow {
   color: #c5a059;
   font-size: 0.9rem;
 }
@@ -174,8 +174,8 @@
   gap: 6px;
 }
 
-.mocha-spec-pills-row .spec-pill,
-.spec-pill {
+.tailored-exhibition-wrapper .mocha-spec-pills-row .spec-pill,
+.tailored-exhibition-wrapper .spec-pill {
   background: rgba(20, 14, 11, 0.7);
   border: 1px solid rgba(197, 160, 89, 0.22);
   color: #f5f2eb;
@@ -220,7 +220,7 @@
   flex-wrap: wrap;
 }
 
-.lighting-label {
+.tailored-exhibition-wrapper .lighting-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   font-weight: 600;
@@ -228,7 +228,7 @@
   letter-spacing: 0.05em;
 }
 
-.single-spotlight-pill {
+.tailored-exhibition-wrapper .single-spotlight-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -256,7 +256,7 @@
   }
 }
 
-.single-spotlight-pill .pill-sub {
+.tailored-exhibition-wrapper .single-spotlight-pill .pill-sub {
   font-size: 0.68rem;
   color: #c5a059;
   opacity: 0.9;
@@ -537,7 +537,7 @@
 }
 
 /* Stage & Controls */
-.element-inspection-stage {
+.tailored-exhibition-wrapper .element-inspection-stage {
   background: rgba(20, 14, 11, 0.85);
   border: 1px solid rgba(197, 160, 89, 0.22);
   border-radius: 14px;
@@ -546,7 +546,7 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
 }
 
-.stage-controls-bar {
+.tailored-exhibition-wrapper .stage-controls-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -563,14 +563,14 @@
   gap: 10px;
 }
 
-.controls-label {
+.tailored-exhibition-wrapper .controls-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.68rem;
   color: #8c7d71;
   letter-spacing: 0.08em;
 }
 
-.btn-mode-pill {
+.tailored-exhibition-wrapper .btn-mode-pill {
   background: rgba(10, 8, 7, 0.6);
   border: 1px solid rgba(197, 160, 89, 0.2);
   color: #a39587;
@@ -583,19 +583,19 @@
   transition: all 0.2s ease;
 }
 
-.btn-mode-pill:hover {
+.tailored-exhibition-wrapper .btn-mode-pill:hover {
   color: #f5f2eb;
   background: rgba(197, 160, 89, 0.12);
 }
 
-.btn-mode-pill.active {
+.tailored-exhibition-wrapper .btn-mode-pill.active {
   background: #c5a059;
   border-color: #c5a059;
   color: #080605;
   font-weight: 600;
 }
 
-.controls-right {
+.tailored-exhibition-wrapper .controls-right {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
   color: #c5a059;
@@ -609,7 +609,7 @@
   align-items: start;
 }
 
-.stage-visual-viewport {
+.tailored-exhibition-wrapper .stage-visual-viewport {
   background: #080605;
   border: 1px solid rgba(197, 160, 89, 0.2);
   border-radius: 10px;
@@ -623,7 +623,7 @@
   overflow: hidden;
 }
 
-.mood-spotlight .stage-visual-viewport {
+.tailored-exhibition-wrapper.mood-spotlight .stage-visual-viewport {
   box-shadow: inset 0 0 50px rgba(197, 160, 89, 0.15);
 }
 
@@ -715,14 +715,14 @@
   gap: 12px;
 }
 
-.active-element-card {
+.tailored-exhibition-wrapper .active-element-card {
   background: #0e0a08;
   border: 1px solid rgba(197, 160, 89, 0.22);
   border-radius: 10px;
   padding: 14px 16px;
 }
 
-.element-eyebrow {
+.tailored-exhibition-wrapper .element-eyebrow {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
@@ -732,7 +732,7 @@
   text-transform: uppercase;
 }
 
-.active-element-title {
+.tailored-exhibition-wrapper .active-element-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.22rem;
   font-weight: 700;
@@ -741,7 +741,7 @@
   margin-bottom: 2px;
 }
 
-.active-element-sub {
+.tailored-exhibition-wrapper .active-element-sub {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
@@ -749,7 +749,7 @@
   margin-bottom: 10px;
 }
 
-.active-element-desc {
+.tailored-exhibition-wrapper .active-element-desc {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.84rem;
   line-height: 1.5;
@@ -763,7 +763,7 @@
   gap: 8px;
 }
 
-.tray-label {
+.tailored-exhibition-wrapper .tray-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #8c7d71;
@@ -776,7 +776,7 @@
   gap: 6px;
 }
 
-.selector-item-card {
+.tailored-exhibition-wrapper .selector-item-card {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -788,18 +788,18 @@
   transition: all 0.2s ease;
 }
 
-.selector-item-card:hover {
+.tailored-exhibition-wrapper .selector-item-card:hover {
   background: rgba(197, 160, 89, 0.1);
   border-color: rgba(197, 160, 89, 0.4);
   transform: translateX(2px);
 }
 
-.selector-item-card.selected {
+.tailored-exhibition-wrapper .selector-item-card.selected {
   background: rgba(197, 160, 89, 0.18);
   border-color: #c5a059;
 }
 
-.selector-thumb {
+.tailored-exhibition-wrapper .selector-thumb {
   width: 38px;
   height: 38px;
   border-radius: 5px;
@@ -820,20 +820,20 @@
   gap: 1px;
 }
 
-.s-num {
+.tailored-exhibition-wrapper .s-num {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.6rem;
   color: #c5a059;
 }
 
-.s-name {
+.tailored-exhibition-wrapper .s-name {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   color: #f5f2eb;
 }
 
-.s-sub {
+.tailored-exhibition-wrapper .s-sub {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.68rem;
   color: #8c7d71;
@@ -851,14 +851,14 @@
   gap: 20px;
 }
 
-.story-card {
+.tailored-exhibition-wrapper .story-card {
   background: rgba(20, 14, 11, 0.85);
   border: 1px solid rgba(197, 160, 89, 0.2);
   border-radius: 12px;
   padding: 18px 20px;
 }
 
-.story-kicker {
+.tailored-exhibition-wrapper .story-kicker {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.66rem;
@@ -867,7 +867,7 @@
   margin-bottom: 6px;
 }
 
-.story-title {
+.tailored-exhibition-wrapper .story-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -901,7 +901,7 @@
   padding-top: 20px;
 }
 
-.next-timepiece-card {
+.tailored-exhibition-wrapper .next-timepiece-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -918,7 +918,7 @@
   gap: 18px;
 }
 
-.next-timepiece-card:hover {
+.tailored-exhibition-wrapper .next-timepiece-card:hover {
   border-color: #c5a059;
   background: linear-gradient(135deg, rgba(30, 20, 15, 0.95) 0%, rgba(16, 12, 10, 0.98) 100%);
   transform: translateY(-2px);
@@ -932,7 +932,7 @@
   gap: 4px;
 }
 
-.next-kicker {
+.tailored-exhibition-wrapper .next-kicker {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   letter-spacing: 0.1em;
@@ -940,7 +940,7 @@
   text-transform: uppercase;
 }
 
-.next-title {
+.tailored-exhibition-wrapper .next-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -949,7 +949,7 @@
   margin: 0;
 }
 
-.next-tagline {
+.tailored-exhibition-wrapper .next-tagline {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.8rem;
   color: #a89f91;
@@ -957,7 +957,7 @@
   margin: 0;
 }
 
-.next-btn-action {
+.tailored-exhibition-wrapper .next-btn-action {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -969,12 +969,12 @@
   transition: transform 0.2s ease;
 }
 
-.next-timepiece-card:hover .next-btn-action {
+.tailored-exhibition-wrapper .next-timepiece-card:hover .next-btn-action {
   color: #f5f2eb;
   transform: translateX(4px);
 }
 
-.next-card-thumb {
+.tailored-exhibition-wrapper .next-card-thumb {
   width: 100px;
   height: 100px;
   display: flex;
@@ -983,7 +983,7 @@
   flex-shrink: 0;
 }
 
-.next-watch-img {
+.tailored-exhibition-wrapper .next-watch-img {
   max-height: 95px;
   max-width: 100%;
   object-fit: contain;
@@ -992,7 +992,7 @@
   transition: transform 0.3s ease;
 }
 
-.next-timepiece-card:hover .next-watch-img {
+.tailored-exhibition-wrapper .next-timepiece-card:hover .next-watch-img {
   transform: scale(1.06);
 }
 
@@ -1012,12 +1012,12 @@
 }
 
 @media (max-width: 640px) {
-  .next-timepiece-card {
+  .tailored-exhibition-wrapper .next-timepiece-card {
     flex-direction: column-reverse;
     align-items: flex-start;
     padding: 16px;
   }
-  .next-card-thumb {
+  .tailored-exhibition-wrapper .next-card-thumb {
     width: 100%;
     height: 80px;
     justify-content: flex-start;

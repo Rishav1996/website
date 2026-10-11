@@ -7,7 +7,7 @@
   background: rgba(11, 11, 13, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid #27272a;
+  border-bottom: 1px solid var(--watch-border, #27272a);
   height: 64px;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #fafafa;
+  background: var(--watch-accent, #fafafa);
 }
 
 .brand-title {
@@ -99,7 +99,8 @@
 }
 
 .crumb-active {
-  color: #fafafa;
+  color: var(--watch-accent, #fafafa);
+  font-weight: 600;
   letter-spacing: 0.05em;
 }
 

@@ -67,7 +67,7 @@
   border-color: #38bdf8;
 }
 
-.btn-adjacent-timepiece {
+.titan-exhibition-wrapper .btn-adjacent-timepiece {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -82,7 +82,7 @@
   transition: all 0.2s ease;
 }
 
-.btn-adjacent-timepiece:hover {
+.titan-exhibition-wrapper .btn-adjacent-timepiece:hover {
   background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
   border-color: rgba(56, 189, 248, 0.4);
@@ -191,10 +191,44 @@
   align-items: center;
   gap: 12px;
   background: #0b131e;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   padding: 8px 14px;
   border-radius: 6px;
   margin-bottom: 0;
+}
+
+.titan-exhibition-wrapper .lighting-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.titan-exhibition-wrapper .single-spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(11, 19, 30, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #f8fafc;
+}
+
+.titan-exhibition-wrapper .single-spotlight-pill .pill-icon {
+  font-size: 0.8rem;
+}
+
+.titan-exhibition-wrapper .single-spotlight-pill .pill-label {
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.titan-exhibition-wrapper .single-spotlight-pill .pill-sub {
+  color: #94a3b8;
+  font-size: 0.65rem;
 }
 
 /* Reflector Cockpit */
@@ -511,6 +545,53 @@
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
 }
 
+.titan-exhibition-wrapper .stage-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.titan-exhibition-wrapper .controls-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.titan-exhibition-wrapper .controls-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.titan-exhibition-wrapper .btn-mode-pill {
+  background: #111d2e;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  color: #94a3b8;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.titan-exhibition-wrapper .btn-mode-pill:hover {
+  border-color: #38bdf8;
+  color: #f8fafc;
+}
+
+.titan-exhibition-wrapper .btn-mode-pill.active {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
 .element-indicator-text {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
@@ -527,7 +608,7 @@
   align-items: start;
 }
 
-.stage-visual-viewport {
+.titan-exhibition-wrapper .stage-visual-viewport {
   background: #060b12;
   border: 1px solid rgba(56, 189, 248, 0.15);
   border-radius: 10px;
@@ -627,21 +708,21 @@
   gap: 14px;
 }
 
-.active-element-card {
+.titan-exhibition-wrapper .active-element-card {
   background: #0b131e;
   border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: 10px;
   padding: 14px 16px;
 }
 
-.active-card-top {
+.titan-exhibition-wrapper .active-card-top {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
 }
 
-.active-element-swatch-dot {
+.titan-exhibition-wrapper .active-element-swatch-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -649,7 +730,7 @@
   box-shadow: 0 0 6px currentColor;
 }
 
-.element-eyebrow {
+.titan-exhibition-wrapper .element-eyebrow {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #38bdf8;
@@ -657,7 +738,7 @@
   text-transform: uppercase;
 }
 
-.active-element-title {
+.titan-exhibition-wrapper .active-element-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -666,7 +747,7 @@
   margin-bottom: 2px;
 }
 
-.active-element-sub {
+.titan-exhibition-wrapper .active-element-sub {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
@@ -674,7 +755,7 @@
   margin-bottom: 8px;
 }
 
-.active-element-desc {
+.titan-exhibition-wrapper .active-element-desc {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
   line-height: 1.5;
@@ -682,13 +763,13 @@
 }
 
 /* Elements Selector Tray */
-.elements-selector-tray {
+.titan-exhibition-wrapper .elements-selector-tray {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.tray-label {
+.titan-exhibition-wrapper .tray-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #94a3b8;
@@ -696,12 +777,13 @@
   text-transform: uppercase;
 }
 
-.selector-cards-list {
+.titan-exhibition-wrapper .selector-cards-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+.titan-exhibition-wrapper .selector-item-card,
 .titan-selector-card {
   display: flex;
   align-items: center;
@@ -714,18 +796,20 @@
   transition: all 0.2s ease;
 }
 
+.titan-exhibition-wrapper .selector-item-card:hover,
 .titan-selector-card:hover {
   background: rgba(56, 189, 248, 0.12);
   border-color: rgba(56, 189, 248, 0.35);
   transform: translateX(2px);
 }
 
+.titan-exhibition-wrapper .selector-item-card.selected,
 .titan-selector-card.selected {
   background: rgba(56, 189, 248, 0.18);
   border-color: #38bdf8;
 }
 
-.selector-thumb {
+.titan-exhibition-wrapper .selector-thumb {
   width: 38px;
   height: 38px;
   border-radius: 5px;
@@ -792,6 +876,7 @@
   gap: 16px;
 }
 
+.titan-exhibition-wrapper .story-card,
 .titan-story-card {
   background: rgba(11, 19, 30, 0.9);
   border: 1px solid rgba(56, 189, 248, 0.2);
@@ -842,6 +927,7 @@
   padding-top: 18px;
 }
 
+.titan-exhibition-wrapper .next-timepiece-card,
 .titan-next-card {
   display: flex;
   align-items: center;
@@ -857,6 +943,7 @@
   gap: 16px;
 }
 
+.titan-exhibition-wrapper .next-timepiece-card:hover,
 .titan-next-card:hover {
   border-color: #38bdf8;
   background: linear-gradient(135deg, rgba(18, 28, 44, 0.96) 0%, rgba(10, 16, 26, 0.98) 100%);

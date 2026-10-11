@@ -34,8 +34,28 @@ const WatchesPage = () => {
     navigate('home');
   };
 
+  const pageThemeStyle = selectedWatch?.theme
+    ? {
+        '--watch-accent': selectedWatch.theme.accentPrimary,
+        '--watch-secondary': selectedWatch.theme.accentSecondary,
+        '--watch-bg-deep': selectedWatch.theme.bgDeep,
+        '--watch-bg-surface': selectedWatch.theme.bgSurface,
+        '--watch-bg-card': selectedWatch.theme.bgCard,
+        '--watch-border': selectedWatch.theme.borderAccent,
+        '--watch-glow': selectedWatch.theme.glowColor,
+      }
+    : {
+        '--watch-accent': '#58a6ff',
+        '--watch-secondary': '#8b949e',
+        '--watch-bg-deep': '#09090b',
+        '--watch-bg-surface': '#121316',
+        '--watch-bg-card': '#18191f',
+        '--watch-border': 'rgba(88, 166, 255, 0.2)',
+        '--watch-glow': 'rgba(88, 166, 255, 0.1)',
+      };
+
   return (
-    <div className="watches-page-wrapper">
+    <div className="watches-page-wrapper" style={pageThemeStyle}>
       {/* Standalone Neutral Gallery Header */}
       <WatchAtelierHeader
         selectedWatch={selectedWatch}

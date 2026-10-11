@@ -1,10 +1,11 @@
 .atelier-footer-wrapper {
-  background: #09090b;
-  border-top: 1px solid #27272a;
+  background: var(--watch-bg-deep, #09090b);
+  border-top: 1px solid var(--watch-border, #27272a);
   padding: 50px 0 26px;
   color: #71717a;
   position: relative;
   z-index: 10;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .atelier-footer-inner {
@@ -111,6 +112,7 @@
 
 .btn-footer-return:hover {
   background: #27272a;
+  border-color: var(--watch-accent, #3f3f46);
   transform: translateX(-2px);
 }
 
@@ -137,7 +139,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #71717a;
+  background: var(--watch-accent, #71717a);
 }
 
 @media (max-width: 900px) {

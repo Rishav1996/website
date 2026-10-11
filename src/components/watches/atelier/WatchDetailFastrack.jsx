@@ -26,7 +26,7 @@ const WatchDetailFastrack = ({
   nextWatch = null,
   onSelectWatch = () => {},
   onBackToVault = () => {},
-  onReturnToPortfolio = () => {}
+  _onReturnToPortfolio = () => {}
 }) => {
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);

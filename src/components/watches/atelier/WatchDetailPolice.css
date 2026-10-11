@@ -67,7 +67,7 @@
   border-color: #e11d48;
 }
 
-.btn-adjacent-timepiece {
+.police-exhibition-wrapper .btn-adjacent-timepiece {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -82,7 +82,7 @@
   transition: all 0.2s ease;
 }
 
-.btn-adjacent-timepiece:hover {
+.police-exhibition-wrapper .btn-adjacent-timepiece:hover {
   background: rgba(225, 29, 72, 0.15);
   color: #fecdd3;
   border-color: rgba(225, 29, 72, 0.4);
@@ -218,7 +218,7 @@
   letter-spacing: 0.08em;
 }
 
-.single-spotlight-pill {
+.police-exhibition-wrapper .single-spotlight-pill {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -230,16 +230,16 @@
   font-size: 0.75rem;
 }
 
-.single-spotlight-pill .pill-icon {
+.police-exhibition-wrapper .single-spotlight-pill .pill-icon {
   font-size: 0.75rem;
 }
 
-.single-spotlight-pill .pill-label {
+.police-exhibition-wrapper .single-spotlight-pill .pill-label {
   font-weight: 600;
   color: #ffffff;
 }
 
-.single-spotlight-pill .pill-sub {
+.police-exhibition-wrapper .single-spotlight-pill .pill-sub {
   color: #fecdd3;
   font-size: 0.72rem;
 }
@@ -254,7 +254,7 @@
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
 }
 
-.stage-controls-bar {
+.police-exhibition-wrapper .stage-controls-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -265,20 +265,20 @@
   gap: 10px;
 }
 
-.controls-left {
+.police-exhibition-wrapper .controls-left {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.controls-label {
+.police-exhibition-wrapper .controls-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #64748b;
   letter-spacing: 0.08em;
 }
 
-.btn-mode-pill {
+.police-exhibition-wrapper .btn-mode-pill {
   background: rgba(22, 28, 38, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #94a3b8;
@@ -291,13 +291,13 @@
   transition: all 0.2s ease;
 }
 
-.btn-mode-pill:hover {
+.police-exhibition-wrapper .btn-mode-pill:hover {
   background: rgba(225, 29, 72, 0.12);
   color: #f8fafc;
   border-color: rgba(225, 29, 72, 0.35);
 }
 
-.btn-mode-pill.active {
+.police-exhibition-wrapper .btn-mode-pill.active {
   background: #e11d48;
   border-color: #e11d48;
   color: #ffffff;
@@ -387,7 +387,7 @@
   align-items: start;
 }
 
-.stage-visual-viewport {
+.police-exhibition-wrapper .stage-visual-viewport {
   background: #08090d;
   border: 1px solid rgba(225, 29, 72, 0.15);
   border-radius: 10px;
@@ -401,8 +401,8 @@
   overflow: hidden;
 }
 
-.viewport-full-wrap,
-.viewport-macro-wrap {
+.police-exhibition-wrapper .viewport-full-wrap,
+.police-exhibition-wrapper .viewport-macro-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -451,21 +451,21 @@
   gap: 14px;
 }
 
-.active-element-card {
+.police-exhibition-wrapper .active-element-card {
   background: #0f131a;
   border: 1px solid rgba(225, 29, 72, 0.2);
   border-radius: 10px;
   padding: 14px 16px;
 }
 
-.active-card-top {
+.police-exhibition-wrapper .active-card-top {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
 }
 
-.active-element-swatch-dot {
+.police-exhibition-wrapper .active-element-swatch-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -473,7 +473,7 @@
   box-shadow: 0 0 6px currentColor;
 }
 
-.element-eyebrow {
+.police-exhibition-wrapper .element-eyebrow {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #e11d48;
@@ -481,7 +481,7 @@
   text-transform: uppercase;
 }
 
-.active-element-title {
+.police-exhibition-wrapper .active-element-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -490,7 +490,7 @@
   margin: 0 0 2px;
 }
 
-.active-element-sub {
+.police-exhibition-wrapper .active-element-sub {
   display: block;
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.72rem;
@@ -498,7 +498,7 @@
   margin-bottom: 8px;
 }
 
-.active-element-desc {
+.police-exhibition-wrapper .active-element-desc {
   font-size: 0.85rem;
   line-height: 1.5;
   color: #cbd5e1;
@@ -506,13 +506,13 @@
 }
 
 /* Elements Selector Tray */
-.elements-selector-tray {
+.police-exhibition-wrapper .elements-selector-tray {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.tray-label {
+.police-exhibition-wrapper .tray-label {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.65rem;
   color: #94a3b8;
@@ -520,13 +520,13 @@
   text-transform: uppercase;
 }
 
-.selector-cards-list {
+.police-exhibition-wrapper .selector-cards-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.selector-item-card {
+.police-exhibition-wrapper .selector-item-card {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -538,13 +538,13 @@
   transition: all 0.2s ease;
 }
 
-.selector-item-card:hover {
+.police-exhibition-wrapper .selector-item-card:hover {
   background: rgba(225, 29, 72, 0.08);
   border-color: rgba(225, 29, 72, 0.3);
   transform: translateX(3px);
 }
 
-.selector-item-card.selected {
+.police-exhibition-wrapper .selector-item-card.selected {
   background: rgba(225, 29, 72, 0.16);
   border-color: #e11d48;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -948,6 +948,7 @@
   gap: 20px;
 }
 
+.police-exhibition-wrapper .story-card,
 .story-card.police-story-card {
   background: #0f131a;
   border: 1px solid rgba(225, 29, 72, 0.2);
@@ -997,6 +998,7 @@
   margin-top: 24px;
 }
 
+.police-exhibition-wrapper .next-timepiece-card,
 .next-timepiece-card.police-next-card {
   display: flex;
   justify-content: space-between;
@@ -1009,6 +1011,7 @@
   transition: all 0.25s ease;
 }
 
+.police-exhibition-wrapper .next-timepiece-card:hover,
 .next-timepiece-card.police-next-card:hover {
   background: #141b24;
   border-color: #e11d48;

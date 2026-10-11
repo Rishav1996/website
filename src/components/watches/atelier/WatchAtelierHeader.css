@@ -31,6 +31,7 @@
   gap: 10px;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 }
 
 .brand-dot {
@@ -85,6 +86,7 @@
   color: #a1a1aa;
   cursor: pointer;
   letter-spacing: 0.06em;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -141,6 +143,7 @@
   padding: 6px 14px;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 

@@ -70,6 +70,7 @@
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 
@@ -92,6 +93,7 @@
   padding: 6px 14px;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 
@@ -908,6 +910,8 @@
   border-radius: 12px;
   padding: 16px 24px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;

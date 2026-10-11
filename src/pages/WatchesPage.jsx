@@ -5,6 +5,7 @@ import WatchCollectionVault from '../components/watches/atelier/WatchCollectionV
 import WatchDetailExhibition from '../components/watches/atelier/WatchDetailExhibition';
 import { WATCH_COLLECTION, findWatchById } from '../data/watchesData';
 import { useRoute } from '../hooks/useRoute';
+import { useWatchHead } from '../hooks/useWatchHead';
 import './WatchesPage.css';
 
 /**
@@ -17,6 +18,9 @@ const WatchesPage = () => {
 
   // Resolve watch by sub watch ID (supporting id, sku, or alias)
   const selectedWatch = findWatchById(watchId);
+
+  // Synchronize document.title, meta description, canonical, and OG tags
+  useWatchHead(selectedWatch);
 
   const handleSelectWatch = (id) => {
     navigate('watches', id);

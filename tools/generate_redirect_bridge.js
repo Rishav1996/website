@@ -150,9 +150,10 @@ for (const r of routes) {
 fs.writeFileSync(path.join(OUT_DIR, '404.html'), generateHtml('', true), 'utf-8');
 console.log('Generated dynamic 404.html redirector');
 
-// Copy sitemap.xml and robots.txt
+// Copy sitemap.xml, robots.txt, and llms.txt
 const sitemapSrc = path.resolve(__dirname, '../public/sitemap.xml');
 const robotsSrc = path.resolve(__dirname, '../public/robots.txt');
+const llmsSrc = path.resolve(__dirname, '../public/llms.txt');
 
 if (fs.existsSync(sitemapSrc)) {
   fs.copyFileSync(sitemapSrc, path.join(OUT_DIR, 'sitemap.xml'));
@@ -161,6 +162,10 @@ if (fs.existsSync(sitemapSrc)) {
 if (fs.existsSync(robotsSrc)) {
   fs.copyFileSync(robotsSrc, path.join(OUT_DIR, 'robots.txt'));
   console.log('Copied robots.txt');
+}
+if (fs.existsSync(llmsSrc)) {
+  fs.copyFileSync(llmsSrc, path.join(OUT_DIR, 'llms.txt'));
+  console.log('Copied llms.txt');
 }
 
 // Add .nojekyll so GitHub Pages doesn't touch or hide any underscore folders

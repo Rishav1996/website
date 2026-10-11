@@ -83,6 +83,26 @@ export const WATCH_COLLECTION = [
       ]
     },
 
+    faq: [
+      {
+            "question": "What movement powers the Kenneth Cole KCWGL2104102MN?",
+            "answer": "It is powered by a 21-jewel self-winding mechanical automatic movement operating at 21,600 vibrations per hour (3 Hz) with auxiliary crown manual winding capability and ~36 to 40 hours of power reserve."
+      },
+      {
+            "question": "What are the dimensions and water resistance of this timepiece?",
+            "answer": "The case has a diameter of 44.0 mm, thickness of 12.0 mm, lug width of 22.0 mm, and 30 meters (3 ATM / 3 Bar) splash and rain resistance."
+      },
+      {
+            "question": "What makes the mocha skeleton dial unique?",
+            "answer": "The timepiece features a multi-layer open skeleton cutaway with front and exhibition caseback mineral crystals, exposing the brass gear train, synthetic ruby pallets, and oscillating balance wheel in a matte mocha ion-plated (IP) steel chassis."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "Operating at a harmonic frequency of 3.0 Hz (21,600 VPH), this self-winding movement delivers 6 discrete beats per second on the central seconds hand. The escapement relies on synthetic corundum ruby impulse pallets and pivot jewels to mitigate frictional losses across the gear train, paired with a bi-directional weighted rotor.",
+      "materialScience": "The 44mm chassis is fabricated from 316L austenitic stainless steel and finished with a physical vapor deposition (PVD) matte chocolate brown ion-plating. This imparts superior surface hardness and corrosion resistance while eliminating specular reflections."
+},
+
     // Authentic Macro Watch Element Pictures
     elements: [
       {
@@ -246,6 +266,26 @@ export const WATCH_COLLECTION = [
       ]
     },
 
+    faq: [
+      {
+            "question": "What complications are featured on the Fastrack Opulence NT3315KM01?",
+            "answer": "It features an analog quartz chronograph with 1-second resolution, dedicated racing crimson pushers, and a diurnal 24-hour Sun & Moon celestial horizon indicator."
+      },
+      {
+            "question": "What is the water resistance and case construction?",
+            "answer": "The 45.0 mm case is constructed from stainless steel with an anthracite PVD finish, featuring a 50-meter (5 ATM) water resistance rating suitable for swimming and daily precipitation."
+      },
+      {
+            "question": "How does the Sun & Moon subdial operate?",
+            "answer": "The 24-hour aperture disc rotates continuously in synchronization with the hour hand, displaying a golden sun during daytime hours (06:00 to 18:00) and moon and stars throughout nocturnal hours."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "The quartz chronograph module utilizes a high-frequency 32,768 Hz quartz crystal resonator, regulated by an integrated stepper motor divider circuit to provide split-second interval measurement and continuous 24-hour gear reduction.",
+      "materialScience": "Constructed with an anthracite PVD-coated stainless steel three-piece housing and multi-link bracelet, the dial combines stamped carbon-fiber guilloche textures with luminescent-filled geometric baton hands."
+},
+
     // Authentic Macro Watch Element Pictures
     elements: [
       {
@@ -369,6 +409,26 @@ export const WATCH_COLLECTION = [
       ]
     },
 
+    faq: [
+      {
+            "question": "Does the Casio GA-B2100LUU-8A feature Tough Solar and Bluetooth?",
+            "answer": "Yes, it integrates Casio Tough Solar light harvesting and Smartphone Link Bluetooth connectivity (Module 5689) for automatic atomic time synchronization."
+      },
+      {
+            "question": "What is the water resistance rating of the GA-B2100LUU-8A?",
+            "answer": "It is rated to 200 meters (20 BAR / ISO standard), designed for amphibious tactical deployment, high-velocity water sports, and extreme impact."
+      },
+      {
+            "question": "What is the Carbon Core Guard architecture?",
+            "answer": "The internal quartz module is suspended inside a carbon-fiber-reinforced resin monocoque, providing extreme shock deflection within an ultra-slim 11.9 mm profile."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "Module 5689 incorporates a shadow-dispersing solar panel dial that transforms even low-lux indoor fluorescent lighting into electrical current stored in a CTL920 rechargeable cell. Smartphone Link synchronizes 4 times daily via Bluetooth Low Energy.",
+      "materialScience": "The octagonal bezel and case structure utilize bio-based eco-resins derived from renewable castor oil, bound to fine-carbon monocoque matrices for maximum tensile strength, shock absorption, and low weight (52 grams)."
+},
+
     // Authentic Macro Watch Element Pictures
     elements: [
       {
@@ -486,6 +546,26 @@ export const WATCH_COLLECTION = [
       ]
     },
 
+    faq: [
+      {
+            "question": "What movement powers the Timex Heritage TW000Z800?",
+            "answer": "It houses a 21-jewel self-winding mechanical automatic caliber operating at 21,600 VPH with an exhibition mineral crystal display caseback and ~40 hours of power reserve."
+      },
+      {
+            "question": "What are the dimensions and styling details of this model?",
+            "answer": "The polished 316L stainless steel case measures 40.0 mm in diameter and 12.5 mm in thickness, featuring a warm champagne sunray dial with faceted gilt diamond-cut indices."
+      },
+      {
+            "question": "Is the Timex TW000Z800 water resistant?",
+            "answer": "It offers 50 meters (5 ATM) of water resistance, making it resilient against rain, handwashing, and surface immersion."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "The self-winding movement features a high-density peripheral oscillating weight that winds the mainspring bi-directionally. A 3.0 Hz Swiss-style lever escapement governs energy release, providing sweeping mechanical seconds across the sunray dial.",
+      "materialScience": "The dial plate is finished in radial champagne sunburst brushing with applied gilt brass indices. The crystal is a domed mineral glass with scratch-resistant surface treatment, complemented by a solid 5-link stainless steel bracelet."
+},
+
     // Authentic Macro Watch Element Pictures
     elements: [
       {
@@ -602,6 +682,26 @@ export const WATCH_COLLECTION = [
         }
       ]
     },
+
+    faq: [
+      {
+            "question": "What case architecture distinguishes the Lee Cooper LC07979.399?",
+            "answer": "It features a sculpted tonneau (barrel-shaped) gunmetal alloy case measuring 41.5 mm × 49.5 mm with perimeter bezel bolts and electric cobalt blue chapter ring accents."
+      },
+      {
+            "question": "Is the movement fully skeletonized?",
+            "answer": "Yes, it features an open-heart mechanical skeleton architecture exposing the balance wheel oscillation, brass gear train, and synthetic ruby bearings front-and-back."
+      },
+      {
+            "question": "What strap and water resistance are provided?",
+            "answer": "It is fitted with an integrated textured midnight blue silicone strap and offers 30 meters (3 ATM) splash resistance."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "The openworked automatic caliber features sculpted organic bridges and cutouts that maximize skeletal transparency without sacrificing torsional rigidity. The balance organ pulses at 21,600 VPH over synthetic ruby pivots.",
+      "materialScience": "The ergonomic tonneau case curves to conform to the human wrist, treated in a satin-brushed gunmetal grey coating. The contrasting cobalt blue flange ring provides high-contrast legibility against the exposed brass gear train."
+},
 
     // Authentic Macro Watch Element Pictures
     elements: [
@@ -722,6 +822,26 @@ export const WATCH_COLLECTION = [
       ]
     },
 
+    faq: [
+      {
+            "question": "What is the signature design feature of the Titan Deca 90245SM01?",
+            "answer": "It features a 10-sided regular decagonal chamfered bezel with 10 precision facets subtending 36° each around a sunburst sky blue dial."
+      },
+      {
+            "question": "What movement and complications does the Titan Deca have?",
+            "answer": "It is powered by a high-accuracy three-hand quartz caliber featuring a framed calendar date window at 3 o'clock and ~2-3 year battery lifespan."
+      },
+      {
+            "question": "What are the dimensions and water resistance?",
+            "answer": "The case measures 41.0 mm in diameter, 9.2 mm in thickness (ultra-slim), with 50 meters (5 ATM) water resistance and a solid 3-link dual-tone stainless steel bracelet."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "The slim quartz caliber utilizes a temperature-compensated quartz crystal vibrating at 32,768 Hz, regulated to within ±15 seconds per month with instantaneous date jumping at midnight.",
+      "materialScience": "Machined from solid 316L stainless steel, the decagonal bezel undergoes alternating high-polish beveling and satin brushing. The sunray dial plate is coated in a Mediterranean sky blue metallic lacquer with rhodium-plated baton indices."
+},
+
     // Authentic Macro Watch Element Pictures
     elements: [
       {
@@ -835,6 +955,26 @@ export const WATCH_COLLECTION = [
         }
       ]
     },
+
+    faq: [
+      {
+            "question": "What is the design concept behind the Police Cranium PLPEWJM0081301W?",
+            "answer": "It embodies an industrial cyber-steel tonneau skeleton aesthetic featuring a sculpted 3D skull bridge, 4-corner socket-head bezel bolts, and a multi-dial dual-time layout."
+      },
+      {
+            "question": "What are the case dimensions and materials?",
+            "answer": "The case measures 42.0 mm × 51.5 mm in brushed 316L stainless steel with mineral crystal, knurled setting crown, and high-traction matte black silicone strap."
+      },
+      {
+            "question": "What movement powers the Police Cranium?",
+            "answer": "It is driven by a precision multi-functional quartz movement with 50 meters (5 ATM) water resistance."
+      }
+],
+
+    technicalDossier: {
+      "caliberAnalysis": "The multi-register quartz movement coordinates dual-time zone tracking and multi-eye indication via independent stepping motors, maintaining split-second accuracy under shock and acceleration.",
+      "materialScience": "The multi-layered case architecture sandwiches a frosted silver cranial skeleton motif between a brushed steel top bezel with functional socket bolts and a hermetic 4-screw caseback, mounted to an industrial silicone band."
+},
 
     // Authentic Macro Watch Element Pictures
     elements: [

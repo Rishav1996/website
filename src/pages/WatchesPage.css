@@ -17,3 +17,23 @@
   z-index: 2;
   min-height: calc(100vh - 68px);
 }
+
+/* Ensure all semantic navigation links maintain clean button & card aesthetics */
+.watches-page-wrapper a.btn-archive-back,
+.watches-page-wrapper a.btn-archive-back-fastrack,
+.watches-page-wrapper a.btn-archive-back-gshock,
+.watches-page-wrapper a.btn-archive-back-timex,
+.watches-page-wrapper a.btn-archive-back-leecooper,
+.watches-page-wrapper a.btn-archive-back-titan,
+.watches-page-wrapper a.btn-archive-back-police,
+.watches-page-wrapper a.btn-adjacent-timepiece,
+.watches-page-wrapper a.btn-neutral-return,
+.watches-page-wrapper a.btn-crumb-link,
+.watches-page-wrapper a.header-brand,
+.watches-page-wrapper a.matrix-timepiece-cell,
+.watches-page-wrapper a.next-timepiece-card,
+.watches-page-wrapper a.btn-footer-return {
+  text-decoration: none !important;
+  color: inherit;
+}
+

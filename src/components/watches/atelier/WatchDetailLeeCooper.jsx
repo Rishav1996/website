@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WatchDossierSection from './WatchDossierSection';
 import './WatchDetailLeeCooper.css';
 
 /**
@@ -63,29 +64,43 @@ const WatchDetailLeeCooper = ({
         {/* Top Breadcrumb & Navigation */}
         <div className="leecooper-top-bar">
           <div className="top-nav-group">
-            <button type="button" className="btn-archive-back-leecooper" onClick={onBackToVault}>
+            <a
+              href={`${import.meta.env.BASE_URL}watches`}
+              className="btn-archive-back-leecooper"
+              onClick={(e) => {
+                e.preventDefault();
+                onBackToVault();
+              }}
+              title="Return to Horological Collection Vault"
+            >
               <span className="arrow">←</span>
               <span>Vault Archive</span>
-            </button>
+            </a>
             {prevWatch && (
-              <button
-                type="button"
+              <a
+                href={`${import.meta.env.BASE_URL}watches/${prevWatch.id}`}
                 className="btn-adjacent-timepiece"
-                onClick={() => onSelectWatch(prevWatch.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectWatch(prevWatch.id);
+                }}
                 title={`Previous: ${prevWatch.brand} ${prevWatch.model}`}
               >
                 <span>← {prevWatch.brand}</span>
-              </button>
+              </a>
             )}
             {nextWatch && (
-              <button
-                type="button"
+              <a
+                href={`${import.meta.env.BASE_URL}watches/${nextWatch.id}`}
                 className="btn-adjacent-timepiece"
-                onClick={() => onSelectWatch(nextWatch.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectWatch(nextWatch.id);
+                }}
                 title={`Next: ${nextWatch.brand} ${nextWatch.model}`}
               >
                 <span>{nextWatch.brand} →</span>
-              </button>
+              </a>
             )}
           </div>
 
@@ -350,14 +365,20 @@ const WatchDetailLeeCooper = ({
           </div>
         </section>
 
+        {/* Full Mechanical Specification & Horological Analysis Dossier (AEO & GEO) */}
+        <WatchDossierSection watch={watch} />
+
         {/* Next Timepiece in Archive Transition Card */}
         {nextWatch && (
           <section className="next-timepiece-transition-section" aria-label="Next Timepiece in Archive">
-            <div
+            <a
+              href={`${import.meta.env.BASE_URL}watches/${nextWatch.id}`}
               className="next-timepiece-card leecooper-next-card"
-              onClick={() => onSelectWatch(nextWatch.id)}
-              role="button"
-              tabIndex={0}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectWatch(nextWatch.id);
+              }}
+              title={`Inspect Next Timepiece: ${nextWatch.brand} ${nextWatch.model}`}
             >
               <div className="next-card-left">
                 <span className="next-kicker">UP NEXT IN ARCHIVE</span>
@@ -374,9 +395,11 @@ const WatchDetailLeeCooper = ({
                   alt={`${nextWatch.brand} ${nextWatch.model}`}
                   className="next-watch-img"
                   loading="lazy"
+                  width="180"
+                  height="180"
                 />
               </div>
-            </div>
+            </a>
           </section>
         )}
       </div>

@@ -247,19 +247,15 @@ const WatchCollectionVault = ({
               const is2026 = String(watch.yearAcquired) === '2026';
 
               return (
-                <article
+                <a
                   key={watch.id}
+                  href={`${import.meta.env.BASE_URL}watches/${watch.id}`}
                   className="matrix-timepiece-cell"
-                  onClick={() => onSelectWatch(watch.id)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      onSelectWatch(watch.id);
-                    }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectWatch(watch.id);
                   }}
-                  aria-label={`Timepiece: ${watch.brand} ${watch.model}, Bought in ${watch.yearAcquired}`}
+                  aria-label={`Timepiece: ${watch.brand} ${watch.model}, Reference ${watch.sku}, Bought in ${watch.yearAcquired}`}
                 >
                   {/* Cell Header: Order, Category, Prominent Bought Year Badge */}
                   <div className="matrix-cell-header">
@@ -288,6 +284,8 @@ const WatchCollectionVault = ({
                       alt={`${watch.brand} ${watch.model}`}
                       className="matrix-pedestal-img"
                       loading="lazy"
+                      width="440"
+                      height="440"
                     />
                     <div className="pedestal-lighting-aura"></div>
                   </div>
@@ -329,7 +327,7 @@ const WatchCollectionVault = ({
                       </span>
                     </div>
                   </div>
-                </article>
+                </a>
               );
             })}
           </div>

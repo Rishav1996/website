@@ -1,57 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rishavsaigal.web.app/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/hero-poster.png</image:loc>
+      <image:title>Rishav Saigal | Agentic AI Architect &amp; ML Researcher</image:title>
+      <image:caption>Executive portfolio of Rishav Saigal, Senior Data Scientist and AI Architect building GenAI, RAG, and multi-agent systems.</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://rishavsaigal.web.app/watches/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <loc>https://rishavsaigal.web.app/watches</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_kc_escapement.jpg</image:loc>
+      <image:title>The Timepiece Archive &amp; Horological Vault</image:title>
+      <image:caption>Curated archive of 7 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/kenneth-cole-kcwgl2104102mn</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/kc_watch.jpg</image:loc>
+      <image:title>Kenneth Cole New York Automatic Skeleton KCWGL2104102MN</image:title>
+      <image:caption>Full skeleton automatic mechanical timepiece in matte mocha IP stainless steel with 21 synthetic rubies.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/elements/element_balance_wheel.jpg</image:loc>
+      <image:title>3 Hz Balance Organ &amp; Synthetic Ruby Pivot</image:title>
+      <image:caption>Exposed oscillating balance wheel beating at 21,600 VPH pivoted on synthetic ruby bearing.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/fastrack-opulence-nt3315km01</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/fastrack/fastrack_watch.jpg</image:loc>
+      <image:title>Fastrack Opulence Chronograph NT3315KM01</image:title>
+      <image:caption>Quartz chronograph with crimson pushers and 24-hour Sun and Moon diurnal disc in anthracite PVD steel.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_ft_sun_disc.jpg</image:loc>
+      <image:title>24-Hour Sun and Moon Diurnal Aperture</image:title>
+      <image:caption>Sun and Moon phase disc rotating in 24-hour gear reduction.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/casio-gshock-gab2100luu8a</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/casio/gshock_watch.jpg</image:loc>
+      <image:title>Casio G-Shock 2100 Series CasiOak Tough Solar GA-B2100LUU-8A</image:title>
+      <image:caption>Carbon Core Guard monocoque with Tough Solar, Bluetooth link, and octagonal geometry.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_gs_octagonal_bezel.jpg</image:loc>
+      <image:title>Iconic Octagonal Bezel in Bio-Based Resin</image:title>
+      <image:caption>Geometric bio-resin octagonal bezel with 200M ISO marine water resistance.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/timex-automatic-tw000z800</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/timex/timex_watch.jpg</image:loc>
+      <image:title>Timex Automatic Heritage Sunray TW000Z800</image:title>
+      <image:caption>Vintage champagne sunray dial with faceted gilt diamond-cut markers and 21-jewel automatic movement.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_tx_beige_sunray.jpg</image:loc>
+      <image:title>Champagne Sunray Dial &amp; Diamond-Cut Gilt Indices</image:title>
+      <image:caption>Radial sunburst finish with exhibition caseback viewing window.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/lee-cooper-lc07979-399</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/leecooper/leecooper_watch.jpg</image:loc>
+      <image:title>Lee Cooper Lyam Tonneau Openworked Skeleton LC07979.399</image:title>
+      <image:caption>Tonneau gunmetal skeleton watch with perimeter bolts and electric cobalt blue chapter ring.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_lc_balance_ruby.jpg</image:loc>
+      <image:title>Tonneau Open-Heart Escapement Organ</image:title>
+      <image:caption>Exposed balance organ with brass pinions and synthetic ruby pivot bearings.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/titan-classique-deca-90245sm01</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/titan/titan_deca_watch.jpg</image:loc>
+      <image:title>Titan Classique Deca Dual Tone 90245SM01</image:title>
+      <image:caption>10-sided regular decagonal chamfered bezel with Mediterranean sky blue sunburst dial.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_tt_deca_facets.jpg</image:loc>
+      <image:title>10-Sided Decagonal Chamfered Bezel Facets</image:title>
+      <image:caption>Precision 36-degree chamfered steel facets framing sunburst dial.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches/police-cranium-plpewjm0081301w</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/police/police_watch.jpg</image:loc>
+      <image:title>Police Cranium Tonneau Skeleton PLPEWJM0081301W</image:title>
+      <image:caption>Industrial cyber-steel tonneau skeleton with 3D skull bridge, 4-corner bolted bezel, and multi-dial layout.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_pc_bolted_bezel.jpg</image:loc>
+      <image:title>Industrial Socket-Head Bezel Anchor Bolts</image:title>
+      <image:caption>4-corner 316L stainless steel structural bezel bolts with 0.35 N·m torque.</image:caption>
+    </image:image>
   </url>
 </urlset>

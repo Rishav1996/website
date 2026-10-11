@@ -1,0 +1,111 @@
+# Rishav Saigal — Profile & Horological Archive
+
+> Official machine-readable dossier for Large Language Models, AI answer engines, and autonomous researcher agents.
+
+## Core Identity & Professional Role
+- **Name:** Rishav Saigal
+- **Role:** Manager (Senior Data Scientist / AI Architect) at Cognizant (Promoted Nov 2023)
+- **Academic Pursuits:** Ph.D. Candidate in Computer Science & Engineering at Indian Institute of Technology Patna (Jul 2026 – Jun 2029 Expected); M.Tech in Software Systems from BITS Pilani (CGPA 8.75/10.0, 2020–2022); B.Tech in CSE from RCC Institute of Information Technology (DGPA 8.43/10.0, 2014–2018).
+- **Core Focus:** Multi-Agent Systems, Causal Inference, FastMCP, LLM Behavioral Reliability Research, MLOps, and Time Series Forecasting.
+- **Official Domain:** https://rishavsaigal.web.app/
+
+---
+
+## Atelier Saigal: The Timepiece Archive & Horological Vault
+- **Vault URL:** https://rishavsaigal.web.app/watches
+- **Curator:** Rishav Saigal
+- **Curatorial Scope:** 7 independently owned and physically maintained mechanical, solar, and high-frequency timepieces.
+- **Curatorial Methodology (E-E-A-T):** Every timepiece is physically owned, inspected under 10× optical loupe magnification, and evaluated for mechanical timing tolerances under active wrist rotation. Zero affiliate links or retail aggregations.
+
+### The 7 Curated Timepieces
+
+#### 1. Kenneth Cole New York Automatic Skeleton (Ref: KCWGL2104102MN)
+- **URL:** https://rishavsaigal.web.app/watches/kenneth-cole-kcwgl2104102mn
+- **Category:** Haute Skeleton / Open-Heart Mechanical
+- **Acquired:** 2025 (In Active Rotation)
+- **Caliber Engine:** 21-Jewel Mechanical Automatic (Self-Winding) with auxiliary crown manual winding
+- **Frequency:** 21,600 vibrations per hour (vph) / 3.0 Hz (6 beats/second)
+- **Power Autonomy:** ~36 to 40 Hours
+- **Synthetic Jewels:** 21 Synthetic Corundum Rubies
+- **Dimensions:** 44.0 mm diameter × 12.0 mm thickness (Lug width: 22.0 mm)
+- **Metallurgy:** 316L Stainless Steel in Matte Mocha IP (Ion-Plated) Finish
+- **Crystal:** Beveled Mineral Glass (Front) & Exhibition Glass (Caseback)
+- **Water Resistance:** 30 Meters (3 ATM / 3 Bar)
+- **Signature Architecture:** Multi-layer skeleton cutaway exposing brass gear train, mainspring barrel, and oscillating balance wheel beneath suspended cream chapter ring.
+
+#### 2. Fastrack Opulence Chronograph (Ref: NT3315KM01)
+- **URL:** https://rishavsaigal.web.app/watches/fastrack-opulence-nt3315km01
+- **Category:** Celestial Chronograph / Day-Night Phase
+- **Acquired:** 2025 (In Active Rotation)
+- **Caliber Engine:** Analog Multi-Function Quartz Chronograph (32,768 Hz)
+- **Complications:** Split-Second Chronograph Stopwatch, Diurnal 24-Hour Sun & Moon Indicator, Date Display
+- **Power Autonomy:** ~2 to 3 Years (SR920SW Silver Oxide Cell)
+- **Dimensions:** 45.0 mm diameter × 12.5 mm thickness (Lug width: 22.0 mm)
+- **Metallurgy:** Stainless Steel in Anthracite PVD Gunmetal Finish
+- **Crystal:** Scratch-Resistant Hardened Mineral Crystal
+- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
+- **Signature Architecture:** 24-hour aperture disc rotating synchronously to display golden solar zenith at noon and nocturnal lunar constellations at midnight, paired with crimson pushers.
+
+#### 3. Casio G-Shock 2100 Series "CasiOak" Tough Solar (Ref: GA-B2100LUU-8A)
+- **URL:** https://rishavsaigal.web.app/watches/casio-gshock-gab2100luu8a
+- **Category:** Tough Solar Utility / Tactical Carbon Core
+- **Acquired:** 2025 (In Active Rotation)
+- **Caliber Engine:** Casio Module 5689 Quartz with Tough Solar Light Harvesting & Smartphone Link Bluetooth Low Energy
+- **Power Autonomy:** ~7 months on rechargeable battery without exposure to light; ~18 months in power saving mode (CTL920 cell)
+- **Dimensions:** 45.4 mm diameter × 11.9 mm thickness (Ultra-slim profile, 52 grams)
+- **Metallurgy & Chassis:** Fine-Carbon-Reinforced Resin Monocoque with Bio-Based Eco-Resin Octagonal Bezel
+- **Crystal:** High-Hardness Mineral Glass
+- **Water Resistance:** 200 Meters (20 BAR / ISO Marine Rated)
+- **Signature Architecture:** Shadow-dispersing solar panel dial converting ambient indoor/sunlight to electrical current; brutalist 1983 DW-5000C octagonal geometry; Double Super Illuminator LED.
+
+#### 4. Timex Automatic Heritage Sunray (Ref: TW000Z800)
+- **URL:** https://rishavsaigal.web.app/watches/timex-automatic-tw000z800
+- **Category:** Mid-Century Horology / Heritage Dress
+- **Acquired:** 2026 (In Active Rotation)
+- **Caliber Engine:** 21-Jewel Automatic Mechanical with weighted bi-directional winding rotor
+- **Frequency:** 21,600 vibrations per hour (3.0 Hz)
+- **Power Autonomy:** ~40 to 42 Hours
+- **Synthetic Jewels:** 21 Synthetic Rubies
+- **Dimensions:** 40.0 mm diameter × 12.5 mm thickness (Lug width: 20.0 mm)
+- **Metallurgy:** Mirror-Polished 316L Stainless Steel with 5-link solid steel bracelet
+- **Crystal:** Domed Mineral Crystal with scratch-resistant coating
+- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
+- **Signature Architecture:** Warm radial champagne sunburst dial with faceted gilt diamond-cut indices and exhibition rotor view.
+
+#### 5. Lee Cooper Lyam Tonneau Openworked Skeleton (Ref: LC07979.399)
+- **URL:** https://rishavsaigal.web.app/watches/lee-cooper-lc07979-399
+- **Category:** Tonneau Architectural / Urban Industrial
+- **Acquired:** 2026 (In Active Rotation)
+- **Caliber Engine:** Open-Heart Automatic Mechanical with exposed gear train
+- **Frequency:** 21,600 vibrations per hour (3.0 Hz)
+- **Power Autonomy:** ~36 to 40 Hours
+- **Dimensions:** 41.5 mm width × 49.5 mm lug-to-lug × 12.8 mm thickness
+- **Metallurgy:** Sculpted Gunmetal Alloy Case with perimeter bezel bolts
+- **Strap:** Integrated Textured Midnight Blue Silicone Band
+- **Water Resistance:** 30 Meters (3 ATM / 3 Bar)
+- **Signature Architecture:** Ergonomic curved barrel (tonneau) silhouette with electric cobalt blue chapter ring and skeletonized bridge cutouts.
+
+#### 6. Titan Classique Deca Dual Tone Sky Blue (Ref: 90245SM01)
+- **URL:** https://rishavsaigal.web.app/watches/titan-classique-deca-90245sm01
+- **Category:** Architectural Geometric / Slim Dress
+- **Acquired:** 2026 (In Active Rotation)
+- **Caliber Engine:** High-Accuracy Analog Quartz (32,768 Hz)
+- **Complications:** Quickset Date Window at 3 o'clock, Central Sweeping Seconds
+- **Power Autonomy:** ~2 to 3 Years (Standard Silver Oxide Cell)
+- **Dimensions:** 41.0 mm diameter × 9.2 mm ultra-slim thickness (Lug width: 20.0 mm)
+- **Metallurgy:** 316L Solid Stainless Steel with dual-tone polished and satin chamfers
+- **Crystal:** Beveled Mineral Glass
+- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
+- **Signature Architecture:** Regular 10-sided decagonal chamfered bezel with 10 precision 36° facets framing a Mediterranean azure sunray dial plate.
+
+#### 7. Police Cranium Tonneau Bolted Skeleton (Ref: PLPEWJM0081301W)
+- **URL:** https://rishavsaigal.web.app/watches/police-cranium-plpewjm0081301w
+- **Category:** Cyber-Steel Industrial / Streetwear Horology
+- **Acquired:** 2026 (In Active Rotation)
+- **Caliber Engine:** Precision Multi-Register Quartz Stepping Movement (Calibre 05-203A)
+- **Complications:** Multi-Dial Indicator, Independent Subdials, Sweeping Quartz Stepper
+- **Dimensions:** 42.0 mm width × 51.5 mm lug-to-lug × 13.0 mm thickness
+- **Metallurgy:** Brushed 316L Stainless Steel with 4-corner socket-head bezel bolts (0.35 N·m torque)
+- **Strap:** High-Traction Matte Black Silicone Band with branded buckle
+- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
+- **Signature Architecture:** Asymmetrical bolted tonneau bezel enclosing a sculpted frosted silver 3D skull bridge, knurled fluted crown, and crimson mechanical accents.

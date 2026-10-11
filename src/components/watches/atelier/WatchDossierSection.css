@@ -1,0 +1,330 @@
+/* WatchDossierSection.css - Technical Spec & Analysis Styling */
+
+.watch-dossier-section {
+  width: 100%;
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(39, 39, 42, 0.6);
+  margin-top: 40px;
+  position: relative;
+}
+
+.dossier-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.dossier-header {
+  margin-bottom: 36px;
+}
+
+.dossier-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #14151a;
+  border: 1px solid #27272a;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #58a6ff;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.eyebrow-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #58a6ff;
+}
+
+.dossier-main-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fafafa;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.dossier-intro-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.92rem;
+  color: #8b949e;
+  max-width: 720px;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Split Grid */
+.dossier-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.dossier-spec-card,
+.dossier-analysis-card {
+  background: #121316;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.spec-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.7);
+  margin-bottom: 20px;
+}
+
+.spec-card-badge {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #58a6ff;
+  letter-spacing: 0.06em;
+}
+
+.spec-sku-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  color: #71717a;
+}
+
+/* Semantic Definition List (<dl>) */
+.horological-spec-dl {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.35);
+  gap: 16px;
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-term {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.78rem;
+  color: #8b949e;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.spec-def {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #fafafa;
+  text-align: right;
+  margin: 0;
+}
+
+/* Analysis Card Content */
+.dossier-narrative-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.analysis-subhead {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e6edf3;
+  margin: 0 0 6px;
+}
+
+.analysis-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.86rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.dossier-provenance-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #18191f;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 8px;
+}
+
+.callout-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52b788;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.callout-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.callout-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.78rem;
+  color: #52b788;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.callout-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: #8b949e;
+  line-height: 1.45;
+}
+
+/* FAQ Block */
+.dossier-faq-block {
+  background: #121316;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.faq-block-head {
+  margin-bottom: 22px;
+}
+
+.faq-badge {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  color: #58a6ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.faq-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fafafa;
+  margin: 0;
+}
+
+.faq-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dossier-faq-item {
+  background: #16171d;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.dossier-faq-item[open] {
+  border-color: #3f3f46;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e6edf3;
+  list-style: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  color: #58a6ff;
+  background: #1a1b22;
+}
+
+.q-indicator {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.q-text {
+  flex: 1;
+}
+
+.q-arrow {
+  color: #71717a;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.dossier-faq-item[open] .q-arrow {
+  transform: rotate(180deg);
+  color: #58a6ff;
+}
+
+.faq-answer {
+  padding: 0 18px 16px 48px;
+}
+
+.faq-answer p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.84rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .dossier-split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dossier-spec-card,
+  .dossier-analysis-card,
+  .dossier-faq-block {
+    padding: 20px;
+  }
+
+  .faq-answer {
+    padding-left: 20px;
+  }
+}

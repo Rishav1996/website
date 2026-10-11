@@ -4,7 +4,7 @@ import './WatchFloatingBackground.css';
 /**
  * WatchFloatingBackground - "Wall of Fame" Continuous Horological Ribbon
  * Displays an auto-sliding cinematic gallery behind the collection vault.
- * Dual-lane infinite marquee featuring authentic cuts and timepieces across all 6 watches.
+ * Dual-lane infinite marquee featuring authentic cuts and timepieces across all 7 watches.
  */
 
 const LANE_1_ITEMS = [

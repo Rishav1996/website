@@ -15,10 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     
     <!-- Primary Meta Tags -->
-    <title>Rishav Saigal | Agentic AI Architect & ML Researcher</title>
-    <meta name="title" content="Rishav Saigal | Agentic AI Architect & ML Researcher" />
-    <meta name="description" content="Rishav Saigal — Agentic AI Architect &amp; ML Researcher building GenAI, RAG, and LLM orchestration systems on GCP Vertex AI, LangGraph, and CrewAI." />
-    <meta name="keywords" content="Rishav Saigal, Agentic AI, RAG systems, LLM orchestration, GCP Vertex AI, LangGraph, CrewAI, Machine Learning Engineer, AI Architect, Data Scientist, Causal Inference" />
+    <title>Rishav Saigal | Senior Data Scientist &amp; AI Architect</title>
+    <meta name="title" content="Rishav Saigal | Senior Data Scientist &amp; AI Architect" />
+    <meta name="description" content="Rishav Saigal — Manager (Senior Data Scientist / AI Architect) at Cognizant &amp; Ph.D. Candidate at IIT Patna. Architecting autonomous multi-agent systems, causal inference, and production MLOps." />
+    <meta name="keywords" content="Rishav Saigal, Senior Data Scientist, AI Architect, Agentic AI, Multi-Agent Systems, GCP Vertex AI, Gemini Enterprise, FastMCP, Agent Engine Platform, LangGraph, CrewAI, Causal Inference, Time Series Forecasting, MLOps" />
     <meta name="author" content="Rishav Saigal" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://rishavsaigal.web.app/" />
@@ -27,8 +27,8 @@
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://rishavsaigal.web.app/" />
-    <meta property="og:title" content="Rishav Saigal | Agentic AI Architect & ML Researcher" />
-    <meta property="og:description" content="Rishav Saigal — Agentic AI Architect &amp; ML Researcher building GenAI, RAG, and LLM orchestration systems on GCP Vertex AI, LangGraph, and CrewAI." />
+    <meta property="og:title" content="Rishav Saigal | Senior Data Scientist &amp; AI Architect" />
+    <meta property="og:description" content="Rishav Saigal — Manager (Senior Data Scientist / AI Architect) at Cognizant &amp; Ph.D. Candidate at IIT Patna. Architecting autonomous multi-agent systems, causal inference, and production MLOps." />
     <meta property="og:image" content="https://rishavsaigal.web.app/assets/hero-poster.png" />
     <meta property="profile:first_name" content="Rishav" />
     <meta property="profile:last_name" content="Saigal" />
@@ -36,61 +36,117 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://rishavsaigal.web.app/" />
-    <meta property="twitter:title" content="Rishav Saigal | Agentic AI Architect & ML Researcher" />
-    <meta property="twitter:description" content="Rishav Saigal — Agentic AI Architect &amp; ML Researcher building GenAI, RAG, and LLM orchestration systems on GCP Vertex AI, LangGraph, and CrewAI." />
+    <meta property="twitter:title" content="Rishav Saigal | Senior Data Scientist &amp; AI Architect" />
+    <meta property="twitter:description" content="Rishav Saigal — Manager (Senior Data Scientist / AI Architect) at Cognizant &amp; Ph.D. Candidate at IIT Patna. Architecting autonomous multi-agent systems, causal inference, and production MLOps." />
     <meta property="twitter:image" content="https://rishavsaigal.web.app/assets/hero-poster.png" />
 
-    <!-- Structured Data (schema.org Person) — helps eligibility for Google's
-         knowledge-panel / rich-result treatment of the profile. -->
+    <!-- Structured Data (Schema.org ProfilePage & Person) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Rishav Saigal",
-      "url": "https://rishavsaigal.web.app/",
-      "image": "https://rishavsaigal.web.app/assets/hero-poster.png",
-      "jobTitle": "Manager (Senior Data Scientist / AI Architect)",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Cognizant"
-      },
-      "alumniOf": [
+      "@graph": [
         {
-          "@type": "CollegeOrUniversity",
-          "name": "Indian Institute of Technology Patna"
+          "@type": "ProfilePage",
+          "@id": "https://rishavsaigal.web.app/#profilepage",
+          "url": "https://rishavsaigal.web.app/",
+          "name": "Rishav Saigal | Senior Data Scientist & AI Architect",
+          "description": "Official professional portfolio, technical factsheets, and research vault of Rishav Saigal.",
+          "mainEntity": {
+            "@id": "https://rishavsaigal.web.app/#person"
+          }
         },
         {
-          "@type": "CollegeOrUniversity",
-          "name": "Birla Institute of Technology and Science, Pilani"
-        },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "RCC Institute of Information Technology"
+          "@type": "Person",
+          "@id": "https://rishavsaigal.web.app/#person",
+          "name": "Rishav Saigal",
+          "url": "https://rishavsaigal.web.app/",
+          "image": "https://rishavsaigal.web.app/assets/hero-poster.png",
+          "jobTitle": "Manager (Senior Data Scientist / AI Architect)",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Cognizant",
+            "url": "https://www.cognizant.com/"
+          },
+          "affiliation": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Indian Institute of Technology Patna",
+              "department": "Department of Computer Science & Engineering",
+              "description": "Ph.D. Candidate (Jul 2026 – Jun 2029 Expected)"
+            }
+          ],
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Birla Institute of Technology and Science, Pilani",
+              "description": "M.Tech in Data Science & Engineering (2019 – 2021)"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "RCC Institute of Information Technology",
+              "description": "B.Tech in Computer Science & Engineering (2013 – 2017)"
+            }
+          ],
+          "knowsAbout": [
+            "Agentic AI",
+            "Multi-Agent Systems",
+            "Retrieval-Augmented Generation (RAG)",
+            "GCP Vertex AI",
+            "Gemini Enterprise",
+            "Cloud Run",
+            "Google ADK",
+            "FastMCP",
+            "Agent Engine Platform",
+            "LangGraph",
+            "CrewAI",
+            "LLM Orchestration",
+            "LLM Behavioral Research",
+            "LLM Behavioral Drift",
+            "Time Series Forecasting",
+            "Causal Inference",
+            "Hierarchical Linear Models (HLM)",
+            "MLOps",
+            "Automated Retraining",
+            "Model Monitoring",
+            "SHAP (XAI)",
+            "Explainable AI",
+            "Scikit-Learn",
+            "TensorFlow",
+            "Keras",
+            "PySpark",
+            "Azure Databricks",
+            "AWS SageMaker",
+            "DataRobot",
+            "PyCaret",
+            "FastAPI",
+            "Streamlit",
+            "Docker",
+            "MLflow",
+            "Ollama",
+            "PostgreSQL",
+            "MySQL",
+            "Redis",
+            "OpenCV",
+            "LSTM",
+            "Survival Analysis",
+            "Transfer Learning",
+            "Feature Engineering",
+            "Prompt Engineering",
+            "AI Governance",
+            "Responsible AI"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/rishav-saigal-4bb50311a/",
+            "https://github.com/Rishav1996",
+            "https://orcid.org/0009-0005-5548-3016",
+            "https://www.credly.com/users/rishav-saigal.ae0679ae",
+            "https://medium.com/@rishavsaigal",
+            "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/",
+            "https://www.youtube.com/@algorythmchronicles",
+            "https://doi.org/10.5281/zenodo.20032071",
+            "https://doi.org/10.5281/zenodo.21520843"
+          ]
         }
-      ],
-      "knowsAbout": [
-        "Agentic AI",
-        "Multi-Agent Systems",
-        "Retrieval-Augmented Generation",
-        "Gemini Enterprise",
-        "LLM Orchestration",
-        "GCP Vertex AI",
-        "LangGraph",
-        "CrewAI",
-        "Causal Inference",
-        "MLOps",
-        "Time Series MLOps",
-        "FastMCP",
-        "Agent Engine Platform",
-        "Google ADK",
-        "Hierarchical Linear Models (HLM)",
-        "Automated Retraining"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/rishav-saigal-4bb50311a/",
-        "https://github.com/Rishav1996",
-        "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/",
-        "https://www.youtube.com/@algorythmchronicles"
       ]
     }
     </script>

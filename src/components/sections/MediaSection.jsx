@@ -290,19 +290,24 @@ const MediaSection = () => {
             ) : (
               <div className="youtube-videos-list">
                 {youtubeVideos.map((vid, idx) => (
-                  <div 
+                  <a 
                     key={idx}
+                    href={vid.url}
                     className="yt-video-row"
-                    onClick={() => setSelectedVideoId(vid.id)}
-                    role="button"
-                    tabIndex={0}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedVideoId(vid.id);
+                    }}
+                    title={`Watch "${vid.title}"`}
                   >
                     <div className="video-info">
                       <span className="video-title">{vid.title}</span>
                       <span className="video-views">{vid.viewsText}</span>
                     </div>
                     <span className="play-badge">Play Video</span>
-                  </div>
+                  </a>
                 ))}
               </div>
             )}

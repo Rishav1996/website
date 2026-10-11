@@ -134,6 +134,8 @@ const ExperienceSection = () => {
                 playsInline
                 muted={isMuted}
                 className="experience-video"
+                title="Rishav Saigal — Career Retrospective & Enterprise Experience Timeline"
+                aria-label="Rishav Saigal Career Retrospective Video"
                 poster={`${import.meta.env.BASE_URL}assets/experience-poster.webp`}
               >
                 {/* Serve 1080p for screens >= 768px */}

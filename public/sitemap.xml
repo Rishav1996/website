@@ -8,8 +8,18 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://rishavsaigal.web.app/assets/hero-poster.png</image:loc>
-      <image:title>Rishav Saigal | Agentic AI Architect &amp; ML Researcher</image:title>
-      <image:caption>Executive portfolio of Rishav Saigal, Senior Data Scientist and AI Architect building GenAI, RAG, and multi-agent systems.</image:caption>
+      <image:title>Rishav Saigal | Senior Data Scientist &amp; AI Architect</image:title>
+      <image:caption>Executive portfolio of Rishav Saigal, Manager and AI Architect building autonomous multi-agent systems and causal inference pipelines.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/experience-poster.webp</image:loc>
+      <image:title>Rishav Saigal — Career Retrospective &amp; Enterprise Timeline</image:title>
+      <image:caption>Career timeline and engineering leadership across Cognizant, Genpact, and Capgemini.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/contact-poster.webp</image:loc>
+      <image:title>Rishav Saigal — Collaboration Protocol</image:title>
+      <image:caption>Direct collaboration protocol for AI architecture advisory and enterprise consulting.</image:caption>
     </image:image>
   </url>
   <url>

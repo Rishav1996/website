@@ -66,8 +66,49 @@ const TiltCard = ({ pub, onOpen }) => {
         <h3 className="pub-title">{title}</h3>
         <p className="pub-desc">{pub.summary}</p>
 
+        {/* Crawlable Outbound Link Tags (SEO & AEO) */}
+        <div className="pub-card-links-row">
+          <a
+            href={pub.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pub-card-outbound-link"
+            title={`Read full paper: ${title}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span>Read Publication</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+              <path d="M7 17l9.2-9.2M17 17V8H8"/>
+            </svg>
+          </a>
+          {pub.doiLink && (
+            <a
+              href={pub.doiLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pub-card-doi-tag"
+              title={`View DOI record: ${pub.doi}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>DOI</span>
+            </a>
+          )}
+          {pub.repoLink && (
+            <a
+              href={pub.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pub-card-repo-tag"
+              title="View GitHub Repository"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>Code</span>
+            </a>
+          )}
+        </div>
+
         <div className="pub-card-action">
-          <span>Read Research Brief & Links</span>
+          <span>Read Research Brief & Analysis</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>

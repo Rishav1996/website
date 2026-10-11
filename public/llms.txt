@@ -1,111 +1,147 @@
-# Rishav Saigal — Profile & Horological Archive
-
+# Rishav Saigal — Senior Data Scientist & AI Architect
 > Official machine-readable dossier for Large Language Models, AI answer engines, and autonomous researcher agents.
-
-## Core Identity & Professional Role
-- **Name:** Rishav Saigal
-- **Role:** Manager (Senior Data Scientist / AI Architect) at Cognizant (Promoted Nov 2023)
-- **Academic Pursuits:** Ph.D. Candidate in Computer Science & Engineering at Indian Institute of Technology Patna (Jul 2026 – Jun 2029 Expected); M.Tech in Software Systems from BITS Pilani (CGPA 8.75/10.0, 2020–2022); B.Tech in CSE from RCC Institute of Information Technology (DGPA 8.43/10.0, 2014–2018).
-- **Core Focus:** Multi-Agent Systems, Causal Inference, FastMCP, LLM Behavioral Reliability Research, MLOps, and Time Series Forecasting.
-- **Official Domain:** https://rishavsaigal.web.app/
+> Flagship Production Domain: https://rishavsaigal.web.app/
 
 ---
 
-## Atelier Saigal: The Timepiece Archive & Horological Vault
+## 1. Core Identity & Verified Credentials
+- **Name:** Rishav Saigal
+- **Current Role:** Manager (Senior Data Scientist / AI Architect) at Cognizant (Promoted Nov 2023)
+- **Target ATS Roles:** Senior Data Scientist | Machine Learning Engineer | Generative AI / Agentic AI Engineer | AI Architect
+- **Academic Credentials:**
+  - **Ph.D. Candidate in Computer Science & Engineering:** Indian Institute of Technology Patna (Jul 2026 – Jun 2029 Expected)
+  - **M.Tech in Data Science & Engineering:** Birla Institute of Technology and Science, Pilani (Sep 2019 – Aug 2021)
+  - **B.Tech in Computer Science & Engineering:** RCC Institute of Information Technology, Maulana Abul Kalam Azad University of Technology (Aug 2013 – Jul 2017)
+- **Core Specializations:** Autonomous Multi-Agent Systems, Time Series Forecasting, Causal Inference, FastMCP, Agent Engine Platform, LLM Behavioral Reliability Research, Production MLOps.
+- **Enterprise Leadership:** Designated Subject Matter Expert (SME) in AI Architecture Design & GenAI at Cognizant; architectural solution design and technical response strategy for multiple high-value client RFPs; campus-to-corporate fresher mentorship lead; primary panellist for technical recruitment.
+
+---
+
+## 2. Selected Engineering & Research Projects (13 Factsheets)
+
+### 1. Generative AI (GenAI) Video Generation
+- **Category:** Agentic AI & GenAI | **Timeline:** Jan 2026 – Present
+- **Architecture:** Autonomous multi-agent pipeline using Google ADK, GCP Vertex AI (document storage), Gemini Enterprise, Agent Engine Platform, and FastMCP. Features context-window summarisation, token-cost observability, dynamic prompting, and automated self-correction validation loops.
+- **Verified Operational Impact:** Slashed end-to-end delivery timeline from 5–14 days down to under 6 hours (from script generation to final video demo).
+
+### 2. Media Analytics (POC)
+- **Category:** Time Series & MLOps | **Timeline:** Jun 2025 – Oct 2025
+- **Architecture:** Predictive ML and prompt engineering pipeline for inference explanation, insight extraction, and business KPI generation; models multi-channel budget allocation and predicts future investment growth using multi-timeseries forecasting.
+- **Scope Note:** Internal capability proof-of-concept without commercial client metrics.
+
+### 3. Price Elasticity (POC)
+- **Category:** Causal ML & Pricing | **Timeline:** Jun 2025 – Jul 2025
+- **Architecture:** Dynamic pricing architecture using Hierarchical Linear Models (HLM) (statsmodels, Python, Azure ML) with automated MLflow continuous retraining pipelines to model cross-product elasticity frontiers.
+- **Scope Note:** Internal capability proof-of-concept without commercial client metrics.
+
+### 4. Enterprise Analytics Chatbot
+- **Category:** Agentic AI & GenAI | **Timeline:** Jul 2024 – Dec 2025
+- **Architecture:** Conversational analytics agent (Streamlit, PostgreSQL) featuring a dedicated Intent Classifier to determine required insight types, paired with dynamic Text-to-SQL generation powered by Client Proprietary Internal LLMs.
+- **Verified Operational Impact:** Projected cycle time reduction for designing complex enterprise insights from 3 months down to under 15 days.
+
+### 5. Intelligent QA / BA Chatbot
+- **Category:** Agentic AI & GenAI | **Timeline:** Apr 2024 – Apr 2025
+- **Architecture:** Enterprise conversational system (FastAPI, Python) utilizing semantic policy retrieval, intent classifiers, and structured intent flows for automated policy Q&A and operational task execution.
+- **Verified Operational Impact:** Autonomously resolved 80% of internal policy document queries; automated RBAC-governed workflow execution and access request approvals/rejections.
+
+### 6. LLM-Driven Predictive Modelling (POC)
+- **Category:** Causal ML & Pricing | **Timeline:** Jul 2024 – Sep 2024
+- **Architecture:** Unsupervised feature extraction pipeline using open-source LLMs via Ollama to discover ticket objective classes; aggregates class occurrences into hourly instance feature vectors fed into an existing deep LSTM sequence model for enhanced predictive sequence accuracy.
+- **Scope Note:** Internal capability proof-of-concept without commercial client metrics.
+
+### 7. LLM-Based Test Case Generator
+- **Category:** Agentic AI & GenAI | **Timeline:** Nov 2023 – Mar 2024
+- **Architecture:** QA automation toolchain (FastAPI, Python) parsing unstructured Business Requirement Documents (BRDs) to extract acceptance criteria and auto-generate structured Gherkin and TMMi test suites.
+- **Verified Operational Impact:** Accelerated test authoring cycle by 70%; ensured 100% test-to-requirement coverage mapping.
+
+### 8. Healthcare Consumer Analytics
+- **Category:** Causal ML & Pricing | **Timeline:** Jun 2022 – Oct 2023
+- **Architecture:** Production ML pipeline on AWS SageMaker (Scikit-Learn, DataRobot) combining customer segmentation, causal inference uplift modeling, and SHAP explainability for account-level promotional strategy ranking.
+- **Verified Operational Impact:** Delivered projected $2.3M in cost savings at 90%+ model accuracy across all account-level promotion campaigns.
+
+### 9. Demand Sensing MLOps
+- **Category:** Time Series & MLOps | **Timeline:** Mar 2020 – Jun 2022
+- **Architecture:** Distributed time series MLOps pipeline on Azure Databricks (PySpark, TensorFlow, Keras) with automated feature engineering, distributed model selection, and continuous retraining workflows.
+- **Verified Operational Impact:** Achieved 5% accuracy improvement, 10% better model selection, reduced training from 3 days to 2 hours, and 60% reduction in manual intervention.
+
+### 10. Predictive Maintenance
+- **Category:** Time Series & MLOps | **Timeline:** Dec 2019 – Mar 2020
+- **Architecture:** Time-varying survival analysis pipeline (Cox Proportional Hazards, XGBoost, lifelines, Python) predicting EV component degradation windows paired with interactive Plotly operational HUDs.
+- **Verified Operational Impact:** Achieved 82% validation accuracy for early failure prevention.
+
+### 11. Service Now Ticket Analytics
+- **Category:** Time Series & MLOps | **Timeline:** Oct 2019 – Dec 2019
+- **Architecture:** Deep learning sequence volume forecasting architecture (LSTM vs. MLP, TensorFlow, MySQL) featuring custom greedy Hungarian workload dispatch heuristics for agent routing.
+- **Verified Operational Impact:** Achieved 85% validation accuracy with intelligent routing heuristics for optimized workload dispatch.
+
+### 12. Supply Chain Demand Forecasting (POC)
+- **Category:** Time Series & MLOps | **Timeline:** Apr 2019 – Oct 2019
+- **Architecture:** Multivariate demand forecasting pipeline (statsmodels SARIMAX, pandas, Python) integrating dynamic NLTK VADER social media sentiment indices as exogenous regressors with grid-search hyperparameter optimization.
+- **Scope Note:** Internal capability proof-of-concept without commercial client metrics.
+
+### 13. Retail Video Analytics (POC)
+- **Category:** NLP & Computer Vision | **Timeline:** Apr 2018 – Mar 2019
+- **Architecture:** Computer vision pipeline (OpenCV, TensorFlow, Keras, Python) featuring frame-level CNN transfer learning for brand asset detection and multi-class classification across retail video streams.
+- **Scope Note:** Internal capability proof-of-concept without commercial client metrics.
+
+---
+
+## 3. Publications & Independent Research (11 Entries)
+
+1. **The Specialized Frontier: An Inquiry Into Gated AI Architectures and the Cooperative Safety Flywheel** (Aug 2026, *Towards AI*)
+   - URL: https://pub.towardsai.net/the-specialized-frontier-an-inquiry-into-gated-ai-architectures-and-the-cooperative-safety-0f10f1546ad6
+2. **Claude Model Routing: Stop Scoring "Complexity." Score These Two Things Instead.** (Jul 2026, *Towards Deep Learning*)
+   - URL: https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce
+   - Zenodo Software DOI: https://doi.org/10.5281/zenodo.21520843 | GitHub: https://github.com/Rishav1996/model-router
+3. **LangGraph Multi-Agent Architecture: Building a Self-Critiquing AI Debate System** (May 2026, *Towards AI*)
+   - URL: https://pub.towardsai.net/langgraph-multi-agent-architecture-building-a-self-critiquing-ai-debate-system-971a7ad881d9
+4. **LLM Drift Experiment: A Quantitative Framework for Measuring Behavioural Drift via Adversarial Multi-Agent Debate** (May 2026, *Zenodo Research Dataset & Framework*)
+   - DOI: https://doi.org/10.5281/zenodo.20032071 | GitHub: https://github.com/Rishav1996/LLMDriftExperiment
+5. **Measuring Behavioral Drift in LLMs: 22 Signals, 5 Dimensions, and the Calcification Effect** (May 2026, *Towards AI*)
+   - URL: https://medium.com/towards-artificial-intelligence/measuring-behavioral-drift-in-llms-22-signals-5-dimensions-and-the-calcification-effect-aeaeb904d096
+   - *Note:* Documents a self-coined calcification effect in challenged models.
+6. **LLM Drift Explained: Do AI Models Lose Themselves Under Adversarial Pressure?** (May 2026, *Towards AI*)
+   - URL: https://pub.towardsai.net/do-ai-models-lose-themselves-exploring-llm-drift-through-adversarial-debate-a37e0c75012b
+7. **The $1.5 Million Difference: Why Benchmarks are Only 10% of the AI Agent Story** (Mar 2026, *LinkedIn*)
+   - URL: https://www.linkedin.com/pulse/15-million-difference-why-benchmarks-only-10-ai-agent-rishav-saigal-ao4jc/
+8. **AutoML on Autopilot** (Mar 2026, *Towards AI*)
+   - URL: https://pub.towardsai.net/automl-on-autopilot-c8939bca8f8f | GitHub: https://github.com/Rishav1996/PyCaretAgent
+9. **CognitoEDA** (Aug 2025, *Medium*)
+   - URL: https://medium.com/@rishavsaigal/cognitoeda-bcbd3567e6d2 | GitHub: https://github.com/Rishav1996/CognitoEDA
+10. **Beyond Prediction: Generative AI's Probabilistic Future in Time Series** (Jun 2025, *Medium*)
+    - URL: https://medium.com/@rishavsaigal/the-generative-ai-revolution-moving-beyond-what-will-happen-to-what-could-happen-in-time-f820ed5263f1
+11. **Unlocking Time Series with LLMs: A New Era with TimeCAP** (Jun 2025, *Medium*)
+    - URL: https://medium.com/@rishavsaigal/unlocking-time-series-with-llms-99a369f45447
+
+---
+
+## 4. Verified Professional Credentials (14 Items)
+- **Credly Profile:** https://www.credly.com/users/rishav-saigal.ae0679ae (8 Digital Badges)
+  1. Deploy an Agent with Agent Development Kit (ADK) (Google Cloud, Sep 2026)
+  2. Evaluate and Improve Agent Development Kit Agents (Google Cloud, Sep 2026)
+  3. Accelerate Development with Antigravity (Google Cloud, Sep 2026)
+  4. Build with Gemini (Google Cloud, Sep 2026)
+  5. Vibe Code Hackathon - Vibe Coded using Windsurf (Cognizant, Nov 2025)
+  6. AWS Knowledge: Amazon Braket (AWS, Aug 2025)
+  7. Machine Learning with Python (IBM / Coursera, Jun 2021)
+  8. Python for Data Science (IBM, May 2019)
+- **Specialized Academy Certifications (6 Credentials):**
+  9. Microsoft Certified: Azure AI Fundamentals (Microsoft, Jun 2025)
+  10. Generative AI Practitioner Certificate (Dataiku Academy, Jun 2026)
+  11. MLOps Practitioner Certificate (Dataiku Academy, Aug 2023)
+  12. Advanced Designer Certificate (Dataiku Academy, Jul 2023)
+  13. ML Practitioner Certificate (Dataiku Academy, Jul 2023)
+  14. Core Designer Certificate (Dataiku Academy, Jul 2023)
+
+---
+
+## 5. Atelier Saigal: The Timepiece Archive & Horological Vault
 - **Vault URL:** https://rishavsaigal.web.app/watches
-- **Curator:** Rishav Saigal
-- **Curatorial Scope:** 7 independently owned and physically maintained mechanical, solar, and high-frequency timepieces.
-- **Curatorial Methodology (E-E-A-T):** Every timepiece is physically owned, inspected under 10× optical loupe magnification, and evaluated for mechanical timing tolerances under active wrist rotation. Zero affiliate links or retail aggregations.
-
-### The 7 Curated Timepieces
-
-#### 1. Kenneth Cole New York Automatic Skeleton (Ref: KCWGL2104102MN)
-- **URL:** https://rishavsaigal.web.app/watches/kenneth-cole-kcwgl2104102mn
-- **Category:** Haute Skeleton / Open-Heart Mechanical
-- **Acquired:** 2025 (In Active Rotation)
-- **Caliber Engine:** 21-Jewel Mechanical Automatic (Self-Winding) with auxiliary crown manual winding
-- **Frequency:** 21,600 vibrations per hour (vph) / 3.0 Hz (6 beats/second)
-- **Power Autonomy:** ~36 to 40 Hours
-- **Synthetic Jewels:** 21 Synthetic Corundum Rubies
-- **Dimensions:** 44.0 mm diameter × 12.0 mm thickness (Lug width: 22.0 mm)
-- **Metallurgy:** 316L Stainless Steel in Matte Mocha IP (Ion-Plated) Finish
-- **Crystal:** Beveled Mineral Glass (Front) & Exhibition Glass (Caseback)
-- **Water Resistance:** 30 Meters (3 ATM / 3 Bar)
-- **Signature Architecture:** Multi-layer skeleton cutaway exposing brass gear train, mainspring barrel, and oscillating balance wheel beneath suspended cream chapter ring.
-
-#### 2. Fastrack Opulence Chronograph (Ref: NT3315KM01)
-- **URL:** https://rishavsaigal.web.app/watches/fastrack-opulence-nt3315km01
-- **Category:** Celestial Chronograph / Day-Night Phase
-- **Acquired:** 2025 (In Active Rotation)
-- **Caliber Engine:** Analog Multi-Function Quartz Chronograph (32,768 Hz)
-- **Complications:** Split-Second Chronograph Stopwatch, Diurnal 24-Hour Sun & Moon Indicator, Date Display
-- **Power Autonomy:** ~2 to 3 Years (SR920SW Silver Oxide Cell)
-- **Dimensions:** 45.0 mm diameter × 12.5 mm thickness (Lug width: 22.0 mm)
-- **Metallurgy:** Stainless Steel in Anthracite PVD Gunmetal Finish
-- **Crystal:** Scratch-Resistant Hardened Mineral Crystal
-- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
-- **Signature Architecture:** 24-hour aperture disc rotating synchronously to display golden solar zenith at noon and nocturnal lunar constellations at midnight, paired with crimson pushers.
-
-#### 3. Casio G-Shock 2100 Series "CasiOak" Tough Solar (Ref: GA-B2100LUU-8A)
-- **URL:** https://rishavsaigal.web.app/watches/casio-gshock-gab2100luu8a
-- **Category:** Tough Solar Utility / Tactical Carbon Core
-- **Acquired:** 2025 (In Active Rotation)
-- **Caliber Engine:** Casio Module 5689 Quartz with Tough Solar Light Harvesting & Smartphone Link Bluetooth Low Energy
-- **Power Autonomy:** ~7 months on rechargeable battery without exposure to light; ~18 months in power saving mode (CTL920 cell)
-- **Dimensions:** 45.4 mm diameter × 11.9 mm thickness (Ultra-slim profile, 52 grams)
-- **Metallurgy & Chassis:** Fine-Carbon-Reinforced Resin Monocoque with Bio-Based Eco-Resin Octagonal Bezel
-- **Crystal:** High-Hardness Mineral Glass
-- **Water Resistance:** 200 Meters (20 BAR / ISO Marine Rated)
-- **Signature Architecture:** Shadow-dispersing solar panel dial converting ambient indoor/sunlight to electrical current; brutalist 1983 DW-5000C octagonal geometry; Double Super Illuminator LED.
-
-#### 4. Timex Automatic Heritage Sunray (Ref: TW000Z800)
-- **URL:** https://rishavsaigal.web.app/watches/timex-automatic-tw000z800
-- **Category:** Mid-Century Horology / Heritage Dress
-- **Acquired:** 2026 (In Active Rotation)
-- **Caliber Engine:** 21-Jewel Automatic Mechanical with weighted bi-directional winding rotor
-- **Frequency:** 21,600 vibrations per hour (3.0 Hz)
-- **Power Autonomy:** ~40 to 42 Hours
-- **Synthetic Jewels:** 21 Synthetic Rubies
-- **Dimensions:** 40.0 mm diameter × 12.5 mm thickness (Lug width: 20.0 mm)
-- **Metallurgy:** Mirror-Polished 316L Stainless Steel with 5-link solid steel bracelet
-- **Crystal:** Domed Mineral Crystal with scratch-resistant coating
-- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
-- **Signature Architecture:** Warm radial champagne sunburst dial with faceted gilt diamond-cut indices and exhibition rotor view.
-
-#### 5. Lee Cooper Lyam Tonneau Openworked Skeleton (Ref: LC07979.399)
-- **URL:** https://rishavsaigal.web.app/watches/lee-cooper-lc07979-399
-- **Category:** Tonneau Architectural / Urban Industrial
-- **Acquired:** 2026 (In Active Rotation)
-- **Caliber Engine:** Open-Heart Automatic Mechanical with exposed gear train
-- **Frequency:** 21,600 vibrations per hour (3.0 Hz)
-- **Power Autonomy:** ~36 to 40 Hours
-- **Dimensions:** 41.5 mm width × 49.5 mm lug-to-lug × 12.8 mm thickness
-- **Metallurgy:** Sculpted Gunmetal Alloy Case with perimeter bezel bolts
-- **Strap:** Integrated Textured Midnight Blue Silicone Band
-- **Water Resistance:** 30 Meters (3 ATM / 3 Bar)
-- **Signature Architecture:** Ergonomic curved barrel (tonneau) silhouette with electric cobalt blue chapter ring and skeletonized bridge cutouts.
-
-#### 6. Titan Classique Deca Dual Tone Sky Blue (Ref: 90245SM01)
-- **URL:** https://rishavsaigal.web.app/watches/titan-classique-deca-90245sm01
-- **Category:** Architectural Geometric / Slim Dress
-- **Acquired:** 2026 (In Active Rotation)
-- **Caliber Engine:** High-Accuracy Analog Quartz (32,768 Hz)
-- **Complications:** Quickset Date Window at 3 o'clock, Central Sweeping Seconds
-- **Power Autonomy:** ~2 to 3 Years (Standard Silver Oxide Cell)
-- **Dimensions:** 41.0 mm diameter × 9.2 mm ultra-slim thickness (Lug width: 20.0 mm)
-- **Metallurgy:** 316L Solid Stainless Steel with dual-tone polished and satin chamfers
-- **Crystal:** Beveled Mineral Glass
-- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
-- **Signature Architecture:** Regular 10-sided decagonal chamfered bezel with 10 precision 36° facets framing a Mediterranean azure sunray dial plate.
-
-#### 7. Police Cranium Tonneau Bolted Skeleton (Ref: PLPEWJM0081301W)
-- **URL:** https://rishavsaigal.web.app/watches/police-cranium-plpewjm0081301w
-- **Category:** Cyber-Steel Industrial / Streetwear Horology
-- **Acquired:** 2026 (In Active Rotation)
-- **Caliber Engine:** Precision Multi-Register Quartz Stepping Movement (Calibre 05-203A)
-- **Complications:** Multi-Dial Indicator, Independent Subdials, Sweeping Quartz Stepper
-- **Dimensions:** 42.0 mm width × 51.5 mm lug-to-lug × 13.0 mm thickness
-- **Metallurgy:** Brushed 316L Stainless Steel with 4-corner socket-head bezel bolts (0.35 N·m torque)
-- **Strap:** High-Traction Matte Black Silicone Band with branded buckle
-- **Water Resistance:** 50 Meters (5 ATM / 5 Bar)
-- **Signature Architecture:** Asymmetrical bolted tonneau bezel enclosing a sculpted frosted silver 3D skull bridge, knurled fluted crown, and crimson mechanical accents.
+- **Curatorial Scope:** 7 independently owned, macro-inspected mechanical, solar, and high-frequency timepieces with 42 total active mechanical jewels.
+  1. **Kenneth Cole New York Automatic Skeleton (KCWGL2104102MN):** 21-Jewel Mechanical Automatic, 21,600 vph (3.0 Hz), 316L Stainless Steel Matte Mocha IP, 44mm.
+  2. **Fastrack Opulence Chronograph (NT3315KM01):** High-Torque Multi-Function Quartz (32,768 Hz), 24-Hour Diurnal Sun/Moon Phase, Anthracite PVD, 45mm.
+  3. **Casio G-Shock 2100 Series "CasiOak" Tough Solar (GA-B2100LUU-8A):** Module 5689 Tough Solar & Bluetooth BLE, Carbon Core Guard Monocoque, 200M WR, 45.4mm.
+  4. **Timex Automatic Heritage Sunray (TW000Z800):** 21-Jewel Bi-Directional Rotor Automatic, 21,600 vph (3.0 Hz), Champagne Sunburst, 316L Steel, 40mm.
+  5. **Lee Cooper Lyam Tonneau Skeleton (LC07979.399):** Open-Heart Mechanical Automatic, 21,600 vph (3.0 Hz), Gunmetal Bezel Bolts, Cobalt Blue Ring, 41.5×49.5mm Tonneau.
+  6. **Titan Classique Deca Dual Tone Sky Blue (90245SM01):** Precision Quartz (32,768 Hz), 10-Sided Decagonal Chamfered Bezel, Quickset Date, Sky Blue Sunray, 41mm.
+  7. **Police Cranium Tonneau Bolted Skeleton (PLPEWJM0081301W):** Calibre 05-203A Quartz Stepper, 4-Corner Socket Bezel Bolts, 3D Skull Dial, Crimson Accents, 42×51.5mm Tonneau.

@@ -167,7 +167,7 @@ const ProjectsSection = () => {
           {/* Left: Scrollable 13 Project Items */}
           <div className="projects-list">
             {filteredProjects.map((proj, idx) => (
-              <div 
+              <article 
                 key={idx} 
                 className={`project-item ${activeProject.title === proj.title ? 'active' : ''}`}
                 onClick={() => setActiveProject(proj)}
@@ -177,7 +177,14 @@ const ProjectsSection = () => {
                   <span className="project-cat-pill">{proj.category}</span>
                 </div>
                 <p className="proj-date">{proj.date}</p>
-              </div>
+                <p className="project-brief-desc">{proj.desc}</p>
+                {proj.impact && (
+                  <div className="project-impact-line">
+                    <span className="impact-bullet">&gt;</span>
+                    <span className="impact-text">{proj.impact}</span>
+                  </div>
+                )}
+              </article>
             ))}
           </div>
           

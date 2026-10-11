@@ -27,15 +27,21 @@ const SvgCircuitFrame = ({ children, className = '', color = '#58a6ff' }) => {
 
   return (
     <div ref={frameRef} className={`svg-circuit-wrapper ${className}`}>
-      <svg className="svg-circuit-frame-overlay" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        {/* Top Left Corner Bracket */}
-        <path className="circuit-trace-path" d="M 0 25 L 0 0 L 25 0" stroke={color} strokeWidth="1.5" fill="none" />
-        {/* Top Right Corner Bracket */}
-        <path className="circuit-trace-path" d="M calc(100% - 25px) 0 L 100% 0 L 100% 25" stroke={color} strokeWidth="1.5" fill="none" />
-        {/* Bottom Left Corner Bracket */}
-        <path className="circuit-trace-path" d="M 0 calc(100% - 25px) L 0 100% L 25 100%" stroke={color} strokeWidth="1.5" fill="none" />
-        {/* Bottom Right Corner Bracket */}
-        <path className="circuit-trace-path" d="M calc(100% - 25px) 100% L 100% 100% L 100% calc(100% - 25px)" stroke={color} strokeWidth="1.5" fill="none" />
+      {/* Top Left Corner Bracket */}
+      <svg className="svg-circuit-corner top-left" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path className="circuit-trace-path" d="M 0 25 L 0 0 L 25 0" stroke={color} strokeWidth="1.5" />
+      </svg>
+      {/* Top Right Corner Bracket */}
+      <svg className="svg-circuit-corner top-right" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path className="circuit-trace-path" d="M 0 0 L 25 0 L 25 25" stroke={color} strokeWidth="1.5" />
+      </svg>
+      {/* Bottom Left Corner Bracket */}
+      <svg className="svg-circuit-corner bottom-left" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path className="circuit-trace-path" d="M 0 0 L 0 25 L 25 25" stroke={color} strokeWidth="1.5" />
+      </svg>
+      {/* Bottom Right Corner Bracket */}
+      <svg className="svg-circuit-corner bottom-right" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path className="circuit-trace-path" d="M 0 25 L 25 25 L 25 0" stroke={color} strokeWidth="1.5" />
       </svg>
       <div className="svg-circuit-content">
         {children}

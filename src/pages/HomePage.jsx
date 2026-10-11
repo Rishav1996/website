@@ -10,6 +10,7 @@ import ExperienceSection from '../components/sections/ExperienceSection'
 import PublicationsSection from '../components/sections/PublicationsSection'
 import CertificationsSection from '../components/sections/CertificationsSection'
 import MediaSection from '../components/sections/MediaSection'
+import ExecutiveFaqSection from '../components/sections/ExecutiveFaqSection'
 import ContactSection from '../components/sections/ContactSection'
 
 const HomePage = () => {
@@ -27,6 +28,7 @@ const HomePage = () => {
           <CapabilitiesSection />
           <CertificationsSection />
           <MediaSection />
+          <ExecutiveFaqSection />
           <ContactSection />
         </main>
         <Footer />

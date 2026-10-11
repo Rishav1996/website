@@ -33,6 +33,7 @@ const NAV_PILLARS = [
     subItems: [
       { label: 'Skills Evolution', href: '#capabilities' },
       { label: 'Certifications', href: '#certifications' },
+      { label: 'Executive FAQ', href: '#faq' },
     ]
   }
 ];

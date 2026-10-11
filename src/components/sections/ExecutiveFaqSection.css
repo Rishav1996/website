@@ -1,0 +1,116 @@
+.executive-faq-section {
+  padding: 6.5rem 5% 6rem;
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.executive-faq-container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.faq-accordions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 3rem;
+}
+
+.faq-detail-card {
+  background: rgba(19, 25, 34, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem 1.6rem;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(16px);
+}
+
+.faq-detail-card:hover {
+  border-color: rgba(88, 166, 255, 0.28);
+  background: rgba(19, 25, 34, 0.85);
+}
+
+.faq-detail-card[open] {
+  border-color: rgba(88, 166, 255, 0.4);
+  background: rgba(19, 25, 34, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.faq-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-summary-row::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question-num {
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.faq-question-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-high);
+  line-height: 1.45;
+  flex-grow: 1;
+}
+
+.faq-detail-card[open] .faq-question-text {
+  color: #fff;
+}
+
+.faq-toggle-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-muted);
+  transition: transform 0.25s ease, background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.faq-detail-card[open] .faq-toggle-chevron {
+  transform: rotate(180deg);
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--color-accent-primary);
+}
+
+.faq-answer-body {
+  padding-top: 1.1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-answer-body p {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .faq-detail-card {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .faq-question-text {
+    font-size: 0.95rem;
+  }
+}

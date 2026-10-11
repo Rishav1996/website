@@ -104,6 +104,8 @@ const ContactSection = () => {
               playsInline
               muted={isMuted}
               className="contact-video"
+              title="Rishav Saigal — Collaboration Protocol & Closing Remarks"
+              aria-label="Rishav Saigal Collaboration Video"
               poster={`${import.meta.env.BASE_URL}assets/contact-poster.webp`}
             >
               {/* Serve 1080p for screens >= 768px */}

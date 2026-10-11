@@ -108,6 +108,8 @@ const HeroSection = () => {
           playsInline
           muted={isMuted}
           className="hero-video"
+          title="Rishav Saigal — Executive Overview & Agentic AI Architecture Introduction"
+          aria-label="Rishav Saigal Executive Overview Video"
           poster={`${import.meta.env.BASE_URL}assets/hero-poster.png`}
         >
           {/* Serve 1080p for screens >= 768px */}

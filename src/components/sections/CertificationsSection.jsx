@@ -271,6 +271,8 @@ const CertificationsSection = () => {
                         src={cert.badgeImage}
                         alt={cert.title}
                         className="cert-badge-img"
+                        width="48"
+                        height="48"
                         loading="lazy"
                       />
                     </div>

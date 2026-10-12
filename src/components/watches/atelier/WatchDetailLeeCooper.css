@@ -459,6 +459,11 @@
   font-weight: 600;
 }
 
+.leecooper-exhibition-wrapper .controls-right {
+  display: flex;
+  align-items: center;
+}
+
 .element-indicator-text {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
@@ -487,6 +492,16 @@
   min-height: 380px;
   position: relative;
   overflow: hidden;
+}
+
+.leecooper-exhibition-wrapper .viewport-full-wrap,
+.leecooper-exhibition-wrapper .viewport-macro-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .leecooper-viewport .viewport-full-img,

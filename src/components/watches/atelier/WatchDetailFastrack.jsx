@@ -41,19 +41,19 @@ const WatchDetailFastrack = ({
   // Derive atmospheric lighting phase from slider position
   let currentPhase = 'day';
   let phaseTitle = 'SOLAR ZENITH';
-  let phaseDesc = 'Golden Sun positioned at peak noon in the 24-hour aperture.';
+  let _phaseDesc = 'Golden Sun positioned at peak noon in the 24-hour aperture.';
   if (orbitHour >= 9 && orbitHour <= 15) {
     currentPhase = 'day';
     phaseTitle = 'SOLAR ZENITH';
-    phaseDesc = 'Golden Sun positioned at peak noon in the 24-hour aperture.';
+    _phaseDesc = 'Golden Sun positioned at peak noon in the 24-hour aperture.';
   } else if ((orbitHour > 15 && orbitHour <= 20) || (orbitHour >= 5 && orbitHour < 9)) {
     currentPhase = 'twilight';
     phaseTitle = 'TWILIGHT HORIZON';
-    phaseDesc = 'Twilight transition between daytime solar brilliance and evening dusk.';
+    _phaseDesc = 'Twilight transition between daytime solar brilliance and evening dusk.';
   } else {
     currentPhase = 'midnight';
     phaseTitle = 'STEALTH MIDNIGHT';
-    phaseDesc = 'Crescent Moon & Constellations aligned with nocturnal luminescence.';
+    _phaseDesc = 'Crescent Moon & Constellations aligned with nocturnal luminescence.';
   }
 
   const formattedHour = `${String(Math.floor(orbitHour)).padStart(2, '0')}:00`;

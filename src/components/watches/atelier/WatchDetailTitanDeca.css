@@ -592,6 +592,11 @@
   font-weight: 600;
 }
 
+.titan-exhibition-wrapper .controls-right {
+  display: flex;
+  align-items: center;
+}
+
 .element-indicator-text {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;
@@ -634,7 +639,8 @@
   box-shadow: none !important;
 }
 
-.viewport-full-wrap {
+.viewport-full-wrap,
+.titan-exhibition-wrapper .viewport-macro-wrap {
   position: relative;
   display: flex;
   flex-direction: column;

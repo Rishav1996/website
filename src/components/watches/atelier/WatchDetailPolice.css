@@ -371,6 +371,11 @@
   font-weight: 600;
 }
 
+.police-exhibition-wrapper .controls-right {
+  display: flex;
+  align-items: center;
+}
+
 .element-indicator-text {
   font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
   font-size: 0.7rem;

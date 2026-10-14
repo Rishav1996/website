@@ -137,11 +137,10 @@
 
 ## 5. Atelier Saigal: The Timepiece Archive & Horological Vault
 - **Vault URL:** https://rishavsaigal.web.app/watches
-- **Curatorial Scope:** 7 independently owned, macro-inspected mechanical, solar, and high-frequency timepieces with 42 total active mechanical jewels.
+- **Curatorial Scope:** 6 independently owned, macro-inspected mechanical, solar, and high-frequency timepieces with 42 total active mechanical jewels.
   1. **Kenneth Cole New York Automatic Skeleton (KCWGL2104102MN):** 21-Jewel Mechanical Automatic, 21,600 vph (3.0 Hz), 316L Stainless Steel Matte Mocha IP, 44mm.
   2. **Fastrack Opulence Chronograph (NT3315KM01):** High-Torque Multi-Function Quartz (32,768 Hz), 24-Hour Diurnal Sun/Moon Phase, Anthracite PVD, 45mm.
   3. **Casio G-Shock 2100 Series "CasiOak" Tough Solar (GA-B2100LUU-8A):** Module 5689 Tough Solar & Bluetooth BLE, Carbon Core Guard Monocoque, 200M WR, 45.4mm.
   4. **Timex Automatic Heritage Sunray (TW000Z800):** 21-Jewel Bi-Directional Rotor Automatic, 21,600 vph (3.0 Hz), Champagne Sunburst, 316L Steel, 40mm.
   5. **Lee Cooper Lyam Tonneau Skeleton (LC07979.399):** Open-Heart Mechanical Automatic, 21,600 vph (3.0 Hz), Gunmetal Bezel Bolts, Cobalt Blue Ring, 41.5×49.5mm Tonneau.
   6. **Titan Classique Deca Dual Tone Sky Blue (90245SM01):** Precision Quartz (32,768 Hz), 10-Sided Decagonal Chamfered Bezel, Quickset Date, Sky Blue Sunray, 41mm.
-  7. **Police Cranium Tonneau Bolted Skeleton (PLPEWJM0081301W):** Calibre 05-203A Quartz Stepper, 4-Corner Socket Bezel Bolts, 3D Skull Dial, Crimson Accents, 42×51.5mm Tonneau.

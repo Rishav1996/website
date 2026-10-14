@@ -17,7 +17,6 @@ const routes = [
   'watches/timex-automatic-tw000z800',
   'watches/lee-cooper-lc07979-399',
   'watches/titan-classique-deca-90245sm01',
-  'watches/police-cranium-plpewjm0081301w',
 ];
 
 function generateHtml(routePath, isDynamic404 = false) {

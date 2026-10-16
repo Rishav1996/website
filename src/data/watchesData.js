@@ -1,7 +1,7 @@
 /**
  * Horological Collection Data Registry
  * Single Source of Truth for Rishav Saigal's Timepiece Vault
- * 6 Curated Masterpieces across Skeleton, Solar, Chronograph & Mid-Century Horology
+ * 7 Curated Masterpieces across Skeleton, Solar, Chronograph & Mid-Century Horology
  */
 
 export const WATCH_COLLECTION = [

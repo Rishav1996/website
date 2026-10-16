@@ -59,7 +59,7 @@ export function useWatchHead(selectedWatch = null) {
     } else {
       // Collection Vault Route (/watches)
       const title = 'The Timepiece Archive | Horological Vault & Mechanical Atelier — Rishav Saigal';
-      const description = 'A curated archive of 6 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal. Featuring macro loupe studies, caliber physics, and deterministic horology.';
+      const description = 'A curated archive of 7 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal. Featuring macro loupe studies, caliber physics, and deterministic horology.';
       const canonicalUrl = `${DOMAIN}/watches`;
       const imageUrl = `${DOMAIN}/assets/watches/cuts/cut_kc_escapement.jpg`;
 

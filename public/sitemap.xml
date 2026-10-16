@@ -30,7 +30,7 @@
     <image:image>
       <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_kc_escapement.jpg</image:loc>
       <image:title>The Timepiece Archive &amp; Horological Vault</image:title>
-      <image:caption>Curated archive of 6 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal.</image:caption>
+      <image:caption>Curated archive of 7 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal.</image:caption>
     </image:image>
   </url>
   <url>
@@ -127,6 +127,22 @@
       <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_tt_deca_facets.jpg</image:loc>
       <image:title>10-Sided Decagonal Chamfered Bezel Facets</image:title>
       <image:caption>Precision 36-degree chamfered steel facets framing sunburst dial.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rishavsaigal.web.app/watches/police-cranium-plpewjm0081301w</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/police/police_watch.jpg</image:loc>
+      <image:title>Police Cranium Tonneau Skeleton PLPEWJM0081301W</image:title>
+      <image:caption>Industrial cyber-steel tonneau skeleton with 3D skull bridge, 4-corner bolted bezel, and multi-dial layout.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_pc_bolted_bezel.jpg</image:loc>
+      <image:title>Industrial Socket-Head Bezel Anchor Bolts</image:title>
+      <image:caption>4-corner 316L stainless steel structural bezel bolts with 0.35 N·m torque.</image:caption>
     </image:image>
   </url>
 </urlset>

@@ -5,6 +5,7 @@ import WatchDetailGShock from './WatchDetailGShock';
 import WatchDetailTimex from './WatchDetailTimex';
 import WatchDetailLeeCooper from './WatchDetailLeeCooper';
 import WatchDetailTitanDeca from './WatchDetailTitanDeca';
+import WatchDetailPolice from './WatchDetailPolice';
 import { WATCH_COLLECTION } from '../../../data/watchesData';
 
 /**
@@ -17,6 +18,7 @@ import { WATCH_COLLECTION } from '../../../data/watchesData';
  *  - Timex Heritage TW000Z800 -> "The Heritage Parchment & Mid-Century Atelier"
  *  - Lee Cooper LC07979.399 -> "The Tonneau Indigo Forge Atelier"
  *  - Titan Deca 90245SM01 -> "The Riviera Deca Prism Atelier"
+ *  - Police Cranium PLPEWJM0081301W -> "The Cranium Cyber-Steel & Industrial Tonneau Atelier"
  */
 const WatchDetailExhibition = ({
   watch,
@@ -69,7 +71,18 @@ const WatchDetailExhibition = ({
     return <WatchDetailTitanDeca {...commonProps} />;
   }
 
-  // 6. Default to Kenneth Cole Coffee Mocha Roastery Atelier
+  // 6. Police Cranium Tonneau Skeleton
+  if (
+    sku === 'PLPEWJM0081301W' ||
+    sku === 'PLPEWJM0081301' ||
+    sku === 'PEWJM0081301' ||
+    id.includes('police') ||
+    id.includes('cranium')
+  ) {
+    return <WatchDetailPolice {...commonProps} />;
+  }
+
+  // 7. Default to Kenneth Cole Coffee Mocha Roastery Atelier
   return <WatchDetailKennethCole {...commonProps} />;
 };
 

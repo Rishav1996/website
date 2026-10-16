@@ -103,10 +103,42 @@ const LANE_1_ITEMS = [
     name: '10-Sided Decagonal Bezel',
     image: 'assets/watches/cuts/cut_tt_deca_facets.jpg',
     accent: '#38bdf8'
+  },
+  {
+    id: 'l1-pc-watch',
+    type: 'watch',
+    watch: 'Police',
+    name: 'Cranium Tonneau Skeleton',
+    image: 'assets/watches/police/police_watch_transparent.png',
+    accent: '#e11d48'
+  },
+  {
+    id: 'l1-pc-bezel',
+    type: 'cut',
+    watch: 'Police',
+    name: 'Bolted Tonneau Bezel',
+    image: 'assets/watches/cuts/cut_pc_bolted_bezel.jpg',
+    accent: '#94a3b8'
   }
 ];
 
 const LANE_2_ITEMS = [
+  {
+    id: 'l2-pc-cranium',
+    type: 'cut',
+    watch: 'Police',
+    name: 'Silver Cranium Skull Dial',
+    image: 'assets/watches/cuts/cut_pc_cranium_dial.jpg',
+    accent: '#e11d48'
+  },
+  {
+    id: 'l2-pc-watch',
+    type: 'watch',
+    watch: 'Police',
+    name: 'Cranium PLPEWJM0081301W',
+    image: 'assets/watches/police/police_watch_transparent.png',
+    accent: '#e11d48'
+  },
   {
     id: 'l2-tt-dial',
     type: 'cut',

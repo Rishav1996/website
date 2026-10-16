@@ -71,7 +71,7 @@ async function run() {
     let vaultHtml = fs.readFileSync(vaultPath, 'utf8');
 
     const vaultTitle = 'The Timepiece Archive | Horological Vault & Mechanical Atelier — Rishav Saigal';
-    const vaultDesc = 'A curated archive of 6 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal. Featuring macro loupe studies, caliber physics, and deterministic horology.';
+    const vaultDesc = 'A curated archive of 7 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal. Featuring macro loupe studies, caliber physics, and deterministic horology.';
     const vaultCanonical = `${DOMAIN}/watches`;
     const vaultImage = `${DOMAIN}/assets/watches/cuts/cut_kc_escapement.jpg`;
 

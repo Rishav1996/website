@@ -19,6 +19,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/kc_watch_transparent.png',
     masterImage: 'assets/watches/kc_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_coffee_mocha.jpg',
+    video: 'assets/watches/videos/kenneth_cole_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/kenneth_cole_cinema_poster.jpg',
+    videoTitle: '1080p Horological Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens
     theme: {
@@ -200,6 +203,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/fastrack/fastrack_watch_transparent.png',
     masterImage: 'assets/watches/fastrack/fastrack_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_celestial_eclipse.jpg',
+    video: 'assets/watches/videos/fastrack_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/fastrack_cinema_poster.jpg',
+    videoTitle: '1080p Celestial Eclipse Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Obsidian Eclipse & Celestial Horizon)
     theme: {
@@ -339,6 +345,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/casio/gshock_watch_transparent.png',
     masterImage: 'assets/watches/casio/gshock_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_tactical_concrete.jpg',
+    video: 'assets/watches/videos/casio_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/casio_cinema_poster.jpg',
+    videoTitle: '1080p Tactical Monolith Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Brutalist Tactical Grey & Solar Amber)
     theme: {
@@ -482,6 +491,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/timex/timex_watch_transparent.png',
     masterImage: 'assets/watches/timex/timex_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_vintage_parchment.jpg',
+    video: 'assets/watches/videos/timex_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/timex_cinema_poster.jpg',
+    videoTitle: '1080p Vintage Horology Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Heritage Brass & Champagne Sunburst)
     theme: {
@@ -619,6 +631,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/leecooper/leecooper_watch_transparent.png',
     masterImage: 'assets/watches/leecooper/leecooper_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_indigo_denim_mesh.jpg',
+    video: 'assets/watches/videos/leecooper_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/leecooper_cinema_poster.jpg',
+    videoTitle: '1080p Tonneau Haute Skeleton Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Raw Indigo & Industrial Steel)
     theme: {
@@ -756,6 +771,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/titan/titan_deca_watch_transparent.png',
     masterImage: 'assets/watches/titan/titan_deca_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_riviera_azure.jpg',
+    video: 'assets/watches/videos/titan_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/titan_cinema_poster.jpg',
+    videoTitle: '1080p Riviera Deca Tiffany Sky Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Riviera Tiffany Sky Blue & Mirror Steel)
     theme: {
@@ -895,6 +913,9 @@ export const WATCH_COLLECTION = [
     image: 'assets/watches/police/police_watch_transparent.png',
     masterImage: 'assets/watches/police/police_watch.jpg',
     backgroundImage: 'assets/watches/backgrounds/bg_urban_rebel.jpg',
+    video: 'assets/watches/videos/police_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/police_cinema_poster.jpg',
+    videoTitle: '1080p Urban Rebel Cranium Cinema Loop (10s Continuous Master Take)',
 
     // Watch-Specific Dynamic Luxury Theme Tokens (Crimson Rebel & Titanium Cold Steel)
     theme: {

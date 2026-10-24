@@ -10,6 +10,7 @@ import './WatchDetailFastrack.css';
  *  - 24-Hour Sun & Moon Diurnal Disc Slider (Rotates Aperture Disc & Shifts Ambient Celestial Horizon)
  *  - Dedicated Chronograph Stopwatch Cockpit (2H Crimson Trigger + 4H Reset)
  *  - Single authoritative 5-element macro inspector with color dots
+ *  - 1080p Horological Cinema Loop (10s Continuous Master Take)
  */
 // Color dots mapped to the 5 authentic macro elements
 const ELEMENT_SWATCH_COLORS = {
@@ -30,7 +31,51 @@ const WatchDetailFastrack = ({
 }) => {
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);
-  const [viewMode, setViewMode] = useState('full-watch'); // Default to full timepiece view
+  const [viewMode, setViewMode] = useState('cinema'); // Video-First: Defaults to auto-running 1080p cinema loop
+  const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
+
+  useEffect(() => {
+    // Unmuted auto-play protocol with graceful interaction fallback
+    if (videoRef.current) {
+      videoRef.current.muted = isVideoMuted;
+      videoRef.current.play().catch(() => {
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play().catch(() => {});
+        }
+      });
+    }
+
+    const handleInteraction = () => {
+      if (videoRef.current && !isVideoMuted) {
+        videoRef.current.muted = false;
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('keydown', handleInteraction, { once: true });
+    window.addEventListener('touchstart', handleInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+  }, [isVideoMuted]);
+
+  const handleTogglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
+    }
+  };
 
   // --- 24-Hour Celestial Sun & Moon Slider State (0 to 24h, default 12 Noon) ---
   const [orbitHour, setOrbitHour] = useState(12);
@@ -203,6 +248,13 @@ const WatchDetailFastrack = ({
               <span className="controls-label">VIEWPORT:</span>
               <button
                 type="button"
+                className={`btn-mode-pill ${viewMode === 'cinema' ? 'active' : ''}`}
+                onClick={() => setViewMode('cinema')}
+              >
+                <span className="cinema-icon">▶</span> 10s Cinema Loop (1080p)
+              </button>
+              <button
+                type="button"
                 className={`btn-mode-pill ${viewMode === 'full-watch' ? 'active' : ''}`}
                 onClick={() => setViewMode('full-watch')}
               >
@@ -218,16 +270,64 @@ const WatchDetailFastrack = ({
             </div>
 
             <div className="controls-right">
-              <span className="element-indicator-text">
-                ELEMENT {elements.indexOf(selectedElement) + 1} OF {elements.length}: {selectedElement.name.toUpperCase()}
-              </span>
+              {viewMode === 'cinema' ? (
+                <span className="element-indicator-text" style={{ color: 'var(--watch-accent, #f59e0b)' }}>
+                  1080P MASTER CINEMA CAPTURE // 10.0S CONTINUOUS
+                </span>
+              ) : viewMode === 'full-watch' ? (
+                <span className="element-indicator-text">
+                  FULL TIMEPIECE // 44.5MM ANTHRACITE PVD
+                </span>
+              ) : (
+                <span className="element-indicator-text">
+                  ELEMENT {elements.indexOf(selectedElement) + 1} OF {elements.length}: {selectedElement.name.toUpperCase()}
+                </span>
+              )}
             </div>
           </div>
 
           <div className="stage-split-display">
             {/* Visual Viewport Stage */}
             <div className="stage-visual-viewport fastrack-viewport">
-              {viewMode === 'full-watch' ? (
+              {viewMode === 'cinema' ? (
+                <div className="viewport-cinema-wrap">
+                  <div className="cinema-video-holder">
+                    <video
+                      ref={videoRef}
+                      src={`${import.meta.env.BASE_URL}${watch.video || 'assets/watches/videos/fastrack_cinema_1080p.mp4'}`}
+                      poster={`${import.meta.env.BASE_URL}${watch.videoPoster || 'assets/watches/videos/fastrack_cinema_poster.jpg'}`}
+                      className="viewport-cinema-video"
+                      autoPlay
+                      loop
+                      muted={isVideoMuted}
+                      playsInline
+                      onPlay={() => setIsVideoPlaying(true)}
+                      onPause={() => setIsVideoPlaying(false)}
+                    />
+                    <div className="cinema-overlay-controls">
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={handleTogglePlay}
+                        title={isVideoPlaying ? "Pause Video" : "Play Video"}
+                        aria-label={isVideoPlaying ? "Pause Video" : "Play Video"}
+                      >
+                        {isVideoPlaying ? "⏸" : "▶"}
+                      </button>
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={() => setIsVideoMuted((prev) => !prev)}
+                        title={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                        aria-label={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                      >
+                        {isVideoMuted ? "🔇" : "🔊"}
+                      </button>
+                      <span className="cinema-badge-1080p">1080p • 10s MASTER TAKE</span>
+                    </div>
+                  </div>
+                </div>
+              ) : viewMode === 'full-watch' ? (
                 <div className="viewport-full-wrap">
                   <img
                     src={`${import.meta.env.BASE_URL}${watch.image}`}

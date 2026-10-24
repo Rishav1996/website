@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WatchDossierSection from './WatchDossierSection';
 import './WatchDetailPolice.css';
 
 /**
  * WatchDetailPolice
  * Tailored Sub-Watch Experience for Police PLPEWJM0081301W Cranium Tonneau Skeleton.
- * Architecture strictly aligned with the canonical Atelier Blueprint (Lee Cooper / Titan Deca):
+ * Features:
+ *  - 1080p Horological Cinema Loop (10s Continuous Master Take)
  *  - Top Navigation with Adjacent Timepiece Carousel buttons
  *  - Standardized Header Split Row with Integrated Atmospheric Lighting Badge
  *  - Single Unified Watch & Macro Element Inspection Stage (Left Viewport + Right 2-Card Dossier Stack)
@@ -120,7 +121,10 @@ const WatchDetailPolice = ({
 }) => {
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);
-  const [viewMode, setViewMode] = useState('full-watch'); // 'full-watch' | 'element'
+  const [viewMode, setViewMode] = useState('cinema'); // Video-First: Defaults to auto-running 1080p cinema loop
+  const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
   const [selectedPerspective, setSelectedPerspective] = useState(STUDIO_PERSPECTIVES[0]);
 
   // Quartz Stepping Drive State
@@ -132,6 +136,47 @@ const WatchDetailPolice = ({
   const [selectedBolt, setSelectedBolt] = useState(BEZEL_BOLTS[0]);
 
   const currentCadence = CADENCE_MODES.find((c) => c.id === cadenceMode) || CADENCE_MODES[0];
+
+  useEffect(() => {
+    // Unmuted auto-play protocol with graceful interaction fallback
+    if (videoRef.current) {
+      videoRef.current.muted = isVideoMuted;
+      videoRef.current.play().catch(() => {
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play().catch(() => {});
+        }
+      });
+    }
+
+    const handleInteraction = () => {
+      if (videoRef.current && !isVideoMuted) {
+        videoRef.current.muted = false;
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('keydown', handleInteraction, { once: true });
+    window.addEventListener('touchstart', handleInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+  }, [isVideoMuted]);
+
+  const handleTogglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
+    }
+  };
 
   // Precision Quartz Stepping Motor Rhythm
   useEffect(() => {
@@ -257,6 +302,13 @@ const WatchDetailPolice = ({
               <span className="controls-label">VIEWPORT:</span>
               <button
                 type="button"
+                className={`btn-mode-pill ${viewMode === 'cinema' ? 'active' : ''}`}
+                onClick={() => setViewMode('cinema')}
+              >
+                <span className="cinema-icon">▶</span> 10s Cinema Loop (1080p)
+              </button>
+              <button
+                type="button"
                 className={`btn-mode-pill ${viewMode === 'full-watch' ? 'active' : ''}`}
                 onClick={() => setViewMode('full-watch')}
               >
@@ -291,7 +343,11 @@ const WatchDetailPolice = ({
             ) : null}
 
             <div className="controls-right">
-              {viewMode === 'full-watch' ? (
+              {viewMode === 'cinema' ? (
+                <span className="element-indicator-text" style={{ color: 'var(--watch-accent, #e11d48)' }}>
+                  1080P MASTER CINEMA CAPTURE // 10.0S CONTINUOUS
+                </span>
+              ) : viewMode === 'full-watch' ? (
                 <div className="telemetry-pill-strip">
                   <span className="telemetry-chip">316L TONNEAU</span>
                   <span className="telemetry-chip">FROSTED SKULL BRIDGE</span>
@@ -308,7 +364,45 @@ const WatchDetailPolice = ({
           <div className="stage-split-display">
             {/* Left: Viewport Stage */}
             <div className="stage-visual-viewport police-viewport">
-              {viewMode === 'full-watch' ? (
+              {viewMode === 'cinema' ? (
+                <div className="viewport-cinema-wrap">
+                  <div className="cinema-video-holder">
+                    <video
+                      ref={videoRef}
+                      src={`${import.meta.env.BASE_URL}${watch.video || 'assets/watches/videos/police_cinema_1080p.mp4'}`}
+                      poster={`${import.meta.env.BASE_URL}${watch.videoPoster || 'assets/watches/videos/police_cinema_poster.jpg'}`}
+                      className="viewport-cinema-video"
+                      autoPlay
+                      loop
+                      muted={isVideoMuted}
+                      playsInline
+                      onPlay={() => setIsVideoPlaying(true)}
+                      onPause={() => setIsVideoPlaying(false)}
+                    />
+                    <div className="cinema-overlay-controls">
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={handleTogglePlay}
+                        title={isVideoPlaying ? "Pause Video" : "Play Video"}
+                        aria-label={isVideoPlaying ? "Pause Video" : "Play Video"}
+                      >
+                        {isVideoPlaying ? "⏸" : "▶"}
+                      </button>
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={() => setIsVideoMuted((prev) => !prev)}
+                        title={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                        aria-label={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                      >
+                        {isVideoMuted ? "🔇" : "🔊"}
+                      </button>
+                      <span className="cinema-badge-1080p">1080p • 10s MASTER TAKE</span>
+                    </div>
+                  </div>
+                </div>
+              ) : viewMode === 'full-watch' ? (
                 <div className="viewport-full-wrap">
                   <div className="viewport-img-holder">
                     <img

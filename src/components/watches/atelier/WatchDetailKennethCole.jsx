@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WatchDossierSection from './WatchDossierSection';
 import './WatchDetailExhibition.css';
 
@@ -6,12 +6,13 @@ import './WatchDetailExhibition.css';
  * WatchDetailKennethCole
  * Tailored Sub-Watch Experience for Kenneth Cole KCWGL2104102MN.
  * Features:
+ *  - 1080p Horological Cinema Loop (Video-First Auto-Running Experience)
  *  - The Coffee Mocha Roastery Theme
  *  - Single Authoritative Roastery Spotlight Atmosphere Bar
  *  - Dedicated 3 Hz Kinetic Balance Wheel Oscillator Cockpit (21,600 VPH harmonic rhythm)
  *  - Knurled Crown Stem (3H) Manual Winding & Mainspring Tensioner Cockpit (+4h per wind)
  *  - Single authoritative 5-element macro inspector with color dots
- *  - Full timepiece default viewport with active 7H balance wheel kinetic heartbeat
+ *  - Full timepiece & cinema viewports with active 7H balance wheel kinetic heartbeat
  */
 
 // Color dots mapped to the 5 authentic macro elements
@@ -33,11 +34,56 @@ const WatchDetailKennethCole = ({
 }) => {
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);
-  const [viewMode, setViewMode] = useState('full-watch'); // Default to full timepiece view across all watches
+  const [viewMode, setViewMode] = useState('cinema'); // Video-First: Defaults to auto-running 1080p cinema loop
   const [isEscapementActive, setIsEscapementActive] = useState(true);
   const [tickCount, setTickCount] = useState(0);
   const [kcReserveHours, setKcReserveHours] = useState(36);
   const [isCrownWinding, setIsCrownWinding] = useState(false);
+  const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
+
+  useEffect(() => {
+    // Unmuted auto-play protocol with graceful interaction fallback
+    if (videoRef.current) {
+      videoRef.current.muted = isVideoMuted;
+      videoRef.current.play().catch(() => {
+        // If browser policies block unmuted autoplay prior to user interaction, fallback to muted then unmute on interaction
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play().catch(() => {});
+        }
+      });
+    }
+
+    const handleInteraction = () => {
+      if (videoRef.current && !isVideoMuted) {
+        videoRef.current.muted = false;
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('keydown', handleInteraction, { once: true });
+    window.addEventListener('touchstart', handleInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+  }, [isVideoMuted]);
+
+  const handleTogglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
+    }
+  };
 
   const handleWindCrown = () => {
     setIsCrownWinding(true);
@@ -168,6 +214,13 @@ const WatchDetailKennethCole = ({
               <span className="controls-label">VIEWPORT:</span>
               <button
                 type="button"
+                className={`btn-mode-pill ${viewMode === 'cinema' ? 'active' : ''}`}
+                onClick={() => setViewMode('cinema')}
+              >
+                <span className="cinema-icon">▶</span> 10s Cinema Loop (1080p)
+              </button>
+              <button
+                type="button"
                 className={`btn-mode-pill ${viewMode === 'full-watch' ? 'active' : ''}`}
                 onClick={() => setViewMode('full-watch')}
               >
@@ -178,21 +231,69 @@ const WatchDetailKennethCole = ({
                 className={`btn-mode-pill ${viewMode === 'element' ? 'active' : ''}`}
                 onClick={() => setViewMode('element')}
               >
-                Macro Element View
+                Macro Elements
               </button>
             </div>
 
             <div className="controls-right">
-              <span className="element-indicator-text">
-                ELEMENT {elements.indexOf(selectedElement) + 1} OF {elements.length}: {selectedElement.name.toUpperCase()}
-              </span>
+              {viewMode === 'cinema' ? (
+                <span className="element-indicator-text text-gold">
+                  1080P MASTER CINEMA CAPTURE // 10.0S CONTINUOUS
+                </span>
+              ) : viewMode === 'full-watch' ? (
+                <span className="element-indicator-text">
+                  FULL TIMEPIECE // 44MM 316L MOCHA STEEL
+                </span>
+              ) : (
+                <span className="element-indicator-text">
+                  ELEMENT {elements.indexOf(selectedElement) + 1} OF {elements.length}: {selectedElement.name.toUpperCase()}
+                </span>
+              )}
             </div>
           </div>
 
           <div className="stage-split-display">
             {/* Visual Viewport Stage */}
             <div className="stage-visual-viewport">
-              {viewMode === 'full-watch' ? (
+              {viewMode === 'cinema' ? (
+                <div className="viewport-cinema-wrap">
+                  <div className="cinema-video-holder">
+                    <video
+                      ref={videoRef}
+                      src={`${import.meta.env.BASE_URL}${watch.video || 'assets/watches/videos/kenneth_cole_cinema_1080p.mp4'}`}
+                      poster={`${import.meta.env.BASE_URL}${watch.videoPoster || 'assets/watches/videos/kenneth_cole_cinema_poster.jpg'}`}
+                      className="viewport-cinema-video"
+                      autoPlay
+                      loop
+                      muted={isVideoMuted}
+                      playsInline
+                      onPlay={() => setIsVideoPlaying(true)}
+                      onPause={() => setIsVideoPlaying(false)}
+                    />
+                    <div className="cinema-overlay-controls">
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={handleTogglePlay}
+                        title={isVideoPlaying ? "Pause Video" : "Play Video"}
+                        aria-label={isVideoPlaying ? "Pause Video" : "Play Video"}
+                      >
+                        {isVideoPlaying ? "⏸" : "▶"}
+                      </button>
+                      <button
+                        type="button"
+                        className="cinema-control-btn"
+                        onClick={() => setIsVideoMuted((prev) => !prev)}
+                        title={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                        aria-label={isVideoMuted ? "Unmute Sound" : "Mute Sound"}
+                      >
+                        {isVideoMuted ? "🔇" : "🔊"}
+                      </button>
+                      <span className="cinema-badge-1080p">1080p • 10s MASTER TAKE</span>
+                    </div>
+                  </div>
+                </div>
+              ) : viewMode === 'full-watch' ? (
                 <div className="viewport-full-wrap">
                   <div className="viewport-img-holder">
                     <img

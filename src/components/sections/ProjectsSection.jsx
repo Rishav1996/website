@@ -3,6 +3,18 @@ import './ProjectsSection.css';
 
 const PROJECTS = [
   {
+    title: "A2UI Commercial Component Architecture (POC)",
+    category: "Agentic AI & GenAI",
+    date: "Nov 2026 – Present",
+    desc: "Agent-to-User Interface (A2UI) decoupling commercial monetization and ad-components from LLM reasoning kernels. Implemented via FastMCP server, React UI components, and verified with Zenodo-indexed benchmark suite.",
+    impact: null,
+    links: {
+      article: "https://www.towardsdeeplearning.com/the-300b-search-dilemma-decoupling-commercial-components-from-llm-reasoning-in-conversational-ai-e41c3d2d5152",
+      repo: "https://github.com/Rishav1996/a2ui-ad-component",
+      doi: "https://doi.org/10.5281/zenodo.23900459"
+    }
+  },
+  {
     title: "Generative AI (GenAI) Video Generation",
     category: "Agentic AI & GenAI",
     date: "Jan 2026 – Present",
@@ -121,6 +133,12 @@ const ProjectsSection = () => {
       ...(project.impact ? [
         { type: 'output', text: `VERIFIED OPERATIONAL IMPACT:` },
         { type: 'impact', text: project.impact }
+      ] : []),
+      ...(project.links ? [
+        { type: 'output', text: `ASSOCIATED ARTIFACTS & LINKS:` },
+        ...(project.links.article ? [{ type: 'link', label: '[Article]', url: project.links.article, text: `Publication: ${project.links.article}` }] : []),
+        ...(project.links.repo ? [{ type: 'link', label: '[Code Repo]', url: project.links.repo, text: `Repository: ${project.links.repo}` }] : []),
+        ...(project.links.doi ? [{ type: 'link', label: '[Zenodo DOI]', url: project.links.doi, text: `DOI Record: ${project.links.doi}` }] : [])
       ] : [])
     ];
 
@@ -143,7 +161,7 @@ const ProjectsSection = () => {
         <div className="projects-header">
           <span className="section-tag-badge">TECHNICAL FACTSHEETS</span>
           <h2 className="section-title">Project Laboratory</h2>
-          <p className="section-subtitle">Technical fact-sheets focusing on architecture, design, and approach details across 13 production & research projects.</p>
+          <p className="section-subtitle">Technical fact-sheets focusing on architecture, design, and approach details across 14 production & research projects.</p>
         </div>
 
         {/* Domain Filter Pills for Recruiters */}
@@ -164,7 +182,7 @@ const ProjectsSection = () => {
         </div>
 
         <div className="projects-layout">
-          {/* Left: Scrollable 13 Project Items */}
+          {/* Left: Scrollable 14 Project Items */}
           <div className="projects-list">
             {filteredProjects.map((proj, idx) => (
               <article 
@@ -184,6 +202,28 @@ const ProjectsSection = () => {
                     <span className="impact-text">{proj.impact}</span>
                   </div>
                 )}
+                {proj.links && (
+                  <div className="project-card-links-row" onClick={(e) => e.stopPropagation()}>
+                    {proj.links.article && (
+                      <a href={proj.links.article} target="_blank" rel="noopener noreferrer" className="proj-card-link-tag article" title="Read Publication">
+                        <span>[Article]</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                      </a>
+                    )}
+                    {proj.links.repo && (
+                      <a href={proj.links.repo} target="_blank" rel="noopener noreferrer" className="proj-card-link-tag repo" title="View Code Repository">
+                        <span>[Code]</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                      </a>
+                    )}
+                    {proj.links.doi && (
+                      <a href={proj.links.doi} target="_blank" rel="noopener noreferrer" className="proj-card-link-tag doi" title="View Zenodo DOI">
+                        <span>[DOI]</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                      </a>
+                    )}
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -200,10 +240,19 @@ const ProjectsSection = () => {
             </div>
             <div className="terminal-body code" ref={terminalRef}>
               {terminalOutput.filter(Boolean).map((line, idx) => (
-                <div key={idx} className={`terminal-line ${line.type}`}>
-                  {line.type === 'input' && <span className="prompt">rishav@lab:~$ </span>}
-                  {line.text}
-                </div>
+                line.type === 'link' ? (
+                  <div key={idx} className="terminal-line link">
+                    <span className="prompt">artifact: </span>
+                    <a href={line.url} target="_blank" rel="noopener noreferrer" className="terminal-artifact-link">
+                      <span className="terminal-link-badge">{line.label}</span> {line.text}
+                    </a>
+                  </div>
+                ) : (
+                  <div key={idx} className={`terminal-line ${line.type}`}>
+                    {line.type === 'input' && <span className="prompt">rishav@lab:~$ </span>}
+                    {line.text}
+                  </div>
+                )
               ))}
               <div className="cursor"></div>
             </div>

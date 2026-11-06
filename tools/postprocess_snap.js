@@ -259,6 +259,7 @@ async function run() {
     rootHtml = replacePropertyMeta(rootHtml, 'twitter:url', rootCanonical);
 
     const ROOT_PROJECTS = [
+      { name: "A2UI Commercial Component Architecture (POC)", category: "Agentic AI & GenAI", date: "Nov 2026 – Present", description: "Agent-to-User Interface (A2UI) decoupling commercial monetization and ad-components from LLM reasoning kernels. Implemented via FastMCP server, React UI components, and verified with Zenodo-indexed benchmark suite.", impact: null },
       { name: "Generative AI (GenAI) Video Generation", category: "Agentic AI & GenAI", date: "Jan 2026 – Present", description: "Autonomous multi-agent pipeline using Google ADK, GCP Vertex AI (document storage), Gemini Enterprise, Agent Engine Platform, and FastMCP; features context-window summarisation, token-cost observability, dynamic prompting, and automated self-correction validation loops.", impact: "Slashed end-to-end delivery timeline from 5–14 days down to under 6 hours (from script generation to final video demo)." },
       { name: "Media Analytics (POC)", category: "Time Series & MLOps", date: "Jun 2025 – Oct 2025", description: "Predictive ML and prompt engineering pipeline for inference explanation, insight extraction, and business KPI generation; models multi-channel budget allocation and predicts future investment growth using multi-timeseries forecasting.", impact: null },
       { name: "Price Elasticity (POC)", category: "Causal ML & Pricing", date: "Jun 2025 – Jul 2025", description: "Dynamic pricing architecture using Hierarchical Linear Models (HLM) (statsmodels, Python, Azure ML) with automated MLflow continuous retraining pipelines to model cross-product elasticity frontiers.", impact: null },
@@ -275,6 +276,7 @@ async function run() {
     ];
 
     const ROOT_PUBLICATIONS = [
+      { name: "The $300B Search Dilemma: Decoupling Commercial Components from LLM Reasoning in Conversational AI", datePublished: "2026-11", publisher: "Towards Deep Learning", url: "https://www.towardsdeeplearning.com/the-300b-search-dilemma-decoupling-commercial-components-from-llm-reasoning-in-conversational-ai-e41c3d2d5152", sameAs: "https://doi.org/10.5281/zenodo.23900459" },
       { name: "The Specialized Frontier: An Inquiry Into Gated AI Architectures and the Cooperative Safety Flywheel", datePublished: "2026-08", publisher: "Towards AI", url: "https://pub.towardsai.net/the-specialized-frontier-an-inquiry-into-gated-ai-architectures-and-the-cooperative-safety-0f10f1546ad6" },
       { name: "Claude Model Routing: Stop Scoring \"Complexity.\" Score These Two Things Instead.", datePublished: "2026-07", publisher: "Towards Deep Learning", url: "https://www.towardsdeeplearning.com/claude-model-routing-stop-scoring-complexity-score-these-two-things-instead-a6505c9053ce", sameAs: "https://doi.org/10.5281/zenodo.21520843" },
       { name: "LangGraph Multi-Agent Architecture: Building a Self-Critiquing AI Debate System", datePublished: "2026-05", publisher: "Towards AI", url: "https://pub.towardsai.net/langgraph-multi-agent-architecture-building-a-self-critiquing-ai-debate-system-971a7ad881d9" },
@@ -309,7 +311,7 @@ async function run() {
       { question: "What are Rishav Saigal's primary engineering and research specializations?", answer: "Rishav Saigal specializes in autonomous Multi-Agent Systems, Time Series Forecasting, Causal Inference, and production MLOps. His engineering focuses on architecting production-grade enterprise Agentic AI systems on Google Cloud (Vertex AI, Cloud Run, Gemini Enterprise, Agent Engine Platform, FastMCP) with autonomous self-correction validation loops, context-window summarization, and token-cost observability." },
       { question: "What is Rishav's current enterprise leadership role and organizational scope?", answer: "Rishav serves as Manager (Senior Data Scientist / AI Architect) at Cognizant (promoted November 2023). In this capacity, he is a designated Subject Matter Expert (SME) in AI Architecture Design and GenAI, spearheading architectural solution design and response strategy for multiple high-value client RFPs, managing cross-functional teams of ML/GenAI engineers, directing campus-to-corporate fresher mentorship programs, and serving as a primary hiring panellist for external lateral recruitment." },
       { question: "What is Rishav's formal academic background and doctoral research focus?", answer: "Rishav is a Ph.D. Candidate in Computer Science & Engineering at the Indian Institute of Technology Patna (IIT Patna, Jul 2026 – Jun 2029 Expected). He holds a Master of Technology (M.Tech) in Data Science & Engineering from BITS Pilani (Sep 2019 – Aug 2021) and a Bachelor of Technology (B.Tech) in Computer Science & Engineering from RCC Institute of Information Technology / MAKAUT (Aug 2013 – Jul 2017). His doctoral research investigates LLM behavioral drift, adversarial robustness, and a self-coined calcification effect in multi-agent debate systems." },
-      { question: "What open research frameworks, datasets, and DOI releases has Rishav published?", answer: "Rishav has published 11 technical publications and open research releases, including two Zenodo DOI-indexed releases: the LLM Behavioral Drift Experiment framework and dataset (DOI: 10.5281/zenodo.20032071) measuring persona shift across 22 behavioral signals, and model-router (DOI: 10.5281/zenodo.21520843), an open-source capability floor vs. cost exposure routing skill for Claude Code. His independent research articles appear in Towards AI, Towards Deep Learning, and Medium." },
+      { question: "What open research frameworks, datasets, and DOI releases has Rishav published?", answer: "Rishav has published 12 technical publications and open research releases, including three Zenodo DOI-indexed releases: the LLM Behavioral Drift Experiment framework and dataset (DOI: 10.5281/zenodo.20032071) measuring persona shift across 22 behavioral signals, model-router (DOI: 10.5281/zenodo.21520843), an open-source capability floor vs. cost exposure routing skill for Claude Code, and a2ui-ad-component (DOI: 10.5281/zenodo.23900459), a decoupled commercial component architecture for conversational AI. His independent research articles appear in Towards AI, Towards Deep Learning, and Medium." },
       { question: "What verified credentials and professional certifications does Rishav hold?", answer: "Rishav holds 14 verified industry credentials, including 8 official Credly digital badges (Google Cloud Agent Development Kit [ADK] Deployment, ADK Agent Evaluation, Antigravity Accelerated Development, Build with Gemini, Cognizant Vibe Code Hackathon, AWS Knowledge: Amazon Braket, IBM Machine Learning with Python, IBM Python for Data Science) and 6 specialized academy certificates (Microsoft Certified: Azure AI Fundamentals, Dataiku Generative AI Practitioner, Dataiku MLOps Practitioner, and Dataiku Core/Advanced/ML Designer)." }
     ];
 
@@ -375,7 +377,8 @@ async function run() {
             "AWS SageMaker", "DataRobot", "PyCaret", "FastAPI", "Streamlit", "Docker",
             "MLflow", "Ollama", "PostgreSQL", "MySQL", "Redis", "OpenCV", "LSTM",
             "Survival Analysis", "Transfer Learning", "Feature Engineering",
-            "Prompt Engineering", "AI Governance", "Responsible AI"
+            "Prompt Engineering", "AI Governance", "Responsible AI",
+            "A2UI (Agent-to-User Interface)", "Conversational AI"
           ],
           sameAs: [
             "https://www.linkedin.com/in/rishav-saigal-4bb50311a/",
@@ -386,7 +389,8 @@ async function run() {
             "https://www.linkedin.com/newsletters/algorhythm-chronicles-7480002909695438848/",
             "https://www.youtube.com/@algorythmchronicles",
             "https://doi.org/10.5281/zenodo.20032071",
-            "https://doi.org/10.5281/zenodo.21520843"
+            "https://doi.org/10.5281/zenodo.21520843",
+            "https://doi.org/10.5281/zenodo.23900459"
           ],
           hasCredential: ROOT_CREDENTIALS.map((c) => ({
             '@type': 'EducationalOccupationalCredential',

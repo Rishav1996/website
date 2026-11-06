@@ -41,6 +41,7 @@ const Footer = () => {
               <a href="https://medium.com/@rishavsaigal" target="_blank" rel="noopener noreferrer">Medium Technical Articles</a>
               <a href="https://doi.org/10.5281/zenodo.20032071" target="_blank" rel="noopener noreferrer">LLM Drift Framework (DOI)</a>
               <a href="https://doi.org/10.5281/zenodo.21520843" target="_blank" rel="noopener noreferrer">model-router Release (DOI)</a>
+              <a href="https://doi.org/10.5281/zenodo.23900459" target="_blank" rel="noopener noreferrer">a2ui-ad-component (DOI)</a>
             </div>
           </div>
         </div>

@@ -77,7 +77,8 @@ const SKILLS = [
   { id: 'Agent Engine Platform', group: 2, year: 2026 },
   { id: 'Cloud Run', group: 3, year: 2026 },
   { id: 'Google ADK', group: 2, year: 2026 },
-  { id: 'Architectural Design', group: 1, year: 2026 }
+  { id: 'Architectural Design', group: 1, year: 2026 },
+  { id: 'A2UI (Agent-to-User Interface)', group: 2, year: 2026 }
 ];
 
 const COLORS = {

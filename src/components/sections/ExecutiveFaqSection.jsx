@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What open research frameworks, datasets, and DOI releases has Rishav published?",
-    answer: "Rishav has published 11 technical publications and open research releases, including two Zenodo DOI-indexed releases: the LLM Behavioral Drift Experiment framework and dataset (DOI: 10.5281/zenodo.20032071) measuring persona shift across 22 behavioral signals, and model-router (DOI: 10.5281/zenodo.21520843), an open-source capability floor vs. cost exposure routing skill for Claude Code. His independent research articles appear in Towards AI, Towards Deep Learning, and Medium."
+    answer: "Rishav has published 12 technical publications and open research releases, including three Zenodo DOI-indexed releases: the LLM Behavioral Drift Experiment framework and dataset (DOI: 10.5281/zenodo.20032071) measuring persona shift across 22 behavioral signals, model-router (DOI: 10.5281/zenodo.21520843), an open-source capability floor vs. cost exposure routing skill for Claude Code, and a2ui-ad-component (DOI: 10.5281/zenodo.23900459), a decoupled commercial component architecture for conversational AI. His independent research articles appear in Towards AI, Towards Deep Learning, and Medium."
   },
   {
     question: "What verified credentials and professional certifications does Rishav hold?",

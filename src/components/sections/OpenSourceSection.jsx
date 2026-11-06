@@ -3,6 +3,20 @@ import './OpenSourceSection.css';
 
 const OS_PROJECTS = [
   {
+    title: "a2ui-ad-component",
+    url: "https://github.com/Rishav1996/a2ui-ad-component",
+    desc: "Decoupled commercial component architecture for conversational AI using Google's A2UI protocol.",
+    commands: [
+      { type: 'input', text: `git clone https://github.com/Rishav1996/a2ui-ad-component.git` },
+      { type: 'input', text: `cd a2ui-ad-component && uv sync` },
+      { type: 'system', text: `[uv] Installed a2ui-ad-component dependencies.` },
+      { type: 'input', text: `uv run python -m a2ui_ad.evaluator` },
+      { type: 'observation', text: `[Intent Gate] Educational query detected: suppressing commercial components.` },
+      { type: 'progress', text: `[A2UI] Rendering declarative SponsoredCard JSON without model weight intervention.` },
+      { type: 'success', text: `[Success] Neutral LLM reasoning preserved with verified UI ad components.` }
+    ]
+  },
+  {
     title: "model-router",
     url: "https://github.com/Rishav1996/model-router",
     desc: "Two-axis Claude Code skill that scores capability floor and cost exposure separately to pick the cheapest model.",
@@ -197,7 +211,7 @@ const OpenSourceSection = () => {
         <div className="section-header-center">
           <span className="section-tag-badge">OPEN SOURCE TOOLING</span>
           <h2 className="section-title">GitHub Open Source</h2>
-          <p className="section-subtitle">Publicly available AI research & MLOps frameworks across 7 open source repositories.</p>
+          <p className="section-subtitle">Publicly available AI research & MLOps frameworks across 8 open source repositories.</p>
         </div>
 
         <div className="opensource-layout">

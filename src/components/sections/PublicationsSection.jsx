@@ -120,6 +120,16 @@ const TiltCard = ({ pub, onOpen }) => {
 
 const publications = [
   {
+    title: "The $300B Search Dilemma: Decoupling Commercial Components from LLM Reasoning in Conversational AI",
+    date: "Nov 2026",
+    description: "Published in Towards Deep Learning",
+    summary: "Analyzes the monetization breakdown in zero-click conversational AI and proposes decoupling commercial execution from core LLM reasoning via Google's A2UI (Agent-to-User Interface) standard, enabling intent-gated declarative ad components without model retraining.",
+    link: "https://www.towardsdeeplearning.com/the-300b-search-dilemma-decoupling-commercial-components-from-llm-reasoning-in-conversational-ai-e41c3d2d5152",
+    doi: "10.5281/zenodo.23900459",
+    doiLink: "https://doi.org/10.5281/zenodo.23900459",
+    repoLink: "https://github.com/Rishav1996/a2ui-ad-component"
+  },
+  {
     title: "The Specialized Frontier: An Inquiry Into Gated AI Architectures and the Cooperative Safety Flywheel",
     date: "Aug 2026",
     description: "Published in Towards AI",
@@ -230,7 +240,7 @@ const PublicationsSection = () => {
         <div className="section-header-center">
           <span className="section-tag-badge">INDEPENDENT RESEARCH & TECHNICAL WRITING</span>
           <h2 className="section-title">Publications & Research Vault</h2>
-          <p className="section-subtitle">11 technical research publications and open datasets spanning Agentic AI, LLM behavioral drift, causal dynamic pricing, and production MLOps.</p>
+          <p className="section-subtitle">12 technical research publications and open datasets spanning Agentic AI, LLM behavioral drift, causal dynamic pricing, and production MLOps.</p>
         </div>
 
         <div className="publications-grid">

@@ -169,7 +169,7 @@ const HeroSection = () => {
           <div className="hud-stat-pill pill-2">
             <span className="stat-icon">📄</span>
             <div className="stat-text">
-              <strong>11 Publications</strong>
+              <strong>12 Publications</strong>
               <small>Towards AI • Zenodo DOI • Towards Deep Learning</small>
             </div>
           </div>

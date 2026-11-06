@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import anime from '../../utils/anime';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import './PublicationsSection.css';
 
-const TiltCard = ({ pub, onOpen }) => {
+const TiltCard = ({ pub }) => {
   const { title, date, description } = pub;
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
 
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
@@ -29,8 +27,6 @@ const TiltCard = ({ pub, onOpen }) => {
 
     x.set(xPct);
     y.set(yPct);
-    mouseX.set(mouseXPos);
-    mouseY.set(mouseYPos);
   };
 
   const handleMouseLeave = () => {
@@ -54,8 +50,9 @@ const TiltCard = ({ pub, onOpen }) => {
       className="tilt-card-wrapper pub-card-item"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onTouchEnd={handleMouseLeave}
+      onTouchCancel={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      onClick={() => onOpen(pub)}
     >
       <div className="tilt-card-inner">
         <div className="pub-card-top">
@@ -107,12 +104,19 @@ const TiltCard = ({ pub, onOpen }) => {
           )}
         </div>
 
-        <div className="pub-card-action">
+        <a
+          href={pub.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pub-card-action"
+          title={`Read article & analysis: ${title}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <span>Read Research Brief & Analysis</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
-        </div>
+        </a>
       </div>
     </motion.div>
   );
@@ -217,7 +221,6 @@ const publications = [
 ];
 
 const PublicationsSection = () => {
-  const [selectedPub, setSelectedPub] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -245,70 +248,10 @@ const PublicationsSection = () => {
 
         <div className="publications-grid">
           {publications.map((pub, index) => (
-            <TiltCard key={index} pub={pub} onOpen={setSelectedPub} />
+            <TiltCard key={index} pub={pub} />
           ))}
         </div>
       </div>
-
-      {/* Publication Summary Modal */}
-      {selectedPub && (
-        <div className="pub-modal-backdrop" onClick={() => setSelectedPub(null)}>
-          <div className="pub-modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="pub-modal-top-bar">
-              <div className="modal-meta-badges">
-                <span className="modal-publisher-tag">{selectedPub.description}</span>
-                {selectedPub.doi && (
-                  <span className="modal-doi-badge">DOI: {selectedPub.doi}</span>
-                )}
-                <span className="modal-date-tag">{selectedPub.date}</span>
-              </div>
-              <button className="modal-close-btn" onClick={() => setSelectedPub(null)} aria-label="Close modal">
-                <span>[ ESC_CLOSE ]</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-            <h3 className="modal-pub-title">{selectedPub.title}</h3>
-            <p className="modal-pub-desc">{selectedPub.summary}</p>
-            <div className="modal-footer-actions">
-              <a href={selectedPub.link} target="_blank" rel="noopener noreferrer" className="modal-view-paper-btn">
-                <span>Access Full Publication</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M7 17l9.2-9.2M17 17V8H8"/>
-                </svg>
-              </a>
-              {selectedPub.doiLink && selectedPub.doiLink !== selectedPub.link && (
-                <a
-                  href={selectedPub.doiLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-doi-link-btn"
-                >
-                  <span>Zenodo DOI</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M7 17l9.2-9.2M17 17V8H8"/>
-                  </svg>
-                </a>
-              )}
-              {selectedPub.repoLink && (
-                <a
-                  href={selectedPub.repoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-repo-link-btn"
-                >
-                  <span>GitHub Repository</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M7 17l9.2-9.2M17 17V8H8"/>
-                  </svg>
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

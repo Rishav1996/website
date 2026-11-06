@@ -207,3 +207,9 @@
   display: block;
   opacity: 0.85;
 }
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.25rem;
+  }
+}

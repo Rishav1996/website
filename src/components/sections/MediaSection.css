@@ -46,8 +46,8 @@
 }
 
 .motto-text::after {
-  bottom: -2.5rem;
-  right: -0.5rem;
+  bottom: -0.5rem;
+  right: 0.25rem;
 }
 
 .media-grid {
@@ -405,20 +405,35 @@
 
 .close-theatre-btn {
   position: absolute;
-  top: -45px;
-  right: 0;
-  background: transparent;
-  border: none;
-  color: var(--color-text-muted);
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(12, 16, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--color-text-high);
   font-family: var(--font-code);
   font-size: 0.85rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .close-theatre-btn:hover {
-  color: #ff0000;
+  background: rgba(255, 0, 0, 0.2);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #ff5f56;
+}
+
+@media (max-width: 768px) {
+  .media-interactive-card {
+    padding: 1.25rem;
+  }
 }

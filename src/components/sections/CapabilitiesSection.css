@@ -16,12 +16,6 @@
   align-items: start;
 }
 
-@media (max-width: 960px) {
-  .capabilities-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
 .years-list {
   display: flex;
   flex-direction: column;
@@ -154,7 +148,13 @@
   border: none;
   color: var(--color-text-muted);
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clear-search-btn:hover {
@@ -200,4 +200,35 @@
 
 .cloud-word:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 960px) {
+  .capabilities-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .word-cloud-container {
+    position: static;
+    min-height: auto;
+    order: -1;
+  }
+
+  .years-list {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .word-cloud-container {
+    padding: 1.25rem;
+  }
+
+  .search-box-wrapper {
+    max-width: 100%;
+  }
+
+  .year-node {
+    padding: 1.25rem;
+  }
 }

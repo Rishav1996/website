@@ -16,12 +16,6 @@
   align-items: start;
 }
 
-@media (max-width: 960px) {
-  .opensource-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
 .opensource-list {
   display: flex;
   flex-direction: column;
@@ -127,6 +121,11 @@
   font-size: 0.82rem;
   color: var(--color-text-muted);
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
 }
 
 .os-terminal-body {
@@ -186,4 +185,16 @@
   background: var(--color-accent-primary);
   animation: blink 1s infinite;
   margin-top: 0.25rem;
+}
+
+@media (max-width: 960px) {
+  .opensource-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .os-terminal-container {
+    position: static;
+    min-height: auto;
+  }
 }

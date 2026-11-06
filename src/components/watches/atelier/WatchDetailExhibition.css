@@ -1100,6 +1100,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .stage-split-display,
+  .story-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .tailored-exhibition-wrapper .next-timepiece-card {
     flex-direction: column-reverse;

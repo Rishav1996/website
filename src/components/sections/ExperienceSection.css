@@ -17,13 +17,6 @@
   margin-top: 2.5rem;
 }
 
-@media (max-width: 960px) {
-  .experience-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
 /* Video Column */
 .experience-video-col {
   position: sticky;
@@ -283,4 +276,30 @@
   background: rgba(88, 166, 255, 0.08);
   border: 1px solid rgba(88, 166, 255, 0.2);
   color: var(--color-accent-primary);
+}
+
+@media (max-width: 960px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .experience-video-col {
+    position: static;
+  }
+
+  .timeline-col {
+    padding-left: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-inner {
+    padding: 1.25rem;
+  }
+
+  .exp-responsibilities-box,
+  .exp-skills-box {
+    padding: 1rem 1.15rem;
+  }
 }

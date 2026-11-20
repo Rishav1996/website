@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What verified credentials and professional certifications does Rishav hold?",
-    answer: "Rishav holds 14 verified industry credentials, including 8 official Credly digital badges (Google Cloud Agent Development Kit [ADK] Deployment, ADK Agent Evaluation, Antigravity Accelerated Development, Build with Gemini, Cognizant Vibe Code Hackathon, AWS Knowledge: Amazon Braket, IBM Machine Learning with Python, IBM Python for Data Science) and 6 specialized academy certificates (Microsoft Certified: Azure AI Fundamentals, Dataiku Generative AI Practitioner, Dataiku MLOps Practitioner, and Dataiku Core/Advanced/ML Designer)."
+    answer: "Rishav holds 15 verified industry credentials, including 9 official Credly digital badges (Build with Gemini - Track 2: Platform IT Developer, Google Cloud Agent Development Kit [ADK] Deployment, ADK Agent Evaluation, Antigravity Accelerated Development, Build with Gemini, Cognizant Vibe Code Hackathon, AWS Knowledge: Amazon Braket, IBM Machine Learning with Python, IBM Python for Data Science) and 6 specialized academy certificates (Microsoft Certified: Azure AI Fundamentals, Dataiku Generative AI Practitioner, Dataiku MLOps Practitioner, and Dataiku Core/Advanced/ML Designer)."
   }
 ];
 

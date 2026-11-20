@@ -5,9 +5,22 @@ import './CertificationsSection.css';
 
 const CREDLY_PROFILE_URL = "https://www.credly.com/users/rishav-saigal.ae0679ae";
 
-// All 14 verified industry credentials ordered chronologically by procurement (most recent to oldest)
+// All 15 verified industry credentials ordered chronologically by procurement (most recent to oldest)
 const certifications = [
-  // 1. Google Cloud - Sep 2026 (Sep 28, 2026)
+  // 1. Explore Google Cloud - Oct 2026 (Oct 14, 2026)
+  {
+    id: "credly-gemini-track2",
+    title: "Build with Gemini - Track 2: Platform IT Developer",
+    issuer: "Explore Google Cloud",
+    date: "Oct 2026",
+    link: "https://www.credly.com/badges/4386b5f2-72d0-49df-845e-11f7828dec07/public_url",
+    badgeImage: "https://images.credly.com/images/14be11f8-a5c2-4465-b04c-97229f1e3ae2/blob",
+    platform: "Credly",
+    category: "credly",
+    icon: "GEM2",
+    skills: ["Antigravity", "Gemini Enterprise", "Google Cloud"]
+  },
+  // 2. Google Cloud - Sep 2026 (Sep 28, 2026)
   {
     id: "credly-adk-deploy",
     title: "Deploy an Agent with Agent Development Kit (ADK)",
@@ -208,7 +221,7 @@ const CertificationsSection = () => {
           <span className="section-tag-badge">VERIFIED INDUSTRY CREDENTIALS</span>
           <h2 className="section-title">Certifications &amp; Badges Vault</h2>
           <p className="section-subtitle">
-            14 verified professional credentials and digital badges spanning Agentic AI, Google Cloud ADK, Cloud Infrastructure, and Production MLOps.
+            15 verified professional credentials and digital badges spanning Agentic AI, Google Cloud ADK, Cloud Infrastructure, and Production MLOps.
           </p>
 
           <div className="cert-header-actions">
@@ -221,7 +234,7 @@ const CertificationsSection = () => {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
-              <span>Explore Official Credly Profile (8 Badges)</span>
+              <span>Explore Official Credly Profile (9 Badges)</span>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M7 17l9.2-9.2M17 17V8H8"/>
               </svg>
@@ -241,7 +254,7 @@ const CertificationsSection = () => {
             className={`cert-filter-btn ${filter === 'credly' ? 'active' : ''}`}
             onClick={() => setFilter('credly')}
           >
-            Credly Digital Badges (8)
+            Credly Digital Badges (9)
           </button>
           <button
             className={`cert-filter-btn ${filter === 'academy' ? 'active' : ''}`}

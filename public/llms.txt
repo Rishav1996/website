@@ -124,23 +124,24 @@
 
 ---
 
-## 4. Verified Professional Credentials (14 Items)
-- **Credly Profile:** https://www.credly.com/users/rishav-saigal.ae0679ae (8 Digital Badges)
-  1. Deploy an Agent with Agent Development Kit (ADK) (Google Cloud, Sep 2026)
-  2. Evaluate and Improve Agent Development Kit Agents (Google Cloud, Sep 2026)
-  3. Accelerate Development with Antigravity (Google Cloud, Sep 2026)
-  4. Build with Gemini (Google Cloud, Sep 2026)
-  5. Vibe Code Hackathon - Vibe Coded using Windsurf (Cognizant, Nov 2025)
-  6. AWS Knowledge: Amazon Braket (AWS, Aug 2025)
-  7. Machine Learning with Python (IBM / Coursera, Jun 2021)
-  8. Python for Data Science (IBM, May 2019)
+## 4. Verified Professional Credentials (15 Items)
+- **Credly Profile:** https://www.credly.com/users/rishav-saigal.ae0679ae (9 Digital Badges)
+  1. Build with Gemini - Track 2: Platform IT Developer (Explore Google Cloud, Oct 2026)
+  2. Deploy an Agent with Agent Development Kit (ADK) (Google Cloud, Sep 2026)
+  3. Evaluate and Improve Agent Development Kit Agents (Google Cloud, Sep 2026)
+  4. Accelerate Development with Antigravity (Google Cloud, Sep 2026)
+  5. Build with Gemini (Google Cloud, Sep 2026)
+  6. Vibe Code Hackathon - Vibe Coded using Windsurf (Cognizant, Nov 2025)
+  7. AWS Knowledge: Amazon Braket (AWS, Aug 2025)
+  8. Machine Learning with Python (IBM / Coursera, Jun 2021)
+  9. Python for Data Science (IBM, May 2019)
 - **Specialized Academy Certifications (6 Credentials):**
-  9. Microsoft Certified: Azure AI Fundamentals (Microsoft, Jun 2025)
-  10. Generative AI Practitioner Certificate (Dataiku Academy, Jun 2026)
-  11. MLOps Practitioner Certificate (Dataiku Academy, Aug 2023)
-  12. Advanced Designer Certificate (Dataiku Academy, Jul 2023)
-  13. ML Practitioner Certificate (Dataiku Academy, Jul 2023)
-  14. Core Designer Certificate (Dataiku Academy, Jul 2023)
+  10. Microsoft Certified: Azure AI Fundamentals (Microsoft, Jun 2025)
+  11. Generative AI Practitioner Certificate (Dataiku Academy, Jun 2026)
+  12. MLOps Practitioner Certificate (Dataiku Academy, Aug 2023)
+  13. Advanced Designer Certificate (Dataiku Academy, Jul 2023)
+  14. ML Practitioner Certificate (Dataiku Academy, Jul 2023)
+  15. Core Designer Certificate (Dataiku Academy, Jul 2023)
 
 ---
 

@@ -11,7 +11,6 @@ import './WatchDetailLeeCooper.css';
  *  - Single Atmospheric Lighting bar (Indigo Forge Spotlight)
  *  - Full timepiece default viewport (filter: none, box-shadow: none)
  *  - 5 authentic macro elements with swatch dots
- *  - Interactive 3 Hz Escapement Pulse (21,600 VPH harmonic rhythm)
  *  - 1080p Horological Cinema Loop (10s Continuous Master Take)
  */
 
@@ -37,8 +36,6 @@ const WatchDetailLeeCooper = ({
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
-  const [isEscapementActive, setIsEscapementActive] = useState(true);
-  const [tickCount, setTickCount] = useState(0);
 
   useEffect(() => {
     // Unmuted auto-play protocol with graceful interaction fallback
@@ -80,19 +77,6 @@ const WatchDetailLeeCooper = ({
       setIsVideoPlaying(false);
     }
   };
-
-  useEffect(() => {
-    let interval = null;
-    if (isEscapementActive) {
-      // 6 beats per second (approx every 166ms)
-      interval = setInterval(() => {
-        setTickCount((prev) => (prev + 1) % 6);
-      }, 166);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isEscapementActive]);
 
   return (
     <div className="leecooper-exhibition-wrapper">
@@ -361,68 +345,6 @@ const WatchDetailLeeCooper = ({
                     );
                   })}
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive 3 Hz Escapement Heartbeat Pulse Cockpit */}
-        <section className="leecooper-interactive-cockpit" aria-label="3 Hz Escapement Cockpit">
-          <div className="escapement-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">3 HZ HARMONIC PULSE</span>
-              <h3 className="cockpit-title">Mechanical Lever Escapement Rhythm</h3>
-            </div>
-            <p className="cockpit-desc">
-              Pulsing at 21,600 beats per hour, the synthetic ruby pallets release the escape wheel exactly 6 times per second to drive the sweeping second hand.
-            </p>
-
-            <div className="pulse-meter-row">
-              <button
-                type="button"
-                className={`btn-toggle-pulse ${isEscapementActive ? 'active' : ''}`}
-                onClick={() => setIsEscapementActive(!isEscapementActive)}
-              >
-                <span>{isEscapementActive ? '⏸ Pause Escapement' : '▶ Engage Escapement'}</span>
-              </button>
-
-              <div className="tick-visualizer">
-                {[0, 1, 2, 3, 4, 5].map((beat) => (
-                  <span
-                    key={beat}
-                    className={`beat-bar ${isEscapementActive && tickCount === beat ? 'active' : ''}`}
-                  ></span>
-                ))}
-              </div>
-            </div>
-
-            <div className="escapement-stats-strip">
-              <div className="stat-unit">
-                <span className="stat-label">FREQUENCY:</span>
-                <strong className="stat-val text-blue">21,600 VPH (3.0 Hz)</strong>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">DISCRETE STEPS:</span>
-                <span className="stat-val">6 Micro-Ticks / Second</span>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">BEARING:</span>
-                <span className="stat-val text-ruby">Corundum Ruby Cap</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="escapement-panel-right">
-            <div className="tonneau-geometry-card">
-              <span className="geo-badge">ERGONOMIC ANATOMY</span>
-              <h4 className="geo-title">Curved Tonneau Profile</h4>
-              <p className="geo-desc">
-                Departing from traditional round silhouettes, the 42mm curved tonneau chassis naturally wraps the carpal anatomy.
-              </p>
-              <div className="geo-specs">
-                <span className="geo-spec-item">8 Perimeter Rivets</span>
-                <span className="geo-spec-item">Cobalt Inner Chapter Flange</span>
-                <span className="geo-spec-item">Midnight Silicone Integration</span>
               </div>
             </div>
           </div>

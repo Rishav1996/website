@@ -9,10 +9,8 @@ import './WatchDetailExhibition.css';
  *  - 1080p Horological Cinema Loop (Video-First Auto-Running Experience)
  *  - The Coffee Mocha Roastery Theme
  *  - Single Authoritative Roastery Spotlight Atmosphere Bar
- *  - Dedicated 3 Hz Kinetic Balance Wheel Oscillator Cockpit (21,600 VPH harmonic rhythm)
- *  - Knurled Crown Stem (3H) Manual Winding & Mainspring Tensioner Cockpit (+4h per wind)
  *  - Single authoritative 5-element macro inspector with color dots
- *  - Full timepiece & cinema viewports with active 7H balance wheel kinetic heartbeat
+ *  - Full timepiece & cinema viewports
  */
 
 // Color dots mapped to the 5 authentic macro elements
@@ -35,10 +33,6 @@ const WatchDetailKennethCole = ({
   const elements = watch?.elements || [];
   const [selectedElement, setSelectedElement] = useState(elements[0]);
   const [viewMode, setViewMode] = useState('cinema'); // Video-First: Defaults to auto-running 1080p cinema loop
-  const [isEscapementActive, setIsEscapementActive] = useState(true);
-  const [tickCount, setTickCount] = useState(0);
-  const [kcReserveHours, setKcReserveHours] = useState(36);
-  const [isCrownWinding, setIsCrownWinding] = useState(false);
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
@@ -84,27 +78,6 @@ const WatchDetailKennethCole = ({
       setIsVideoPlaying(false);
     }
   };
-
-  const handleWindCrown = () => {
-    setIsCrownWinding(true);
-    setKcReserveHours((prev) => Math.min(40, prev + 4));
-    setTimeout(() => {
-      setIsCrownWinding(false);
-    }, 300);
-  };
-
-  useEffect(() => {
-    let interval = null;
-    if (isEscapementActive) {
-      // 6 beats per second (approx every 166ms for 3.0 Hz / 21,600 VPH)
-      interval = setInterval(() => {
-        setTickCount((prev) => (prev + 1) % 6);
-      }, 166);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isEscapementActive]);
 
   return (
     <div className="tailored-exhibition-wrapper mood-spotlight">
@@ -301,20 +274,9 @@ const WatchDetailKennethCole = ({
                       alt={`${watch.brand} ${watch.model}`}
                       className="viewport-full-img"
                     />
-                    {/* Synchronized 3 Hz Balance Wheel Kinetic Pulse at 7H open-heart aperture */}
-                    {isEscapementActive && (
-                      <div
-                        className={`kc-balance-heartbeat beat-${tickCount}`}
-                        aria-hidden="true"
-                        title="Active 3 Hz Escapement Heartbeat"
-                      >
-                        <div className="heartbeat-ring" />
-                        <div className="ruby-pip" />
-                      </div>
-                    )}
                   </div>
                   <div className="viewport-caption">
-                    Full Timepiece • 44mm Matte Mocha IP Steel in Roastery Spotlight (Automatic Skeleton • 21 Jewels • {isEscapementActive ? '3.0 Hz Oscillator Active' : 'Escapement Paused'})
+                    Full Timepiece • 44mm Matte Mocha IP Steel in Roastery Spotlight (Automatic Skeleton • 21 Jewels • 21,600 VPH)
                   </div>
                 </div>
               ) : (
@@ -383,109 +345,6 @@ const WatchDetailKennethCole = ({
                       </div>
                     );
                   })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive Skeleton Balance Wheel & Auxiliary Crown Winding Cockpit */}
-        <section className="kc-interactive-cockpit" aria-label="Mechanical Balance Wheel Cockpit">
-          <div className="cockpit-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">3 HZ KINETIC HEARTBEAT</span>
-              <h3 className="cockpit-title">Automatic Skeleton Balance Wheel Oscillator</h3>
-            </div>
-            <p className="cockpit-desc">
-              Pulsing at 21,600 VPH (3.0 Hz), the synthetic ruby pallet stones oscillate the balance wheel 6 times per second to meter power release from the mainspring.
-            </p>
-
-            <div className="kc-pulse-control-row">
-              <button
-                type="button"
-                className={`btn-toggle-pulse ${isEscapementActive ? 'active' : ''}`}
-                onClick={() => setIsEscapementActive(!isEscapementActive)}
-                title="Toggle mechanical escapement oscillation"
-              >
-                <span>{isEscapementActive ? '⏸ Pause Escapement' : '▶ Release Balance Wheel'}</span>
-              </button>
-
-              <div className="kc-beat-visualizer" title="6 beats per second harmonic frequency">
-                {[0, 1, 2, 3, 4, 5].map((beat) => (
-                  <span
-                    key={beat}
-                    className={`kc-beat-bar ${isEscapementActive && tickCount === beat ? 'active' : ''}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="kc-telemetry-strip">
-              <div className="telemetry-item">
-                <span className="telemetry-label">FREQUENCY:</span>
-                <strong className="telemetry-val text-gold">21,600 VPH (3.0 Hz)</strong>
-              </div>
-              <div className="telemetry-item">
-                <span className="telemetry-label">JEWEL BEARING:</span>
-                <span className="telemetry-val text-ruby">21 Synthetic Rubies</span>
-              </div>
-              <div className="telemetry-item">
-                <span className="telemetry-label">PALLET ACTION:</span>
-                <span className="telemetry-val">6 Micro-Ticks / Sec</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="cockpit-panel-right">
-            <div className="crown-winding-card">
-              <div className="crown-title-row">
-                <span className="crown-badge">MANUAL STEM WINDING</span>
-                <h4 className="crown-title">Knurled Crown Stem (3H)</h4>
-              </div>
-              <p className="crown-desc">
-                Auxiliary manual winding mechanism nestled between mocha IP crown guards to tension the mainspring barrel.
-              </p>
-
-              <div className="crown-action-row">
-                <button
-                  type="button"
-                  className={`btn-wind-crown ${isCrownWinding ? 'winding' : ''}`}
-                  onClick={handleWindCrown}
-                  title="Click to turn crown and wind the mainspring barrel"
-                >
-                  <span className="crown-icon">⚙️</span>
-                  <span className="crown-btn-text">Turn Crown (+4h Reserve)</span>
-                </button>
-                <span className="crown-winding-hint">
-                  {kcReserveHours >= 40 ? '✓ Fully Tensioned (40h Max)' : 'Click to add reserve'}
-                </span>
-              </div>
-
-              <div className="crown-reserve-gauge">
-                <div className="gauge-label-row">
-                  <span className="gauge-label">MAINSPRING TENSION:</span>
-                  <strong className="gauge-val text-gold">{kcReserveHours}h / 40h ({Math.round((kcReserveHours / 40) * 100)}%)</strong>
-                </div>
-                <div className="gauge-track">
-                  <div
-                    className="gauge-fill"
-                    style={{ width: `${Math.round((kcReserveHours / 40) * 100)}%` }}
-                  />
-                </div>
-              </div>
-
-              <div className="kc-telemetry-strip crown-telemetry-strip">
-                <div className="telemetry-item">
-                  <span className="telemetry-label">MAX CAPACITY:</span>
-                  <strong className="telemetry-val text-gold">40 Hours</strong>
-                </div>
-                <div className="telemetry-item">
-                  <span className="telemetry-label">WIND RATE:</span>
-                  <span className="telemetry-val">+4h / Crown Turn</span>
-                </div>
-                <div className="telemetry-item">
-                  <span className="telemetry-label">STEM SEAL:</span>
-                  <span className="telemetry-val">Dual O-Ring IP</span>
                 </div>
               </div>
             </div>

@@ -18,6 +18,7 @@ const routes = [
   'watches/lee-cooper-lc07979-399',
   'watches/titan-classique-deca-90245sm01',
   'watches/police-cranium-plpewjm0081301w',
+  'watches/d1-milano-polycarbon-pcbj37',
 ];
 
 function generateHtml(routePath, isDynamic404 = false) {

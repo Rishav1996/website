@@ -24,13 +24,13 @@
   </url>
   <url>
     <loc>https://rishavsaigal.web.app/watches</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_kc_escapement.jpg</image:loc>
       <image:title>The Timepiece Archive &amp; Horological Vault</image:title>
-      <image:caption>Curated archive of 7 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal.</image:caption>
+      <image:caption>Curated archive of 8 personal mechanical, solar, and high-frequency timepieces cataloged by Rishav Saigal.</image:caption>
     </image:image>
   </url>
   <url>
@@ -143,6 +143,22 @@
       <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_pc_bolted_bezel.jpg</image:loc>
       <image:title>Industrial Socket-Head Bezel Anchor Bolts</image:title>
       <image:caption>4-corner 316L stainless steel structural bezel bolts with 0.35 N·m torque.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rishavsaigal.web.app/watches/d1-milano-polycarbon-pcbj37</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/d1milano/d1milano_watch.jpg</image:loc>
+      <image:title>D1 Milano Polycarbon Urban Camo PCBJ37</image:title>
+      <image:caption>44g soft-touch Urban Camo polycarbonate monoblock with 40.5mm octagonal bezel, Blue AR mineral crystal, and Seiko TMI VJ21 quartz.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rishavsaigal.web.app/assets/watches/cuts/cut_d1_camo_bezel.jpg</image:loc>
+      <image:title>Octagonal Soft-Touch Urban Camo Bezel</image:title>
+      <image:caption>Continuous monochrome grey fractal camouflage across octagonal bezel and matte grey brass dial.</image:caption>
     </image:image>
   </url>
 </urlset>

@@ -44,7 +44,7 @@ const WatchAtelierFooter = ({ selectedWatch = null, onReturnToPortfolio = () => 
             ) : (
               <ul className="footer-spec-list">
                 <li><strong>Archive Scope:</strong> {collectionCount} Independently Owned Timepieces</li>
-                <li><strong>Disciplines:</strong> Automatic Skeleton, Tough Solar, Tonneau, Vintage Dress</li>
+                <li><strong>Disciplines:</strong> Automatic Skeleton, Tough Solar, Tonneau, Vintage Dress, Urban Polymer</li>
                 <li><strong>Total Jewels:</strong> 42 Synthetic Rubies across mechanical engines</li>
                 <li><strong>Curation:</strong> Zero Algorithmic Drift • Pure Horology</li>
               </ul>

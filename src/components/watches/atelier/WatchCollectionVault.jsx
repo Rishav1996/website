@@ -6,7 +6,7 @@ import './WatchCollectionVault.css';
  * WatchCollectionVault - Scalable Horological Archive Matrix
  * Compact, high-density matrix grid engineered for future collection expansion.
  * Features:
- * - Bought Year tracking (2025 for first three, 2026 for last three)
+ * - Bought Year tracking (2025 and 2026 dynamic archive)
  * - Multi-dimensional sorting (by Year desc/asc, by Name A-Z/Z-A, Vault order)
  * - Category and Year filter pills
  * - Zero duplicated sub-watch elements (macro cards reserved for atelier pages)

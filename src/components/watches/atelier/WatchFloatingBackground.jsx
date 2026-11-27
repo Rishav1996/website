@@ -4,7 +4,7 @@ import './WatchFloatingBackground.css';
 /**
  * WatchFloatingBackground - "Wall of Fame" Continuous Horological Ribbon
  * Displays an auto-sliding cinematic gallery behind the collection vault.
- * Dual-lane infinite marquee featuring authentic cuts and timepieces across all 7 watches.
+ * Dual-lane infinite marquee featuring authentic cuts and timepieces across all 8 watches.
  */
 
 const LANE_1_ITEMS = [
@@ -119,10 +119,42 @@ const LANE_1_ITEMS = [
     name: 'Bolted Tonneau Bezel',
     image: 'assets/watches/cuts/cut_pc_bolted_bezel.jpg',
     accent: '#94a3b8'
+  },
+  {
+    id: 'l1-d1-watch',
+    type: 'watch',
+    watch: 'D1 Milano',
+    name: 'Polycarbon Urban Camo',
+    image: 'assets/watches/d1milano/d1milano_watch_transparent.png',
+    accent: '#8fa89b'
+  },
+  {
+    id: 'l1-d1-bezel',
+    type: 'cut',
+    watch: 'D1 Milano',
+    name: 'Octagonal Urban Camo Bezel',
+    image: 'assets/watches/cuts/cut_d1_camo_bezel.jpg',
+    accent: '#7c9cc0'
   }
 ];
 
 const LANE_2_ITEMS = [
+  {
+    id: 'l2-d1-dial',
+    type: 'cut',
+    watch: 'D1 Milano',
+    name: 'Matte Grey Brass Dial',
+    image: 'assets/watches/cuts/cut_d1_matte_dial.jpg',
+    accent: '#8fa89b'
+  },
+  {
+    id: 'l2-d1-watch',
+    type: 'watch',
+    watch: 'D1 Milano',
+    name: 'Urban Camo PCBJ37',
+    image: 'assets/watches/d1milano/d1milano_watch_transparent.png',
+    accent: '#7c9cc0'
+  },
   {
     id: 'l2-pc-cranium',
     type: 'cut',

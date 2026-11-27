@@ -1,0 +1,788 @@
+/* Milanese Urban Camo & Stealth Polymer Atelier Theme - WatchDetailD1Milano.css */
+
+.d1milano-exhibition-wrapper {
+  background-color: #0a0c0c;
+  color: #a1a1aa;
+  min-height: 100vh;
+  padding: 80px 24px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.d1milano-exhibition-wrapper .atelier-thematic-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+  filter: contrast(1.12) brightness(0.95);
+  mask-image: radial-gradient(circle at center, black 45%, transparent 92%);
+  -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 92%);
+}
+
+.d1milano-exhibition-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Bar */
+.d1milano-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.d1milano-exhibition-wrapper .top-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-archive-back-d1milano {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 21, 22, 0.9);
+  border: 1px solid rgba(143, 168, 155, 0.28);
+  color: #e4e4e7;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.75rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-archive-back-d1milano:hover {
+  background: rgba(143, 168, 155, 0.16);
+  color: #ffffff;
+  border-color: #8fa89b;
+}
+
+.d1milano-exhibition-wrapper .btn-adjacent-timepiece {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 21, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.d1milano-exhibition-wrapper .btn-adjacent-timepiece:hover {
+  background: rgba(124, 156, 192, 0.16);
+  color: #f4f4f5;
+  border-color: rgba(124, 156, 192, 0.45);
+}
+
+.d1milano-theme-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 21, 22, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.d1milano-emblem-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.d1milano-tag-text {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #8fa89b;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Header & Integrated Atmospheric Lighting Split Row */
+.d1milano-exhibition-wrapper .header-split-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.exhibition-d1milano-header {
+  flex: 1;
+  min-width: 300px;
+}
+
+.d1milano-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.7rem;
+  color: #8fa89b;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.d1milano-eyebrow .sep {
+  opacity: 0.4;
+}
+
+.d1milano-exhibition-wrapper .acquisition-badge {
+  background: rgba(124, 156, 192, 0.16);
+  border: 1px solid rgba(124, 156, 192, 0.4);
+  color: #dbeafe;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.d1milano-main-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #f4f4f5;
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+
+.d1milano-lead-text {
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  max-width: 720px;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.d1milano-spec-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.d1milano-spec-pills-row .spec-pill {
+  background: rgba(18, 21, 22, 0.88);
+  border: 1px solid rgba(143, 168, 155, 0.25);
+  color: #f4f4f5;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.d1milano-spec-pills-row .spec-pill.highlight-pill {
+  background: rgba(124, 156, 192, 0.18);
+  border-color: rgba(124, 156, 192, 0.45);
+  color: #e0f2fe;
+  font-weight: 600;
+}
+
+/* Integrated Atmospheric Lighting Badge */
+.d1milano-exhibition-wrapper .header-lighting-col {
+  display: flex;
+  align-items: center;
+}
+
+.d1milano-lighting-bar.single-spotlight-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 21, 22, 0.92);
+  border: 1px solid rgba(143, 168, 155, 0.25);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.d1milano-lighting-bar .lighting-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #71717a;
+  letter-spacing: 0.08em;
+}
+
+.d1milano-exhibition-wrapper .single-spotlight-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(143, 168, 155, 0.14);
+  border: 1px solid rgba(143, 168, 155, 0.32);
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #f4f4f5;
+  font-size: 0.75rem;
+}
+
+.d1milano-exhibition-wrapper .single-spotlight-pill .pill-icon {
+  font-size: 0.75rem;
+  color: #8fa89b;
+}
+
+.d1milano-exhibition-wrapper .single-spotlight-pill .pill-label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.d1milano-exhibition-wrapper .single-spotlight-pill .pill-sub {
+  color: #bfdbfe;
+  font-size: 0.72rem;
+}
+
+/* Centerpiece: Single Unified Watch & Macro Element Inspection Stage */
+.d1milano-inspection-stage {
+  background: #121516;
+  border: 1px solid rgba(143, 168, 155, 0.22);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+}
+
+.d1milano-exhibition-wrapper .stage-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.d1milano-exhibition-wrapper .controls-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.d1milano-exhibition-wrapper .controls-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #71717a;
+  letter-spacing: 0.08em;
+}
+
+.d1milano-exhibition-wrapper .btn-mode-pill {
+  background: rgba(26, 31, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.d1milano-exhibition-wrapper .btn-mode-pill:hover {
+  background: rgba(143, 168, 155, 0.14);
+  color: #f4f4f5;
+  border-color: rgba(143, 168, 155, 0.38);
+}
+
+.d1milano-exhibition-wrapper .btn-mode-pill.active {
+  background: #8fa89b;
+  border-color: #8fa89b;
+  color: #0a0c0c;
+  font-weight: 600;
+}
+
+/* Studio Perspective Switcher */
+.d1milano-exhibition-wrapper .controls-center-perspectives {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.d1milano-exhibition-wrapper .perspective-btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.d1milano-exhibition-wrapper .btn-persp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(26, 31, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.7rem;
+  padding: 4px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.d1milano-exhibition-wrapper .btn-persp-pill:hover {
+  background: rgba(124, 156, 192, 0.14);
+  color: #f4f4f5;
+  border-color: rgba(124, 156, 192, 0.38);
+}
+
+.d1milano-exhibition-wrapper .btn-persp-pill.active {
+  background: rgba(124, 156, 192, 0.22);
+  border-color: #7c9cc0;
+  color: #e0f2fe;
+  font-weight: 600;
+}
+
+.d1milano-exhibition-wrapper .telemetry-pill-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.d1milano-exhibition-wrapper .telemetry-chip {
+  background: rgba(26, 31, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.d1milano-exhibition-wrapper .telemetry-chip.highlight {
+  background: rgba(143, 168, 155, 0.16);
+  border-color: rgba(143, 168, 155, 0.4);
+  color: #e4e4e7;
+  font-weight: 600;
+}
+
+.d1milano-exhibition-wrapper .controls-right {
+  display: flex;
+  align-items: center;
+}
+
+.d1milano-exhibition-wrapper .element-indicator-text {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.7rem;
+  color: #8fa89b;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Stage Split Display */
+.d1milano-exhibition-wrapper .stage-split-display {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.d1milano-exhibition-wrapper .stage-visual-viewport {
+  background: #0a0c0c;
+  border: 1px solid rgba(143, 168, 155, 0.18);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.d1milano-exhibition-wrapper .viewport-full-wrap,
+.d1milano-exhibition-wrapper .viewport-macro-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.d1milano-viewport .viewport-img-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 340px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.d1milano-viewport .viewport-full-img {
+  max-width: 100%;
+  max-height: 370px;
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.d1milano-viewport .viewport-macro-img {
+  max-width: 100%;
+  max-height: 370px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.d1milano-exhibition-wrapper .viewport-caption {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  color: #a1a1aa;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Stage Element Dossier Stack (2 Separate Cards) */
+.d1milano-exhibition-wrapper .stage-element-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.d1milano-exhibition-wrapper .active-element-card {
+  background: #1a1f20;
+  border: 1px solid rgba(143, 168, 155, 0.22);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.d1milano-exhibition-wrapper .active-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.d1milano-exhibition-wrapper .active-element-swatch-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.d1milano-exhibition-wrapper .element-eyebrow {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #8fa89b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.d1milano-exhibition-wrapper .active-element-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  letter-spacing: -0.01em;
+  margin: 0 0 2px;
+}
+
+.d1milano-exhibition-wrapper .active-element-sub {
+  display: block;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+
+.d1milano-exhibition-wrapper .active-element-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #d4d4d8;
+  margin: 0;
+}
+
+/* Elements Selector Tray */
+.d1milano-exhibition-wrapper .elements-selector-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.d1milano-exhibition-wrapper .tray-label {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #a1a1aa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.d1milano-exhibition-wrapper .selector-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.d1milano-exhibition-wrapper .selector-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(26, 31, 32, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.d1milano-exhibition-wrapper .selector-item-card:hover {
+  background: rgba(143, 168, 155, 0.1);
+  border-color: rgba(143, 168, 155, 0.35);
+  transform: translateX(3px);
+}
+
+.d1milano-exhibition-wrapper .selector-item-card.selected {
+  background: rgba(143, 168, 155, 0.16);
+  border-color: #8fa89b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.d1milano-exhibition-wrapper .selector-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0a0c0c;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.d1milano-exhibition-wrapper .selector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.d1milano-exhibition-wrapper .selector-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.d1milano-exhibition-wrapper .s-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.d1milano-exhibition-wrapper .elem-color-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.d1milano-exhibition-wrapper .s-num {
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #71717a;
+}
+
+.d1milano-exhibition-wrapper .s-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.d1milano-exhibition-wrapper .s-sub {
+  display: block;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #a1a1aa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Concise Design Backstory: 2-Column Curated Story Split Grid */
+.d1milano-story-section {
+  margin-bottom: 24px;
+}
+
+.d1milano-exhibition-wrapper .story-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.d1milano-exhibition-wrapper .story-card,
+.story-card.d1milano-story-card {
+  background: #121516;
+  border: 1px solid rgba(143, 168, 155, 0.22);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.d1milano-exhibition-wrapper .story-kicker {
+  display: block;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.68rem;
+  color: #8fa89b;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.d1milano-exhibition-wrapper .story-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  margin: 0 0 14px;
+}
+
+.d1milano-exhibition-wrapper .story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.d1milano-exhibition-wrapper .story-list li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #d4d4d8;
+}
+
+.d1milano-exhibition-wrapper .story-list li strong {
+  color: #f4f4f5;
+  font-weight: 600;
+}
+
+/* Next Timepiece in Archive Transition Card */
+.d1milano-exhibition-wrapper .next-timepiece-transition-section {
+  margin-top: 24px;
+}
+
+.d1milano-exhibition-wrapper .next-timepiece-card,
+.next-timepiece-card.d1milano-next-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121516;
+  border: 1px solid rgba(143, 168, 155, 0.22);
+  border-radius: 12px;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.d1milano-exhibition-wrapper .next-timepiece-card:hover,
+.next-timepiece-card.d1milano-next-card:hover {
+  background: #1a1f20;
+  border-color: #8fa89b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.d1milano-exhibition-wrapper .next-card-left {
+  flex: 1;
+}
+
+.d1milano-exhibition-wrapper .next-kicker {
+  display: block;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.65rem;
+  color: #8fa89b;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.d1milano-exhibition-wrapper .next-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  margin: 0 0 4px;
+}
+
+.d1milano-exhibition-wrapper .next-tagline {
+  font-size: 0.82rem;
+  color: #a1a1aa;
+  margin: 0 0 10px;
+}
+
+.d1milano-exhibition-wrapper .next-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-size: 0.72rem;
+  color: #8fa89b;
+  font-weight: 600;
+}
+
+.d1milano-exhibition-wrapper .next-card-thumb {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  background: #0a0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.d1milano-exhibition-wrapper .next-watch-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .d1milano-exhibition-wrapper .stage-split-display {
+    grid-template-columns: 1fr;
+  }
+  .d1milano-exhibition-wrapper .story-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .d1milano-exhibition-wrapper .header-split-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .d1milano-exhibition-wrapper {
+    padding: 70px 14px 30px;
+  }
+  .d1milano-main-title {
+    font-size: 1.8rem;
+  }
+  .d1milano-exhibition-wrapper .stage-controls-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

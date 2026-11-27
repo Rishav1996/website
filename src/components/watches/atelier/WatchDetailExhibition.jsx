@@ -6,6 +6,7 @@ import WatchDetailTimex from './WatchDetailTimex';
 import WatchDetailLeeCooper from './WatchDetailLeeCooper';
 import WatchDetailTitanDeca from './WatchDetailTitanDeca';
 import WatchDetailPolice from './WatchDetailPolice';
+import WatchDetailD1Milano from './WatchDetailD1Milano';
 import { WATCH_COLLECTION } from '../../../data/watchesData';
 
 /**
@@ -19,6 +20,7 @@ import { WATCH_COLLECTION } from '../../../data/watchesData';
  *  - Lee Cooper LC07979.399 -> "The Tonneau Indigo Forge Atelier"
  *  - Titan Deca 90245SM01 -> "The Riviera Deca Prism Atelier"
  *  - Police Cranium PLPEWJM0081301W -> "The Cranium Cyber-Steel & Industrial Tonneau Atelier"
+ *  - D1 Milano PCBJ37 -> "The Milanese Urban Camo & Stealth Polymer Atelier"
  */
 const WatchDetailExhibition = ({
   watch,
@@ -82,7 +84,18 @@ const WatchDetailExhibition = ({
     return <WatchDetailPolice {...commonProps} />;
   }
 
-  // 7. Default to Kenneth Cole Coffee Mocha Roastery Atelier
+  // 7. D1 Milano Polycarbon Urban Camo
+  if (
+    sku === 'PCBJ37' ||
+    sku === 'D1-PCBJ37' ||
+    id.includes('d1-milano') ||
+    id.includes('d1milano') ||
+    id.includes('pcbj37')
+  ) {
+    return <WatchDetailD1Milano {...commonProps} />;
+  }
+
+  // 8. Default to Kenneth Cole Coffee Mocha Roastery Atelier
   return <WatchDetailKennethCole {...commonProps} />;
 };
 

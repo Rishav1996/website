@@ -11,10 +11,7 @@ import './WatchDetailPolice.css';
  *  - Standardized Header Split Row with Integrated Atmospheric Lighting Badge
  *  - Single Unified Watch & Macro Element Inspection Stage (Left Viewport + Right 2-Card Dossier Stack)
  *  - Studio Perspective Switcher (Frontal Studio, 3/4 Dynamic Angle, Crown Flank Profile)
- *  - Interactive Cranium Aperture & Crystal Specular Scanner Overlay in Viewport
  *  - Elements Selector Tray with 38x38 preview thumbs and active element states
- *  - Interactive 1.00 Hz Calibre 05-203A Quartz Stepping Sequencer (1 Hz / 5 Hz / Halt)
- *  - Interactive 4-Corner Bezel Bolt Torque & Asymmetrical Tonneau Geometry Inspector
  *  - Concise Design Backstory: 2-Column Curated Story Split Grid
  *  - Up Next in Archive Transition Card
  *  - Zero external retail/store links
@@ -52,65 +49,6 @@ const STUDIO_PERSPECTIVES = [
   }
 ];
 
-const BEZEL_BOLTS = [
-  {
-    id: 'bolt-11h',
-    label: 'Bolt 01 (11H)',
-    title: 'Top-Left Socket Anchor',
-    position: 'Upper-Left Bezel Flank',
-    torque: '0.35 N·m Clamping Torque',
-    material: '316L Austenitic Stainless Steel',
-    finish: 'Concentric Satin-Brushed Face with High-Polish Mirror Chamfer',
-    role: 'Anchors upper tonneau bridge plate to inner waterproof gasket housing.',
-    cx: 26,
-    cy: 20
-  },
-  {
-    id: 'bolt-1h',
-    label: 'Bolt 02 (1H)',
-    title: 'Top-Right Socket Anchor',
-    position: 'Upper-Right Bezel Flank',
-    torque: '0.35 N·m Clamping Torque',
-    material: '316L Austenitic Stainless Steel',
-    finish: 'Concentric Satin-Brushed Face with High-Polish Mirror Chamfer',
-    role: 'Secures upper crystal compression ring adjacent to 1 o’clock index.',
-    cx: 74,
-    cy: 20
-  },
-  {
-    id: 'bolt-5h',
-    label: 'Bolt 03 (5H)',
-    title: 'Bottom-Right Socket Anchor',
-    position: 'Lower-Right Lug Transition',
-    torque: '0.35 N·m Clamping Torque',
-    material: '316L Austenitic Stainless Steel',
-    finish: 'Concentric Satin-Brushed Face with High-Polish Mirror Chamfer',
-    role: 'Provides structural torsional rigidity above lower silicone strap junction.',
-    cx: 74,
-    cy: 80
-  },
-  {
-    id: 'bolt-7h',
-    label: 'Bolt 04 (7H)',
-    title: 'Bottom-Left Socket Anchor',
-    position: 'Lower-Left Lug Transition',
-    torque: '0.35 N·m Clamping Torque',
-    material: '316L Austenitic Stainless Steel',
-    finish: 'Concentric Satin-Brushed Face with High-Polish Mirror Chamfer',
-    role: 'Locks lower bezel perimeter against lateral shock and wrist impact.',
-    cx: 26,
-    cy: 80
-  }
-];
-
-const CADENCE_MODES = [
-  { id: '1hz', label: '1.00 Hz Real-Time', rateMs: 1000, desc: '32,768 Hz Quartz Division • 1 Step / Sec' },
-  { id: '5hz', label: '5.00 Hz Rapid Sweep', rateMs: 200, desc: 'High-Speed Calibration • 5 Steps / Sec' },
-  { id: 'halt', label: 'Stealth Halt', rateMs: null, desc: 'Motor Coil Disengaged • Zero Battery Drain' }
-];
-
-
-
 const WatchDetailPolice = ({
   watch,
   prevWatch = null,
@@ -126,16 +64,6 @@ const WatchDetailPolice = ({
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
   const [selectedPerspective, setSelectedPerspective] = useState(STUDIO_PERSPECTIVES[0]);
-
-  // Quartz Stepping Drive State
-  const [cadenceMode, setCadenceMode] = useState('1hz');
-  const [stepTick, setStepTick] = useState(0);
-  const [secondCount, setSecondCount] = useState(26);
-
-  // Bezel Bolt Inspector State
-  const [selectedBolt, setSelectedBolt] = useState(BEZEL_BOLTS[0]);
-
-  const currentCadence = CADENCE_MODES.find((c) => c.id === cadenceMode) || CADENCE_MODES[0];
 
   useEffect(() => {
     // Unmuted auto-play protocol with graceful interaction fallback
@@ -177,16 +105,6 @@ const WatchDetailPolice = ({
       setIsVideoPlaying(false);
     }
   };
-
-  // Precision Quartz Stepping Motor Rhythm
-  useEffect(() => {
-    if (!currentCadence.rateMs) return undefined;
-    const interval = setInterval(() => {
-      setStepTick((prev) => (prev + 1) % 6);
-      setSecondCount((prev) => (prev + 1) % 60);
-    }, currentCadence.rateMs);
-    return () => clearInterval(interval);
-  }, [currentCadence.rateMs]);
 
   return (
     <div className="police-exhibition-wrapper">
@@ -414,7 +332,7 @@ const WatchDetailPolice = ({
                   </div>
 
                   <div className="viewport-caption">
-                    {selectedPerspective.caption} • Calibre 05-203A Quartz ({cadenceMode !== 'halt' ? `${currentCadence.label} Active • Tick :${String(secondCount).padStart(2, '0')}` : 'Motor Coil Halted'})
+                    {selectedPerspective.caption} • Calibre 05-203A Quartz (1.00 Hz Stepping Drive)
                   </div>
                 </div>
               ) : (
@@ -486,156 +404,6 @@ const WatchDetailPolice = ({
                       </div>
                     );
                   })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive Calibre 05-203A Quartz Stepping Sequencer & Bezel Bolt Inspector Cockpit */}
-        <section className="police-interactive-cockpit" aria-label="Quartz Stepping & Bezel Bolt Cockpit">
-          {/* Left Panel: 1.00 Hz Calibre 05-203A Stepping Drive */}
-          <div className="police-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">{currentCadence.label.toUpperCase()}</span>
-              <h3 className="cockpit-title">Calibre 05-203A Quartz Stepping Drive</h3>
-            </div>
-            <p className="cockpit-desc">
-              Regulated by a 32,768 Hz quartz crystal oscillator, the stepping motor advances the high-torque gear transmission in crisp mechanical pulses.
-            </p>
-
-            <div className="cadence-controls-strip">
-              <span className="strip-label">DRIVE CADENCE:</span>
-              <div className="cadence-btn-group">
-                {CADENCE_MODES.map((cm) => (
-                  <button
-                    key={cm.id}
-                    type="button"
-                    className={`btn-cadence-pill ${cadenceMode === cm.id ? 'active' : ''}`}
-                    onClick={() => setCadenceMode(cm.id)}
-                  >
-                    {cm.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="pulse-meter-row">
-              <div className="second-counter-badge">
-                <span className="sc-label">STEP TICK</span>
-                <strong className="sc-val">:{String(secondCount).padStart(2, '0')}</strong>
-              </div>
-
-              <div className="tick-visualizer">
-                {[0, 1, 2, 3, 4, 5].map((beat) => (
-                  <span
-                    key={beat}
-                    className={`beat-bar ${cadenceMode !== 'halt' && stepTick === beat ? 'active' : ''}`}
-                  ></span>
-                ))}
-              </div>
-            </div>
-
-            <div className="escapement-stats-strip">
-              <div className="stat-unit">
-                <span className="stat-label">OSCILLATOR:</span>
-                <strong className="stat-val text-crimson">32,768 Hz Quartz</strong>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">DRIVE COIL:</span>
-                <span className="stat-val">{cadenceMode !== 'halt' ? 'High-Torque Pulse' : 'Halted'}</span>
-              </div>
-              <div className="stat-unit">
-                <span className="stat-label">TRANSMISSION:</span>
-                <span className="stat-val text-steel">Calibre 05-203A</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Panel: 4-Corner Bezel Bolt Torque & Tonneau Geometry Inspector */}
-          <div className="police-panel-right">
-            <div className="tonneau-geometry-card">
-              <div className="geo-header-row">
-                <span className="geo-badge">BEZEL BOLT TORQUE INSPECTOR</span>
-                <span className="geo-model-pill">42.0 × 51.5 mm Tonneau</span>
-              </div>
-
-              {/* Interactive SVG Tonneau Bolt Radar Diagram */}
-              <div className="bolt-inspector-interactive-area">
-                <div className="bolt-svg-radar-wrap">
-                  <svg className="tonneau-chassis-svg" viewBox="0 0 100 100" fill="none">
-                    {/* Tonneau Outer Barrel Contour */}
-                    <path
-                      d="M 32 12 Q 50 8 68 12 Q 86 16 88 50 Q 86 84 68 88 Q 50 92 32 88 Q 14 84 12 50 Q 14 16 32 12 Z"
-                      stroke="rgba(225, 29, 72, 0.35)"
-                      strokeWidth="1.8"
-                      fill="rgba(15, 19, 26, 0.75)"
-                    />
-                    {/* Inner Dial Bezel Boundary */}
-                    <path
-                      d="M 35 20 Q 50 17 65 20 Q 78 24 80 50 Q 78 76 65 80 Q 50 83 35 80 Q 22 76 20 50 Q 22 24 35 20 Z"
-                      stroke="rgba(148, 163, 184, 0.4)"
-                      strokeWidth="1.2"
-                      strokeDasharray="2 2"
-                    />
-                    {/* Center Skull Silhouette Hint */}
-                    <circle cx="50" cy="46" r="10" stroke="rgba(225, 29, 72, 0.3)" strokeWidth="1" />
-                    <rect x="46" y="55" width="8" height="6" stroke="rgba(148, 163, 184, 0.3)" strokeWidth="1" />
-
-                    {/* 4 Corner Hex Bolt Anchors */}
-                    {BEZEL_BOLTS.map((b) => {
-                      const isSelected = selectedBolt.id === b.id;
-                      return (
-                        <g
-                          key={b.id}
-                          className={`bolt-svg-anchor ${isSelected ? 'selected' : ''}`}
-                          onClick={() => setSelectedBolt(b)}
-                        >
-                          <circle
-                            cx={b.cx}
-                            cy={b.cy}
-                            r={isSelected ? 6 : 4.5}
-                            fill={isSelected ? '#e11d48' : '#1e293b'}
-                            stroke={isSelected ? '#ffffff' : '#94a3b8'}
-                            strokeWidth={isSelected ? 1.8 : 1.2}
-                          />
-                          {/* Hex socket center */}
-                          <polygon
-                            points={`${b.cx},${b.cy - 2} ${b.cx + 1.8},${b.cy - 1} ${b.cx + 1.8},${b.cy + 1} ${b.cx},${b.cy + 2} ${b.cx - 1.8},${b.cy + 1} ${b.cx - 1.8},${b.cy - 1}`}
-                            fill={isSelected ? '#ffffff' : '#475569'}
-                          />
-                        </g>
-                      );
-                    })}
-                  </svg>
-                </div>
-
-                {/* Selected Bolt Engineering Details */}
-                <div className="selected-bolt-dossier">
-                  <div className="bolt-selector-pills">
-                    {BEZEL_BOLTS.map((b) => (
-                      <button
-                        key={b.id}
-                        type="button"
-                        className={`btn-bolt-pill ${selectedBolt.id === b.id ? 'active' : ''}`}
-                        onClick={() => setSelectedBolt(b)}
-                      >
-                        {b.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="bolt-spec-body">
-                    <h5 className="bolt-spec-title">{selectedBolt.title}</h5>
-                    <div className="bolt-spec-meta">
-                      <span className="b-spec-chip text-crimson">{selectedBolt.torque}</span>
-                      <span className="b-spec-chip">{selectedBolt.material}</span>
-                    </div>
-                    <p className="bolt-spec-desc">{selectedBolt.role}</p>
-                    <div className="bolt-spec-finish">
-                      <strong>Finish:</strong> {selectedBolt.finish}
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

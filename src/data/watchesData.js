@@ -1,7 +1,7 @@
 /**
  * Horological Collection Data Registry
  * Single Source of Truth for Rishav Saigal's Timepiece Vault
- * 7 Curated Masterpieces across Skeleton, Solar, Chronograph & Mid-Century Horology
+ * 8 Curated Masterpieces across Skeleton, Solar, Chronograph, Mid-Century & Urban Polymer Horology
  */
 
 export const WATCH_COLLECTION = [
@@ -1035,6 +1035,150 @@ export const WATCH_COLLECTION = [
         description: 'Heavy knurled setting crown integrated seamlessly into the sculpted asymmetric right case flank for ergonomic grip.'
       }
     ]
+  },
+  {
+    id: 'd1-milano-polycarbon-pcbj37',
+    brand: 'D1 Milano',
+    model: 'Polycarbon Urban Camo',
+    sku: 'PCBJ37',
+    referenceAlias: 'D1-PCBJ37',
+    category: 'Architectural Geometric / Urban Polymer',
+    categoryGroup: 'mid-century',
+    yearAcquired: '2026',
+    status: 'In Active Rotation',
+    tagline: '44g Soft-Touch Urban Camo Polycarbonate Monoblock with Octagonal Geometry & Blue AR Glass',
+    image: 'assets/watches/d1milano/d1milano_watch_transparent.png',
+    masterImage: 'assets/watches/d1milano/d1milano_watch.jpg',
+    backgroundImage: 'assets/watches/backgrounds/bg_milanese_camo.jpg',
+    video: 'assets/watches/videos/d1milano_cinema_1080p.mp4',
+    videoPoster: 'assets/watches/videos/d1milano_cinema_poster.jpg',
+    videoTitle: '1080p Milanese Urban Camo Cinema Loop (10s Continuous Master Take)',
+
+    // Watch-Specific Dynamic Luxury Theme Tokens (Milanese Urban Camo & Stealth Polymer)
+    theme: {
+      accentPrimary: '#8fa89b', // Muted Urban Camo Sage
+      accentSecondary: '#7c9cc0', // Blue AR Crystal Ice Tint
+      accentHighlight: '#e4e4e7', // Brushed Platinum Ash
+      bgDeep: '#0a0c0c', // Carbon Basalt Base
+      bgSurface: '#121516', // Milanese Brutalist Concrete Surface
+      bgCard: '#1a1f20', // Soft-Touch Polymer Plinth
+      borderAccent: 'rgba(143, 168, 155, 0.28)',
+      glowColor: 'rgba(124, 156, 192, 0.14)',
+      whiteText: '#f4f4f5'
+    },
+
+    // Core Horological Specifications
+    movement: {
+      type: 'Japanese Three-Hand Quartz (Seiko TMI VJ21)',
+      caliber: 'TMI VJ21',
+      mechanism: '32,768 Hz tuning-fork quartz crystal oscillator driving a low-profile stepping motor',
+      beatRate: '1 step per second (1 Hz stepping cadence)',
+      accuracy: '±20 seconds per month',
+      batteryLife: '~36 Months (SR621SW silver oxide cell)',
+      complications: [
+        'Central Sweeping Three-Hand Display',
+        '8.8 mm Ultra-Slim Octagonal Monoblock',
+        'Blue Anti-Reflective Optical Crystal'
+      ]
+    },
+
+    dimensions: {
+      caseDiameter: '40.5 mm',
+      caseThickness: '8.8 mm (Ultra-Slim Profile)',
+      lugWidth: '25.0 mm to 17.0 mm (Integrated Taper)',
+      lugToLug: '~50.5 mm (Integrated Octagonal Profile)',
+      weight: '44.0 g (Featherweight Soft-Touch Polycarbonate)'
+    },
+
+    materials: {
+      case: 'Soft-Touch Matte Polycarbonate Monoblock infused with continuous Urban Grey Camo fractal print',
+      bezel: 'Signature 8-Sided Octagonal Bevelled Polycarbonate Bezel in matte monochrome camouflage',
+      frontCrystal: 'Flat Hardened Mineral Glass with Blue Anti-Reflective (AR) Optical Coating',
+      caseback: '316L Solid Stainless Steel Engraved Caseback Plate',
+      dial: 'Matte Grey Brass Dial continuing the seamless Urban Camo motif with minimalist applied baton indices',
+      hands: 'Minimalist Matte Grey Brass 3-Hand Baton/Pencil Handset',
+      bracelet: 'Integrated Urban Camo Soft-Touch Polycarbonate Link Bracelet with concealed 316L Stainless Steel Hidden Butterfly Clasp',
+      waterResistance: '50 Meters (5 ATM / 5 Bar) — splash, rain, and everyday wear resistant'
+    },
+
+    narrative: {
+      headline: 'Milanese Geometric Minimalism in Featherweight Soft-Touch Polymer',
+      summary:
+        'Designed in Milan around an ultra-slim 8.8mm octagonal monoblock chassis, the D1 Milano Polycarbon Urban Camo (PCBJ37) reimagines architectural sport-watch geometry in soft-touch matte polycarbonate weighing only 44 grams. Its seamless monochrome grey fractal camo print flows uninterrupted across bezel, brass dial, and integrated bracelet beneath blue anti-reflective mineral glass.',
+      keyPillars: [
+        {
+          title: 'Featherweight 44g Monoblock Ergonomics',
+          description: 'Molded from velvety soft-touch polycarbonate paired with a 316L stainless steel caseback and hidden butterfly clasp for near-weightless daily rotation.'
+        },
+        {
+          title: 'Continuous Urban Camo Fractal Print',
+          description: 'Organic grey camouflage patterning wraps across the octagonal bezel, case flanks, and articulated integrated links for a unified stealth-architectural aesthetic.'
+        },
+        {
+          title: 'Blue AR Coated Optical Clarity',
+          description: 'Flat mineral glass treated with a subtle blue anti-reflective optical layer suppresses surface glare across the matte grey brass dial and minimalist baton handset.'
+        }
+      ]
+    },
+
+    faq: [
+      {
+        question: 'What movement powers the D1 Milano Polycarbon Urban Camo PCBJ37?',
+        answer: 'It is powered by a Japanese Seiko Instruments (TMI) VJ21 three-hand quartz movement regulated by a 32,768 Hz quartz oscillator with ~36 months of battery autonomy.'
+      },
+      {
+        question: 'How light and thin is the D1 Milano PCBJ37 case?',
+        answer: 'The 40.5 mm octagonal soft-touch polycarbonate case measures just 8.8 mm thick and weighs only 44 grams, making it the lightest timepiece in the archive.'
+      },
+      {
+        question: 'What crystal, clasp, and water resistance does the PCBJ37 feature?',
+        answer: 'It features flat mineral glass with a blue anti-reflective (AR) coating, a 316L stainless steel caseback, a concealed 316L hidden butterfly clasp, and 50 meters (5 ATM) water resistance.'
+      }
+    ],
+
+    technicalDossier: {
+      caliberAnalysis: 'The Seiko TMI VJ21 three-hand quartz caliber features an ultra-slim stepping-motor architecture (approximately 2.24 mm movement height), allowing the octagonal polycarbonate case to stay at an 8.8 mm total profile while maintaining ±20 seconds/month stability.',
+      materialScience: 'A continuous monochrome Urban Camo transfer is bonded beneath a tactile soft-touch polycarbonate outer coating, reducing surface specular albedo while resisting fingerprints. Structural rigidity is anchored by a 4-screw 316L stainless steel caseback and concealed butterfly deployant clasp.'
+    },
+
+    // Authentic Macro Watch Element Pictures
+    elements: [
+      {
+        id: 'element-camo-bezel',
+        name: 'Octagonal Urban Camo Bezel',
+        subtitle: 'Soft-Touch Polymer Monoblock',
+        image: 'assets/watches/d1milano/elements/element_camo_bezel.jpg',
+        description: 'Signature 8-sided Milanese bezel sculpted in matte soft-touch polycarbonate with continuous monochrome fractal camo patterning.'
+      },
+      {
+        id: 'element-matte-dial',
+        name: 'Matte Grey Brass Dial',
+        subtitle: 'Minimalist Applied Batons',
+        image: 'assets/watches/d1milano/elements/element_matte_dial.jpg',
+        description: 'Tonal matte grey brass dial featuring minimalist applied baton hour markers and balanced three-hand geometry.'
+      },
+      {
+        id: 'element-ar-crystal-hands',
+        name: 'Blue AR Crystal & Handset',
+        subtitle: 'Anti-Glare Optical Coat',
+        image: 'assets/watches/d1milano/elements/element_ar_crystal_hands.jpg',
+        description: 'Flat mineral crystal treated with blue anti-reflective coating framing the brushed minimalist handset and angled inner chapter wall.'
+      },
+      {
+        id: 'element-camo-bracelet',
+        name: 'Integrated Polycarbonate Bracelet',
+        subtitle: 'Tapered 25mm–17mm Links',
+        image: 'assets/watches/d1milano/elements/element_camo_bracelet.jpg',
+        description: 'Articulated matte polycarbonate bracelet tapering seamlessly from 25 mm integrated shoulders down to 17 mm links.'
+      },
+      {
+        id: 'element-butterfly-clasp',
+        name: '316L Hidden Clasp & Crown',
+        subtitle: 'Concealed Steel Hardware',
+        image: 'assets/watches/d1milano/elements/element_butterfly_clasp.jpg',
+        description: 'Flush 316L stainless steel hidden butterfly deployment clasp paired with an octagonal brushed steel setting crown.'
+      }
+    ]
   }
 ];
 
@@ -1051,7 +1195,8 @@ export const COLLECTION_STATS = {
     'Tough Solar / Tactical Utility',
     'Celestial Chronograph / Day-Night Phase',
     'Mid-Century Automatic / Heritage',
-    'Architectural Geometric / Dress'
+    'Architectural Geometric / Dress',
+    'Architectural Geometric / Urban Polymer'
   ]
 };
 
@@ -1086,7 +1231,8 @@ export function findWatchById(id) {
     { keys: ['timex', 'tw000z', 'tw000z800', 'sunray'], id: 'timex-automatic-tw000z800' },
     { keys: ['leecooper', 'lee', 'cooper', 'lyam', 'tonneau', 'lc07979'], id: 'lee-cooper-lc07979-399' },
     { keys: ['titan', 'deca', '90245', '90245sm01', 'classique'], id: 'titan-classique-deca-90245sm01' },
-    { keys: ['police', 'cranium', 'rebel', 'plpewjm0081301w', 'plpewjm0081301', 'plpewjm', 'pewjm', '0081301w', '0081301'], id: 'police-cranium-plpewjm0081301w' }
+    { keys: ['police', 'cranium', 'rebel', 'plpewjm0081301w', 'plpewjm0081301', 'plpewjm', 'pewjm', '0081301w', '0081301'], id: 'police-cranium-plpewjm0081301w' },
+    { keys: ['d1milano', 'd1', 'milano', 'pcbj37', 'd1pcbj37', 'urbancamo', 'camo', 'polycarbon', 'polycarbonate'], id: 'd1-milano-polycarbon-pcbj37' }
   ];
 
   for (const entry of KEYWORD_MAP) {

@@ -11,7 +11,6 @@ import './WatchDetailGShock.css';
  *  - Single Atmospheric Lighting bar (Tactical Concrete Foundry)
  *  - Full timepiece default viewport (filter: none, box-shadow: none)
  *  - 5 authentic macro elements with swatch dots
- *  - Interactive Tough Solar Lux Charging Simulator & Super Illuminator Double LED Light toggle
  *  - 1080p Horological Cinema Loop (10s Continuous Master Take)
  */
 
@@ -22,12 +21,6 @@ const ELEMENT_SWATCH_COLORS = {
   'element-lume-hands': '#22c55e',       // Neobrite Phosphor Green
   'element-resin-strap': '#64748b'       // Bio-Based Resin Slate
 };
-
-const LUX_PRESETS = [
-  { id: 'indoor', label: 'Indoor Fluorescent', lux: '500 LUX', charge: 'Trickle Reserve', rate: '+1 hr run/3 hr exp' },
-  { id: 'overcast', label: 'Overcast Daylight', lux: '10,000 LUX', charge: 'Moderate Charge', rate: '+8 hr run/1 hr exp' },
-  { id: 'sunlight', label: 'Direct Solar Noon', lux: '50,000 LUX', charge: 'Full Rapid Charge', rate: 'Full Capacity in 8 hrs' }
-];
 
 const WatchDetailGShock = ({
   watch,
@@ -43,8 +36,6 @@ const WatchDetailGShock = ({
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isVideoMuted, setIsVideoMuted] = useState(false); // Unmuted by default per user specification
-  const [activeLux, setActiveLux] = useState('overcast');
-  const [isSuperIlluminatorOn, setIsSuperIlluminatorOn] = useState(false);
 
   useEffect(() => {
     // Unmuted auto-play protocol with graceful interaction fallback
@@ -87,10 +78,8 @@ const WatchDetailGShock = ({
     }
   };
 
-  const currentLux = LUX_PRESETS.find((p) => p.id === activeLux) || LUX_PRESETS[1];
-
   return (
-    <div className={`gshock-exhibition-wrapper ${isSuperIlluminatorOn ? 'led-active' : ''}`}>
+    <div className="gshock-exhibition-wrapper">
       {/* Thematic Visual Background: Brutalist Concrete & Coordinate Grid */}
       <div
         className="atelier-thematic-backdrop"
@@ -285,7 +274,6 @@ const WatchDetailGShock = ({
                   <div className="viewport-caption">
                     Full Timepiece • {watch.dimensions.caseDiameter} Carbon Guard Chassis (Module 5689 Tough Solar)
                   </div>
-                  {isSuperIlluminatorOn && <div className="super-illuminator-glow"></div>}
                 </div>
               ) : (
                 <div className="viewport-macro-wrap">
@@ -358,68 +346,6 @@ const WatchDetailGShock = ({
                   })}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive Tough Solar Lux Simulator & Super Illuminator Cockpit */}
-        <section className="gshock-interactive-cockpit" aria-label="Tough Solar & Light Simulator">
-          <div className="cockpit-panel-left">
-            <div className="cockpit-title-row">
-              <span className="cockpit-badge">SOLAR HARVEST</span>
-              <h3 className="cockpit-title">Tough Solar Light Absorption Simulator</h3>
-            </div>
-            <p className="cockpit-desc">
-              Simulate ambient lux intensity across the shadow-dispersing solar dial plate and observe module charging efficiency.
-            </p>
-
-            <div className="lux-preset-buttons">
-              {LUX_PRESETS.map((p) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  className={`btn-lux-pill ${activeLux === p.id ? 'active' : ''}`}
-                  onClick={() => setActiveLux(p.id)}
-                >
-                  <span className="lux-val">{p.lux}</span>
-                  <span className="lux-name">{p.label}</span>
-                </button>
-              ))}
-            </div>
-
-            <div className="lux-status-strip">
-              <div className="status-col">
-                <span className="col-label">CHARGE STATE:</span>
-                <strong className="col-val text-amber">{currentLux.charge}</strong>
-              </div>
-              <div className="status-col">
-                <span className="col-label">CONVERSION RATE:</span>
-                <span className="col-val">{currentLux.rate}</span>
-              </div>
-              <div className="status-col battery-indicator">
-                <span className="col-label">CAPACITOR:</span>
-                <div className="battery-levels">
-                  <span className="bat-lvl lvl-l active">L</span>
-                  <span className="bat-lvl lvl-m active">M</span>
-                  <span className={`bat-lvl lvl-h ${activeLux !== 'indoor' ? 'active' : ''}`}>H</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="cockpit-panel-right">
-            <div className="led-control-wrap">
-              <span className="led-badge">DOUBLE LED</span>
-              <h4 className="led-title">Super Illuminator</h4>
-              <p className="led-desc">Activates high-luminance white LED array across dial and LCD.</p>
-              <button
-                type="button"
-                className={`btn-toggle-led ${isSuperIlluminatorOn ? 'btn-active' : ''}`}
-                onClick={() => setIsSuperIlluminatorOn(!isSuperIlluminatorOn)}
-              >
-                <span className="led-bulb-icon">{isSuperIlluminatorOn ? '💡' : '🔦'}</span>
-                <span>{isSuperIlluminatorOn ? 'LED Backlight Active' : 'Engage Super Illuminator'}</span>
-              </button>
             </div>
           </div>
         </section>
